@@ -175,7 +175,7 @@
         currentIndex = safeIndex;
 
         const card = cards[safeIndex];
-        const left = card.offsetLeft - (carousel.clientWidth - card.clientWidth) / 2;
+        const left = getCenteredScrollLeft(card);
 
         carousel.scrollTo({
             left: left,
@@ -183,6 +183,12 @@
         });
 
         updateActiveClass();
+    }
+
+    function getCenteredScrollLeft(card) {
+        const target = card.offsetLeft - (carousel.clientWidth - card.offsetWidth) / 2;
+        const max = Math.max(0, carousel.scrollWidth - carousel.clientWidth);
+        return Math.max(0, Math.min(target, max));
     }
 
     function updateActiveClass() {
