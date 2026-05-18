@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="100%" height="100%" fill="#f8fafc"/>
+  <g transform="translate(80,120)">
+    <rect x="0" y="220" width="1040" height="360" rx="24" fill="#ffffff" stroke="#e6eefc" />
+    <text x="520" y="180" font-family="Inter, Arial, sans-serif" font-size="42" fill="#0f1724" text-anchor="middle">Australia hero placeholder</text>
+    <g fill="#0f5c9b" transform="translate(60,260)">
+      <circle cx="60" cy="60" r="40"/>
+      <rect x="140" y="40" width="160" height="80" rx="14"/>
+      <path d="M360 120 h120 v-40 h80 v-80 h-40 v-40 h-120 v40 h-40 z"/>
+    </g>
+  </g>
+</svg>

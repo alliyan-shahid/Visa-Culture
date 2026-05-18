@@ -1,0 +1,321 @@
+{% extends 'base.html' %}
+
+{% block title %}Study in Australia | Visa Culture{% endblock %}
+
+{% block content %}
+<section class="relative overflow-hidden page-hero text-white px-6 pt-16 pb-20 sm:px-10 sm:pt-24 lg:px-12">
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute -top-8 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-primary/25 blur-3xl"></div>
+        <div class="absolute right-0 top-20 h-72 w-72 rounded-full bg-accent/15 blur-3xl"></div>
+        <div class="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-slate-950/10 to-transparent"></div>
+        <div class="absolute inset-x-0 -bottom-16 h-36 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.18),_transparent_55%)] blur-3xl"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl">
+        <div class="grid gap-12 lg:grid-cols-[minmax(0,1.25fr)_minmax(340px,0.75fr)] lg:items-center">
+            <div class="space-y-8 reveal relative z-10">
+                <div class="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-xs uppercase tracking-[0.35em] text-slate-200/90">
+                    Trusted by students for Australia admissions
+                </div>
+                <div class="space-y-6 max-w-3xl">
+                    <h1 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl leading-tight">
+                        <span class="hero-line block">Study in Australia with confidence</span>
+                    </h1>
+                    <div class="space-y-4">
+                        <p class="hero-line max-w-2xl text-sm leading-7 text-slate-300 sm:text-base md:text-lg">One team for university selection, application review and visa submission.</p>
+                        <p class="hero-line max-w-2xl text-sm leading-7 text-slate-300 sm:text-base md:text-lg">We make your path to Australian study fast, clear and fully supported.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
+                    <a href="#appointment" class="inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-primary to-accent px-8 py-4 text-base font-semibold text-white shadow-[0_25px_80px_rgba(15,23,42,0.28)] button-primary">Book a free call</a>
+                    <a href="#services" class="inline-flex items-center justify-center gap-3 rounded-full border border-white/15 bg-white/10 px-8 py-4 text-base font-semibold text-white transition hover:bg-white/20 button-secondary">Explore services</a>
+                </div>
+                <div class="grid gap-4 sm:grid-cols-3">
+                    <div class="hero-stat rounded-[1.75rem] px-6 py-6 text-sm text-white/95 backdrop-blur-md border-white/15 bg-slate-950/50">
+                        <p class="text-3xl font-semibold">3,500+</p>
+                        <p class="mt-3 text-slate-300">Approved student visas</p>
+                    </div>
+                    <div class="hero-stat rounded-[1.75rem] px-6 py-6 text-sm text-white/95 backdrop-blur-md border-white/15 bg-slate-950/50">
+                        <p class="text-3xl font-semibold">98%</p>
+                        <p class="mt-3 text-slate-300">Application success rate</p>
+                    </div>
+                    <div class="hero-stat rounded-[1.75rem] px-6 py-6 text-sm text-white/95 backdrop-blur-md border-white/15 bg-slate-950/50">
+                        <p class="text-3xl font-semibold">24/7</p>
+                        <p class="mt-3 text-slate-300">Student support access</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative flex items-center justify-center reveal reveal-delay z-10">
+                <div class="hero-image-card relative w-full max-w-lg overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/5 shadow-2xl backdrop-blur-xl">
+                    <picture class="block">
+                        <source srcset="{{ url_for('static', filename='images/australia.webp') }}" type="image/webp">
+                        <img src="{{ url_for('static', filename='images/australia.svg') }}" alt="study abroad" class="h-full w-full object-cover min-h-[360px]">
+                    </picture>
+                    <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent"></div>
+                    <div class="absolute top-6 left-6 rounded-3xl border border-white/10 bg-white/10 p-4 text-sm text-white shadow-lg backdrop-blur-xl">
+                        <p class="font-semibold">Fast application review</p>
+                        <p class="mt-2 text-slate-100/80">Get expert feedback within 24 hours.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="ideaCarouselSection" class="relative overflow-hidden bg-slate-950 py-24 text-white">
+    <div class="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(circle_at_top,_rgba(37,99,235,0.18),transparent_35%)]"></div>
+    <div class="mx-auto relative max-w-7xl px-6">
+        <div class="mb-10 max-w-3xl text-center mx-auto">
+            <p class="text-sm uppercase tracking-[0.35em] text-cyan-300">Premium idea carousel</p>
+            <h2 class="mt-4 text-4xl font-bold text-white">Swipe down to move through ideas</h2>
+            <p class="mx-auto mt-4 text-base leading-8 text-slate-300">Enter the section and use vertical scroll to advance each hero card until the end.</p>
+        </div>
+        <div class="relative">
+            <div class="overflow-hidden rounded-[2.5rem] border border-white/10 bg-slate-900/90 p-4 shadow-[0_32px_96px_rgba(15,23,42,0.24)]">
+                <div id="ideaCarousel" class="carousel-track flex snap-x snap-mandatory gap-6 overflow-x-auto px-2 pb-6 scroll-smooth scrollbar-none">
+                    <article class="carousel-card min-w-full max-w-3xl shrink-0 snap-center overflow-hidden rounded-[2rem] bg-white text-slate-950 shadow-[0_24px_60px_rgba(15,23,42,0.16)]">
+                        <div class="relative h-[260px] overflow-hidden bg-slate-200">
+                            <picture class="block h-full w-full">
+                                <source srcset="{{ url_for('static', filename='images/australia.webp') }}" type="image/webp">
+                                <img src="{{ url_for('static', filename='images/australia.svg') }}" alt="Study path image" class="h-full w-full object-cover">
+                            </picture>
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/0 to-transparent"></div>
+                            <div class="absolute left-6 bottom-6 rounded-3xl bg-white/95 px-4 py-3 text-sm font-semibold text-slate-950 shadow-2xl">Visa-ready application</div>
+                        </div>
+                        <div class="p-8">
+                            <div class="flex items-center justify-between gap-3 text-slate-500">
+                                <span class="rounded-full bg-slate-100 px-3 py-1 text-xs uppercase tracking-[0.35em]">Idea</span>
+                                <span class="text-sm font-semibold text-primary">Fast track</span>
+                            </div>
+                            <h3 class="mt-5 text-3xl font-semibold text-slate-950">Hero-style student launch</h3>
+                            <p class="mt-5 text-base leading-7 text-slate-600">A powerful landscape hero card that introduces the study journey with premium visual energy.</p>
+                        </div>
+                    </article>
+                    <article class="carousel-card min-w-full max-w-3xl shrink-0 snap-center overflow-hidden rounded-[2rem] bg-white text-slate-950 shadow-[0_24px_60px_rgba(15,23,42,0.16)]">
+                        <div class="relative h-[260px] overflow-hidden bg-slate-200">
+                            <picture class="block h-full w-full">
+                                <source srcset="{{ url_for('static', filename='images/australia.webp') }}" type="image/webp">
+                                <img src="{{ url_for('static', filename='images/australia.svg') }}" alt="Support strategy image" class="h-full w-full object-cover">
+                            </picture>
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/0 to-transparent"></div>
+                            <div class="absolute left-6 bottom-6 rounded-3xl bg-slate-950/90 px-4 py-3 text-sm font-semibold text-white shadow-2xl">Support ideas</div>
+                        </div>
+                        <div class="p-8">
+                            <div class="flex items-center justify-between gap-3 text-slate-500">
+                                <span class="rounded-full bg-slate-100 px-3 py-1 text-xs uppercase tracking-[0.35em]">Idea</span>
+                                <span class="text-sm font-semibold text-accent">Trusted</span>
+                            </div>
+                            <h3 class="mt-5 text-3xl font-semibold text-slate-950">Landscape student support</h3>
+                            <p class="mt-5 text-base leading-7 text-slate-600">A layered visual card with premium structure that helps students focus on the next step.</p>
+                        </div>
+                    </article>
+                    <article class="carousel-card min-w-full max-w-3xl shrink-0 snap-center overflow-hidden rounded-[2rem] bg-white text-slate-950 shadow-[0_24px_60px_rgba(15,23,42,0.16)]">
+                        <div class="relative h-[260px] overflow-hidden bg-slate-200">
+                            <picture class="block h-full w-full">
+                                <source srcset="{{ url_for('static', filename='images/australia.webp') }}" type="image/webp">
+                                <img src="{{ url_for('static', filename='images/australia.svg') }}" alt="Pathway planning image" class="h-full w-full object-cover">
+                            </picture>
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/0 to-transparent"></div>
+                            <div class="absolute left-6 bottom-6 rounded-3xl bg-sky-950/90 px-4 py-3 text-sm font-semibold text-white shadow-2xl">Pathway planning</div>
+                        </div>
+                        <div class="p-8">
+                            <div class="flex items-center justify-between gap-3 text-slate-500">
+                                <span class="rounded-full bg-slate-100 px-3 py-1 text-xs uppercase tracking-[0.35em]">Idea</span>
+                                <span class="text-sm font-semibold text-sky-600">Clear</span>
+                            </div>
+                            <h3 class="mt-5 text-3xl font-semibold text-slate-950">Clear scholarship route</h3>
+                            <p class="mt-5 text-base leading-7 text-slate-600">A crisp hero card for the scholarship-focused study path, keeping the story bold and direct.</p>
+                        </div>
+                    </article>
+                    <article class="carousel-card min-w-full max-w-3xl shrink-0 snap-center overflow-hidden rounded-[2rem] bg-white text-slate-950 shadow-[0_24px_60px_rgba(15,23,42,0.16)]">
+                        <div class="relative h-[260px] overflow-hidden bg-slate-200">
+                            <picture class="block h-full w-full">
+                                <source srcset="{{ url_for('static', filename='images/australia.webp') }}" type="image/webp">
+                                <img src="{{ url_for('static', filename='images/australia.svg') }}" alt="Lifestyle idea image" class="h-full w-full object-cover">
+                            </picture>
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/0 to-transparent"></div>
+                            <div class="absolute left-6 bottom-6 rounded-3xl bg-primary/85 px-4 py-3 text-sm font-semibold text-white shadow-2xl">Lifestyle focus</div>
+                        </div>
+                        <div class="p-8">
+                            <div class="flex items-center justify-between gap-3 text-slate-500">
+                                <span class="rounded-full bg-slate-100 px-3 py-1 text-xs uppercase tracking-[0.35em]">Idea</span>
+                                <span class="text-sm font-semibold text-primary">Premium</span>
+                            </div>
+                            <h3 class="mt-5 text-3xl font-semibold text-slate-950">Study lifestyle highlight</h3>
+                            <p class="mt-5 text-base leading-7 text-slate-600">A bold hero-card conclusion that brings the aspirational lifestyle into focus.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="bg-slate-50 py-20">
+    <div class="mx-auto max-w-7xl px-6">
+        <div class="mb-12 text-center reveal">
+            <p class="text-sm uppercase tracking-[0.35em] text-primary">Our core services</p>
+            <h2 class="mt-4 text-4xl font-bold text-slate-950">Everything you need to apply and move to Australia</h2>
+            <p class="mx-auto mt-4 max-w-2xl text-base text-slate-600">We combine application strategy, document refinement and visa coaching so you get the strongest possible outcome.</p>
+        </div>
+        <div class="grid gap-6 lg:grid-cols-3">
+            <article class="service-card group rounded-[2rem] p-8 transition duration-300 reveal reveal-delay">
+                <div class="flex items-center justify-between gap-4">
+                    <div class="inline-flex h-14 w-14 items-center justify-center rounded-3xl bg-primary text-white shadow-softmd">
+                        <i data-feather="compass" class="h-6 w-6"></i>
+                    </div>
+                    <span class="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-primary">Best fit</span>
+                </div>
+                <h3 class="mt-6 text-2xl font-semibold text-slate-950">University selection</h3>
+                <p class="mt-4 text-slate-600">Choose the right Australian campus, program and location for your profile.</p>
+                <div class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-slate-500">
+                    <span>Smart study planning</span>
+                </div>
+            </article>
+            <article class="service-card group rounded-[2rem] p-8 transition duration-300 reveal reveal-delay">
+                <div class="flex items-center justify-between gap-4">
+                    <div class="inline-flex h-14 w-14 items-center justify-center rounded-3xl bg-accent text-white shadow-softmd">
+                        <i data-feather="file-text" class="h-6 w-6"></i>
+                    </div>
+                    <span class="rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-accent">Next level</span>
+                </div>
+                <h3 class="mt-6 text-2xl font-semibold text-slate-950">Application review</h3>
+                <p class="mt-4 text-slate-600">Get advisor feedback on essays, forms, and evidence before submission.</p>
+                <div class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-slate-500">
+                    <span>Polished application support</span>
+                </div>
+            </article>
+            <article class="service-card group rounded-[2rem] p-8 transition duration-300 reveal reveal-delay">
+                <div class="flex items-center justify-between gap-4">
+                    <div class="inline-flex h-14 w-14 items-center justify-center rounded-3xl bg-sky-500 text-white shadow-softmd">
+                        <i data-feather="shield" class="h-6 w-6"></i>
+                    </div>
+                    <span class="rounded-full bg-sky-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-sky-600">Secure</span>
+                </div>
+                <h3 class="mt-6 text-2xl font-semibold text-slate-950">Visa guidance</h3>
+                <p class="mt-4 text-slate-600">Follow a clear, compliant student visa process built around your application.</p>
+                <div class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-slate-500">
+                    <span>Confidence at every step</span>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="bg-white py-24">
+    <div class="mx-auto max-w-7xl px-6">
+        <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+            <div class="space-y-6 reveal">
+                <p class="text-sm uppercase tracking-[0.35em] text-primary">How it works</p>
+                <h2 class="text-4xl font-bold text-slate-950">A clear process for every student application</h2>
+                <p class="max-w-xl text-base leading-8 text-slate-600">We guide you through each stage with expert advice, document checks, and visa submission support so you always know the next step.</p>
+                <div class="grid gap-4 sm:grid-cols-2">
+                    <div class="rounded-[1.75rem] border border-slate-200/70 bg-slate-50 p-5 shadow-sm">
+                        <p class="text-sm font-semibold text-primary">Fast personal review</p>
+                        <p class="mt-3 text-slate-600 text-sm">Dedicated advisor feedback in 24 hours.</p>
+                    </div>
+                    <div class="rounded-[1.75rem] border border-slate-200/70 bg-slate-50 p-5 shadow-sm">
+                        <p class="text-sm font-semibold text-primary">Visa-ready support</p>
+                        <p class="mt-3 text-slate-600 text-sm">Document checks and compliance guidance.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid gap-4 sm:grid-cols-2">
+                <div class="step-card rounded-[2rem] p-8 transition duration-300 reveal reveal-delay">
+                    <div class="flex h-14 w-14 items-center justify-center rounded-3xl bg-primary text-white shadow-softmd">
+                        <span class="text-base font-semibold">1</span>
+                    </div>
+                    <h3 class="mt-5 text-xl font-semibold text-slate-950">Profile assessment</h3>
+                    <p class="mt-3 text-slate-600">Review your background and select the best study options in Australia.</p>
+                </div>
+                <div class="step-card rounded-[2rem] p-8 transition duration-300 reveal reveal-delay">
+                    <div class="flex h-14 w-14 items-center justify-center rounded-3xl bg-accent text-white shadow-softmd">
+                        <span class="text-base font-semibold">2</span>
+                    </div>
+                    <h3 class="mt-5 text-xl font-semibold text-slate-950">Application readiness</h3>
+                    <p class="mt-3 text-slate-600">Prepare essays, documents and visa evidence with professional review.</p>
+                </div>
+                <div class="step-card rounded-[2rem] p-8 transition duration-300 reveal reveal-delay sm:col-span-2">
+                    <div class="flex h-14 w-14 items-center justify-center rounded-3xl bg-sky-500 text-white shadow-softmd">
+                        <span class="text-base font-semibold">3</span>
+                    </div>
+                    <h3 class="mt-5 text-xl font-semibold text-slate-950">Visa submission</h3>
+                    <p class="mt-3 text-slate-600">Submit your student visa with confidence and move closer to studying in Australia.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="appointment" class="bg-slate-950 py-20">
+    <div class="mx-auto max-w-7xl px-6">
+        <div class="grid gap-10 lg:grid-cols-[1fr_0.95fr] lg:items-start">
+            <div class="space-y-6 reveal">
+                <p class="text-sm uppercase tracking-[0.35em] text-primary">Book consultancy</p>
+                <h2 class="text-4xl font-bold text-white">Get personalised advice for your Australia application today.</h2>
+                <p class="max-w-xl text-base leading-8 text-slate-300">Complete the form and our experienced team will reach out with clear next steps for your study application.</p>
+                <div class="grid gap-3 sm:grid-cols-2">
+                    <div class="rounded-[1.75rem] border border-white/10 bg-white/5 p-5 text-sm text-slate-200">
+                        <p class="font-semibold text-white">Free initial consultation</p>
+                        <p class="mt-2 text-slate-300">No commitment until you decide.</p>
+                    </div>
+                    <div class="rounded-[1.75rem] border border-white/10 bg-white/5 p-5 text-sm text-slate-200">
+                        <p class="font-semibold text-white">Secure document process</p>
+                        <p class="mt-2 text-slate-300">Your details are handled carefully.</p>
+                    </div>
+                </div>
+            </div>
+            <form action="/book" method="post" class="section-panel rounded-[2rem] p-8 text-white reveal reveal-delay">
+                <div class="mb-6 rounded-[1.75rem] bg-white/5 p-4 text-sm text-slate-200">
+                    <p class="font-semibold text-white">Ready in 48 hours</p>
+                    <p class="mt-2 text-slate-300">We’ll contact you quickly with the next best step.</p>
+                </div>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        <div class="mb-6 space-y-3 rounded-3xl border border-primary/20 bg-primary/10 p-4 text-sm text-slate-100">
+                            {% for category, message in messages %}
+                                <p class="{{ 'text-emerald-200' if category == 'success' else 'text-rose-200' }}">{{ message }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endwith %}
+                <div class="grid gap-4 sm:grid-cols-2">
+                    <label class="space-y-2 text-sm font-semibold text-slate-200" for="name">
+                        <span>Full name</span>
+                        <input id="name" name="name" type="text" required class="w-full rounded-3xl border border-slate-700/80 bg-slate-900/95 px-5 py-3 text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Your name">
+                    </label>
+                    <label class="space-y-2 text-sm font-semibold text-slate-200" for="phone">
+                        <span>Phone number</span>
+                        <input id="phone" name="phone" type="tel" required class="w-full rounded-3xl border border-slate-700/80 bg-slate-900/95 px-5 py-3 text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="+61 4XX XXX XXX">
+                    </label>
+                </div>
+                <div class="grid gap-4 sm:grid-cols-2 mt-4">
+                    <label class="space-y-2 text-sm font-semibold text-slate-200" for="email">
+                        <span>Email address</span>
+                        <input id="email" name="email" type="email" class="w-full rounded-3xl border border-slate-700/80 bg-slate-900/95 px-5 py-3 text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="name@example.com">
+                    </label>
+                    <label class="space-y-2 text-sm font-semibold text-slate-200" for="date">
+                        <span>Preferred date</span>
+                        <input id="date" name="date" type="date" required class="w-full rounded-3xl border border-slate-700/80 bg-slate-900/95 px-5 py-3 text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
+                    </label>
+                </div>
+                <label class="mt-4 space-y-2 text-sm font-semibold text-slate-200" for="university">
+                    <span>Preferred university</span>
+                    <select id="university" name="university" required class="w-full rounded-3xl border border-slate-700/80 bg-slate-900/95 px-5 py-3 text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
+                        <option value="University of Melbourne">University of Melbourne</option>
+                        <option value="Australian National University">Australian National University</option>
+                        <option value="University of Sydney">University of Sydney</option>
+                        <option value="University of New South Wales">University of New South Wales</option>
+                        <option value="Monash University">Monash University</option>
+                        <option value="University of Queensland">University of Queensland</option>
+                    </select>
+                </label>
+                <label class="mt-4 space-y-2 text-sm font-semibold text-slate-200" for="message">
+                    <span>Message</span>
+                    <input id="message" name="message" type="text" class="w-full rounded-3xl border border-slate-700/80 bg-slate-900/95 px-5 py-3 text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Your study goals">
+                </label>
+                <button type="submit" class="mt-6 w-full rounded-3xl bg-gradient-to-r from-primary to-accent px-6 py-4 text-sm font-semibold text-white shadow-[0_20px_60px_rgba(37,99,235,0.32)] transition hover:shadow-[0_24px_72px_rgba(37,99,235,0.38)]">Submit appointment request</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
