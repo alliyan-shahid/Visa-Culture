@@ -187,7 +187,7 @@
             <div class="mt-8 space-y-5">
                 <article class="flex gap-4 rounded-[1.25rem] border border-slate-200 bg-white p-6 shadow-sm">
                     <div class="mt-1 inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                        <i data-feather="star" class="h-5 w-5"></i>
+                        <img src="{{ url_for('static', filename='images/heart.svg') }}" alt="Heart icon" class="h-5 w-5 text-primary" />
                     </div>
                     <div>
                         <h3 class="text-[2rem] leading-tight font-semibold text-slate-950">Unmatched Quality of Services and Genuine Care</h3>
@@ -197,7 +197,7 @@
 
                 <article class="flex gap-4 rounded-[1.25rem] border border-slate-200 bg-white p-6 shadow-sm">
                     <div class="mt-1 inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                        <i data-feather="award" class="h-5 w-5"></i>
+                        <img src="{{ url_for('static', filename='images/award.svg') }}" alt="Award icon" class="h-5 w-5 text-primary" />
                     </div>
                     <div>
                         <h3 class="text-[2rem] leading-tight font-semibold text-slate-950">Experience that Matters</h3>
@@ -423,23 +423,24 @@
                     </label>
                     <label class="space-y-2 text-sm font-semibold text-slate-200" for="date">
                         <span>Preferred date</span>
-                        <input id="date" name="date" type="date" required class="w-full rounded-3xl border border-slate-700/80 bg-slate-900/95 px-5 py-3 text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
+                        <div class="relative">
+                            <input id="date" name="date" type="date" required class="w-full rounded-3xl border border-slate-700/80 bg-slate-900/95 px-5 py-3 pr-14 text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 cursor-pointer" placeholder="mm/dd/yyyy">
+                            <span class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-slate-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <path d="M16 2v4M8 2v4M3 10h18"></path>
+                                </svg>
+                            </span>
+                        </div>
                     </label>
                 </div>
                 <label class="mt-4 space-y-2 text-sm font-semibold text-slate-200" for="university">
                     <span>Preferred university</span>
-                    <select id="university" name="university" required class="w-full rounded-3xl border border-slate-700/80 bg-slate-900/95 px-5 py-3 text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
-                        <option value="University of Melbourne">University of Melbourne</option>
-                        <option value="Australian National University">Australian National University</option>
-                        <option value="University of Sydney">University of Sydney</option>
-                        <option value="University of New South Wales">University of New South Wales</option>
-                        <option value="Monash University">Monash University</option>
-                        <option value="University of Queensland">University of Queensland</option>
-                    </select>
+                    <input id="university" name="university" type="text" required class="w-full rounded-3xl border border-slate-700/80 bg-slate-900/95 px-5 py-3 text-white outline-none placeholder:text-slate-400 focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="University of Melbourne">
                 </label>
                 <label class="mt-4 space-y-2 text-sm font-semibold text-slate-200" for="message">
                     <span>Message</span>
-                    <input id="message" name="message" type="text" class="w-full rounded-3xl border border-slate-700/80 bg-slate-900/95 px-5 py-3 text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Your study goals">
+                    <textarea id="message" name="message" rows="5" class="w-full rounded-3xl border border-slate-700/80 bg-slate-900/95 px-5 py-3 text-white outline-none resize-none overflow-y-auto focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Your study goals"></textarea>
                 </label>
                 <button type="submit" class="mt-6 w-full rounded-3xl bg-gradient-to-r from-primary to-accent px-6 py-4 text-sm font-semibold text-white shadow-[0_20px_60px_rgba(37,99,235,0.32)] transition hover:shadow-[0_24px_72px_rgba(37,99,235,0.38)]">Submit appointment request</button>
             </form>

@@ -277,6 +277,15 @@
             user-select: none;
             -webkit-user-select: none;
         }
+        #date::-webkit-calendar-picker-indicator {
+            opacity: 0;
+            display: block;
+            pointer-events: none;
+        }
+        #date::-moz-calendar-picker-indicator {
+            opacity: 0;
+            pointer-events: none;
+        }
         .hero-stat {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.12);
@@ -361,19 +370,96 @@
         {% block content %}{% endblock %}
     </main>
 
-    <footer class="border-t border-slate-200 bg-slate-100 py-12">
-        <div class="mx-auto max-w-7xl px-6 text-center text-sm text-slate-500">
-            <p>Visa Culture - premium Australian study consultancy for ambitious students.</p>
+    <footer class="border-t border-slate-200 bg-slate-100 pt-16">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="grid gap-10 pb-12 md:grid-cols-2 lg:grid-cols-4">
+                <div>
+                    <div class="mb-5 flex items-center gap-3">
+                        <img src="{{ url_for('static', filename='images/VisaCulture Logo.webp') }}" alt="Visa Culture logo" class="h-12 w-auto object-contain">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.35em] text-primary">Visa Culture</p>
+                            <p class="text-sm font-semibold text-slate-900">Global Education Desk</p>
+                        </div>
+                    </div>
+                    <p class="max-w-sm text-base leading-8 text-slate-600">
+                        Let us help you unlock your true academic potential for international education with trusted guidance and clear strategy.
+                    </p>
+                    <div class="mt-6 flex items-center gap-3">
+                        <button type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 transition hover:border-primary hover:text-primary" aria-label="Facebook">
+                            <i data-feather="facebook" class="h-4 w-4"></i>
+                        </button>
+                        <button type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 transition hover:border-primary hover:text-primary" aria-label="X">
+                            <i data-feather="twitter" class="h-4 w-4"></i>
+                        </button>
+                        <button type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 transition hover:border-primary hover:text-primary" aria-label="Instagram">
+                            <i data-feather="instagram" class="h-4 w-4"></i>
+                        </button>
+                        <button type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 transition hover:border-primary hover:text-primary" aria-label="LinkedIn">
+                            <i data-feather="linkedin" class="h-4 w-4"></i>
+                        </button>
+                        <button type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 transition hover:border-primary hover:text-primary" aria-label="YouTube">
+                            <i data-feather="youtube" class="h-4 w-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-semibold text-slate-900">Links</h3>
+                    <ul class="mt-4 space-y-3 text-base text-slate-600">
+                        <li><a href="#services" class="transition hover:text-primary">Services</a></li>
+                        <li><a href="#universities" class="transition hover:text-primary">Universities</a></li>
+                        <li><a href="#appointment" class="transition hover:text-primary">Book Appointment</a></li>
+                        <li><a href="#about-us" class="transition hover:text-primary">About Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-semibold text-slate-900">Explore</h3>
+                    <ul class="mt-4 space-y-3 text-base text-slate-600">
+                        <li><a href="#choose-us" class="transition hover:text-primary">Why Choose Us</a></li>
+                        <li><a href="#services" class="transition hover:text-primary">Our Services</a></li>
+                        <li><a href="#universities" class="transition hover:text-primary">Top Universities</a></li>
+                        <li><a href="#appointment" class="transition hover:text-primary">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-semibold text-slate-900">Information</h3>
+                    <ul class="mt-4 space-y-3 text-base text-slate-600">
+                        <li>+92 300 0000000</li>
+                        <li>info@visaculture.com</li>
+                        <li>Australia/Pakistan</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-slate-200 py-6">
+            <div class="mx-auto max-w-7xl px-6 text-center text-sm text-slate-500">
+                <p>&copy; 2026 Visa Culture. All Rights Reserved.</p>
+                <p class="mt-1">Powered by Techify Platforms.</p>
+            </div>
         </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" integrity="sha512-xA8+9dRYfV4uS8GhUOxtCH1b1qvYlJUSQGtd8BdW6r6MZrRwEkaZIwWkNjHNI8Gx+QTWzn7Aj8LYR7D6y7M4Uw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{ url_for('static', filename='js/idea-carousel-scroll.js') }}"></script>
     <script>
-        try {
-            feather.replace();
-        } catch (e) {
-            console.warn('feather replace failed', e);
+        function replaceFeatherIcons() {
+            if (window.feather) {
+                try {
+                    feather.replace({ 'stroke-width': 2, width: '24', height: '24' });
+                } catch (e) {
+                    console.warn('feather replace failed', e);
+                }
+            } else {
+                console.warn('feather icons library is not available');
+            }
+        }
+
+        if (document.readyState === 'complete') {
+            replaceFeatherIcons();
+        } else {
+            window.addEventListener('load', replaceFeatherIcons);
         }
 
         document.getElementById('navToggle')?.addEventListener('click', function() {
