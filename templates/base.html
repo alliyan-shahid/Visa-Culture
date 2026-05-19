@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Visa Culture{% endblock %}</title>
+    <link rel="icon" type="image/webp" href="{{ url_for('static', filename='images/VisaCulture Logo.webp') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -307,8 +308,8 @@
     <header class="sticky top-0 z-50 shadow-sm">
         <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
             <a href="/" class="flex items-center gap-3">
-                <div class="flex h-12 w-12 items-center justify-center rounded-3xl bg-primary text-white shadow-soft">
-                    VC
+                <div class="flex h-12 w-12 items-center justify-center overflow-hidden rounded-3xl bg-white shadow-soft ring-1 ring-slate-200">
+                    <img src="{{ url_for('static', filename='images/VisaCulture Logo.webp') }}" alt="Visa Culture logo" class="h-full w-full object-cover">
                 </div>
                 <div>
                     <p class="text-xs uppercase tracking-[0.35em] text-primary">Visa Culture</p>
