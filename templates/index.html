@@ -47,8 +47,8 @@
             <div class="relative flex items-center justify-center reveal reveal-delay z-10">
                 <div class="hero-image-card relative w-full max-w-lg overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/5 shadow-2xl backdrop-blur-xl">
                     <picture class="block">
-                        <source srcset="{{ url_for('static', filename='images/australia.webp') }}" type="image/webp">
-                        <img src="{{ url_for('static', filename='images/australia.svg') }}" alt="study abroad" class="h-full w-full object-cover min-h-[360px]">
+                        <source srcset="{{ url_for('static', filename='images/universities-in-australia.webp') }}" type="image/webp">
+                        <img src="{{ url_for('static', filename='images/universities-in-australia.webp') }}" alt="study abroad" class="h-full w-full object-cover min-h-[360px]">
                     </picture>
                     <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent"></div>
                 </div>
@@ -57,91 +57,46 @@
     </div>
 </section>
 
-<section id="ideaCarouselSection" class="relative overflow-hidden bg-slate-950 py-24 text-white">
-    <div class="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(circle_at_top,_rgba(37,99,235,0.18),transparent_35%)]"></div>
-    <div class="mx-auto relative max-w-7xl px-6">
-        <div class="mb-10 max-w-3xl text-center mx-auto">
-            <p class="text-sm uppercase tracking-[0.35em] text-cyan-300">Premium idea carousel</p>
-            <h2 class="mt-4 text-4xl font-bold text-white">Swipe down to move through ideas</h2>
-            <p class="mx-auto mt-4 text-base leading-8 text-slate-300">Enter the section and use vertical scroll to advance each hero card until the end.</p>
+<section id="ideaCarouselSection" class="relative overflow-hidden bg-[#100e17] py-24 text-white">
+    <div class="mx-auto max-w-7xl px-6">
+        <div class="mb-10 text-center">
+            <p class="text-sm uppercase tracking-[0.35em] text-slate-400">Study In Australia</p>
+            <h2 class="mt-4 text-4xl font-bold text-white">Why Choose Australia?</h2>
+            <p class="mx-auto mt-4 max-w-3xl text-base leading-8 text-slate-300">Australia offers globally recognized degrees, strong career pathways, and a safe multicultural environment for international students. Explore the key reasons students choose Australia for higher education.</p>
         </div>
-        <div class="relative">
-            <div class="overflow-hidden rounded-[2.5rem] border border-white/10 bg-slate-900/90 p-6 md:p-7 shadow-[0_32px_96px_rgba(15,23,42,0.24)]">
-                <div id="ideaCarousel" class="carousel-track flex snap-x snap-mandatory gap-6 overflow-x-auto pb-2 scroll-smooth scrollbar-none">
-                    <article class="carousel-card min-w-full max-w-3xl shrink-0 snap-center overflow-hidden rounded-[2rem] bg-white text-slate-950 shadow-[0_24px_60px_rgba(15,23,42,0.16)]">
-                        <div class="relative h-[260px] overflow-hidden bg-slate-200">
-                            <picture class="block h-full w-full">
-                                <source srcset="{{ url_for('static', filename='images/australia.webp') }}" type="image/webp">
-                                <img src="{{ url_for('static', filename='images/australia.svg') }}" alt="Study path image" class="h-full w-full object-cover">
-                            </picture>
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/0 to-transparent"></div>
-                            <div class="absolute left-6 bottom-6 rounded-3xl bg-white/95 px-4 py-3 text-sm font-semibold text-slate-950 shadow-2xl">Visa-ready application</div>
-                        </div>
-                        <div class="p-8">
-                            <div class="flex items-center justify-between gap-3 text-slate-500">
-                                <span class="rounded-full bg-slate-100 px-3 py-1 text-xs uppercase tracking-[0.35em]">Idea</span>
-                                <span class="text-sm font-semibold text-primary">Fast track</span>
-                            </div>
-                            <h3 class="mt-5 text-3xl font-semibold text-slate-950">Hero-style student launch</h3>
-                            <p class="mt-5 text-base leading-7 text-slate-600">A powerful landscape hero card that introduces the study journey with premium visual energy.</p>
-                        </div>
-                    </article>
-                    <article class="carousel-card min-w-full max-w-3xl shrink-0 snap-center overflow-hidden rounded-[2rem] bg-white text-slate-950 shadow-[0_24px_60px_rgba(15,23,42,0.16)]">
-                        <div class="relative h-[260px] overflow-hidden bg-slate-200">
-                            <picture class="block h-full w-full">
-                                <source srcset="{{ url_for('static', filename='images/australia.webp') }}" type="image/webp">
-                                <img src="{{ url_for('static', filename='images/australia.svg') }}" alt="Support strategy image" class="h-full w-full object-cover">
-                            </picture>
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/0 to-transparent"></div>
-                            <div class="absolute left-6 bottom-6 rounded-3xl bg-slate-950/90 px-4 py-3 text-sm font-semibold text-white shadow-2xl">Support ideas</div>
-                        </div>
-                        <div class="p-8">
-                            <div class="flex items-center justify-between gap-3 text-slate-500">
-                                <span class="rounded-full bg-slate-100 px-3 py-1 text-xs uppercase tracking-[0.35em]">Idea</span>
-                                <span class="text-sm font-semibold text-accent">Trusted</span>
-                            </div>
-                            <h3 class="mt-5 text-3xl font-semibold text-slate-950">Landscape student support</h3>
-                            <p class="mt-5 text-base leading-7 text-slate-600">A layered visual card with premium structure that helps students focus on the next step.</p>
-                        </div>
-                    </article>
-                    <article class="carousel-card min-w-full max-w-3xl shrink-0 snap-center overflow-hidden rounded-[2rem] bg-white text-slate-950 shadow-[0_24px_60px_rgba(15,23,42,0.16)]">
-                        <div class="relative h-[260px] overflow-hidden bg-slate-200">
-                            <picture class="block h-full w-full">
-                                <source srcset="{{ url_for('static', filename='images/australia.webp') }}" type="image/webp">
-                                <img src="{{ url_for('static', filename='images/australia.svg') }}" alt="Pathway planning image" class="h-full w-full object-cover">
-                            </picture>
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/0 to-transparent"></div>
-                            <div class="absolute left-6 bottom-6 rounded-3xl bg-sky-950/90 px-4 py-3 text-sm font-semibold text-white shadow-2xl">Pathway planning</div>
-                        </div>
-                        <div class="p-8">
-                            <div class="flex items-center justify-between gap-3 text-slate-500">
-                                <span class="rounded-full bg-slate-100 px-3 py-1 text-xs uppercase tracking-[0.35em]">Idea</span>
-                                <span class="text-sm font-semibold text-sky-600">Clear</span>
-                            </div>
-                            <h3 class="mt-5 text-3xl font-semibold text-slate-950">Clear scholarship route</h3>
-                            <p class="mt-5 text-base leading-7 text-slate-600">A crisp hero card for the scholarship-focused study path, keeping the story bold and direct.</p>
-                        </div>
-                    </article>
-                    <article class="carousel-card min-w-full max-w-3xl shrink-0 snap-center overflow-hidden rounded-[2rem] bg-white text-slate-950 shadow-[0_24px_60px_rgba(15,23,42,0.16)]">
-                        <div class="relative h-[260px] overflow-hidden bg-slate-200">
-                            <picture class="block h-full w-full">
-                                <source srcset="{{ url_for('static', filename='images/australia.webp') }}" type="image/webp">
-                                <img src="{{ url_for('static', filename='images/australia.svg') }}" alt="Lifestyle idea image" class="h-full w-full object-cover">
-                            </picture>
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/0 to-transparent"></div>
-                            <div class="absolute left-6 bottom-6 rounded-3xl bg-primary/85 px-4 py-3 text-sm font-semibold text-white shadow-2xl">Lifestyle focus</div>
-                        </div>
-                        <div class="p-8">
-                            <div class="flex items-center justify-between gap-3 text-slate-500">
-                                <span class="rounded-full bg-slate-100 px-3 py-1 text-xs uppercase tracking-[0.35em]">Idea</span>
-                                <span class="text-sm font-semibold text-primary">Premium</span>
-                            </div>
-                            <h3 class="mt-5 text-3xl font-semibold text-slate-950">Study lifestyle highlight</h3>
-                            <p class="mt-5 text-base leading-7 text-slate-600">A bold hero-card conclusion that brings the aspirational lifestyle into focus.</p>
-                        </div>
-                    </article>
+
+        <div class="stack-cards mx-auto w-full max-w-[1180px]">
+            <article class="stack-card rounded-[14px] bg-[#17141d] p-6 shadow-[0_16px_50px_rgba(0,0,0,0.45)]">
+                <h3 class="text-[1.75rem] font-semibold text-white">Globally Ranked Universities</h3>
+                <p class="mt-4 text-sm leading-7 text-slate-300">Study at internationally respected institutions known for academic excellence, practical learning, and strong graduate outcomes.</p>
+                <div class="mt-12 h-[5px] w-full bg-[#2e3033]">
+                    <div class="h-full w-[58%] bg-[linear-gradient(90deg,rgba(0,154,217,1)_0%,rgba(217,147,0,1)_65%,rgba(255,186,0,1)_100%)]"></div>
                 </div>
-            </div>
+            </article>
+
+            <article class="stack-card rounded-[14px] bg-[#17141d] p-6 shadow-[0_16px_50px_rgba(0,0,0,0.45)]">
+                <h3 class="text-[1.75rem] font-semibold text-white">Post-Study Work Opportunities</h3>
+                <p class="mt-4 text-sm leading-7 text-slate-300">Benefit from post-study work visa options that allow eligible graduates to gain valuable international work experience.</p>
+                <div class="mt-12 h-[5px] w-full bg-[#2e3033]">
+                    <div class="h-full w-[52%] bg-[linear-gradient(90deg,rgba(0,154,217,1)_0%,rgba(217,147,0,1)_65%,rgba(255,186,0,1)_100%)]"></div>
+                </div>
+            </article>
+
+            <article class="stack-card rounded-[14px] bg-[#17141d] p-6 shadow-[0_16px_50px_rgba(0,0,0,0.45)]">
+                <h3 class="text-[1.75rem] font-semibold text-white">Safe & Multicultural Lifestyle</h3>
+                <p class="mt-4 text-sm leading-7 text-slate-300">Live in a welcoming society with high quality of life, modern cities, and supportive communities for international students.</p>
+                <div class="mt-12 h-[5px] w-full bg-[#2e3033]">
+                    <div class="h-full w-[48%] bg-[linear-gradient(90deg,rgba(0,154,217,1)_0%,rgba(217,147,0,1)_65%,rgba(255,186,0,1)_100%)]"></div>
+                </div>
+            </article>
+
+            <article class="stack-card rounded-[14px] bg-[#17141d] p-6 shadow-[0_16px_50px_rgba(0,0,0,0.45)]">
+                <h3 class="text-[1.75rem] font-semibold text-white">Scholarships & Career Pathways</h3>
+                <p class="mt-4 text-sm leading-7 text-slate-300">Access scholarship opportunities and industry-linked programs designed to support long-term career growth and migration pathways.</p>
+                <div class="mt-12 h-[5px] w-full bg-[#2e3033]">
+                    <div class="h-full w-[55%] bg-[linear-gradient(90deg,rgba(0,154,217,1)_0%,rgba(217,147,0,1)_65%,rgba(255,186,0,1)_100%)]"></div>
+                </div>
+            </article>
         </div>
     </div>
 </section>
