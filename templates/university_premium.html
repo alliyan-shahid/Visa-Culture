@@ -1,0 +1,249 @@
+﻿{% extends 'base.html' %}
+{% block title %}{{ profile.name }} Guide for Pakistani Students | Visa Culture{% endblock %}
+
+{% block content %}
+<style>
+  :root {
+    --u-primary: {{ profile.theme.primary }};
+    --u-secondary: {{ profile.theme.secondary }};
+    --u-accent: {{ profile.theme.accent }};
+    --u-surface: {{ profile.theme.surface }};
+    --u-hero: {{ profile.theme.hero }};
+  }
+  .u-hero-bg { background: var(--u-hero); }
+  .u-section { padding: 6rem 1.5rem; }
+  .u-card {
+    border: 1px solid rgba(200, 213, 230, 0.35);
+    border-radius: 1.25rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.97) 0%, rgba(248, 250, 252, 0.96) 100%);
+    box-shadow: 0 18px 48px rgba(15, 23, 42, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .u-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 80px rgba(30, 58, 138, 0.14);
+  }
+  .u-chip { border: 1px solid color-mix(in srgb, var(--u-secondary) 35%, white); background: color-mix(in srgb, var(--u-primary) 15%, white); color: color-mix(in srgb, var(--u-primary) 72%, black); }
+  .u-gradient-text { background: linear-gradient(120deg, var(--u-secondary), var(--u-accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .u-float { animation: u-float 4s ease-in-out infinite; }
+  @keyframes u-float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+  .u-timeline::before { content: ""; position: absolute; left: 1rem; top: 0.8rem; bottom: 0.8rem; width: 3px; border-radius: 99px; background: linear-gradient(var(--u-secondary), transparent); }
+  .u-faq summary { cursor: pointer; list-style: none; }
+  .u-faq summary::-webkit-details-marker { display:none; }
+</style>
+
+<section class="relative overflow-hidden u-hero-bg min-h-[92vh] flex items-center">
+  <div class="absolute inset-0 bg-black/25"></div>
+  <div class="absolute top-10 right-8 w-64 h-64 rounded-full blur-3xl opacity-35" style="background: var(--u-accent);"></div>
+  <div class="absolute bottom-4 left-8 w-72 h-72 rounded-full blur-3xl opacity-25" style="background: var(--u-secondary);"></div>
+  <div class="relative max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+    <div class="text-white">
+      <p class="inline-flex items-center rounded-full px-4 py-2 text-xs font-semibold tracking-[0.2em] uppercase u-chip">Premium University Guide</p>
+      <h1 class="mt-6 text-5xl md:text-7xl font-bold leading-tight">Study at <span class="u-gradient-text">{{ profile.name }}</span> from Pakistan</h1>
+      <p class="mt-6 text-lg text-slate-200 max-w-2xl">{{ profile.hero_tagline }}. Ranking highlight: {{ profile.ranking }}. City: {{ profile.city }}, {{ profile.country }}.</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="#apply-plan" class="rounded-xl px-6 py-3 text-white font-semibold" style="background: var(--u-secondary);">Start Application Plan</a>
+        <a href="#scholarships" class="rounded-xl px-6 py-3 bg-white/15 border border-white/25 text-white font-semibold">View Scholarships</a>
+      </div>
+      <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3">
+        {% for s in content.stats %}
+        <div class="rounded-xl border border-white/20 bg-white/10 p-3 text-center u-float">
+          <p class="text-2xl font-bold">{{ s.value }}</p>
+          <p class="text-xs text-slate-200 mt-1">{{ s.label }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="relative">
+      <img src="{{ profile.hero_image }}" alt="{{ profile.name }} campus" class="w-full h-[520px] object-cover rounded-2xl shadow-2xl">
+      <div class="absolute -bottom-5 -left-5 u-card p-4 max-w-xs">
+        <p class="text-sm font-bold text-slate-900">Scholarship Advantage</p>
+        <p class="text-sm text-slate-600 mt-1">{{ content.hero_cards[0].value }}</p>
+      </div>
+      <div class="absolute -top-5 -right-4 u-card p-4 max-w-xs">
+        <p class="text-sm font-bold text-slate-900">Pakistani Student Support</p>
+        <p class="text-sm text-slate-600 mt-1">Dedicated counseling, visa roadmap and pre-departure mentoring.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="u-section bg-slate-50">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <div class="u-card p-8">
+      <h2 class="text-3xl font-bold text-slate-900">About {{ profile.name }}</h2>
+      <div class="mt-5 space-y-4 text-slate-600">
+        {% for p in content.about_points %}<p>{{ p }}</p>{% endfor %}
+      </div>
+    </div>
+    <div class="u-card p-8">
+      <h2 class="text-3xl font-bold text-slate-900">Why Pakistani Students Choose {{ profile.short_name }}</h2>
+      <ul class="mt-5 space-y-3 text-slate-600">
+        {% for item in content.pakistan_why %}<li>• {{ item }}</li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="u-section bg-white">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-4xl font-bold text-slate-900">Detailed Admission Requirements</h2>
+    <div class="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-5">
+      <div class="u-card p-6"><h3 class="text-xl font-bold">Undergraduate</h3><ul class="mt-3 space-y-2 text-slate-600">{% for i in content.admission.undergrad %}<li>• {{ i }}</li>{% endfor %}</ul></div>
+      <div class="u-card p-6"><h3 class="text-xl font-bold">Master's</h3><ul class="mt-3 space-y-2 text-slate-600">{% for i in content.admission.masters %}<li>• {{ i }}</li>{% endfor %}</ul></div>
+      <div class="u-card p-6"><h3 class="text-xl font-bold">PhD</h3><ul class="mt-3 space-y-2 text-slate-600">{% for i in content.admission.phd %}<li>• {{ i }}</li>{% endfor %}</ul></div>
+    </div>
+    <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-5">
+      <div class="u-card p-6"><h3 class="text-xl font-bold">Required Documents</h3><ul class="mt-3 space-y-2 text-slate-600">{% for i in content.admission.docs %}<li>• {{ i }}</li>{% endfor %}</ul></div>
+      <div class="u-card p-6"><h3 class="text-xl font-bold">English Test Scores</h3><ul class="mt-3 space-y-2 text-slate-600">{% for i in content.admission.english %}<li>• {{ i }}</li>{% endfor %}</ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="u-section bg-slate-50">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <div class="u-card p-8">
+      <h2 class="text-3xl font-bold text-slate-900">Tuition Fees and Cost Breakdown</h2>
+      <div class="mt-5 space-y-3">
+        {% for f in content.fees %}
+        <div class="flex justify-between gap-4 border-b border-slate-200 pb-2 text-sm">
+          <span class="text-slate-700">{{ f.item }}</span><span class="font-semibold text-slate-900">{{ f.cost }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="space-y-4">
+      {% for b in content.budget_cards %}
+      <div class="u-card p-6">
+        <p class="text-sm text-slate-500">{{ b.label }}</p><p class="text-2xl font-bold mt-1" style="color: var(--u-primary);">{{ b.value }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="scholarships" class="u-section bg-white">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-4xl font-bold text-slate-900">Scholarships: Detailed Opportunities</h2>
+    <div class="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-5">
+      {% for s in content.scholarships %}
+      <article class="u-card p-6">
+        <h3 class="text-xl font-bold text-slate-900">{{ s.name }}</h3>
+        <p class="text-sm mt-2"><strong>Coverage:</strong> {{ s.coverage }}</p>
+        <p class="text-sm mt-2"><strong>Eligibility:</strong> {{ s.eligibility }}</p>
+        <p class="text-sm mt-2"><strong>Deadline:</strong> {{ s.deadline }}</p>
+        <p class="text-sm mt-2"><strong>Process:</strong> {{ s.process }}</p>
+        <p class="text-sm mt-2"><strong>Tip:</strong> {{ s.tip }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="u-section bg-slate-50">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <div class="u-card p-8">
+      <h2 class="text-3xl font-bold">Courses and Faculties</h2>
+      <div class="mt-5 space-y-4">
+        {% for c in content.courses %}
+        <div class="rounded-xl border border-slate-200 p-4">
+          <p class="font-bold text-slate-900">{{ c.name }}</p>
+          <p class="text-sm text-slate-600 mt-1">Duration: {{ c.duration }}</p>
+          <p class="text-sm text-slate-600 mt-1">Career outcomes: {{ c.career }}</p>
+          <p class="text-sm text-slate-600 mt-1">Internships and industry partnerships integrated in pathway planning.</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="u-card p-8">
+      <h2 class="text-3xl font-bold">Student Life for Pakistani Students</h2>
+      <ul class="mt-5 space-y-3 text-slate-600">
+        {% for i in content.student_life %}<li>• {{ i }}</li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="u-section bg-white">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <div class="u-card p-8">
+      <h2 class="text-3xl font-bold">Accommodation Guide</h2>
+      <div class="mt-5 space-y-4">
+        {% for a in content.accommodation %}
+        <div class="rounded-xl border border-slate-200 p-4">
+          <p class="font-bold">{{ a.type }}</p>
+          <p class="text-sm text-slate-600">Cost range: {{ a.range }}</p>
+          <p class="text-sm text-slate-600">Best for: {{ a.fit }}</p>
+        </div>
+        {% endfor %}
+      </div>
+      <ul class="mt-5 space-y-2 text-slate-600">{% for i in content.areas %}<li>• {{ i }}</li>{% endfor %}</ul>
+    </div>
+    <div class="u-card p-8">
+      <h2 class="text-3xl font-bold">Visa Guidance for Pakistani Students</h2>
+      <ol class="mt-5 space-y-3 text-slate-600">{% for i in content.visa_steps %}<li>{{ loop.index }}. {{ i }}</li>{% endfor %}</ol>
+      <h3 class="mt-6 font-bold text-slate-900">Visa Success Tips</h3>
+      <ul class="mt-3 space-y-2 text-slate-600">{% for i in content.visa_tips %}<li>• {{ i }}</li>{% endfor %}</ul>
+    </div>
+  </div>
+</section>
+
+<section class="u-section bg-slate-50">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <div class="u-card p-8">
+      <h2 class="text-3xl font-bold">Career and PR Opportunities</h2>
+      <ul class="mt-5 space-y-3 text-slate-600">{% for i in content.career %}<li>• {{ i }}</li>{% endfor %}</ul>
+    </div>
+    <div class="u-card p-8 relative u-timeline">
+      <h2 class="text-3xl font-bold">Step-by-Step Application Timeline</h2>
+      <div class="mt-5 pl-8 space-y-4">
+        {% for i in content.timeline %}
+        <div class="relative">
+          <span class="absolute -left-10 top-1 w-6 h-6 rounded-full text-white text-xs flex items-center justify-center" style="background: var(--u-secondary);">{{ loop.index }}</span>
+          <p class="font-semibold text-slate-800">{{ i }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="u-section bg-white">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-4xl font-bold text-slate-900">Real Student Testimonials</h2>
+    <div class="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-5">
+      {% for t in content.testimonials %}
+      <article class="u-card p-6">
+        <p class="text-slate-600">"{{ t.quote }}"</p>
+        <p class="mt-4 font-bold text-slate-900">{{ t.name }}</p>
+        <p class="text-sm text-slate-500">{{ t.program }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="u-section bg-slate-50">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-4xl font-bold text-slate-900">Frequently Asked Questions</h2>
+    <div class="mt-8 space-y-4">
+      {% for f in content.faqs %}
+      <details class="u-card p-5 u-faq">
+        <summary class="font-semibold text-slate-900">{{ f.q }}</summary>
+        <p class="mt-3 text-slate-600">{{ f.a }}</p>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="apply-plan" class="u-section text-white" style="background: var(--u-hero);">
+  <div class="max-w-5xl mx-auto text-center">
+    <p class="text-sm uppercase tracking-[0.35em] text-slate-300">Premium Advisory Support</p>
+    <h2 class="mt-5 text-5xl font-bold">Build Your {{ profile.short_name }} Offer Strategy with Visa Culture</h2>
+    <p class="mt-5 text-lg text-slate-200">From profile evaluation to scholarship targeting, application drafting, visa file building and pre-departure execution, we manage the full journey for Pakistani students.</p>
+    <a href="/#appointment" class="inline-block mt-8 rounded-xl px-7 py-4 font-semibold" style="background: var(--u-secondary);">Book Your Consultation</a>
+  </div>
+</section>
+{% endblock %}
+
