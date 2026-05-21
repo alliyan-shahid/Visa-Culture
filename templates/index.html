@@ -5,8 +5,10 @@
 {% block content %}
 <section class="relative overflow-hidden page-hero text-white px-6 pt-16 pb-20 sm:px-10 sm:pt-24 lg:px-12">
     <div class="absolute inset-0 pointer-events-none">
-        <!-- Decorative blur elements removed for a cleaner premium look -->
-        <div class="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-slate-950/06 to-transparent"></div>
+        <div class="absolute -top-8 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-primary/25 blur-3xl"></div>
+        <div class="absolute right-0 top-20 h-72 w-72 rounded-full bg-accent/15 blur-3xl"></div>
+        <div class="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-slate-950/10 to-transparent"></div>
+        <div class="absolute inset-x-0 -bottom-16 h-36 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.18),_transparent_55%)] blur-3xl"></div>
     </div>
     <div class="relative mx-auto max-w-7xl">
         <div class="grid gap-12 lg:grid-cols-[minmax(0,1.25fr)_minmax(340px,0.75fr)] lg:items-center">
@@ -43,12 +45,12 @@
                 </div>
             </div>
             <div class="relative flex items-center justify-center reveal reveal-delay z-10">
-                <div class="hero-image-card relative w-full max-w-lg overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/6 shadow-2xl">
+                <div class="hero-image-card relative w-full max-w-lg overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/5 shadow-2xl backdrop-blur-xl">
                     <picture class="block">
                         <source srcset="{{ url_for('static', filename='images/universities-in-australia.webp') }}" type="image/webp">
                         <img src="{{ url_for('static', filename='images/universities-in-australia.webp') }}" alt="study abroad" class="h-full w-full object-cover min-h-[360px]">
                     </picture>
-                    <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/40 via-slate-950/06 to-transparent"></div>
+                    <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent"></div>
                 </div>
             </div>
         </div>
@@ -248,42 +250,37 @@
             <p class="mx-auto mt-4 max-w-3xl text-base text-slate-600">We help match your profile to the right institution, entry pathway and scholarship opportunities.</p>
         </div>
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <a href="{{ url_for('unimelb_landing') }}" class="rounded-[1.75rem] border border-slate-200 bg-slate-50/60 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md hover:border-primary group">
+            <a href="/universities/university-of-melbourne" class="block rounded-[1.75rem] border border-slate-200 bg-slate-50/60 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary/40">
                 <p class="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Group of Eight</p>
-                <h3 class="mt-3 text-xl font-semibold text-slate-900 group-hover:text-primary">University of Melbourne</h3>
+                <h3 class="mt-3 text-xl font-semibold text-slate-900">University of Melbourne</h3>
                 <p class="mt-3 text-sm text-slate-600">High-demand courses with strong graduate outcomes.</p>
-                <p class="mt-4 text-xs font-semibold text-primary group-hover:underline">Explore premium pathway →</p>
+                <p class="mt-4 text-sm font-semibold text-primary">Explore premium guide →</p>
             </a>
-            <a href="{{ url_for('anu_landing') }}" class="rounded-[1.75rem] border border-slate-200 bg-slate-50/60 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md group">
+            <article class="rounded-[1.75rem] border border-slate-200 bg-slate-50/60 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
                 <p class="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Group of Eight</p>
-                <h3 class="mt-3 text-xl font-semibold text-slate-900 group-hover:text-primary">Australian National University</h3>
+                <h3 class="mt-3 text-xl font-semibold text-slate-900">Australian National University</h3>
                 <p class="mt-3 text-sm text-slate-600">Research-led pathways and globally ranked academics.</p>
-                <p class="mt-4 text-xs font-semibold text-primary group-hover:underline">Explore premium pathway →</p>
-            </a>
-            <a href="{{ url_for('sydney_landing') }}" class="rounded-[1.75rem] border border-slate-200 bg-slate-50/60 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md group">
+            </article>
+            <article class="rounded-[1.75rem] border border-slate-200 bg-slate-50/60 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
                 <p class="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Group of Eight</p>
-                <h3 class="mt-3 text-xl font-semibold text-slate-900 group-hover:text-primary">University of Sydney</h3>
+                <h3 class="mt-3 text-xl font-semibold text-slate-900">University of Sydney</h3>
                 <p class="mt-3 text-sm text-slate-600">Strong city-campus opportunities and premium student life.</p>
-                <p class="mt-4 text-xs font-semibold text-primary group-hover:underline">Explore premium pathway →</p>
-            </a>
-            <a href="{{ url_for('unsw_landing') }}" class="rounded-[1.75rem] border border-slate-200 bg-slate-50/60 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md group">
+            </article>
+            <article class="rounded-[1.75rem] border border-slate-200 bg-slate-50/60 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
                 <p class="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Go8 and Beyond</p>
-                <h3 class="mt-3 text-xl font-semibold text-slate-900 group-hover:text-primary">UNSW Sydney</h3>
+                <h3 class="mt-3 text-xl font-semibold text-slate-900">UNSW Sydney</h3>
                 <p class="mt-3 text-sm text-slate-600">Industry-connected degrees across business, engineering and tech.</p>
-                <p class="mt-4 text-xs font-semibold text-primary group-hover:underline">Explore premium pathway →</p>
-            </a>
-            <a href="{{ url_for('monash_landing') }}" class="rounded-[1.75rem] border border-slate-200 bg-slate-50/60 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md group">
+            </article>
+            <article class="rounded-[1.75rem] border border-slate-200 bg-slate-50/60 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
                 <p class="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Go8 and Beyond</p>
-                <h3 class="mt-3 text-xl font-semibold text-slate-900 group-hover:text-primary">Monash University</h3>
+                <h3 class="mt-3 text-xl font-semibold text-slate-900">Monash University</h3>
                 <p class="mt-3 text-sm text-slate-600">Multiple intake options with flexible international support.</p>
-                <p class="mt-4 text-xs font-semibold text-primary group-hover:underline">Explore premium pathway →</p>
-            </a>
-            <a href="{{ url_for('uq_landing') }}" class="rounded-[1.75rem] border border-slate-200 bg-slate-50/60 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md group">
+            </article>
+            <article class="rounded-[1.75rem] border border-slate-200 bg-slate-50/60 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
                 <p class="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Go8 and Beyond</p>
-                <h3 class="mt-3 text-xl font-semibold text-slate-900 group-hover:text-primary">University of Queensland</h3>
+                <h3 class="mt-3 text-xl font-semibold text-slate-900">University of Queensland</h3>
                 <p class="mt-3 text-sm text-slate-600">Excellent programs and a welcoming student ecosystem.</p>
-                <p class="mt-4 text-xs font-semibold text-primary group-hover:underline">Explore premium pathway →</p>
-            </a>
+            </article>
         </div>
     </div>
 </section>
