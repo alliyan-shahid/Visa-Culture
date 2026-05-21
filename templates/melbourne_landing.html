@@ -138,6 +138,35 @@ body { background: var(--mel-bg); }
 .mel-section-soft {
   background: linear-gradient(180deg, #f7fbff 0%, #eef5ff 100%);
 }
+.mel-kicker {
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .28em;
+  color: var(--mel-navy-soft);
+  font-weight: 700;
+}
+.mel-copy {
+  color: #475569;
+  line-height: 1.8;
+}
+.mel-list li {
+  position: relative;
+  padding-left: 1.1rem;
+}
+.mel-list li::before {
+  content: "";
+  width: .42rem;
+  height: .42rem;
+  border-radius: 9999px;
+  background: #3b82f6;
+  position: absolute;
+  left: 0;
+  top: .62rem;
+}
+.mel-badge-card {
+  border: 1px solid rgba(96,165,250,.25);
+  background: linear-gradient(145deg, #ffffff, #f0f6ff);
+}
 .mel-timeline::before { content:''; position:absolute; left: 14px; top: 12px; bottom: 12px; width:2px; background: linear-gradient(#1c4788, rgba(28,71,136,.08)); }
 .faq-item[open] { box-shadow: 0 20px 55px rgba(11,31,68,.12); }
 @media (prefers-reduced-motion: reduce) {
@@ -176,16 +205,16 @@ body { background: var(--mel-bg); }
     </div>
   </section>
 
-  <section id="why" class="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-2 lg:items-center">
+  <section id="why" class="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-2 lg:items-center">
     <div class="mel-reveal">
-      <p class="text-sm uppercase tracking-[0.28em] text-[var(--mel-navy-soft)]">Why Choose University of Melbourne</p>
-      <h2 class="mt-3 text-4xl font-bold text-[var(--mel-navy)]">Global prestige with real-world outcomes</h2>
-      <p class="mt-5 text-slate-600 leading-8">The University of Melbourne is known for world-class teaching, high-impact research, strong global employer recognition, and internationally transferable qualifications.</p>
+      <p class="mel-kicker">Why Choose University of Melbourne</p>
+      <h2 class="mt-3 text-4xl font-bold text-[var(--mel-navy)]">One of Australia’s strongest choices for Pakistani students</h2>
+      <p class="mel-copy mt-4">Get high-quality teaching, globally respected degrees, and practical career pathways in one place.</p>
       <div class="mt-6 grid gap-4 sm:grid-cols-2">
-        <div class="mel-card p-5"><h3 class="font-bold">Global Reputation</h3><p class="mt-2 text-sm text-slate-600">Consistently ranked among the world's leading universities.</p></div>
-        <div class="mel-card p-5"><h3 class="font-bold">Research Excellence</h3><p class="mt-2 text-sm text-slate-600">High-impact labs, innovation hubs, and advanced learning facilities.</p></div>
-        <div class="mel-card p-5"><h3 class="font-bold">Employability</h3><p class="mt-2 text-sm text-slate-600">Industry-linked curriculum and strong graduate outcomes.</p></div>
-        <div class="mel-card p-5"><h3 class="font-bold">International Recognition</h3><p class="mt-2 text-sm text-slate-600">Degrees respected by employers and institutions globally.</p></div>
+        <div class="mel-card p-5"><h3 class="font-bold text-slate-900">Global Ranking</h3><p class="mt-2 text-sm text-slate-600">Recognized internationally across major ranking systems.</p></div>
+        <div class="mel-card p-5"><h3 class="font-bold text-slate-900">Research Power</h3><p class="mt-2 text-sm text-slate-600">Advanced labs, funded projects, and innovation culture.</p></div>
+        <div class="mel-card p-5"><h3 class="font-bold text-slate-900">Career Outcomes</h3><p class="mt-2 text-sm text-slate-600">Strong employability and industry-focused learning.</p></div>
+        <div class="mel-card p-5"><h3 class="font-bold text-slate-900">Degree Value</h3><p class="mt-2 text-sm text-slate-600">Highly respected by employers worldwide.</p></div>
       </div>
     </div>
     <div class="mel-reveal">
@@ -197,28 +226,28 @@ body { background: var(--mel-bg); }
     <div class="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-2 lg:items-center">
       <div class="mel-reveal order-2 lg:order-1"><img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=80" alt="Pakistani student guidance" loading="lazy" decoding="async" class="h-[520px] w-full rounded-[2rem] object-cover"></div>
       <div class="mel-reveal order-1 lg:order-2">
-        <p class="text-sm uppercase tracking-[0.28em] text-[var(--mel-navy-soft)]">Guide for Pakistani Students</p>
-        <h2 class="mt-3 text-4xl font-bold text-[var(--mel-navy)]">Everything you need before applying</h2>
-        <ul class="mt-6 space-y-3 text-slate-700">
-          <li>Admission requirements for undergraduate, postgraduate and research programs</li>
-          <li>IELTS/PTE expectations by faculty and pathway options</li>
-          <li>Tuition fee ranges and budget planning</li>
-          <li>Scholarship opportunities for Pakistani applicants</li>
-          <li>Student visa process and Genuine Temporary Entrant (GTE/GS) guidance</li>
-          <li>Accommodation choices: on-campus, shared housing and private rentals</li>
-          <li>Living costs in Melbourne including transport and utilities</li>
-          <li>Part-time work opportunities and work-limit compliance</li>
-        </ul>
+        <p class="mel-kicker">Pakistani Student Guide</p>
+        <h2 class="mt-3 text-4xl font-bold text-[var(--mel-navy)]">Clear checklist, no confusion</h2>
+        <div class="mt-6 grid gap-3 sm:grid-cols-2">
+          <div class="mel-badge-card rounded-xl p-4 text-sm font-semibold text-slate-700">Admission Requirements</div>
+          <div class="mel-badge-card rounded-xl p-4 text-sm font-semibold text-slate-700">IELTS / PTE Scores</div>
+          <div class="mel-badge-card rounded-xl p-4 text-sm font-semibold text-slate-700">Tuition Fee Planning</div>
+          <div class="mel-badge-card rounded-xl p-4 text-sm font-semibold text-slate-700">Scholarship Strategy</div>
+          <div class="mel-badge-card rounded-xl p-4 text-sm font-semibold text-slate-700">Student Visa + GS/GTE</div>
+          <div class="mel-badge-card rounded-xl p-4 text-sm font-semibold text-slate-700">Accommodation Options</div>
+          <div class="mel-badge-card rounded-xl p-4 text-sm font-semibold text-slate-700">Living Cost in Melbourne</div>
+          <div class="mel-badge-card rounded-xl p-4 text-sm font-semibold text-slate-700">Part-time Work Rules</div>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="courses" class="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-2 lg:items-center">
     <div class="mel-reveal">
-      <p class="text-sm uppercase tracking-[0.28em] text-[var(--mel-navy-soft)]">Courses & Faculties</p>
-      <h2 class="mt-3 text-4xl font-bold text-[var(--mel-navy)]">High-demand study areas</h2>
+      <p class="mel-kicker">Courses & Faculties</p>
+      <h2 class="mt-3 text-4xl font-bold text-[var(--mel-navy)]">Popular study options</h2>
       <div class="mt-6 grid gap-4 sm:grid-cols-2">
-        <div class="mel-card p-5">Computer Science</div><div class="mel-card p-5">Business & MBA</div><div class="mel-card p-5">Medicine</div><div class="mel-card p-5">Engineering</div><div class="mel-card p-5">Data Science</div><div class="mel-card p-5">AI & Cybersecurity</div><div class="mel-card p-5">Law</div><div class="mel-card p-5">Architecture</div>
+        <div class="mel-card p-5 font-semibold text-slate-800">Computer Science</div><div class="mel-card p-5 font-semibold text-slate-800">Business & MBA</div><div class="mel-card p-5 font-semibold text-slate-800">Medicine</div><div class="mel-card p-5 font-semibold text-slate-800">Engineering</div><div class="mel-card p-5 font-semibold text-slate-800">Data Science</div><div class="mel-card p-5 font-semibold text-slate-800">AI & Cybersecurity</div><div class="mel-card p-5 font-semibold text-slate-800">Law</div><div class="mel-card p-5 font-semibold text-slate-800">Architecture</div>
       </div>
     </div>
     <div class="mel-reveal">
@@ -230,13 +259,13 @@ body { background: var(--mel-bg); }
     <div class="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-2 lg:items-center">
       <div class="mel-reveal order-2 lg:order-1"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80" alt="Scholarship planning" loading="lazy" decoding="async" class="h-[500px] w-full rounded-[2rem] object-cover"></div>
       <div class="mel-reveal order-1 lg:order-2">
-        <p class="text-sm uppercase tracking-[0.28em] text-[var(--mel-navy-soft)]">Scholarships Section</p>
-        <h2 class="mt-3 text-4xl font-bold text-[var(--mel-navy)]">Funding pathways for Pakistani students</h2>
+        <p class="mel-kicker">Scholarships</p>
+        <h2 class="mt-3 text-4xl font-bold text-[var(--mel-navy)]">Funding options made simple</h2>
         <div class="mt-6 space-y-4">
-          <div class="mel-card p-5"><h3 class="font-bold">Merit Scholarships</h3><p class="mt-2 text-sm text-slate-600">Awarded for top academic profiles and leadership potential.</p></div>
-          <div class="mel-card p-5"><h3 class="font-bold">Research Scholarships</h3><p class="mt-2 text-sm text-slate-600">Support for MPhil/PhD with stipend and tuition coverage.</p></div>
-          <div class="mel-card p-5"><h3 class="font-bold">International Grants & Discounts</h3><p class="mt-2 text-sm text-slate-600">Tuition relief programs for eligible international students.</p></div>
-          <div class="mel-card p-5"><h3 class="font-bold">Application Timeline</h3><p class="mt-2 text-sm text-slate-600">Start 8-10 months early to align intake deadlines and visa processing.</p></div>
+          <div class="mel-card p-5"><h3 class="font-bold text-slate-900">Merit Scholarships</h3><p class="mt-2 text-sm text-slate-600">Based on strong grades and profile quality.</p></div>
+          <div class="mel-card p-5"><h3 class="font-bold text-slate-900">Research Scholarships</h3><p class="mt-2 text-sm text-slate-600">Great for MPhil/PhD with possible stipend support.</p></div>
+          <div class="mel-card p-5"><h3 class="font-bold text-slate-900">International Grants</h3><p class="mt-2 text-sm text-slate-600">Tuition discounts for eligible international students.</p></div>
+          <div class="mel-card p-5"><h3 class="font-bold text-slate-900">Best Time to Apply</h3><p class="mt-2 text-sm text-slate-600">Start 8 to 10 months before intake for better chances.</p></div>
         </div>
       </div>
     </div>
@@ -244,9 +273,9 @@ body { background: var(--mel-bg); }
 
   <section id="life" class="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-2 lg:items-center">
     <div class="mel-reveal">
-      <p class="text-sm uppercase tracking-[0.28em] text-[var(--mel-navy-soft)]">Student Life in Melbourne</p>
-      <h2 class="mt-3 text-4xl font-bold text-[var(--mel-navy)]">A vibrant, safe, and global student experience</h2>
-      <ul class="mt-6 space-y-3 text-slate-700">
+      <p class="mel-kicker">Student Life in Melbourne</p>
+      <h2 class="mt-3 text-4xl font-bold text-[var(--mel-navy)]">Comfortable and welcoming for Pakistani students</h2>
+      <ul class="mel-list mt-6 space-y-3 text-slate-700">
         <li>Active Pakistani student societies and peer networks</li>
         <li>Wide halal food availability and South Asian groceries</li>
         <li>Safe neighborhoods with student-friendly services</li>
@@ -264,15 +293,15 @@ body { background: var(--mel-bg); }
     <div class="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-2 lg:items-center">
       <div class="mel-reveal order-2 lg:order-1"><img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?auto=format&fit=crop&w=1200&q=80" alt="Admission process support" loading="lazy" decoding="async" class="h-[510px] w-full rounded-[2rem] object-cover"></div>
       <div class="mel-reveal order-1 lg:order-2">
-        <p class="text-sm uppercase tracking-[0.28em] text-[var(--mel-navy-soft)]">Step-by-Step Admission Process</p>
-        <h2 class="mt-3 text-4xl font-bold text-[var(--mel-navy)]">Your roadmap to Australia</h2>
+        <p class="mel-kicker">Admission Process</p>
+        <h2 class="mt-3 text-4xl font-bold text-[var(--mel-navy)]">Step-by-step roadmap</h2>
         <div class="relative mel-timeline mt-6 pl-10 space-y-4">
-          <div class="mel-card p-4"><strong>1. Choose Course</strong></div>
-          <div class="mel-card p-4"><strong>2. Prepare Documents</strong></div>
-          <div class="mel-card p-4"><strong>3. Apply Online</strong></div>
-          <div class="mel-card p-4"><strong>4. Receive Offer Letter</strong></div>
-          <div class="mel-card p-4"><strong>5. Apply for Visa</strong></div>
-          <div class="mel-card p-4"><strong>6. Fly to Australia</strong></div>
+          <div class="mel-card p-4"><strong>1. Choose Course</strong><p class="mt-1 text-sm text-slate-600">Select program and intake based on profile and budget.</p></div>
+          <div class="mel-card p-4"><strong>2. Prepare Documents</strong><p class="mt-1 text-sm text-slate-600">Academic records, test scores, SOP, and passport ready.</p></div>
+          <div class="mel-card p-4"><strong>3. Apply Online</strong><p class="mt-1 text-sm text-slate-600">Submit complete application with all required details.</p></div>
+          <div class="mel-card p-4"><strong>4. Receive Offer Letter</strong><p class="mt-1 text-sm text-slate-600">Review conditions and accept offer on time.</p></div>
+          <div class="mel-card p-4"><strong>5. Apply for Visa</strong><p class="mt-1 text-sm text-slate-600">Prepare GS/GTE evidence and file visa properly.</p></div>
+          <div class="mel-card p-4"><strong>6. Fly to Australia</strong><p class="mt-1 text-sm text-slate-600">Pre-departure checklist and smooth arrival planning.</p></div>
         </div>
       </div>
     </div>
