@@ -45,12 +45,8 @@
                 </div>
             </div>
             <div class="relative flex items-center justify-center reveal reveal-delay z-10">
-                <div class="hero-image-card relative w-full max-w-lg overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/5 shadow-2xl backdrop-blur-xl">
-                    <picture class="block">
-                        <source srcset="{{ url_for('static', filename='images/universities-in-australia.webp') }}" type="image/webp">
-                        <img src="{{ url_for('static', filename='images/universities-in-australia.webp') }}" alt="study abroad" class="h-full w-full object-cover min-h-[360px]">
-                    </picture>
-                    <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent"></div>
+                <div class="hero-image-card relative w-full overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/5 shadow-2xl backdrop-blur-xl" style="aspect-ratio: 1200 / 700; max-width: 100%;">
+                    <img src="{{ url_for('static', filename='images/home hero img.webp') }}" alt="home hero image" class="absolute inset-0 h-full w-full object-cover">
                 </div>
             </div>
         </div>
@@ -256,31 +252,36 @@
                 <p class="mt-3 text-sm text-slate-600">High-demand courses with strong graduate outcomes.</p>
                 <p class="mt-4 text-sm font-semibold text-primary">Explore premium guide →</p>
             </a>
-            <article class="rounded-[1.75rem] border border-slate-200 bg-slate-50/60 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+            <a href="/universities/australian-national-university" class="block rounded-[1.75rem] border border-slate-200 bg-slate-50/60 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary/40">
                 <p class="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Group of Eight</p>
                 <h3 class="mt-3 text-xl font-semibold text-slate-900">Australian National University</h3>
                 <p class="mt-3 text-sm text-slate-600">Research-led pathways and globally ranked academics.</p>
-            </article>
-            <article class="rounded-[1.75rem] border border-slate-200 bg-slate-50/60 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+                <p class="mt-4 text-sm font-semibold text-primary">Explore premium guide →</p>
+            </a>
+            <a href="/universities/university-of-sydney" class="block rounded-[1.75rem] border border-slate-200 bg-slate-50/60 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary/40">
                 <p class="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Group of Eight</p>
                 <h3 class="mt-3 text-xl font-semibold text-slate-900">University of Sydney</h3>
                 <p class="mt-3 text-sm text-slate-600">Strong city-campus opportunities and premium student life.</p>
-            </article>
-            <article class="rounded-[1.75rem] border border-slate-200 bg-slate-50/60 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+                <p class="mt-4 text-sm font-semibold text-primary">Explore premium guide →</p>
+            </a>
+            <a href="/universities/unsw-sydney" class="block rounded-[1.75rem] border border-slate-200 bg-slate-50/60 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary/40">
                 <p class="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Go8 and Beyond</p>
                 <h3 class="mt-3 text-xl font-semibold text-slate-900">UNSW Sydney</h3>
                 <p class="mt-3 text-sm text-slate-600">Industry-connected degrees across business, engineering and tech.</p>
-            </article>
-            <article class="rounded-[1.75rem] border border-slate-200 bg-slate-50/60 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+                <p class="mt-4 text-sm font-semibold text-primary">Explore premium guide →</p>
+            </a>
+            <a href="/universities/monash-university" class="block rounded-[1.75rem] border border-slate-200 bg-slate-50/60 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary/40">
                 <p class="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Go8 and Beyond</p>
                 <h3 class="mt-3 text-xl font-semibold text-slate-900">Monash University</h3>
                 <p class="mt-3 text-sm text-slate-600">Multiple intake options with flexible international support.</p>
-            </article>
-            <article class="rounded-[1.75rem] border border-slate-200 bg-slate-50/60 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+                <p class="mt-4 text-sm font-semibold text-primary">Explore premium guide →</p>
+            </a>
+            <a href="/universities/university-of-queensland" class="block rounded-[1.75rem] border border-slate-200 bg-slate-50/60 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary/40">
                 <p class="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Go8 and Beyond</p>
                 <h3 class="mt-3 text-xl font-semibold text-slate-900">University of Queensland</h3>
                 <p class="mt-3 text-sm text-slate-600">Excellent programs and a welcoming student ecosystem.</p>
-            </article>
+                <p class="mt-4 text-sm font-semibold text-primary">Explore premium guide →</p>
+            </a>
         </div>
     </div>
 </section>
