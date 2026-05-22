@@ -204,27 +204,27 @@ def landing_page():
     return render_template("index.html")
 
 @app.route("/universities/university-of-melbourne")
-def melbourne_landing_page():
+def university_of_melbourne():
     return render_template("melbourne_landing.html")
 
 @app.route("/universities/australian-national-university")
-def anu_landing_page():
+def australian_national_university():
     return render_template("anu_landing.html")
 
 @app.route("/universities/university-of-sydney")
-def sydney_landing_page():
+def university_of_sydney():
     return render_template("sydney_landing.html")
 
 @app.route("/universities/unsw-sydney")
-def unsw_landing_page():
+def unsw_sydney():
     return render_template("unsw_landing.html")
 
 @app.route("/universities/monash-university")
-def monash_landing_page():
+def monash_university():
     return render_template("monash_landing.html")
 
 @app.route("/universities/university-of-queensland")
-def uq_landing_page():
+def university_of_queensland():
     return render_template("uq_landing.html")
 
 @app.route("/login", methods=["GET", "POST"])

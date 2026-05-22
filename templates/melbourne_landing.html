@@ -28,16 +28,46 @@ body { background: var(--mel-bg); }
 .mel-nav-link:hover { color: var(--mel-gold); }
 .mel-hero {
   min-height: 74vh;
-  background: radial-gradient(circle at 18% 18%, rgba(96,165,250,0.24), transparent 20%),
-              radial-gradient(circle at 88% 72%, rgba(147,197,253,0.14), transparent 16%),
-              linear-gradient(135deg, #081a3d 0%, #14417d 38%, #1a4d8f 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  position: relative;
+  overflow: hidden;
 }
 .mel-hero::before {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(8,24,70,0.24), rgba(11,32,80,0.72));
+  background: radial-gradient(circle at 18% 18%, rgba(96,165,250,0.24), transparent 22%),
+              radial-gradient(circle at 88% 72%, rgba(147,197,253,0.14), transparent 18%);
+  z-index: 0;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(8, 18, 40, 0.72) 0%, rgba(18, 52, 112, 0.58) 45%, rgba(8, 18, 40, 0.78) 100%);
+  animation: fadeIn 0.9s ease-out;
+  z-index: 0;
+}
+.hero-glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-glow-1 {
+  width: 420px;
+  height: 420px;
+  top: -140px;
+  left: -120px;
+  background: rgba(56, 189, 248, 0.22);
+}
+.hero-glow-2 {
+  width: 360px;
+  height: 360px;
+  right: -80px;
+  bottom: 40px;
+  background: rgba(250, 204, 21, 0.16);
 }
 .hero-heading {
   font-family: "Playfair Display", serif;
@@ -553,11 +583,10 @@ body { background: var(--mel-bg); }
 {% endblock %}
 {% block content %}
 <div class="mel-wrap text-[var(--mel-ink)]">
-  <section class="mel-hero relative overflow-hidden text-white">
-    <div class="absolute inset-0 pointer-events-none">
-      <div class="absolute right-8 top-20 h-48 w-48 rounded-full bg-amber-300/20 blur-3xl"></div>
-      <div class="absolute left-10 bottom-8 h-56 w-56 rounded-full bg-cyan-400/20 blur-3xl"></div>
-    </div>
+  <section class="mel-hero text-white">
+    <div class="hero-overlay"></div>
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
     <div class="mx-auto max-w-7xl px-6 py-14 lg:py-18">
       <div class="grid lg:grid-cols-3 gap-9 items-center">
         <div class="lg:col-span-2 mel-reveal relative z-10">
