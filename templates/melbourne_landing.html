@@ -177,6 +177,375 @@ body { background: var(--mel-bg); }
 }
 .mel-timeline::before { content:''; position:absolute; left: 14px; top: 12px; bottom: 12px; width:2px; background: linear-gradient(#1c4788, rgba(28,71,136,.08)); }
 .faq-item[open] { box-shadow: 0 20px 55px rgba(11,31,68,.12); }
+
+/* PREMIUM REDESIGN ANIMATIONS & STYLES */
+.premium-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(99,179,255,.08), transparent 50%),
+              radial-gradient(circle at 0% 100%, rgba(201,162,75,.06), transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.premium-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0b1f44;
+  line-height: 1.15;
+}
+
+.premium-subtitle {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #1b4f9a;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.premium-subtitle::before {
+  content: '';
+  width: 3rem;
+  height: 2px;
+  background: linear-gradient(90deg, #1b4f9a, transparent);
+  border-radius: 1px;
+}
+
+/* Luxury Cards */
+.luxury-card {
+  position: relative;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(201, 162, 75, 0.2);
+  background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(240,248,255,0.4));
+  backdrop-filter: blur(10px);
+  padding: 1.75rem;
+  transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+}
+
+.luxury-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, rgba(201,162,75,0.3), rgba(99,179,255,0.2));
+  border-radius: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  z-index: -1;
+}
+
+.luxury-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(201, 162, 75, 0.5);
+  box-shadow: 0 20px 60px rgba(11, 31, 68, 0.15);
+}
+
+.luxury-card:hover::before {
+  opacity: 1;
+}
+
+.luxury-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.luxury-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0b1f44;
+  margin-bottom: 0.75rem;
+}
+
+.luxury-card-text {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Stat Counter Animation */
+.stat-counter {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1b4f9a, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes count-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.stat-item {
+  animation: count-up 0.8s ease-out forwards;
+}
+
+/* Interactive Timeline */
+.premium-timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline-step {
+  position: relative;
+  padding: 1.5rem 0;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  animation: timeline-slide 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes timeline-slide {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.timeline-step:nth-child(1) { animation-delay: 0.1s; }
+.timeline-step:nth-child(2) { animation-delay: 0.2s; }
+.timeline-step:nth-child(3) { animation-delay: 0.3s; }
+.timeline-step:nth-child(4) { animation-delay: 0.4s; }
+.timeline-step:nth-child(5) { animation-delay: 0.5s; }
+.timeline-step:nth-child(6) { animation-delay: 0.6s; }
+
+.timeline-dot {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7dd3fc, #3b82f6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+  font-size: 0.95rem;
+}
+
+.timeline-content {
+  flex: 1;
+  padding-top: 0.25rem;
+}
+
+.timeline-title {
+  font-weight: 700;
+  color: #0b1f44;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.timeline-desc {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+  position: relative;
+  border-radius: 1.75rem;
+  background: linear-gradient(135deg, #ffffff, #f0f8ff);
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  padding: 2rem;
+  transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  font-size: 4rem;
+  color: rgba(201, 162, 75, 0.15);
+  font-family: "Playfair Display", serif;
+}
+
+.testimonial-text {
+  color: #1e293b;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-author {
+  font-weight: 700;
+  color: #0b1f44;
+  font-size: 1.05rem;
+}
+
+.testimonial-role {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 70px rgba(11, 31, 68, 0.12);
+}
+
+/* Premium FAQ */
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  border-radius: 1.5rem;
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  background: linear-gradient(135deg, #ffffff, #f0f8ff);
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.faq-item[open] {
+  box-shadow: 0 20px 60px rgba(11, 31, 68, 0.1);
+  border-color: rgba(201, 162, 75, 0.4);
+}
+
+.faq-summary {
+  cursor: pointer;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  color: #0b1f44;
+  font-size: 1.05rem;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.faq-item[open] .faq-summary {
+  color: #1b4f9a;
+}
+
+.faq-summary::after {
+  content: '▼';
+  transition: transform 0.4s ease;
+  font-size: 0.75rem;
+  color: #1b4f9a;
+}
+
+.faq-item[open] .faq-summary::after {
+  transform: rotate(-180deg);
+}
+
+.faq-content {
+  padding: 0 1.5rem 1.5rem;
+  color: #475569;
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+/* Smooth Parallax */
+.parallax-img {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Feature Grid with Stagger */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+  animation: grid-fade-in 0.8s ease-out;
+}
+
+@keyframes grid-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.feature-item {
+  opacity: 0;
+  animation: feature-slide-up 0.6s ease-out forwards;
+}
+
+.feature-item:nth-child(1) { animation-delay: 0.1s; }
+.feature-item:nth-child(2) { animation-delay: 0.2s; }
+.feature-item:nth-child(3) { animation-delay: 0.3s; }
+.feature-item:nth-child(4) { animation-delay: 0.4s; }
+.feature-item:nth-child(5) { animation-delay: 0.5s; }
+.feature-item:nth-child(6) { animation-delay: 0.6s; }
+.feature-item:nth-child(7) { animation-delay: 0.7s; }
+.feature-item:nth-child(8) { animation-delay: 0.8s; }
+
+@keyframes feature-slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* CTA Button Styles */
+.premium-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  border-radius: 0.875rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  border: none;
+}
+
+.premium-btn-primary {
+  background: linear-gradient(135deg, #7dd3fc, #3b82f6);
+  color: #041a3d;
+  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.3);
+}
+
+.premium-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 25px 60px rgba(59, 130, 246, 0.4);
+}
+
+.premium-btn-secondary {
+  border: 2px solid rgba(201, 162, 75, 0.5);
+  background: rgba(255, 255, 255, 0.5);
+  color: #0b1f44;
+  backdrop-filter: blur(8px);
+}
+
+.premium-btn-secondary:hover {
+  border-color: rgba(201, 162, 75, 0.8);
+  background: rgba(255, 255, 255, 0.7);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .mel-reveal, .mel-card, .mel-float { transition:none !important; animation:none !important; transform:none !important; opacity:1 !important; }
 }
@@ -216,142 +585,450 @@ body { background: var(--mel-bg); }
     </div>
   </section>
 
-  <section id="why" class="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-2 lg:items-center">
-    <div class="mel-reveal">
-      <p class="mel-kicker">Why Choose University of Melbourne</p>
-      <h2 class="mt-3 text-4xl font-bold text-[var(--mel-navy)]">One of Australia’s strongest choices for Pakistani students</h2>
-      <p class="mel-copy mt-4">Get high-quality teaching, globally respected degrees, and practical career pathways in one place.</p>
-      <div class="mt-6 grid gap-4 sm:grid-cols-2">
-        <div class="mel-card p-5"><h3 class="font-bold text-slate-900">Global Ranking</h3><p class="mt-2 text-sm text-slate-600">Recognized internationally across major ranking systems.</p></div>
-        <div class="mel-card p-5"><h3 class="font-bold text-slate-900">Research Power</h3><p class="mt-2 text-sm text-slate-600">Advanced labs, funded projects, and innovation culture.</p></div>
-        <div class="mel-card p-5"><h3 class="font-bold text-slate-900">Career Outcomes</h3><p class="mt-2 text-sm text-slate-600">Strong employability and industry-focused learning.</p></div>
-        <div class="mel-card p-5"><h3 class="font-bold text-slate-900">Degree Value</h3><p class="mt-2 text-sm text-slate-600">Highly respected by employers worldwide.</p></div>
-      </div>
-    </div>
-    <div class="mel-reveal">
-      <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80" alt="International students on campus" loading="lazy" decoding="async" class="h-[500px] w-full rounded-[2rem] object-cover shadow-soft">
-    </div>
-  </section>
+  <section id="why" class="premium-section relative py-20 lg:py-28">
+    <div class="mx-auto max-w-7xl px-6 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <div class="mel-reveal space-y-6">
+          <div>
+            <p class="premium-subtitle">Why Choose Melbourne</p>
+            <h2 class="premium-title">World-class education designed for ambitious students</h2>
+          </div>
+          <p class="mel-copy text-lg">University of Melbourne is a premier destination for Pakistani students seeking academic excellence, confident career outcomes, and a global community that supports long-term success.</p>
 
-  <section id="pak-guide" class="mel-section-soft">
-    <div class="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-2 lg:items-center">
-      <div class="mel-reveal order-2 lg:order-1"><img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=80" alt="Pakistani student guidance" loading="lazy" decoding="async" class="h-[520px] w-full rounded-[2rem] object-cover"></div>
-      <div class="mel-reveal order-1 lg:order-2">
-        <p class="mel-kicker">Pakistani Student Guide</p>
-        <h2 class="mt-3 text-4xl font-bold text-[var(--mel-navy)]">Clear checklist, no confusion</h2>
-        <div class="mt-6 grid gap-3 sm:grid-cols-2">
-          <div class="mel-badge-card rounded-xl p-4 text-sm font-semibold text-slate-700">Admission Requirements</div>
-          <div class="mel-badge-card rounded-xl p-4 text-sm font-semibold text-slate-700">IELTS / PTE Scores</div>
-          <div class="mel-badge-card rounded-xl p-4 text-sm font-semibold text-slate-700">Tuition Fee Planning</div>
-          <div class="mel-badge-card rounded-xl p-4 text-sm font-semibold text-slate-700">Scholarship Strategy</div>
-          <div class="mel-badge-card rounded-xl p-4 text-sm font-semibold text-slate-700">Student Visa + GS/GTE</div>
-          <div class="mel-badge-card rounded-xl p-4 text-sm font-semibold text-slate-700">Accommodation Options</div>
-          <div class="mel-badge-card rounded-xl p-4 text-sm font-semibold text-slate-700">Living Cost in Melbourne</div>
-          <div class="mel-badge-card rounded-xl p-4 text-sm font-semibold text-slate-700">Part-time Work Rules</div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="luxury-card">
+              <div class="luxury-card-icon">🏆</div>
+              <h3 class="luxury-card-title">Global Reputation</h3>
+              <p class="luxury-card-text">Ranked among the world's top institutions with widely respected degrees across sectors.</p>
+            </div>
+            <div class="luxury-card">
+              <div class="luxury-card-icon">🔬</div>
+              <h3 class="luxury-card-title">Research Leadership</h3>
+              <p class="luxury-card-text">Advance knowledge through high-impact research and innovation partnerships.</p>
+            </div>
+            <div class="luxury-card">
+              <div class="luxury-card-icon">💼</div>
+              <h3 class="luxury-card-title">Graduate Success</h3>
+              <p class="luxury-card-text">Top employment outcomes and industry pathways for global career launches.</p>
+            </div>
+            <div class="luxury-card">
+              <div class="luxury-card-icon">🌍</div>
+              <h3 class="luxury-card-title">International Network</h3>
+              <p class="luxury-card-text">A community spanning 185+ countries, including strong connections in Pakistan.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mel-reveal">
+          <div class="relative group">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-400/30 to-purple-400/30 rounded-[2rem] blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80" alt="International students on campus" loading="lazy" decoding="async" class="relative rounded-[2rem] object-cover w-full h-[500px] shadow-2xl">
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="courses" class="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-2 lg:items-center">
-    <div class="mel-reveal">
-      <p class="mel-kicker">Courses & Faculties</p>
-      <h2 class="mt-3 text-4xl font-bold text-[var(--mel-navy)]">Popular study options</h2>
-      <div class="mt-6 grid gap-4 sm:grid-cols-2">
-        <div class="mel-card p-5 font-semibold text-slate-800">Computer Science</div><div class="mel-card p-5 font-semibold text-slate-800">Business & MBA</div><div class="mel-card p-5 font-semibold text-slate-800">Medicine</div><div class="mel-card p-5 font-semibold text-slate-800">Engineering</div><div class="mel-card p-5 font-semibold text-slate-800">Data Science</div><div class="mel-card p-5 font-semibold text-slate-800">AI & Cybersecurity</div><div class="mel-card p-5 font-semibold text-slate-800">Law</div><div class="mel-card p-5 font-semibold text-slate-800">Architecture</div>
-      </div>
-    </div>
-    <div class="mel-reveal">
-      <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80" alt="Students in lecture hall" loading="lazy" decoding="async" class="h-[500px] w-full rounded-[2rem] object-cover">
-    </div>
-  </section>
+  <section id="pak-guide" class="premium-section relative py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-blue-50">
+    <div class="mx-auto max-w-7xl px-6 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <div class="mel-reveal order-2 lg:order-1">
+          <div class="relative group">
+            <div class="absolute inset-0 bg-gradient-to-tr from-amber-300/20 to-blue-300/20 rounded-[2rem] blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
+            <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=80" alt="Pakistani student guidance" loading="lazy" decoding="async" class="relative rounded-[2rem] object-cover w-full h-[520px] shadow-2xl">
+          </div>
+        </div>
 
-  <section id="scholarships" class="mel-section-soft">
-    <div class="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-2 lg:items-center">
-      <div class="mel-reveal order-2 lg:order-1"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80" alt="Scholarship planning" loading="lazy" decoding="async" class="h-[500px] w-full rounded-[2rem] object-cover"></div>
-      <div class="mel-reveal order-1 lg:order-2">
-        <p class="mel-kicker">Scholarships</p>
-        <h2 class="mt-3 text-4xl font-bold text-[var(--mel-navy)]">Funding options made simple</h2>
-        <div class="mt-6 space-y-4">
-          <div class="mel-card p-5"><h3 class="font-bold text-slate-900">Merit Scholarships</h3><p class="mt-2 text-sm text-slate-600">Based on strong grades and profile quality.</p></div>
-          <div class="mel-card p-5"><h3 class="font-bold text-slate-900">Research Scholarships</h3><p class="mt-2 text-sm text-slate-600">Great for MPhil/PhD with possible stipend support.</p></div>
-          <div class="mel-card p-5"><h3 class="font-bold text-slate-900">International Grants</h3><p class="mt-2 text-sm text-slate-600">Tuition discounts for eligible international students.</p></div>
-          <div class="mel-card p-5"><h3 class="font-bold text-slate-900">Best Time to Apply</h3><p class="mt-2 text-sm text-slate-600">Start 8 to 10 months before intake for better chances.</p></div>
+        <div class="mel-reveal order-1 lg:order-2 space-y-6">
+          <div>
+            <p class="premium-subtitle">Pakistani Student Pathway</p>
+            <h2 class="premium-title">A clear roadmap from Pakistan to Melbourne</h2>
+          </div>
+          <p class="mel-copy text-lg">High-quality counselling, personalized planning, and premium support across admission, scholarships, visa, and arrival.</p>
+
+          <div class="grid sm:grid-cols-2 gap-3">
+            <div class="luxury-card p-4 sm:p-5"><p class="luxury-card-title text-sm">Admission Requirements</p></div>
+            <div class="luxury-card p-4 sm:p-5"><p class="luxury-card-title text-sm">IELTS / PTE Score Strategy</p></div>
+            <div class="luxury-card p-4 sm:p-5"><p class="luxury-card-title text-sm">Tuition & Budget Planning</p></div>
+            <div class="luxury-card p-4 sm:p-5"><p class="luxury-card-title text-sm">Scholarship Assessment</p></div>
+            <div class="luxury-card p-4 sm:p-5"><p class="luxury-card-title text-sm">Student Visa & GTE</p></div>
+            <div class="luxury-card p-4 sm:p-5"><p class="luxury-card-title text-sm">Pre-arrival Planning</p></div>
+            <div class="luxury-card p-4 sm:p-5"><p class="luxury-card-title text-sm">Accommodation Guidance</p></div>
+            <div class="luxury-card p-4 sm:p-5"><p class="luxury-card-title text-sm">Melbourne Living Insights</p></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="life" class="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-2 lg:items-center">
-    <div class="mel-reveal">
-      <p class="mel-kicker">Student Life in Melbourne</p>
-      <h2 class="mt-3 text-4xl font-bold text-[var(--mel-navy)]">Comfortable and welcoming for Pakistani students</h2>
-      <ul class="mel-list mt-6 space-y-3 text-slate-700">
-        <li>Active Pakistani student societies and peer networks</li>
-        <li>Wide halal food availability and South Asian groceries</li>
-        <li>Safe neighborhoods with student-friendly services</li>
-        <li>Reliable public transport with student concessions</li>
-        <li>Year-round events, sports, and multicultural festivals</li>
-        <li>Lifestyle blend of academics, career growth, and city life</li>
-      </ul>
-    </div>
-    <div class="mel-reveal">
-      <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80" alt="Student community in Melbourne" loading="lazy" decoding="async" class="h-[500px] w-full rounded-[2rem] object-cover">
-    </div>
-  </section>
+  <section id="courses" class="premium-section relative py-20 lg:py-28">
+    <div class="mx-auto max-w-7xl px-6 relative z-10">
+      <div class="text-center mb-14 mel-reveal">
+        <p class="premium-subtitle justify-center">Academic Excellence</p>
+        <h2 class="premium-title">Featured programs for ambitious global leaders</h2>
+        <p class="mel-copy text-lg max-w-2xl mx-auto mt-4">Choose from world-class courses that blend research strength, industry relevance, and practical learning.</p>
+      </div>
 
-  <section id="process" class="mel-section-soft">
-    <div class="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-2 lg:items-center">
-      <div class="mel-reveal order-2 lg:order-1"><img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?auto=format&fit=crop&w=1200&q=80" alt="Admission process support" loading="lazy" decoding="async" class="h-[510px] w-full rounded-[2rem] object-cover"></div>
-      <div class="mel-reveal order-1 lg:order-2">
-        <p class="mel-kicker">Admission Process</p>
-        <h2 class="mt-3 text-4xl font-bold text-[var(--mel-navy)]">Step-by-step roadmap</h2>
-        <div class="relative mel-timeline mt-6 pl-10 space-y-4">
-          <div class="mel-card p-4"><strong>1. Choose Course</strong><p class="mt-1 text-sm text-slate-600">Select program and intake based on profile and budget.</p></div>
-          <div class="mel-card p-4"><strong>2. Prepare Documents</strong><p class="mt-1 text-sm text-slate-600">Academic records, test scores, SOP, and passport ready.</p></div>
-          <div class="mel-card p-4"><strong>3. Apply Online</strong><p class="mt-1 text-sm text-slate-600">Submit complete application with all required details.</p></div>
-          <div class="mel-card p-4"><strong>4. Receive Offer Letter</strong><p class="mt-1 text-sm text-slate-600">Review conditions and accept offer on time.</p></div>
-          <div class="mel-card p-4"><strong>5. Apply for Visa</strong><p class="mt-1 text-sm text-slate-600">Prepare GS/GTE evidence and file visa properly.</p></div>
-          <div class="mel-card p-4"><strong>6. Fly to Australia</strong><p class="mt-1 text-sm text-slate-600">Pre-departure checklist and smooth arrival planning.</p></div>
+      <div class="feature-grid">
+        <div class="feature-item luxury-card">
+          <div class="luxury-card-icon">💻</div>
+          <h3 class="luxury-card-title">Computer Science & AI</h3>
+          <p class="luxury-card-text">Build future-ready skills in software engineering, machine learning, and cybersecurity.</p>
+        </div>
+        <div class="feature-item luxury-card">
+          <div class="luxury-card-icon">📊</div>
+          <h3 class="luxury-card-title">Data Science & Analytics</h3>
+          <p class="luxury-card-text">Translate data into impact with powerful analytics and business intelligence expertise.</p>
+        </div>
+        <div class="feature-item luxury-card">
+          <div class="luxury-card-icon">⚙️</div>
+          <h3 class="luxury-card-title">Engineering</h3>
+          <p class="luxury-card-text">Experience world-class facilities in civil, mechanical, electrical, and structural engineering.</p>
+        </div>
+        <div class="feature-item luxury-card">
+          <div class="luxury-card-icon">💼</div>
+          <h3 class="luxury-card-title">Business & MBA</h3>
+          <p class="luxury-card-text">Lead with confidence through globally accredited business and management programs.</p>
+        </div>
+        <div class="feature-item luxury-card">
+          <div class="luxury-card-icon">⚕️</div>
+          <h3 class="luxury-card-title">Medicine & Health</h3>
+          <p class="luxury-card-text">Develop clinical expertise and research insight with Melbourne's health sciences.</p>
+        </div>
+        <div class="feature-item luxury-card">
+          <div class="luxury-card-icon">⚖️</div>
+          <h3 class="luxury-card-title">Law</h3>
+          <p class="luxury-card-text">Study law with global perspective and strong professional pathways.</p>
+        </div>
+        <div class="feature-item luxury-card">
+          <div class="luxury-card-icon">🏗️</div>
+          <h3 class="luxury-card-title">Architecture & Design</h3>
+          <p class="luxury-card-text">Shape the future of sustainable spaces through design-led innovation.</p>
+        </div>
+        <div class="feature-item luxury-card">
+          <div class="luxury-card-icon">🔬</div>
+          <h3 class="luxury-card-title">Science & Research</h3>
+          <p class="luxury-card-text">Engage with top-tier scientific research and laboratory-led discovery.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="mx-auto max-w-7xl px-6 py-20">
-    <div class="mel-reveal text-center"><p class="text-sm uppercase tracking-[0.28em] text-[var(--mel-navy-soft)]">Testimonials</p><h2 class="mt-3 text-4xl font-bold text-[var(--mel-navy)]">Pakistani student success stories</h2></div>
-    <div class="mt-10 grid gap-5 md:grid-cols-3">
-      <article class="mel-card mel-reveal p-6"><p class="text-slate-600">"Visa Culture helped me align scholarships and my SOP perfectly. I got my Melbourne offer faster than expected."</p><p class="mt-4 font-bold">Ayesha K.</p><p class="text-sm text-slate-500">MS Data Science</p></article>
-      <article class="mel-card mel-reveal p-6"><p class="text-slate-600">"The visa and GTE guidance was clear and practical. Every step was handled professionally."</p><p class="mt-4 font-bold">Hamza R.</p><p class="text-sm text-slate-500">Bachelor of Engineering</p></article>
-      <article class="mel-card mel-reveal p-6"><p class="text-slate-600">"From university shortlist to accommodation planning, the support felt premium and reliable."</p><p class="mt-4 font-bold">Mariam S.</p><p class="text-sm text-slate-500">Master of Business Analytics</p></article>
-    </div>
-  </section>
+  <section class="premium-section relative py-20 lg:py-28 bg-gradient-to-r from-blue-50 via-white to-blue-50">
+    <div class="mx-auto max-w-7xl px-6 relative z-10">
+      <div class="text-center mb-14 mel-reveal">
+        <p class="premium-subtitle justify-center">By the Numbers</p>
+        <h2 class="premium-title">Impact, scale, and student success</h2>
+      </div>
 
-  <section id="faq" class="mel-section-soft">
-    <div class="mx-auto max-w-5xl px-6 py-20">
-      <div class="mel-reveal text-center"><p class="text-sm uppercase tracking-[0.28em] text-[var(--mel-navy-soft)]">FAQ</p><h2 class="mt-3 text-4xl font-bold text-[var(--mel-navy)]">Frequently asked questions</h2></div>
-      <div class="mt-8 space-y-4">
-        <details class="faq-item mel-card mel-reveal p-5"><summary class="cursor-pointer font-semibold">What IELTS score is usually needed for Melbourne?</summary><p class="mt-3 text-slate-600">Most programs require around IELTS 6.5 overall with band conditions depending on faculty.</p></details>
-        <details class="faq-item mel-card mel-reveal p-5"><summary class="cursor-pointer font-semibold">Can Pakistani students apply for scholarships at offer stage?</summary><p class="mt-3 text-slate-600">Many scholarships are automatic with admission, while others need separate applications and deadlines.</p></details>
-        <details class="faq-item mel-card mel-reveal p-5"><summary class="cursor-pointer font-semibold">How much does it cost to live in Melbourne as a student?</summary><p class="mt-3 text-slate-600">Living costs vary by housing style, but students generally budget for rent, transport, food, utilities, and insurance.</p></details>
-        <details class="faq-item mel-card mel-reveal p-5"><summary class="cursor-pointer font-semibold">Can I work part-time while studying?</summary><p class="mt-3 text-slate-600">Yes, international students can work under current student visa work-limit conditions.</p></details>
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="mel-reveal stat-item">
+          <div class="luxury-card text-center">
+            <div class="stat-counter">37</div>
+            <p class="text-slate-600 font-semibold mt-3">Global Rankings</p>
+            <p class="text-sm text-slate-500 mt-1">Top 50 worldwide</p>
+          </div>
+        </div>
+        <div class="mel-reveal stat-item">
+          <div class="luxury-card text-center">
+            <div class="stat-counter">95%</div>
+            <p class="text-slate-600 font-semibold mt-3">Graduate Employment</p>
+            <p class="text-sm text-slate-500 mt-1">Within 6 months</p>
+          </div>
+        </div>
+        <div class="mel-reveal stat-item">
+          <div class="luxury-card text-center">
+            <div class="stat-counter">185+</div>
+            <p class="text-slate-600 font-semibold mt-3">Countries</p>
+            <p class="text-sm text-slate-500 mt-1">Strong alumni network</p>
+          </div>
+        </div>
+        <div class="mel-reveal stat-item">
+          <div class="luxury-card text-center">
+            <div class="stat-counter">10K+</div>
+            <p class="text-slate-600 font-semibold mt-3">Int'l Students</p>
+            <p class="text-sm text-slate-500 mt-1">Diverse global community</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="final-cta" class="px-6 py-20">
-    <div class="mx-auto max-w-6xl rounded-[2rem] bg-gradient-to-r from-[#0b1f44] via-[#153465] to-[#c9a24b] p-10 text-center text-white shadow-2xl">
-      <p class="text-sm uppercase tracking-[0.3em] text-slate-200">Final Call</p>
-      <h2 class="mt-4 text-4xl font-bold sm:text-5xl">Start Your Australian Education Journey Today</h2>
-      <p class="mx-auto mt-5 max-w-3xl text-slate-200">Secure your University of Melbourne strategy with profile review, scholarship planning, and complete admission-to-visa support.</p>
-      <a href="/#appointment" class="mt-8 inline-flex rounded-xl bg-white px-8 py-3 font-semibold text-[var(--mel-navy)]">Book Consultation</a>
+  <section id="scholarships" class="premium-section relative py-20 lg:py-28 bg-gradient-to-b from-white to-slate-50">
+    <div class="mx-auto max-w-7xl px-6 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <div class="mel-reveal space-y-6">
+          <div>
+            <p class="premium-subtitle">Scholarships</p>
+            <h2 class="premium-title">Scholarship pathways that reduce your investment</h2>
+          </div>
+          <p class="mel-copy text-lg">Discover merits, research, and international grants that make a Melbourne education more accessible.</p>
+
+          <div class="space-y-4">
+            <div class="luxury-card">
+              <h3 class="luxury-card-title">Merit Scholarships</h3>
+              <p class="luxury-card-text">25-50% tuition awards for strong academics and profile strength.</p>
+            </div>
+            <div class="luxury-card">
+              <h3 class="luxury-card-title">Research Scholarships</h3>
+              <p class="luxury-card-text">Full tuition and stipend support for MPhil and PhD candidates.</p>
+            </div>
+            <div class="luxury-card">
+              <h3 class="luxury-card-title">International Grants</h3>
+              <p class="luxury-card-text">Partial tuition awards for high-achieving international applicants.</p>
+            </div>
+            <div class="luxury-card bg-gradient-to-r from-blue-50 to-purple-50 border-amber-300/50">
+              <h3 class="luxury-card-title">Insider Tip</h3>
+              <p class="luxury-card-text">Submit early to boost scholarship chances — the strongest applications are prepared 8-10 months before intake.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mel-reveal">
+          <div class="relative group">
+            <div class="absolute inset-0 bg-gradient-to-br from-emerald-300/20 to-blue-300/20 rounded-[2rem] blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80" alt="Scholarship planning" loading="lazy" decoding="async" class="relative rounded-[2rem] object-cover w-full h-[520px] shadow-2xl">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="life" class="premium-section relative py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-blue-50">
+    <div class="mx-auto max-w-7xl px-6 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <div class="mel-reveal">
+          <div class="relative group">
+            <div class="absolute inset-0 bg-gradient-to-br from-orange-300/20 to-pink-300/20 rounded-[2rem] blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
+            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80" alt="Student community in Melbourne" loading="lazy" decoding="async" class="relative rounded-[2rem] object-cover w-full h-[500px] shadow-2xl">
+          </div>
+        </div>
+
+        <div class="mel-reveal space-y-6">
+          <div>
+            <p class="premium-subtitle">Student Life</p>
+            <h2 class="premium-title">Melbourne life for Pakistani students is welcoming, vibrant, and safe</h2>
+          </div>
+          <p class="mel-copy text-lg">From cultural communities to halal dining, public transport, and festivals, Melbourne offers an enriching student experience.</p>
+
+          <div class="space-y-4">
+            <div class="flex items-start gap-3 group">
+              <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold text-sm mt-1">✓</div>
+              <div>
+                <p class="font-bold text-slate-900">Strong student communities</p>
+                <p class="text-slate-600 text-sm">Active Pakistani cultural societies and support networks.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 group">
+              <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-white font-bold text-sm mt-1">✓</div>
+              <div>
+                <p class="font-bold text-slate-900">Halal food access</p>
+                <p class="text-slate-600 text-sm">Wide range of dining options and grocery stores across Melbourne.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 group">
+              <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-white font-bold text-sm mt-1">✓</div>
+              <div>
+                <p class="font-bold text-slate-900">Safe student-friendly neighborhoods</p>
+                <p class="text-slate-600 text-sm">Convenient locations with excellent transport and amenities.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 group">
+              <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white font-bold text-sm mt-1">✓</div>
+              <div>
+                <p class="font-bold text-slate-900">Premium transport benefits</p>
+                <p class="text-slate-600 text-sm">Student concessions make getting around easy and affordable.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 group">
+              <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center text-white font-bold text-sm mt-1">✓</div>
+              <div>
+                <p class="font-bold text-slate-900">Vibrant campus culture</p>
+                <p class="text-slate-600 text-sm">Festivals, sports, and student-led events throughout the year.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="premium-section relative py-20 lg:py-28 bg-gradient-to-b from-white to-blue-50">
+    <div class="mx-auto max-w-7xl px-6 relative z-10">
+      <div class="text-center mb-14 mel-reveal">
+        <p class="premium-subtitle justify-center">Step-by-Step</p>
+        <h2 class="premium-title">Your application process, simplified</h2>
+        <p class="mel-copy text-lg max-w-2xl mx-auto mt-4">We break the journey into 6 clear stages, so you know exactly what to do next.</p>
+      </div>
+
+      <div class="premium-timeline">
+        <div class="timeline-step mel-reveal">
+          <div class="timeline-dot">1</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Choose your program and intake</div>
+            <p class="timeline-desc">Select options aligned with your goals, budget, and career pathway. We help you shortlist strong choices.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step mel-reveal">
+          <div class="timeline-dot">2</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Prepare documents and profile</div>
+            <p class="timeline-desc">Collect transcripts, test reports, SOP, and financial documents with our detailed checklist.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step mel-reveal">
+          <div class="timeline-dot">3</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Submit your application</div>
+            <p class="timeline-desc">Complete the Melbourne portal accurately and confidently with our step-by-step guidance.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step mel-reveal">
+          <div class="timeline-dot">4</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Receive your offer</div>
+            <p class="timeline-desc">Review the offer, understand conditions, and prepare for acceptance and visa application.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step mel-reveal">
+          <div class="timeline-dot">5</div>
+          <div class="timeline-content">
+            <div class="timeline-title">File your student visa</div>
+            <p class="timeline-desc">Prepare your GTE statement, financial evidence, and documents for a strong visa submission.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step mel-reveal">
+          <div class="timeline-dot">6</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Arrive and settle in</div>
+            <p class="timeline-desc">Get pre-departure support, accommodation advice, and arrival planning for a confident start.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="premium-section relative py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white">
+    <div class="mx-auto max-w-7xl px-6 relative z-10">
+      <div class="text-center mb-14 mel-reveal">
+        <p class="premium-subtitle justify-center">Success Stories</p>
+        <h2 class="premium-title">Real results for Pakistani students</h2>
+        <p class="mel-copy text-lg max-w-2xl mx-auto mt-4">Hear from students who achieved their goals with premium support from application through arrival.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="mel-reveal">
+          <div class="testimonial-card">
+            <p class="testimonial-text">"Visa Culture helped me align scholarships and my SOP perfectly. I got my Melbourne offer faster than expected and felt supported the whole way."</p>
+            <div class="pt-4 border-t border-slate-200">
+              <p class="testimonial-author">Ayesha Khan</p>
+              <p class="testimonial-role">MS Data Science</p>
+            </div>
+          </div>
+        </div>
+        <div class="mel-reveal">
+          <div class="testimonial-card">
+            <p class="testimonial-text">"The visa and GTE guidance was clear and practical. Every step was handled professionally, and now I'm thriving at Melbourne."</p>
+            <div class="pt-4 border-t border-slate-200">
+              <p class="testimonial-author">Hamza Ali</p>
+              <p class="testimonial-role">Bachelor of Engineering</p>
+            </div>
+          </div>
+        </div>
+        <div class="mel-reveal">
+          <div class="testimonial-card">
+            <p class="testimonial-text">"From university shortlist to accommodation planning, the support felt premium and reliable. I had a smooth arrival and strong start."</p>
+            <div class="pt-4 border-t border-slate-200">
+              <p class="testimonial-author">Mariam Siddiqui</p>
+              <p class="testimonial-role">Master of Business Analytics</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="premium-section relative py-20 lg:py-28 bg-gradient-to-b from-blue-50 to-slate-50">
+    <div class="mx-auto max-w-4xl px-6 relative z-10">
+      <div class="text-center mb-14 mel-reveal">
+        <p class="premium-subtitle justify-center">Frequently Asked</p>
+        <h2 class="premium-title">Common questions about studying in Melbourne</h2>
+        <p class="mel-copy text-lg mt-4">Everything you need to know about admissions, scholarships, visa, and life in Australia.</p>
+      </div>
+
+      <div class="faq-accordion">
+        <details class="faq-item mel-reveal" open>
+          <summary class="faq-summary">What IELTS/PTE scores do I need for Melbourne?</summary>
+          <div class="faq-content">
+            <p>Most programs ask for <strong>IELTS 6.5 overall</strong> with at least 6.0 in each band. Some competitive streams require 7.0. PTE is accepted with equivalent scores. We provide target scores for each course during counseling.</p>
+          </div>
+        </details>
+        <details class="faq-item mel-reveal">
+          <summary class="faq-summary">When should I apply for intake?</summary>
+          <div class="faq-content">
+            <p>Melbourne has main intakes in <strong>February</strong> and <strong>July</strong>. Apply 8-10 months in advance to allow time for admissions, scholarship review, and visa processing.</p>
+          </div>
+        </details>
+        <details class="faq-item mel-reveal">
+          <summary class="faq-summary">How much does it cost to live in Melbourne?</summary>
+          <div class="faq-content">
+            <p>Monthly living costs are usually around AUD 1,500-2,000 for rent, food, transport, and utilities. With scholarships and part-time work, many students manage a comfortable lifestyle.</p>
+          </div>
+        </details>
+        <details class="faq-item mel-reveal">
+          <summary class="faq-summary">Can I work while studying?</summary>
+          <div class="faq-content">
+            <p>Yes. International students can work up to <strong>20 hours per week</strong> during term and full-time during study breaks. Many use part-time work to support living expenses and gain experience.</p>
+          </div>
+        </details>
+        <details class="faq-item mel-reveal">
+          <summary class="faq-summary">What is a Genuine Temporary Entrant (GTE)?</summary>
+          <div class="faq-content">
+            <p>A GTE statement shows your genuine intent to study in Australia. We help you craft a strong narrative supported by your academic, career, and financial plans.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="final-cta" class="premium-section relative py-20 lg:py-32">
+    <div class="mx-auto max-w-5xl px-6 relative z-10">
+      <div class="relative overflow-hidden rounded-[2rem] p-10 lg:p-16">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-800 opacity-95"></div>
+        <div class="absolute inset-0 opacity-10">
+          <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+          <div class="absolute bottom-0 left-0 w-96 h-96 bg-amber-300 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative z-10 text-center text-white space-y-8">
+          <div class="mel-reveal">
+            <p class="text-sm uppercase tracking-[0.2em] text-blue-200 font-bold">Ready to transform your future?</p>
+            <h2 class="text-4xl lg:text-5xl font-bold font-display mt-4 leading-tight">Begin your Melbourne journey today</h2>
+            <p class="text-lg text-blue-100 max-w-2xl mx-auto mt-6">Get expert guidance on admissions, scholarships, visa strategy, and campus life. Your personalized pathway to University of Melbourne starts with a consultation.</p>
+          </div>
+
+          <div class="mel-reveal flex flex-col sm:flex-row gap-4 justify-center pt-4">
+            <a href="/#appointment" class="premium-btn premium-btn-primary">Book Free Consultation<span>→</span></a>
+            <a href="#pak-guide" class="premium-btn premium-btn-secondary">Learn More</a>
+          </div>
+
+          <div class="mel-reveal pt-4">
+            <p class="text-sm text-blue-200">✓ Personalized support &nbsp; | &nbsp; ✓ Scholarship-ready strategy &nbsp; | &nbsp; ✓ Smooth visa preparation</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </div>
 
 <script>
 (function () {
-  const reveals = document.querySelectorAll('.mel-reveal');
+  const reveals = document.querySelectorAll('.mel-reveal, .feature-item, .timeline-step');
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -360,8 +1037,39 @@ body { background: var(--mel-bg); }
       }
     });
   }, { threshold: 0.15 });
-
   reveals.forEach((el) => io.observe(el));
+
+  const counters = document.querySelectorAll('.stat-counter');
+  const counterIO = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+        entry.target.classList.add('counted');
+        const target = parseInt(entry.target.textContent.replace(/\D/g, ''), 10);
+        let current = 0;
+        const step = Math.max(1, Math.floor(target / 60));
+        const interval = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            entry.target.textContent = entry.target.textContent;
+            clearInterval(interval);
+          } else {
+            entry.target.textContent = `${current}${entry.target.textContent.includes('+') ? '+' : ''}`;
+          }
+        }, 20);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach((el) => counterIO.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href && href.startsWith('#') && href.length > 1 && document.querySelector(href)) {
+        e.preventDefault();
+        document.querySelector(href).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
 })();
 </script>
 {% endblock %}
