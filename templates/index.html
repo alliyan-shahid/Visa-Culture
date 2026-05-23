@@ -333,6 +333,56 @@
     .university-card:hover .card-badge {
         transform: translateY(-2px);
     }
+
+    /* View More Button Styling */
+    .view-more-btn {
+        display: none;
+        width: 100%;
+        padding: 1rem;
+        margin-top: 1.5rem;
+        background: linear-gradient(135deg, #0a4d8f 0%, #1e7ea8 100%);
+        color: white;
+        border: none;
+        border-radius: 0.875rem;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .view-more-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(10, 77, 143, 0.3);
+    }
+
+    /* Hidden cards on mobile */
+    @media (max-width: 768px) {
+        .service-card:nth-child(n+4),
+        .university-card:nth-child(n+4) {
+            display: none;
+        }
+
+        .service-card:nth-child(n+4).visible,
+        .university-card:nth-child(n+4).visible {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .view-more-btn {
+            display: block;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 </style>
 {% endblock %}
 
@@ -630,7 +680,8 @@
             </div>
             <p class="text-base leading-8 text-slate-600">Visa Culture provides end-to-end services for student admissions and visa success, from profile planning and applications to arrival and settlement support.</p>
         </div>
-        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-6">
+        <div class="services-container">
+            <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-6">
             <article class="service-card group rounded-[1.1rem] p-7 transition duration-300 reveal reveal-delay hover:border-blue-300 hover:bg-blue-50/80 lg:col-span-2">
                 <div class="flex items-start justify-between">
                     <i data-feather="message-circle" class="h-9 w-9 text-primary transition group-hover:text-blue-700"></i>
@@ -695,6 +746,8 @@
                 <h3 class="mt-8 text-2xl font-semibold text-slate-950 transition group-hover:text-violet-800">Financial Aid and Scholarship Guidance</h3>
                 <p class="mt-4 text-slate-600">Guidance on scholarship options, funding opportunities, and cost planning to make education more accessible.</p>
             </article>
+            </div>
+            <button class="view-more-btn services-view-more collapsed" onclick="toggleServices(event)">View More Services</button>
         </div>
     </div>
 </section>
@@ -706,7 +759,8 @@
             <h2 class="mt-4 text-4xl font-bold text-slate-950">Apply with confidence to top Australian universities</h2>
             <p class="mx-auto mt-4 max-w-3xl text-base text-slate-600">We help match your profile to the right institution, entry pathway and scholarship opportunities.</p>
         </div>
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="universities-container">
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <a href="/universities/university-of-melbourne" class="university-card group block rounded-[1.75rem] border border-slate-200 bg-gradient-to-br from-slate-50 via-white to-slate-100 p-6 shadow-sm ring-1 ring-slate-100/80 focus:outline-none focus:ring-2 focus:ring-sky-300/40">
                 <div class="flex items-start justify-between gap-4">
                     <span class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Group of Eight</span>
@@ -791,6 +845,8 @@
                     <span class="transition group-hover:translate-x-1">→</span>
                 </div>
             </a>
+            </div>
+            <button class="view-more-btn universities-view-more collapsed" onclick="toggleUniversities(event)">View More Universities</button>
         </div>
     </div>
 </section>
@@ -1051,4 +1107,45 @@
         </div>
     </div>
 </section>
+
+<script>
+    function toggleServices(event) {
+        event.preventDefault();
+        const btn = event.target;
+        const container = document.querySelector('.services-container .grid');
+        const hiddenCards = container.querySelectorAll('.service-card:nth-child(n+4)');
+        
+        if (btn.classList.contains('collapsed')) {
+            hiddenCards.forEach(card => card.classList.add('visible'));
+            btn.classList.remove('collapsed');
+            btn.classList.add('expanded');
+            btn.textContent = 'Show Less Services';
+        } else {
+            hiddenCards.forEach(card => card.classList.remove('visible'));
+            btn.classList.add('collapsed');
+            btn.classList.remove('expanded');
+            btn.textContent = 'View More Services';
+        }
+    }
+
+    function toggleUniversities(event) {
+        event.preventDefault();
+        const btn = event.target;
+        const container = document.querySelector('.universities-container .grid');
+        const hiddenCards = container.querySelectorAll('.university-card:nth-child(n+4)');
+        
+        if (btn.classList.contains('collapsed')) {
+            hiddenCards.forEach(card => card.classList.add('visible'));
+            btn.classList.remove('collapsed');
+            btn.classList.add('expanded');
+            btn.textContent = 'Show Less Universities';
+        } else {
+            hiddenCards.forEach(card => card.classList.remove('visible'));
+            btn.classList.add('collapsed');
+            btn.classList.remove('expanded');
+            btn.textContent = 'View More Universities';
+        }
+    }
+</script>
+
 {% endblock %}
