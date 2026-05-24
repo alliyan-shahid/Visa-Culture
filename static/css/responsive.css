@@ -1023,6 +1023,13 @@
     }
 }
 
+/* Hide mobile navbar on desktop */
+@media (min-width: 1025px) {
+    .mobile-top-navbar {
+        display: none !important;
+    }
+}
+
 /* ======================================================
    PREMIUM MOBILE/TABLET NAVBAR SYSTEM
 ====================================================== */
