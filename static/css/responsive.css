@@ -341,6 +341,19 @@
         -webkit-tap-highlight-color: transparent;
     }
 
+    /* Keep hero carousel dots compact on mobile/tablet */
+    .hero-dot {
+        min-height: 8px !important;
+        min-width: 8px !important;
+        padding: 0 !important;
+        line-height: 1 !important;
+        flex: 0 0 auto !important;
+    }
+
+    .hero-dot.active {
+        min-width: 24px !important;
+    }
+
     .px-8,
     .px-10 {
         padding-left: 1.5rem;
@@ -1030,12 +1043,34 @@
     }
 }
 
+/* Hero dots: force stable size across all breakpoints */
+.hero-pagination .hero-dot {
+    width: 8px !important;
+    height: 8px !important;
+    min-width: 8px !important;
+    min-height: 8px !important;
+    padding: 0 !important;
+    display: block !important;
+    flex: 0 0 auto !important;
+    line-height: 1 !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+}
+
+.hero-pagination .hero-dot.active {
+    width: 24px !important;
+    height: 8px !important;
+    min-width: 24px !important;
+    min-height: 8px !important;
+}
+
 /* ======================================================
    PREMIUM MOBILE/TABLET NAVBAR SYSTEM
 ====================================================== */
 
 @media (max-width: 1024px) {
   /* Hide all desktop navbar content */
+  header > .mx-auto,
   header nav,
   header .hidden,
   header .md\:flex {
@@ -1075,8 +1110,8 @@
     left: 50% !important;
     transform: translateX(-50%) !important;
 
-    width: calc(100% - 24px) !important;
-    max-width: 380px !important;
+    width: 80vw !important;
+    max-width: 80vw !important;
 
     display: flex !important;
     align-items: center !important;

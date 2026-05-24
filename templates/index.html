@@ -71,6 +71,12 @@
         max-width: 7xl;
         margin: 0 auto;
     }
+    .hero-carousel.clean-slide .hero-content {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.45s ease;
+    }
 
     @media (min-width: 640px) {
         .hero-content {
@@ -461,7 +467,7 @@
     const heroNextBtn = document.getElementById('heroNextBtn');
 
     let currentSlide = 0;
-    let autoplayInterval;
+    let autoplayInterval = null;
     const SLIDE_DURATION = 5000; // 5 seconds
     const TRANSITION_DURATION = 1200; // 1.2 seconds
 
@@ -481,6 +487,9 @@
                 dot.classList.add('active');
             }
         });
+
+        // Hide hero text/buttons on slide 3 (index 2) for a clean visual.
+        heroCarousel.classList.toggle('clean-slide', index === 2);
 
         currentSlide = index;
     }
@@ -503,13 +512,18 @@
     }
 
     function startAutoplay() {
+        if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+        }
         autoplayInterval = setInterval(() => {
             nextSlide();
         }, SLIDE_DURATION);
     }
 
     function resetAutoplay() {
-        clearInterval(autoplayInterval);
+        if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+        }
         startAutoplay();
     }
 
@@ -525,7 +539,10 @@
 
     // Pause autoplay on hover
     heroCarousel.addEventListener('mouseenter', () => {
-        clearInterval(autoplayInterval);
+        if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+            autoplayInterval = null;
+        }
     });
 
     heroCarousel.addEventListener('mouseleave', () => {
