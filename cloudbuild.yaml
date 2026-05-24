@@ -1,0 +1,53 @@
+steps:
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      - "build"
+      - "-t"
+      - "${_IMAGE_URI}"
+      - "."
+
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      - "push"
+      - "${_IMAGE_URI}"
+
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: gcloud
+    args:
+      - "run"
+      - "deploy"
+      - "${_SERVICE_NAME}"
+      - "--image"
+      - "${_IMAGE_URI}"
+      - "--region"
+      - "${_REGION}"
+      - "--platform"
+      - "managed"
+      - "--allow-unauthenticated"
+      - "--port"
+      - "8080"
+      - "--memory"
+      - "1Gi"
+      - "--cpu"
+      - "1"
+      - "--min-instances"
+      - "0"
+      - "--max-instances"
+      - "3"
+      - "--set-env-vars=DB_URI=${_DB_URI},FORCE_ONLINE_DB=${_FORCE_ONLINE_DB},SECRET_KEY=${_SECRET_KEY},ADMIN_PASSWORD=${_ADMIN_PASSWORD},DEVELOPER_EMAIL=${_DEVELOPER_EMAIL},DEVELOPER_PASSWORD=${_DEVELOPER_PASSWORD}"
+
+substitutions:
+  _REGION: "asia-south1"
+  _SERVICE_NAME: "visa-culture-webapp"
+  _REPOSITORY: "cloud-run-source-deploy"
+  _IMAGE_NAME: "visa-culture"
+  _IMAGE_URI: "${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE_NAME}"
+  _DB_URI: "***Removed***"
+  _FORCE_ONLINE_DB: "true"
+  _SECRET_KEY: "***Removed***"
+  _ADMIN_PASSWORD: "***Removed***"
+  _DEVELOPER_EMAIL: "***Removed***"
+  _DEVELOPER_PASSWORD: "***Removed***"
+
+options:
+  logging: CLOUD_LOGGING_ONLY
