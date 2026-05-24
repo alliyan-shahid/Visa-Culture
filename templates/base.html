@@ -610,25 +610,25 @@
 </head>
 <body class="min-h-screen bg-white text-slate-900 antialiased m-0">
     <header class="sticky top-0 z-50 shadow-sm">
-        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-0">
+        <div class="mx-auto flex min-h-[56px] max-w-7xl items-center justify-between px-6 py-1 md:min-h-[60px] md:py-1">
             <a href="/" class="flex items-center">
-                <img src="{{ url_for('static', filename='images/VisaCulture Logo.webp') }}" alt="Visa Culture logo" class="block w-16 h-auto object-contain object-left md:w-20 lg:w-20" style="image-rendering: auto;">
+                <img src="{{ url_for('static', filename='images/VisaCulture Logo.webp') }}" alt="Visa Culture logo" class="block h-auto w-12 object-contain object-left md:w-14 lg:w-14" style="image-rendering: auto;">
             </a>
-            <div class="items-center gap-8 text-sm font-semibold text-slate-600 md:flex">
+            <div class="items-center gap-7 text-sm font-semibold text-slate-600 md:flex">
                 <a href="#services" class="nav-link">Services</a>
                 <a href="#universities" class="nav-link">Universities</a>
                 <a href="#appointment" class="nav-link">Book Appointment</a>
             </div>
-            <div class="items-center gap-3 md:flex">
-                <a href="#appointment" class="rounded-full border border-slate-200 bg-white/95 px-5 py-2 text-sm font-semibold text-slate-900 transition hover:border-primary hover:shadow-soft">Book Appointment</a>
+            <div class="items-center gap-2.5 md:flex">
+                <a href="#appointment" class="rounded-full border border-slate-200 bg-white/95 px-4 py-1.5 text-sm font-semibold text-slate-900 transition hover:border-primary hover:shadow-soft">Book Appointment</a>
                 {% if current_user %}
-                    <a href="/dashboard" class="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white shadow-soft transition hover:bg-slate-900">Dashboard</a>
+                    <a href="/dashboard" class="rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-white shadow-soft transition hover:bg-slate-900">Dashboard</a>
                     {% if current_user.role in ['admin', 'developer'] %}
-                        <a href="/register" class="rounded-full border border-primary bg-white px-5 py-2 text-sm font-semibold text-primary transition hover:bg-primary hover:text-white">Register</a>
+                        <a href="/register" class="rounded-full border border-primary bg-white px-4 py-1.5 text-sm font-semibold text-primary transition hover:bg-primary hover:text-white">Register</a>
                     {% endif %}
-                    <a href="/logout" class="rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-semibold text-slate-900 transition hover:border-primary">Logout</a>
+                    <a href="/logout" class="rounded-full border border-slate-200 bg-white px-4 py-1.5 text-sm font-semibold text-slate-900 transition hover:border-primary">Logout</a>
                 {% else %}
-                    <a href="/login" class="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white shadow-soft transition hover:bg-slate-900">Login</a>
+                    <a href="/login" class="rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-white shadow-soft transition hover:bg-slate-900">Login</a>
                 {% endif %}
             </div>
         </div>
