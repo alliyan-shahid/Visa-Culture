@@ -760,13 +760,13 @@
                 if (scrollTop > lastScrollTop && scrollTop > 100) {
                     mobileTopNavbar.style.opacity = '0';
                     mobileTopNavbar.style.pointerEvents = 'none';
-                    mobileTopNavbar.style.transform = 'translateX(-50%) translateY(-100%)';
+                    mobileTopNavbar.style.transform = 'translateY(-100%)';
                 } 
                 // Show navbar when scrolling up
                 else {
                     mobileTopNavbar.style.opacity = '1';
                     mobileTopNavbar.style.pointerEvents = 'auto';
-                    mobileTopNavbar.style.transform = 'translateX(-50%) translateY(0)';
+                    mobileTopNavbar.style.transform = 'translateY(0)';
                 }
                 
                 lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
