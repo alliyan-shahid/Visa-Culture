@@ -1024,36 +1024,90 @@
 }
 
 /* ======================================================
-   FIX DOUBLE NAVBAR OVERLAP
+   PREMIUM MOBILE/TABLET NAVBAR SYSTEM
 ====================================================== */
 
 @media (max-width: 1024px) {
-
-  /* Hide ORIGINAL desktop navbar content */
+  /* Hide all desktop navbar content */
   header nav,
-  header .desktop-navbar,
-  header .main-navbar,
-  header .nav-wrapper {
+  header .hidden,
+  header .md\:flex {
     display: none !important;
   }
 
-  /* Keep header container minimal */
+  /* Repurpose header as navbar background container */
   header {
-    height: 0 !important;
-    min-height: 0 !important;
-    padding: 0 !important;
-    background: transparent !important;
-    box-shadow: none !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 100px !important;
+    z-index: 999998 !important;
+
+    background: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0.95)) !important;
+    backdrop-filter: none !important;
     border: none !important;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08) !important;
+
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
-  /* Show ONLY custom mobile navbar */
+  /* Create spacing below navbar */
+  main {
+    margin-top: 100px !important;
+    padding-top: 0 !important;
+  }
+
+  /* Premium floating mobile navbar */
   .mobile-top-navbar {
-    display: flex !important;
     position: fixed !important;
-    top: 12px !important;
+    top: 14px !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
+
+    width: calc(100% - 24px) !important;
+    max-width: 430px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-around !important;
+
     z-index: 1000000 !important;
+
+    background: rgba(255, 255, 255, 0.96) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+
+    border-radius: 50px !important;
+    padding: 12px 20px !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 
+                0 2px 8px rgba(0, 0, 0, 0.08) !important;
+    
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  }
+
+  /* Hero section below navbar */
+  .hero-section,
+  .hero-carousel,
+  .min-h-screen {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* Hide hero text overlays */
+  .hero-content,
+  .hero-text,
+  .hero-section h1,
+  .hero-section p,
+  .hero-section button,
+  .hero-section .btn {
+    display: none !important;
   }
 }
