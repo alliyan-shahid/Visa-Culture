@@ -4,100 +4,17 @@
 <meta name="description" content="Premium University of Melbourne guide for Pakistani students: admissions, IELTS/PTE, scholarships, visa steps, living costs, student life and application support.">
 <meta name="keywords" content="University of Melbourne Pakistani students, study in Australia, Melbourne scholarships, Australian student visa, IELTS PTE requirements">
 <style>
-:root {
-  --mel-navy: #0b1f44;
-  --mel-navy-soft: #1b4f9a;
-  --mel-gold: #c9a24b;
-  --mel-bg: #f7f9fc;
-  --mel-ink: #10203f;
-  --mel-blue-1: #061a3a;
-  --mel-blue-2: #0d3266;
-  --mel-blue-3: #1f5fa5;
-  --mel-cyan: #63b3ff;
-}
-body { background: var(--mel-bg); }
-.mel-wrap { background: radial-gradient(circle at 85% 10%, rgba(201,162,75,.15), transparent 28%), radial-gradient(circle at 8% 35%, rgba(21,52,101,.12), transparent 32%), #fff; }
-.mel-glass { background: linear-gradient(135deg, rgba(255,255,255,.2), rgba(255,255,255,.08)); backdrop-filter: blur(16px); border: 1px solid rgba(186,230,253,.4); box-shadow: 0 20px 65px rgba(15,23,42,.09); }
-.mel-card { border-radius: 1.25rem; border: 1px solid rgba(148,163,184,.18); background: linear-gradient(135deg, #ffffff, #f3f8ff); box-shadow: 0 16px 40px rgba(15,23,42,.07); transition: all .35s ease; }
-.mel-card:hover { transform: translateY(-6px); box-shadow: 0 28px 70px rgba(14,56,114,.14); border-color: rgba(96,165,250,.3); }
-.mel-float { animation: mel-float 5.5s ease-in-out infinite; }
-@keyframes mel-float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-9px)} }
-.mel-reveal { opacity: 0; transform: translateY(28px); transition: opacity .75s cubic-bezier(.22,1,.36,1), transform .75s cubic-bezier(.22,1,.36,1); }
-.mel-reveal.show { opacity: 1; transform: translateY(0); }
-.mel-nav-link { transition: color .22s ease; }
-.mel-nav-link:hover { color: var(--mel-gold); }
-.mel-hero {
-  min-height: 74vh;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
-  position: relative;
-  overflow: hidden;
-}
-.mel-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(circle at 18% 18%, rgba(96,165,250,0.24), transparent 22%),
-              radial-gradient(circle at 88% 72%, rgba(147,197,253,0.14), transparent 18%);
-  z-index: 0;
-}
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(8, 18, 40, 0.72) 0%, rgba(18, 52, 112, 0.58) 45%, rgba(8, 18, 40, 0.78) 100%);
-  animation: fadeIn 0.9s ease-out;
-  z-index: 0;
-}
-.hero-glow {
-  position: absolute;
-  border-radius: 9999px;
-  filter: blur(70px);
-  pointer-events: none;
-  z-index: 0;
-}
-.hero-glow-1 {
-  width: 420px;
-  height: 420px;
-  top: -140px;
-  left: -120px;
-  background: rgba(56, 189, 248, 0.22);
-}
-.hero-glow-2 {
-  width: 360px;
-  height: 360px;
-  right: -80px;
-  bottom: 40px;
-  background: rgba(250, 204, 21, 0.16);
-}
-.hero-heading {
-  font-family: "Playfair Display", serif;
-  letter-spacing: -0.03em;
-  line-height: 1;
-  font-size: 4rem;
-}
-@media (min-width: 640px) {
-  .hero-heading {
-    font-size: 4.8rem;
-  }
-}
-@media (min-width: 1024px) {
-  .hero-heading {
-    font-size: 5.4rem;
-  }
-}
-.hero-kicker {
-  border: 1px solid rgba(147,197,253,.45);
-  background: linear-gradient(135deg, rgba(14,66,150,.34), rgba(15,23,42,.38));
-  border-radius: 9999px;
-}
-.hero-highlight {
-  background: linear-gradient(120deg, #5eb3ff 0%, #7dd3fc 50%, #a5f3fc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  display: inline;
-}
-.hero-highlight-warm {
+:root { --hero-from: #041f3c; --hero-to: #0c4a6e; --accent: #38bdf8; --panel: rgba(255,255,255,0.12); }
+.hero-section { background: radial-gradient(circle at top right, rgba(56,189,248,0.22), transparent 30%), linear-gradient(135deg, var(--hero-from), var(--hero-to)); }
+.section-card { background: var(--panel); border: 1px solid rgba(255,255,255,0.1); opacity: 0; animation: fadeInUp 0.9s ease-out forwards; animation-delay: 0.2s; }
+.hero-highlight { color: var(--accent); text-shadow: 0 0 24px rgba(56,189,248,0.28); }
+.accent-btn { background: var(--accent); color: #0f172a; transition: transform 0.28s ease, box-shadow 0.28s ease; }
+.accent-btn:hover { transform: translateY(-2px); box-shadow: 0 18px 36px rgba(56,189,248,0.22); }
+.accordion-button { border: 1px solid rgba(255,255,255,0.14); background: rgba(255,255,255,0.08); }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+.hero-fade-in { opacity: 0; animation: fadeInUp 1s ease-out forwards; }
+</style>
+<style>
   background: linear-gradient(120deg, #fde68a 0%, #fbbf24 52%, #f59e0b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -583,31 +500,30 @@ body { background: var(--mel-bg); }
 {% endblock %}
 {% block content %}
 <div class="mel-wrap text-[var(--mel-ink)]">
-  <section class="mel-hero text-white">
-    <div class="hero-overlay"></div>
-    <div class="hero-glow hero-glow-1"></div>
-    <div class="hero-glow hero-glow-2"></div>
-    <div class="mx-auto max-w-7xl px-6 py-14 lg:py-18">
-      <div class="grid lg:grid-cols-3 gap-9 items-center">
-        <div class="lg:col-span-2 mel-reveal relative z-10">
-          <p class="hero-kicker inline-flex px-5 py-2 text-xs uppercase tracking-[0.28em] text-blue-100">Premium University Guide</p>
-          <h1 class="hero-heading mt-4 font-bold text-white">
-            Study at<br>
-            <span class="hero-highlight">University of Melbourne from</span><br>
-            <span class="text-white">Pakistan</span>
-          </h1>
-          <p class="mt-5 max-w-2xl text-sm leading-relaxed text-slate-100">Academic excellence, global reputation, and strong graduate outcomes. Location: Melbourne, Australia.</p>
-          <div class="mt-6 flex flex-wrap gap-4">
-            <a href="#final-cta" class="mel-primary-btn rounded-lg px-7 py-2.5 text-sm font-semibold transition">Start Application</a>
-            <a href="#scholarships" class="hero-secondary-btn rounded-lg px-7 py-2.5 text-sm font-semibold transition">Scholarships</a>
+  <section class="hero-section min-h-screen text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-30" style="background: url('https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=1200&h=900&fit=crop') center/cover no-repeat;"></div>
+    <div class="absolute inset-0 bg-slate-950/70"></div>
+    <div class="relative max-w-7xl mx-auto px-6 py-28">
+      <div class="grid gap-10 lg:grid-cols-[1.3fr_0.9fr] items-center">
+        <div>
+          <div class="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm uppercase tracking-[0.28em] text-slate-200">World-Class Campus</div>
+          <h1 class="mt-8 text-5xl font-black leading-tight sm:text-6xl">Study at the <span class="hero-highlight">University of Melbourne</span> from Pakistan</h1>
+          <p class="mt-6 max-w-2xl text-lg text-slate-200">Melbourne combines academic excellence with cultural diversity for Pakistani students seeking global recognition and a vibrant city experience.</p>
+          <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+            <a href="#apply" class="accent-btn inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-semibold shadow-lg shadow-sky-400/20">Start Your Melbourne Journey</a>
+            <a href="#why-melbourne" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-8 py-4 text-sm text-white transition hover:bg-white/15">See Study Benefits</a>
           </div>
         </div>
-        <div class="mel-reveal relative z-10">
-          <div class="relative">
-            <div class="mel-premium-frame">
-              <img src="{{ url_for('static', filename='images/universities-in-australia.webp') }}" alt="University of Melbourne campus" loading="eager" fetchpriority="high" class="h-72 w-full rounded-2xl object-cover">
-            </div>
-            <p class="mt-2 text-xs uppercase tracking-[0.28em] text-slate-300 font-semibold text-right">University of Melbourne campus</p>
+        <div class="space-y-4">
+          <div class="section-card rounded-3xl p-8 backdrop-blur-xl">
+            <span class="text-sm uppercase tracking-[0.2em] text-slate-300">Why Melbourne</span>
+            <h2 class="mt-4 text-3xl font-bold">Academic strength, global reach</h2>
+            <p class="mt-3 text-slate-300">Top-ranked university with exceptional research and strong employment outcomes.</p>
+          </div>
+          <div class="section-card rounded-3xl p-8 backdrop-blur-xl">
+            <span class="text-sm uppercase tracking-[0.2em] text-slate-300">Scholarship opportunity</span>
+            <h2 class="mt-4 text-3xl font-bold">Merit-based funding available</h2>
+            <p class="mt-3 text-slate-300">Melbourne offers scholarships to talented international students to support your studies.</p>
           </div>
         </div>
       </div>
