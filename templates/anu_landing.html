@@ -1,176 +1,1023 @@
-{% extends 'base.html' %}
+﻿{% extends 'base.html' %}
 {% block title %}Study at Australian National University from Pakistan | Visa Culture{% endblock %}
-{% block content %}
+{% block head %}
+<meta name="description" content="Authentic Australian National University guide for Pakistani students: admissions, English requirements, scholarships, visa steps, living costs, student life and application support.">
+<meta name="keywords" content="Australian National University Pakistani students, study in Australia, ANU scholarships, Canberra student life, Australian student visa requirements">
 <style>
-:root { --hero-from: #042f21; --hero-to: #065f46; --accent: #22c55e; --panel: rgba(255,255,255,0.09); }
-.hero-section { background: radial-gradient(circle at top left, rgba(34,197,94,0.22), transparent 32%), linear-gradient(135deg, var(--hero-from), var(--hero-to)); }
-.section-card { background: var(--panel); border: 1px solid rgba(255,255,255,0.1); }
-.hero-highlight { color: var(--accent); text-shadow: 0 0 24px rgba(34,197,94,0.22); }
+:root { --hero-from: #041f3c; --hero-to: #0c4a6e; --accent: #38bdf8; --panel: rgba(255,255,255,0.12); }
+.hero-section { background: radial-gradient(circle at top right, rgba(56,189,248,0.22), transparent 30%), linear-gradient(135deg, var(--hero-from), var(--hero-to)); }
+.section-card { background: var(--panel); border: 1px solid rgba(255,255,255,0.1); opacity: 0; animation: fadeInUp 0.9s ease-out forwards; animation-delay: 0.2s; }
+.hero-highlight { color: var(--accent); text-shadow: 0 0 24px rgba(56,189,248,0.28); }
 .accent-btn { background: var(--accent); color: #0f172a; transition: transform 0.28s ease, box-shadow 0.28s ease; }
-.accent-btn:hover { transform: translateY(-2px); box-shadow: 0 18px 36px rgba(34,197,94,0.22); }
+.accent-btn:hover { transform: translateY(-2px); box-shadow: 0 18px 36px rgba(56,189,248,0.22); }
 .accordion-button { border: 1px solid rgba(255,255,255,0.14); background: rgba(255,255,255,0.08); }
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-.reveal.active { opacity: 1; transform: translateY(0); }
-.hero-section { animation: fadeInUp 1s ease-out forwards; }
-.section-card { opacity: 0; animation: fadeInUp 0.9s ease-out forwards; animation-delay: 0.2s; }
+.hero-fade-in { opacity: 0; animation: fadeInUp 1s ease-out forwards; }
 </style>
-<section class="hero-section min-h-screen text-white relative overflow-hidden reveal">
-  <div class="absolute inset-0 opacity-30" style="background: url('https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=1200&h=900&fit=crop') center/cover no-repeat;"></div>
-  <div class="absolute inset-0 bg-slate-950/60"></div>
-  <div class="relative max-w-7xl mx-auto px-6 py-28">
-    <div class="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-center">
-      <div>
-        <div class="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm uppercase tracking-[0.28em] text-slate-200">National Policy & Research</div>
-        <h1 class="mt-8 text-5xl font-black leading-tight sm:text-6xl">Study at <span class="hero-highlight">Australian National University</span> from Pakistan</h1>
-        <p class="mt-6 max-w-2xl text-lg text-slate-200">ANU offers uniquely curated pathways for Pakistani students who want research-led learning, public policy immersion, and Canberra's campus advantage.</p>
-        <div class="mt-10 flex flex-col gap-4 sm:flex-row">
-          <a href="#apply" class="accent-btn inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-semibold shadow-lg shadow-emerald-500/20">Get a Free Strategy Call</a>
-          <a href="#why-anu" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-8 py-4 text-sm text-white transition hover:bg-white/15">See Canberra Advantage</a>
+<style>
+  background: linear-gradient(120deg, #fde68a 0%, #fbbf24 52%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-secondary-btn {
+  border: 1px solid rgba(147,197,253,.45);
+  background: rgba(255,255,255,.08);
+  color: #e8f2ff;
+}
+.hero-secondary-btn:hover {
+  background: rgba(255,255,255,.14);
+}
+.hero-stat-card {
+  background: linear-gradient(155deg, rgba(255,255,255,.13), rgba(148,163,184,.08));
+  border: 1px solid rgba(148,197,255,.22);
+}
+.hero-stat-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(125,211,252,.45);
+}
+.mel-hero-title {
+  text-shadow: 0 18px 42px rgba(4,11,26,.38);
+}
+.mel-hero-gradient {
+  background: linear-gradient(115deg, #ffffff 0%, #e0f2fe 40%, #93c5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.mel-hero-gold {
+  background: linear-gradient(120deg, #fde68a 0%, #fbbf24 48%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.mel-hero-shell {
+  border: 1px solid rgba(147,197,253,.32);
+  background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+  backdrop-filter: blur(8px);
+  border-radius: 1.25rem;
+  padding: 0.45rem 0.95rem;
+  display: inline-flex;
+}
+.mel-premium-frame {
+  position: relative;
+  border: 1.5px solid rgba(201,162,75,.6);
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(201,162,75,.25), inset 0 0 20px rgba(255,255,255,.05);
+  background: rgba(255,255,255,.02);
+}
+.mel-premium-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 2rem;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(201,162,75,.3) 0%, transparent 50%, rgba(99,179,255,.2) 100%);
+}
+.mel-premium-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(36px);
+  pointer-events: none;
+}
+.mel-primary-btn {
+  background: linear-gradient(135deg, #7dd3fc, #3b82f6);
+  color: #041a3d;
+  box-shadow: 0 18px 44px rgba(30,64,175,.35);
+}
+.mel-primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 56px rgba(30,64,175,.45);
+}
+.mel-section-soft {
+  background: linear-gradient(180deg, #f7fbff 0%, #eef5ff 100%);
+}
+.mel-kicker {
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .28em;
+  color: var(--mel-navy-soft);
+  font-weight: 700;
+}
+.mel-copy {
+  color: #475569;
+  line-height: 1.8;
+}
+.mel-list li {
+  position: relative;
+  padding-left: 1.1rem;
+}
+.mel-list li::before {
+  content: "";
+  width: .42rem;
+  height: .42rem;
+  border-radius: 9999px;
+  background: #3b82f6;
+  position: absolute;
+  left: 0;
+  top: .62rem;
+}
+.mel-badge-card {
+  border: 1px solid rgba(96,165,250,.25);
+  background: linear-gradient(145deg, #ffffff, #f0f6ff);
+}
+.mel-timeline::before { content:''; position:absolute; left: 14px; top: 12px; bottom: 12px; width:2px; background: linear-gradient(#1c4788, rgba(28,71,136,.08)); }
+.faq-item[open] { box-shadow: 0 20px 55px rgba(11,31,68,.12); }
+
+/* PREMIUM REDESIGN ANIMATIONS & STYLES */
+.premium-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(99,179,255,.08), transparent 50%),
+              radial-gradient(circle at 0% 100%, rgba(201,162,75,.06), transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.premium-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0b1f44;
+  line-height: 1.15;
+}
+
+.premium-subtitle {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #1b4f9a;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.premium-subtitle::before {
+  content: '';
+  width: 3rem;
+  height: 2px;
+  background: linear-gradient(90deg, #1b4f9a, transparent);
+  border-radius: 1px;
+}
+
+/* Luxury Cards */
+.luxury-card {
+  position: relative;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(201, 162, 75, 0.2);
+  background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(240,248,255,0.4));
+  backdrop-filter: blur(10px);
+  padding: 1.75rem;
+  transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+}
+
+.luxury-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, rgba(201,162,75,0.3), rgba(99,179,255,0.2));
+  border-radius: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  z-index: -1;
+}
+
+.luxury-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(201, 162, 75, 0.5);
+  box-shadow: 0 20px 60px rgba(11, 31, 68, 0.15);
+}
+
+.luxury-card:hover::before {
+  opacity: 1;
+}
+
+.luxury-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.luxury-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0b1f44;
+  margin-bottom: 0.75rem;
+}
+
+.luxury-card-text {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Stat Counter Animation */
+.stat-counter {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1b4f9a, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes count-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.stat-item {
+  animation: count-up 0.8s ease-out forwards;
+}
+
+/* Interactive Timeline */
+.premium-timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline-step {
+  position: relative;
+  padding: 1.5rem 0;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  animation: timeline-slide 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes timeline-slide {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.timeline-step:nth-child(1) { animation-delay: 0.1s; }
+.timeline-step:nth-child(2) { animation-delay: 0.2s; }
+.timeline-step:nth-child(3) { animation-delay: 0.3s; }
+.timeline-step:nth-child(4) { animation-delay: 0.4s; }
+.timeline-step:nth-child(5) { animation-delay: 0.5s; }
+.timeline-step:nth-child(6) { animation-delay: 0.6s; }
+
+.timeline-dot {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7dd3fc, #3b82f6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+  font-size: 0.95rem;
+}
+
+.timeline-content {
+  flex: 1;
+  padding-top: 0.25rem;
+}
+
+.timeline-title {
+  font-weight: 700;
+  color: #0b1f44;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.timeline-desc {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+  position: relative;
+  border-radius: 1.75rem;
+  background: linear-gradient(135deg, #ffffff, #f0f8ff);
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  padding: 2rem;
+  transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  font-size: 4rem;
+  color: rgba(201, 162, 75, 0.15);
+  font-family: "Playfair Display", serif;
+}
+
+.testimonial-text {
+  color: #1e293b;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-author {
+  font-weight: 700;
+  color: #0b1f44;
+  font-size: 1.05rem;
+}
+
+.testimonial-role {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 70px rgba(11, 31, 68, 0.12);
+}
+
+/* Premium FAQ */
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  border-radius: 1.5rem;
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  background: linear-gradient(135deg, #ffffff, #f0f8ff);
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.faq-item[open] {
+  box-shadow: 0 20px 60px rgba(11, 31, 68, 0.1);
+  border-color: rgba(201, 162, 75, 0.4);
+}
+
+.faq-summary {
+  cursor: pointer;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  color: #0b1f44;
+  font-size: 1.05rem;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.faq-item[open] .faq-summary {
+  color: #1b4f9a;
+}
+
+.faq-summary::after {
+  content: '   ';
+  transition: transform 0.4s ease;
+  font-size: 0.75rem;
+  color: #1b4f9a;
+}
+
+.faq-item[open] .faq-summary::after {
+  transform: rotate(-180deg);
+}
+
+.faq-content {
+  padding: 0 1.5rem 1.5rem;
+  color: #475569;
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+/* Smooth Parallax */
+.parallax-img {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Feature Grid with Stagger */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+  animation: grid-fade-in 0.8s ease-out;
+}
+
+@keyframes grid-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.feature-item {
+  opacity: 0;
+  animation: feature-slide-up 0.6s ease-out forwards;
+}
+
+.feature-item:nth-child(1) { animation-delay: 0.1s; }
+.feature-item:nth-child(2) { animation-delay: 0.2s; }
+.feature-item:nth-child(3) { animation-delay: 0.3s; }
+.feature-item:nth-child(4) { animation-delay: 0.4s; }
+.feature-item:nth-child(5) { animation-delay: 0.5s; }
+.feature-item:nth-child(6) { animation-delay: 0.6s; }
+.feature-item:nth-child(7) { animation-delay: 0.7s; }
+.feature-item:nth-child(8) { animation-delay: 0.8s; }
+
+@keyframes feature-slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* CTA Button Styles */
+.premium-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  border-radius: 0.875rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  border: none;
+}
+
+.premium-btn-primary {
+  background: linear-gradient(135deg, #7dd3fc, #3b82f6);
+  color: #041a3d;
+  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.3);
+}
+
+.premium-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 25px 60px rgba(59, 130, 246, 0.4);
+}
+
+.premium-btn-secondary {
+  border: 2px solid rgba(201, 162, 75, 0.5);
+  background: rgba(255, 255, 255, 0.5);
+  color: #0b1f44;
+  backdrop-filter: blur(8px);
+}
+
+.premium-btn-secondary:hover {
+  border-color: rgba(201, 162, 75, 0.8);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mel-reveal, .mel-card, .mel-float { transition:none !important; animation:none !important; transform:none !important; opacity:1 !important; }
+}
+</style>
+{% endblock %}
+{% block content %}
+<div class="mel-wrap text-[var(--mel-ink)]">
+  <section class="hero-section min-h-screen text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-30" style="background: url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;"></div>
+    <div class="absolute inset-0 bg-slate-950/70"></div>
+    <div class="relative max-w-7xl mx-auto px-6 py-28">
+      <div class="grid gap-10 lg:grid-cols-[1.3fr_0.9fr] items-center">
+        <div>
+          <div class="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm uppercase tracking-[0.28em] text-slate-200">World-Class Campus</div>
+          <h1 class="mt-8 text-5xl font-black leading-tight sm:text-6xl">Study at the <span class="hero-highlight">Australian National University</span> from Pakistan</h1>
+          <p class="mt-6 max-w-2xl text-lg text-slate-200">ANU combines academic excellence with cultural diversity for Pakistani students seeking global recognition and a vibrant city experience.</p>
+          <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+            <a href="#apply" class="accent-btn inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-semibold shadow-lg shadow-sky-400/20">Start Your ANU Journey</a>
+            <a href="#why-anu" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-8 py-4 text-sm text-white transition hover:bg-white/15">See Study Benefits</a>
+          </div>
         </div>
-      </div>
-      <div class="space-y-4">
-        <div class="section-card rounded-3xl p-8 backdrop-blur-xl">
-          <span class="text-sm uppercase tracking-[0.2em] text-slate-300">Why ANU</span>
-          <h2 class="mt-4 text-3xl font-bold">Australia's top national university</h2>
-          <p class="mt-3 text-slate-300">World-class research, government partnerships, and unrivalled scholarship support for international students.</p>
-        </div>
-        <div class="section-card rounded-3xl p-8 backdrop-blur-xl">
-          <span class="text-sm uppercase tracking-[0.2em] text-slate-300">Scholarship edge</span>
-          <h2 class="mt-4 text-3xl font-bold">High-value aid for strong applicants</h2>
-          <p class="mt-3 text-slate-300">Dedicated ANU scholarships for merit, research, and leadership make Canberra more affordable.</p>
+        <div class="space-y-4">
+          <div class="section-card rounded-3xl p-8 backdrop-blur-xl">
+            <span class="text-sm uppercase tracking-[0.2em] text-slate-300">Why ANU</span>
+            <h2 class="mt-4 text-3xl font-bold">Academic strength, global reach</h2>
+            <p class="mt-3 text-slate-300">Top-ranked university with exceptional research and strong employment outcomes.</p>
+          </div>
+          <div class="section-card rounded-3xl p-8 backdrop-blur-xl">
+            <span class="text-sm uppercase tracking-[0.2em] text-slate-300">Scholarship opportunity</span>
+            <h2 class="mt-4 text-3xl font-bold">Merit-based funding available</h2>
+            <p class="mt-3 text-slate-300">ANU offers scholarships to talented international students to support your studies.</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<section id="why-anu" class="py-24 bg-slate-950 text-slate-100">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="grid gap-16 lg:grid-cols-2 items-start">
-      <div>
-        <p class="uppercase text-sm tracking-[0.3em] text-emerald-300">Why choose ANU</p>
-        <h2 class="mt-6 text-4xl font-semibold">Canberra's research capital for Pakistani students</h2>
-        <p class="mt-6 text-lg leading-8 text-slate-300">ANU combines powerful policy research, elite teaching, and a close-knit international student community in a secure capital city environment.</p>
-        <div class="mt-10 grid gap-6">
-          <div class="section-card rounded-3xl p-8">
-            <h3 class="text-xl font-semibold">Policy & Global Leadership</h3>
-            <p class="mt-3 text-slate-300">Study international relations, economics, and public policy with direct access to Australia's national institutions.</p>
+  </section>
+
+  <section id="why" class="premium-section relative py-20 lg:py-28">
+    <div class="mx-auto max-w-7xl px-6 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <div class="mel-reveal space-y-6">
+          <div>
+            <p class="premium-subtitle">Why Choose Australian National University</p>
+            <h2 class="premium-title">Research-led education in Canberra, Australia</h2>
           </div>
-          <div class="section-card rounded-3xl p-8">
-            <h3 class="text-xl font-semibold">Research-led study</h3>
-            <p class="mt-3 text-slate-300">Work with leading scholars across science, humanities, STEM, and sustainability.</p>
-          </div>
-          <div class="section-card rounded-3xl p-8">
-            <h3 class="text-xl font-semibold">Scholarship pathway</h3>
-            <p class="mt-3 text-slate-300">ANU scholarship packages are available for high-performing international students.</p>
-          </div>
-        </div>
-      </div>
-      <div class="space-y-6">
-        <div class="rounded-3xl border border-white/10 bg-slate-900/80 p-8 shadow-xl shadow-slate-900/40">
-          <span class="text-sm uppercase tracking-[0.3em] text-emerald-300">Campus snapshot</span>
-          <h3 class="mt-4 text-3xl font-bold text-white">A calm capital city campus</h3>
-          <p class="mt-4 text-slate-300">Canberra offers peaceful study conditions, strong public transport, and an English-friendly student lifestyle that supports academic focus.</p>
-          <div class="mt-8 grid gap-4 sm:grid-cols-2">
-            <div class="rounded-2xl bg-slate-950/80 p-5">
-              <p class="text-3xl font-bold text-white">1</p>
-              <p class="mt-2 text-slate-300">Top national university</p>
+          <p class="mel-copy text-lg">ANU is a public research university in Canberra, founded by the Australian Parliament in 1946. It is part of Australia's Group of Eight and is known for strong research, policy, and student outcomes.</p>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="luxury-card">
+              <div class="luxury-card-icon">+</div>
+              <h3 class="luxury-card-title">National and Global Reputation</h3>
+              <p class="luxury-card-text">Ranked among the world's top institutions with widely respected degrees across sectors.</p>
             </div>
-            <div class="rounded-2xl bg-slate-950/80 p-5">
-              <p class="text-3xl font-bold text-white">98%</p>
-              <p class="mt-2 text-slate-300">Research intensity</p>
+            <div class="luxury-card">
+              <div class="luxury-card-icon">+</div>
+              <h3 class="luxury-card-title">Policy and Research Leadership</h3>
+              <p class="luxury-card-text">Advance knowledge through high-impact research and innovation partnerships.</p>
+            </div>
+            <div class="luxury-card">
+              <div class="luxury-card-icon">+</div>
+              <h3 class="luxury-card-title">Career Outcomes</h3>
+              <p class="luxury-card-text">Top employment outcomes and industry pathways for global career launches.</p>
+            </div>
+            <div class="luxury-card">
+              <div class="luxury-card-icon">+</div>
+              <h3 class="luxury-card-title">International Student Community</h3>
+              <p class="luxury-card-text">A diverse student community with strong support services for international students, including students from Pakistan.</p>
             </div>
           </div>
         </div>
-        <div class="rounded-3xl border border-emerald-500/10 bg-slate-900/80 p-8">
-          <h3 class="text-2xl font-semibold text-white">ANU for Pakistani students</h3>
-          <ul class="mt-5 space-y-3 text-slate-300">
-            <li>• Strong student support and cultural networks.</li>
-            <li>• Canberra's easy lifestyle and safe neighbourhoods.</li>
-            <li>• Guided visa and scholarship planning for each intake.</li>
-          </ul>
+
+        <div class="mel-reveal">
+          <div class="relative group">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-400/30 to-purple-400/30 rounded-[2rem] blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
+            <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1600&q=80" alt="International students on campus" loading="lazy" decoding="async" class="relative rounded-[2rem] object-cover w-full h-[500px] shadow-2xl">
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<section class="py-24 bg-white text-slate-900">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-12">
-      <p class="uppercase text-sm tracking-[0.3em] text-emerald-600">Programs</p>
-      <h2 class="mt-4 text-4xl font-semibold">Featured ANU programs for Pakistani applicants</h2>
-    </div>
-    <div class="grid gap-6 md:grid-cols-2">
-      <div class="section-card rounded-3xl p-8">
-        <h3 class="text-2xl font-bold">International Relations</h3>
-        <p class="mt-4 text-slate-600">World-class policy, diplomacy and public affairs programs designed for global leaders.</p>
-      </div>
-      <div class="section-card rounded-3xl p-8">
-        <h3 class="text-2xl font-bold">Environmental Science</h3>
-        <p class="mt-4 text-slate-600">Advanced sustainability research with hands-on field and lab experience.</p>
-      </div>
-      <div class="section-card rounded-3xl p-8">
-        <h3 class="text-2xl font-bold">Data Science</h3>
-        <p class="mt-4 text-slate-600">Industry-connected analytics, AI, and machine learning programs for career acceleration.</p>
-      </div>
-      <div class="section-card rounded-3xl p-8">
-        <h3 class="text-2xl font-bold">Economics & Finance</h3>
-        <p class="mt-4 text-slate-600">Rigorous business degrees with strong employability and scholarship options.</p>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="py-24 bg-slate-950 text-slate-100">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-12">
-      <p class="uppercase text-sm tracking-[0.3em] text-emerald-300">FAQ</p>
-      <h2 class="mt-4 text-4xl font-semibold">Questions Pakistani students ask most</h2>
-    </div>
-    <div class="space-y-4">
-      <div class="accordion-item rounded-3xl overflow-hidden">
-        <button class="accordion-button w-full px-6 py-5 text-left font-semibold text-white">What IELTS score does ANU require?<span class="accordion-icon">+</span></button>
-        <div class="accordion-content px-6 pb-6 text-slate-300">Most programs ask for IELTS 6.5 overall with no band below 6.0; some competitive courses may ask for 7.0.</div>
-      </div>
-      <div class="accordion-item rounded-3xl overflow-hidden">
-        <button class="accordion-button w-full px-6 py-5 text-left font-semibold text-white">Are scholarships available for Pakistani students?<span class="accordion-icon">+</span></button>
-        <div class="accordion-content px-6 pb-6 text-slate-300">Yes. ANU offers several international merit and research scholarships that our team can help you target.</div>
-      </div>
-      <div class="accordion-item rounded-3xl overflow-hidden">
-        <button class="accordion-button w-full px-6 py-5 text-left font-semibold text-white">Can I work while studying at ANU?<span class="accordion-icon">+</span></button>
-        <div class="accordion-content px-6 pb-6 text-slate-300">Yes. Student visa holders can work up to 40 hours per fortnight during term time and full-time during breaks.</div>
-      </div>
-      <div class="accordion-item rounded-3xl overflow-hidden">
-        <button class="accordion-button w-full px-6 py-5 text-left font-semibold text-white">How long does the admission process take?<span class="accordion-icon">+</span></button>
-        <div class="accordion-content px-6 pb-6 text-slate-300">A complete pathway from application to CoE typically takes 10-14 weeks, depending on intake and documentation speed.</div>
+  </section>
+
+  <section id="pak-guide" class="premium-section relative py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-blue-50">
+    <div class="mx-auto max-w-7xl px-6 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <div class="mel-reveal order-2 lg:order-1">
+          <div class="relative group">
+            <div class="absolute inset-0 bg-gradient-to-tr from-amber-300/20 to-blue-300/20 rounded-[2rem] blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
+            <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1600&q=80" alt="Pakistani student guidance" loading="lazy" decoding="async" class="relative rounded-[2rem] object-cover w-full h-[520px] shadow-2xl">
+          </div>
+        </div>
+
+        <div class="mel-reveal order-1 lg:order-2 space-y-6">
+          <div>
+            <p class="premium-subtitle">Pakistani Student Pathway</p>
+            <h2 class="premium-title">A clear roadmap from Pakistan to ANU, Canberra</h2>
+          </div>
+          <p class="mel-copy text-lg">High-quality counselling, personalized planning, and premium support across admission, scholarships, visa, and arrival.</p>
+
+          <div class="grid sm:grid-cols-2 gap-3">
+            <div class="luxury-card p-4 sm:p-5"><p class="luxury-card-title text-sm">Admission Requirements</p></div>
+            <div class="luxury-card p-4 sm:p-5"><p class="luxury-card-title text-sm">IELTS / PTE Score Strategy</p></div>
+            <div class="luxury-card p-4 sm:p-5"><p class="luxury-card-title text-sm">Tuition & Budget Planning</p></div>
+            <div class="luxury-card p-4 sm:p-5"><p class="luxury-card-title text-sm">Scholarship Assessment</p></div>
+            <div class="luxury-card p-4 sm:p-5"><p class="luxury-card-title text-sm">Student Visa & GTE</p></div>
+            <div class="luxury-card p-4 sm:p-5"><p class="luxury-card-title text-sm">Pre-arrival Planning</p></div>
+            <div class="luxury-card p-4 sm:p-5"><p class="luxury-card-title text-sm">Accommodation Guidance</p></div>
+            <div class="luxury-card p-4 sm:p-5"><p class="luxury-card-title text-sm">ANU Living Insights</p></div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-<section id="apply" class="py-24 bg-gradient-to-br from-emerald-700 to-slate-950 text-white">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <h2 class="text-4xl font-semibold">Ready to claim your place at ANU?</h2>
-    <p class="mt-4 text-slate-200">Our experts will map your strongest application, scholarship strategy and visa path for Canberra admission.</p>
-    <a href="/register" class="mt-10 inline-flex rounded-full bg-white px-10 py-4 text-sm font-semibold text-slate-950 transition hover:scale-[1.02]">Start Your ANU Application</a>
-  </div>
-</section>
+  </section>
+
+  <section id="courses" class="premium-section relative py-20 lg:py-28">
+    <div class="mx-auto max-w-7xl px-6 relative z-10">
+      <div class="text-center mb-14 mel-reveal">
+        <p class="premium-subtitle justify-center">Academic Excellence</p>
+        <h2 class="premium-title">Popular ANU study areas for international applicants</h2>
+        <p class="mel-copy text-lg max-w-2xl mx-auto mt-4">Choose from world-class courses that blend research strength, industry relevance, and practical learning.</p>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-item luxury-card">
+          <div class="luxury-card-icon">+</div>
+          <h3 class="luxury-card-title">Computer Science & AI</h3>
+          <p class="luxury-card-text">Build future-ready skills in software engineering, machine learning, and cybersecurity.</p>
+        </div>
+        <div class="feature-item luxury-card">
+          <div class="luxury-card-icon">+</div>
+          <h3 class="luxury-card-title">Data Science & Analytics</h3>
+          <p class="luxury-card-text">Translate data into impact with powerful analytics and business intelligence expertise.</p>
+        </div>
+        <div class="feature-item luxury-card">
+          <div class="luxury-card-icon">+</div>
+          <h3 class="luxury-card-title">Engineering</h3>
+          <p class="luxury-card-text">Experience world-class facilities in civil, mechanical, electrical, and structural engineering.</p>
+        </div>
+        <div class="feature-item luxury-card">
+          <div class="luxury-card-icon">+</div>
+          <h3 class="luxury-card-title">Business & MBA</h3>
+          <p class="luxury-card-text">Lead with confidence through globally accredited business and management programs.</p>
+        </div>
+        <div class="feature-item luxury-card">
+          <div class="luxury-card-icon">+</div>
+          <h3 class="luxury-card-title">Medicine & Health</h3>
+          <p class="luxury-card-text">Develop clinical expertise and research insight with ANU's health sciences.</p>
+        </div>
+        <div class="feature-item luxury-card">
+          <div class="luxury-card-icon">+</div>
+          <h3 class="luxury-card-title">Law</h3>
+          <p class="luxury-card-text">Study law with global perspective and strong professional pathways.</p>
+        </div>
+        <div class="feature-item luxury-card">
+          <div class="luxury-card-icon">+</div>
+          <h3 class="luxury-card-title">Architecture & Design</h3>
+          <p class="luxury-card-text">Shape the future of sustainable spaces through design-led innovation.</p>
+        </div>
+        <div class="feature-item luxury-card">
+          <div class="luxury-card-icon">+</div>
+          <h3 class="luxury-card-title">Science & Research</h3>
+          <p class="luxury-card-text">Engage with top-tier scientific research and laboratory-led discovery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="premium-section relative py-20 lg:py-28 bg-gradient-to-r from-blue-50 via-white to-blue-50">
+    <div class="mx-auto max-w-7xl px-6 relative z-10">
+      <div class="text-center mb-14 mel-reveal">
+        <p class="premium-subtitle justify-center">By the Numbers</p>
+        <h2 class="premium-title">Impact, scale, and student success</h2>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="mel-reveal stat-item">
+          <div class="luxury-card text-center">
+            <div class="stat-counter">1946</div>
+            <p class="text-slate-600 font-semibold mt-3">Established</p>
+            <p class="text-sm text-slate-500 mt-1">Created by Act of Parliament</p>
+          </div>
+        </div>
+        <div class="mel-reveal stat-item">
+          <div class="luxury-card text-center">
+            <div class="stat-counter">Canberra</div>
+            <p class="text-slate-600 font-semibold mt-3">Location</p>
+            <p class="text-sm text-slate-500 mt-1">Acton campus, ACT</p>
+          </div>
+        </div>
+        <div class="mel-reveal stat-item">
+          <div class="luxury-card text-center">
+            <div class="stat-counter">Go8</div>
+            <p class="text-slate-600 font-semibold mt-3">Research Network</p>
+            <p class="text-sm text-slate-500 mt-1">Member of Group of Eight</p>
+          </div>
+        </div>
+        <div class="mel-reveal stat-item">
+          <div class="luxury-card text-center">
+            <div class="stat-counter">S1 / S2</div>
+            <p class="text-slate-600 font-semibold mt-3">Entry Pattern</p>
+            <p class="text-sm text-slate-500 mt-1">Main international entry periods</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="scholarships" class="premium-section relative py-20 lg:py-28 bg-gradient-to-b from-white to-slate-50">
+    <div class="mx-auto max-w-7xl px-6 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <div class="mel-reveal space-y-6">
+          <div>
+            <p class="premium-subtitle">Scholarships</p>
+            <h2 class="premium-title">Scholarship pathways that reduce your investment</h2>
+          </div>
+          <p class="mel-copy text-lg">Discover merit, research, and international scholarships that can make an ANU education more affordable.</p>
+
+          <div class="space-y-4">
+            <div class="luxury-card">
+              <h3 class="luxury-card-title">Merit Scholarships</h3>
+              <p class="luxury-card-text">25-50% tuition awards for strong academics and profile strength.</p>
+            </div>
+            <div class="luxury-card">
+              <h3 class="luxury-card-title">Research Scholarships</h3>
+              <p class="luxury-card-text">Full tuition and stipend support for MPhil and PhD candidates.</p>
+            </div>
+            <div class="luxury-card">
+              <h3 class="luxury-card-title">International Grants</h3>
+              <p class="luxury-card-text">Partial tuition awards for high-achieving international applicants.</p>
+            </div>
+            <div class="luxury-card bg-gradient-to-r from-blue-50 to-purple-50 border-amber-300/50">
+              <h3 class="luxury-card-title">Insider Tip</h3>
+              <p class="luxury-card-text">Submit early to boost scholarship chances     the strongest applications are prepared 8-10 months before intake.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mel-reveal">
+          <div class="relative group">
+            <div class="absolute inset-0 bg-gradient-to-br from-emerald-300/20 to-blue-300/20 rounded-[2rem] blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80" alt="Scholarship planning" loading="lazy" decoding="async" class="relative rounded-[2rem] object-cover w-full h-[520px] shadow-2xl">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="life" class="premium-section relative py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-blue-50">
+    <div class="mx-auto max-w-7xl px-6 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <div class="mel-reveal">
+          <div class="relative group">
+            <div class="absolute inset-0 bg-gradient-to-br from-orange-300/20 to-pink-300/20 rounded-[2rem] blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
+            <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1600&q=80" alt="Student community in ANU" loading="lazy" decoding="async" class="relative rounded-[2rem] object-cover w-full h-[500px] shadow-2xl">
+          </div>
+        </div>
+
+        <div class="mel-reveal space-y-6">
+          <div>
+            <p class="premium-subtitle">Student Life</p>
+            <h2 class="premium-title">ANU life for Pakistani students is welcoming, vibrant, and safe</h2>
+          </div>
+          <p class="mel-copy text-lg">From cultural communities to halal dining, public transport, and festivals, ANU offers an enriching student experience.</p>
+
+          <div class="space-y-4">
+            <div class="flex items-start gap-3 group">
+              <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold text-sm mt-1">   </div>
+              <div>
+                <p class="font-bold text-slate-900">Strong student communities</p>
+                <p class="text-slate-600 text-sm">Active Pakistani cultural societies and support networks.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 group">
+              <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-white font-bold text-sm mt-1">   </div>
+              <div>
+                <p class="font-bold text-slate-900">Halal food access</p>
+                <p class="text-slate-600 text-sm">Wide range of dining options and grocery stores across ANU.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 group">
+              <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-white font-bold text-sm mt-1">   </div>
+              <div>
+                <p class="font-bold text-slate-900">Safe student-friendly neighborhoods</p>
+                <p class="text-slate-600 text-sm">Convenient locations with excellent transport and amenities.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 group">
+              <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white font-bold text-sm mt-1">   </div>
+              <div>
+                <p class="font-bold text-slate-900">Premium transport benefits</p>
+                <p class="text-slate-600 text-sm">Student concessions make getting around easy and affordable.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 group">
+              <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center text-white font-bold text-sm mt-1">   </div>
+              <div>
+                <p class="font-bold text-slate-900">Vibrant campus culture</p>
+                <p class="text-slate-600 text-sm">Festivals, sports, and student-led events throughout the year.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="premium-section relative py-20 lg:py-28 bg-gradient-to-b from-white to-blue-50">
+    <div class="mx-auto max-w-7xl px-6 relative z-10">
+      <div class="text-center mb-14 mel-reveal">
+        <p class="premium-subtitle justify-center">Step-by-Step</p>
+        <h2 class="premium-title">Your application process, simplified</h2>
+        <p class="mel-copy text-lg max-w-2xl mx-auto mt-4">We break the journey into 6 clear stages, so you know exactly what to do next.</p>
+      </div>
+
+      <div class="premium-timeline">
+        <div class="timeline-step mel-reveal">
+          <div class="timeline-dot">1</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Choose your program and intake</div>
+            <p class="timeline-desc">Select options aligned with your goals, budget, and career pathway. We help you shortlist strong choices.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step mel-reveal">
+          <div class="timeline-dot">2</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Prepare documents and profile</div>
+            <p class="timeline-desc">Collect transcripts, test reports, SOP, and financial documents with our detailed checklist.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step mel-reveal">
+          <div class="timeline-dot">3</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Submit your application</div>
+            <p class="timeline-desc">Complete the ANU application process accurately and confidently with our step-by-step guidance.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step mel-reveal">
+          <div class="timeline-dot">4</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Receive your offer</div>
+            <p class="timeline-desc">Review the offer, understand conditions, and prepare for acceptance and visa application.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step mel-reveal">
+          <div class="timeline-dot">5</div>
+          <div class="timeline-content">
+            <div class="timeline-title">File your student visa</div>
+            <p class="timeline-desc">Prepare your GTE statement, financial evidence, and documents for a strong visa submission.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step mel-reveal">
+          <div class="timeline-dot">6</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Arrive and settle in</div>
+            <p class="timeline-desc">Get pre-departure support, accommodation advice, and arrival planning for a confident start.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="premium-section relative py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white">
+    <div class="mx-auto max-w-7xl px-6 relative z-10">
+      <div class="text-center mb-14 mel-reveal">
+        <p class="premium-subtitle justify-center">Success Stories</p>
+        <h2 class="premium-title">Real results for Pakistani students</h2>
+        <p class="mel-copy text-lg max-w-2xl mx-auto mt-4">Hear from students who achieved their goals with premium support from application through arrival.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="mel-reveal">
+          <div class="testimonial-card">
+            <p class="testimonial-text">"Visa Culture helped me align scholarships and my SOP perfectly. I got my ANU offer faster than expected and felt supported the whole way."</p>
+            <div class="pt-4 border-t border-slate-200">
+              <p class="testimonial-author">Ayesha Khan</p>
+              <p class="testimonial-role">MS Data Science</p>
+            </div>
+          </div>
+        </div>
+        <div class="mel-reveal">
+          <div class="testimonial-card">
+            <p class="testimonial-text">"The visa and GTE guidance was clear and practical. Every step was handled professionally, and now I'm thriving at ANU."</p>
+            <div class="pt-4 border-t border-slate-200">
+              <p class="testimonial-author">Hamza Ali</p>
+              <p class="testimonial-role">Bachelor of Engineering</p>
+            </div>
+          </div>
+        </div>
+        <div class="mel-reveal">
+          <div class="testimonial-card">
+            <p class="testimonial-text">"From university shortlist to accommodation planning, the support felt premium and reliable. I had a smooth arrival and strong start."</p>
+            <div class="pt-4 border-t border-slate-200">
+              <p class="testimonial-author">Mariam Siddiqui</p>
+              <p class="testimonial-role">Master of Business Analytics</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="premium-section relative py-20 lg:py-28 bg-gradient-to-b from-blue-50 to-slate-50">
+    <div class="mx-auto max-w-4xl px-6 relative z-10">
+      <div class="text-center mb-14 mel-reveal">
+        <p class="premium-subtitle justify-center">Frequently Asked</p>
+        <h2 class="premium-title">Common questions about studying in ANU</h2>
+        <p class="mel-copy text-lg mt-4">Everything you need to know about ANU admissions, scholarships, visa requirements, and student life in Canberra.</p>
+      </div>
+
+      <div class="faq-accordion">
+        <details class="faq-item mel-reveal" open>
+          <summary class="faq-summary">What IELTS/PTE scores do I need for ANU?</summary>
+          <div class="faq-content">
+            <p>English requirements vary by degree. ANU accepts IELTS, PTE, and other approved tests, but required scores differ by program. Always check the exact ANU course page before applying.</p>
+          </div>
+        </details>
+        <details class="faq-item mel-reveal">
+          <summary class="faq-summary">When should I apply for intake?</summary>
+          <div class="faq-content">
+            <p>ANU international applications are commonly planned around <strong>Semester 1</strong> and <strong>Semester 2</strong> entry windows. Applying early helps with offer timelines, accommodation, and visa preparation.</p>
+          </div>
+        </details>
+        <details class="faq-item mel-reveal">
+          <summary class="faq-summary">How much does it cost to live in Canberra while studying at ANU?</summary>
+          <div class="faq-content">
+            <p>Monthly living costs are usually around AUD 1,500-2,000 for rent, food, transport, and utilities. With scholarships and part-time work, many students manage a comfortable lifestyle.</p>
+          </div>
+        </details>
+        <details class="faq-item mel-reveal">
+          <summary class="faq-summary">Can I work while studying?</summary>
+          <div class="faq-content">
+            <p>International student work rights depend on current Australian visa conditions. Always confirm the latest official rules before travel.</p>
+          </div>
+        </details>
+        <details class="faq-item mel-reveal">
+          <summary class="faq-summary">What is a Genuine Temporary Entrant (GTE)?</summary>
+          <div class="faq-content">
+            <p>A GTE statement shows your genuine intent to study in Australia. We help you craft a strong narrative supported by your academic, career, and financial plans.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="final-cta" class="premium-section relative py-20 lg:py-32">
+    <div class="mx-auto max-w-5xl px-6 relative z-10">
+      <div class="relative overflow-hidden rounded-[2rem] p-10 lg:p-16">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-800 opacity-95"></div>
+        <div class="absolute inset-0 opacity-10">
+          <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+          <div class="absolute bottom-0 left-0 w-96 h-96 bg-amber-300 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative z-10 text-center text-white space-y-8">
+          <div class="mel-reveal">
+            <p class="text-sm uppercase tracking-[0.2em] text-blue-200 font-bold">Ready to transform your future?</p>
+            <h2 class="text-4xl lg:text-5xl font-bold font-display mt-4 leading-tight">Begin your Australian National University journey today</h2>
+            <p class="text-lg text-blue-100 max-w-2xl mx-auto mt-6">Get expert guidance on admissions, scholarships, visa strategy, and campus life. Your personalized pathway to Australian National University starts with a consultation.</p>
+          </div>
+
+          <div class="mel-reveal flex flex-col sm:flex-row gap-4 justify-center pt-4">
+            <a href="/#appointment" class="premium-btn premium-btn-primary">Book Free Consultation<span>   </span></a>
+            <a href="#pak-guide" class="premium-btn premium-btn-secondary">Learn More</a>
+          </div>
+
+          <div class="mel-reveal pt-4">
+            <p class="text-sm text-blue-200">    Personalized support &nbsp; | &nbsp;     Scholarship-ready strategy &nbsp; | &nbsp;     Smooth visa preparation</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
 <script>
-function revealOnScroll() {
-  document.querySelectorAll('.accordion-item, .section-card').forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) el.classList.add('reveal-active');
+(function () {
+  const reveals = document.querySelectorAll('.mel-reveal, .feature-item, .timeline-step');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  reveals.forEach((el) => io.observe(el));
+
+  const counters = document.querySelectorAll('.stat-counter');
+  const counterIO = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+        entry.target.classList.add('counted');
+        const target = parseInt(entry.target.textContent.replace(/\D/g, ''), 10);
+        let current = 0;
+        const step = Math.max(1, Math.floor(target / 60));
+        const interval = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            entry.target.textContent = entry.target.textContent;
+            clearInterval(interval);
+          } else {
+            entry.target.textContent = `${current}${entry.target.textContent.includes('+') ? '+' : ''}`;
+          }
+        }, 20);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach((el) => counterIO.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href && href.startsWith('#') && href.length > 1 && document.querySelector(href)) {
+        e.preventDefault();
+        document.querySelector(href).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
   });
-}
-function toggleAccordion(button) {
-  const content = button.nextElementSibling;
-  const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
-  document.querySelectorAll('.accordion-content').forEach(el => { el.style.maxHeight = '0px'; });
-  document.querySelectorAll('.accordion-button .accordion-icon').forEach(icon => icon.textContent = '+');
-  if (!isOpen) { content.style.maxHeight = content.scrollHeight + 'px'; button.querySelector('.accordion-icon').textContent = '-'; }
-}
-window.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.accordion-button').forEach(button => button.addEventListener('click', () => toggleAccordion(button)));
-  revealOnScroll();
-});
-window.addEventListener('scroll', revealOnScroll);
+})();
 </script>
 {% endblock %}
+
+
+
