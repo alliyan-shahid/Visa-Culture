@@ -429,8 +429,20 @@
 
     @media (max-width: 768px) {
         #heroCarousel {
+            width: 100vw;
+            max-width: 100vw;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+            padding-left: 0 !important;
+            padding-right: 0 !important;
             height: 62vh;
             min-height: 480px;
+        }
+        #heroCarousel .hero-carousel-track,
+        #heroCarousel .hero-slide,
+        #heroCarousel picture,
+        #heroCarousel .hero-slide-image {
+            width: 100%;
         }
         #heroCarousel .hero-content {
             padding: 1.1rem;
@@ -538,22 +550,34 @@
     <div class="hero-carousel-track">
         <!-- Slide 1 -->
         <div class="hero-slide active" id="heroSlide-0">
-            <img src="{{ url_for('static', filename='images/home hero img.webp') }}" alt="Hero slide 1" class="hero-slide-image">
+            <picture>
+                <source media="(max-width: 768px)" srcset="{{ url_for('static', filename='images/m home hero img.webp') }}">
+                <img src="{{ url_for('static', filename='images/home hero img.webp') }}" alt="Hero slide 1" class="hero-slide-image">
+            </picture>
         </div>
 
         <!-- Slide 2 -->
         <div class="hero-slide" id="heroSlide-1">
-            <img src="{{ url_for('static', filename='images/home hero img 2.webp') }}" alt="Hero slide 2" class="hero-slide-image">
+            <picture>
+                <source media="(max-width: 768px)" srcset="{{ url_for('static', filename='images/m home hero img2.webp') }}">
+                <img src="{{ url_for('static', filename='images/home hero img 2.webp') }}" alt="Hero slide 2" class="hero-slide-image">
+            </picture>
         </div>
 
         <!-- Slide 3 -->
         <div class="hero-slide" id="heroSlide-2">
-            <img src="{{ url_for('static', filename='images/home hero img 3.webp') }}" alt="Hero slide 3" class="hero-slide-image">
+            <picture>
+                <source media="(max-width: 768px)" srcset="{{ url_for('static', filename='images/m home hero img3.webp') }}">
+                <img src="{{ url_for('static', filename='images/home hero img 3.webp') }}" alt="Hero slide 3" class="hero-slide-image">
+            </picture>
         </div>
 
         <!-- Slide 4 -->
         <div class="hero-slide" id="heroSlide-3">
-            <img src="{{ url_for('static', filename='images/home hero img 4.webp') }}" alt="Hero slide 4" class="hero-slide-image">
+            <picture>
+                <source media="(max-width: 768px)" srcset="{{ url_for('static', filename='images/m home hero img4.webp') }}">
+                <img src="{{ url_for('static', filename='images/home hero img 4.webp') }}" alt="Hero slide 4" class="hero-slide-image">
+            </picture>
         </div>
 
         <!-- Hero Content -->
