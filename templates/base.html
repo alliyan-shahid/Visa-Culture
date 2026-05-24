@@ -591,12 +591,12 @@
                     <p class="text-lg font-semibold text-slate-950">Global Education Desk</p>
                 </div>
             </a>
-            <div class="hidden items-center gap-8 text-sm font-semibold text-slate-600 md:flex">
+            <div class="items-center gap-8 text-sm font-semibold text-slate-600 md:flex">
                 <a href="#services" class="nav-link">Services</a>
                 <a href="#universities" class="nav-link">Universities</a>
                 <a href="#appointment" class="nav-link">Book Appointment</a>
             </div>
-            <div class="hidden items-center gap-3 md:flex">
+            <div class="items-center gap-3 md:flex">
                 <a href="#appointment" class="rounded-full border border-slate-200 bg-white/95 px-5 py-2 text-sm font-semibold text-slate-900 transition hover:border-primary hover:shadow-soft">Book Appointment</a>
                 {% if current_user %}
                     <a href="/dashboard" class="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white shadow-soft transition hover:bg-slate-900">Dashboard</a>
@@ -608,28 +608,7 @@
                     <a href="/login" class="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white shadow-soft transition hover:bg-slate-900">Login</a>
                 {% endif %}
             </div>
-            <button id="navToggle" aria-label="Open menu" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm md:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
         </div>
-        <nav id="mobileMenu" class="hidden border-t border-slate-200 bg-white md:hidden">
-            <div class="space-y-1 px-6 py-4">
-                <a href="#services" class="block rounded-3xl px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-100">Services</a>
-                <a href="#universities" class="block rounded-3xl px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-100">Universities</a>
-                <a href="#appointment" class="block rounded-3xl px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-100">Book Appointment</a>
-                {% if current_user %}
-                    <a href="/dashboard" class="block rounded-3xl bg-primary px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-900">Dashboard</a>
-                    {% if current_user.role in ['admin', 'developer'] %}
-                        <a href="/register" class="block rounded-3xl border border-primary bg-white px-4 py-3 text-sm font-semibold text-primary transition hover:bg-primary hover:text-white">Register</a>
-                    {% endif %}
-                    <a href="/logout" class="block rounded-3xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100">Logout</a>
-                {% else %}
-                    <a href="/login" class="block rounded-3xl bg-primary px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-900">Login</a>
-                {% endif %}
-            </div>
-        </nav>
     </header>
 
     <main>
@@ -729,8 +708,88 @@
             window.addEventListener('load', replaceFeatherIcons);
         }
 
+        /* ============================================
+           FLOATING NAVBAR FUNCTIONALITY
+           ============================================ */
+        
+        // Simple click handler for future use
         document.getElementById('navToggle')?.addEventListener('click', function() {
             document.getElementById('mobileMenu')?.classList.toggle('hidden');
+        });
+
+        /* Mobile navbar hide/show on scroll */
+        const mobileTopNavbar = document.querySelector('.mobile-top-navbar');
+        let lastScrollTop = 0;
+        let scrollTimeout;
+
+        if (mobileTopNavbar && window.innerWidth <= 1024) {
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                clearTimeout(scrollTimeout);
+                
+                // Hide navbar when scrolling down
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    mobileTopNavbar.style.opacity = '0';
+                    mobileTopNavbar.style.pointerEvents = 'none';
+                    mobileTopNavbar.style.transform = 'translateX(-50%) translateY(-100%)';
+                } 
+                // Show navbar when scrolling up
+                else {
+                    mobileTopNavbar.style.opacity = '1';
+                    mobileTopNavbar.style.pointerEvents = 'auto';
+                    mobileTopNavbar.style.transform = 'translateX(-50%) translateY(0)';
+                }
+                
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            }, false);
+        }
+
+        /* Mobile bottom navbar functionality */
+        const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+        
+        mobileNavItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                if (this.classList.contains('mobile-nav-more')) {
+                    e.preventDefault();
+                    // Future: Handle More menu here
+                    return;
+                }
+                
+                // Update active state
+                mobileNavItems.forEach(i => i.classList.remove('mobile-nav-active'));
+                this.classList.add('mobile-nav-active');
+            });
+        });
+
+        // Auto-detect active section on scroll
+        window.addEventListener('scroll', () => {
+            const sections = [
+                { selector: '#universities', navName: 'universities' },
+                { selector: '#appointment', navName: 'appointment' }
+            ];
+            
+            let activeSection = 'home';
+            
+            sections.forEach(section => {
+                const el = document.querySelector(section.selector);
+                if (el) {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight * 0.5 && rect.bottom > 0) {
+                        activeSection = section.navName;
+                    }
+                }
+            });
+            
+            // Update active nav item
+            mobileNavItems.forEach(item => {
+                const navName = item.getAttribute('data-nav');
+                if (navName === activeSection) {
+                    item.classList.add('mobile-nav-active');
+                } else if (navName !== 'more') {
+                    item.classList.remove('mobile-nav-active');
+                }
+            });
         });
 
         try {
@@ -824,5 +883,26 @@
             .reveal, .reveal-fade { opacity: 1 !important; transform: none !important; }
         </style>
     </noscript>
+    
+    <!-- MOBILE TOP NAVBAR (Fixed at Top) -->
+    <nav class="mobile-top-navbar">
+        <a href="/" class="mobile-nav-item mobile-nav-active" data-nav="home">
+            <div class="mobile-nav-icon">🏠</div>
+            <div class="mobile-nav-label">Home</div>
+        </a>
+        <a href="#universities" class="mobile-nav-item" data-nav="universities">
+            <div class="mobile-nav-icon">🎓</div>
+            <div class="mobile-nav-label">Universities</div>
+        </a>
+        <a href="#appointment" class="mobile-nav-item" data-nav="appointment">
+            <div class="mobile-nav-icon">📅</div>
+            <div class="mobile-nav-label">Book</div>
+        </a>
+        <button class="mobile-nav-item mobile-nav-more" id="mobileNavMore" type="button">
+            <div class="mobile-nav-icon">⋯</div>
+            <div class="mobile-nav-label">More</div>
+        </button>
+    </nav>
+
 </body>
 </html>

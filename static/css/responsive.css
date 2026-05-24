@@ -274,8 +274,27 @@
     .min-h-screen {
         min-height: 50vh;
         height: auto;
-        padding-top: 2rem;
+        padding-top: 0;
         padding-bottom: 2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .hero-carousel {
+        min-height: 50vh;
+        height: auto;
+        padding-bottom: 2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    /* Ensure hero carousel respects navbar spacing */
+    .hero-carousel {
+        margin-top: 0 !important;
+    }
+
+    main {
+        margin-top: 0;
     }
 
     .hero-section .relative {
@@ -490,31 +509,7 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     }
 
-    /* ========================================
-       NAVIGATION - MOBILE PREMIUM
-       ======================================== */
-    
-    header {
-        padding: 1rem;
-        backdrop-filter: blur(10px);
-        background-color: rgba(255, 255, 255, 0.95);
-    }
 
-    #mobileMenu {
-        padding: 1rem;
-    }
-
-    #mobileMenu a {
-        padding: 0.875rem 1rem;
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
-        transition: all 0.2s ease;
-    }
-
-    #mobileMenu a:active {
-        background-color: rgba(10, 77, 143, 0.08);
-        transform: scale(0.98);
-    }
 
     /* ========================================
        CHOOSE US SECTION - REORDERED
@@ -1026,4 +1021,39 @@
     .show-on-desktop {
         display: block !important;
     }
+}
+
+/* ======================================================
+   FIX DOUBLE NAVBAR OVERLAP
+====================================================== */
+
+@media (max-width: 1024px) {
+
+  /* Hide ORIGINAL desktop navbar content */
+  header nav,
+  header .desktop-navbar,
+  header .main-navbar,
+  header .nav-wrapper {
+    display: none !important;
+  }
+
+  /* Keep header container minimal */
+  header {
+    height: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* Show ONLY custom mobile navbar */
+  .mobile-top-navbar {
+    display: flex !important;
+    position: fixed !important;
+    top: 12px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 1000000 !important;
+  }
 }
