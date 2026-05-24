@@ -162,6 +162,35 @@
             border-radius: 9999px;
             background: linear-gradient(180deg, rgba(37, 99, 235, 0.36), rgba(37, 99, 235, 0));
         }
+        @media (max-width: 768px) {
+            .how-it-works-timeline {
+                padding-left: 0.75rem;
+                gap: 1rem;
+            }
+            .how-it-works-timeline::before {
+                left: 0.5rem;
+                top: 2.2rem;
+                bottom: 0.5rem;
+                width: 3px;
+            }
+            .step-card {
+                padding: 1.25rem 1.15rem 1.1rem 1.15rem;
+                text-align: left;
+            }
+            .step-card__marker {
+                position: static;
+                width: 2.5rem;
+                height: 2.5rem;
+                margin-bottom: 0.65rem;
+                font-size: 0.95rem;
+            }
+            .step-card__sub {
+                display: block;
+                font-size: 0.72rem;
+                letter-spacing: 0.14em;
+                margin-bottom: 0.45rem;
+            }
+        }
         .how-it-works-highlights {
             display: grid;
             gap: 1rem;
