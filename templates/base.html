@@ -610,15 +610,9 @@
 </head>
 <body class="min-h-screen bg-white text-slate-900 antialiased m-0">
     <header class="sticky top-0 z-50 shadow-sm">
-        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-            <a href="/" class="flex items-center gap-3">
-                <div class="flex h-12 w-12 items-center justify-center overflow-hidden rounded-3xl bg-white shadow-soft ring-1 ring-slate-200">
-                    <img src="{{ url_for('static', filename='images/VisaCulture Logo.webp') }}" alt="Visa Culture logo" class="h-full w-full object-cover">
-                </div>
-                <div>
-                    <p class="text-xs uppercase tracking-[0.35em] text-primary">Visa Culture</p>
-                    <p class="text-lg font-semibold text-slate-950">Global Education Desk</p>
-                </div>
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-0">
+            <a href="/" class="flex items-center">
+                <img src="{{ url_for('static', filename='images/VisaCulture Logo.webp') }}" alt="Visa Culture logo" class="block w-16 h-auto object-contain object-left md:w-20 lg:w-20" style="image-rendering: auto;">
             </a>
             <div class="items-center gap-8 text-sm font-semibold text-slate-600 md:flex">
                 <a href="#services" class="nav-link">Services</a>
