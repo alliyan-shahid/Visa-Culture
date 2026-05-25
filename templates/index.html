@@ -554,6 +554,31 @@
                 <source media="(max-width: 768px)" srcset="{{ url_for('static', filename='images/m home hero img.webp') }}">
                 <img src="{{ url_for('static', filename='images/home hero img.webp') }}" alt="Hero slide 1" class="hero-slide-image">
             </picture>
+            <div class="hero-content">
+                <div class="hero-text-group">
+                    <h1>Make Your Dream University a Reality with Visa Culture</h1>
+                    <p>One team for university selection, application review and visa submission.</p>
+                    <p>We make your path to Australian study fast, clear and fully supported.</p>
+                    <div class="hero-buttons">
+                        <a href="#appointment" class="hero-btn hero-btn-primary">Book Appointment</a>
+                        <a href="#services" class="hero-btn hero-btn-secondary">Explore services</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="hero-stat-card">
+                            <p class="hero-stat-value">3,500+</p>
+                            <p class="hero-stat-label">Approved student visas</p>
+                        </div>
+                        <div class="hero-stat-card">
+                            <p class="hero-stat-value">98%</p>
+                            <p class="hero-stat-label">Application success rate</p>
+                        </div>
+                        <div class="hero-stat-card">
+                            <p class="hero-stat-value">24/7</p>
+                            <p class="hero-stat-label">Student support access</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Slide 2 -->
@@ -578,37 +603,6 @@
                 <source media="(max-width: 768px)" srcset="{{ url_for('static', filename='images/m home hero img4.webp') }}">
                 <img src="{{ url_for('static', filename='images/home hero img 4.webp') }}" alt="Hero slide 4" class="hero-slide-image">
             </picture>
-        </div>
-
-        <!-- Hero Content -->
-        <div class="hero-content">
-            <div class="hero-text-group">
-                <h1>Study in Australia with confidence</h1>
-                <p>One team for university selection, application review and visa submission.</p>
-                <p>We make your path to Australian study fast, clear and fully supported.</p>
-
-                <!-- Action Buttons -->
-                <div class="hero-buttons">
-                    <a href="#appointment" class="hero-btn hero-btn-primary">Book Appointment</a>
-                    <a href="#services" class="hero-btn hero-btn-secondary">Explore services</a>
-                </div>
-
-                <!-- Stats -->
-                <div class="hero-stats">
-                    <div class="hero-stat-card">
-                        <p class="hero-stat-value">3,500+</p>
-                        <p class="hero-stat-label">Approved student visas</p>
-                    </div>
-                    <div class="hero-stat-card">
-                        <p class="hero-stat-value">98%</p>
-                        <p class="hero-stat-label">Application success rate</p>
-                    </div>
-                    <div class="hero-stat-card">
-                        <p class="hero-stat-value">24/7</p>
-                        <p class="hero-stat-label">Student support access</p>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <!-- Navigation Arrows -->
@@ -662,9 +656,6 @@
                 dot.classList.add('active');
             }
         });
-
-        // Hide hero text/buttons on slide 3 (index 2) for a clean visual.
-        heroCarousel.classList.toggle('clean-slide', index === 2);
 
         currentSlide = index;
     }
@@ -1071,11 +1062,11 @@
                     <div class="flex items-start justify-between">
                         <div>
                             <p class="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Visa Cost</p>
-                            <h3 class="mt-3 text-lg font-semibold text-slate-950">AUD 1,600–2,000</h3>
+                            <h3 class="mt-3 text-lg font-semibold text-slate-950">AUD 2,000</h3>
                         </div>
                         <div class="text-3xl">💳</div>
                     </div>
-                    <p class="mt-3 text-sm text-slate-600">Student Visa Subclass 500 application fee</p>
+                    <p class="mt-3 text-sm text-slate-600">Student Visa Subclass 500 application fee (non-refundable, as of 2026)</p>
                 </div>
             </div>
 
@@ -1134,13 +1125,14 @@
 
                         <div class="border-t border-slate-200 pt-6">
                             <h4 class="font-semibold text-slate-950">Student Visa – Subclass 500</h4>
-                            <p class="mt-2 text-sm text-slate-600">Allows full-time study at a registered institution with part-time work up to 48 hours per fortnight during term time.</p>
+                            <p class="mt-2 text-sm text-slate-600">Allows full-time study at a registered institution with part-time work up to 48 hours per fortnight during term time. Unlimited hours during university breaks.</p>
                             <ul class="mt-3 space-y-2 text-sm text-slate-600">
                                 <li>• Valid Confirmation of Enrolment (CoE) from CRICOS-registered institution</li>
-                                <li>• Genuine Student Requirement – demonstrate primary intent is education</li>
+                                <li>• <strong>Genuine Student Requirement</strong> – demonstrate primary intent is to study (replaced GTE requirement in 2024)</li>
                                 <li>• Financial capacity proof – minimum annual living cost: <strong>AUD 29,710</strong></li>
-                                <li>• Visa fee: AUD 1,600–2,000</li>
-                                <li>• Processing time: 4–8 weeks</li>
+                                <li>• If bringing dependants: <strong>Spouse AUD 10,394/year</strong>, <strong>Child AUD 4,449/year</strong></li>
+                                <li>• Visa fee: <strong>AUD 2,000</strong> (non-refundable)</li>
+                                <li>• Processing time: 4–8 weeks (priority given under Ministerial Direction 115)</li>
                             </ul>
                         </div>
 
@@ -1155,15 +1147,21 @@
                         </div>
 
                         <div class="border-t border-slate-200 pt-6">
-                            <h4 class="font-semibold text-slate-950">Post-Study Work Opportunity</h4>
-                            <p class="mt-2 text-sm text-slate-600">After graduation, eligible graduates can apply for a <strong>Temporary Graduate Visa (Subclass 485)</strong> to work in Australia for 2–4 years, depending on qualification level. This provides valuable international work experience and potential pathways to permanent residency.</p>
+                            <h4 class="font-semibold text-slate-950">Post-Study Work Visa – Subclass 485 (2026 Updates)</h4>
+                            <p class="mt-2 text-sm text-slate-600">After graduation, eligible graduates can apply for a <strong>Temporary Graduate Visa (Subclass 485)</strong> to work in Australia for 2–4 years, depending on qualification level.</p>
+                            <ul class="mt-3 space-y-2 text-sm text-slate-600">
+                                <li>• <strong>Visa fee: AUD 4,600</strong> (as of March 2026 – increased from AUD 2,300)</li>
+                                <li>• Maximum age: <strong>35 years</strong> for most streams (PhDs and Masters by Research remain eligible until age 50)</li>
+                                <li>• Work rights: Full-time employment in your nominated occupation</li>
+                                <li>• Valuable pathway to permanent residency through skilled migration (2–5 years from graduation)</li>
+                            </ul>
                         </div>
 
                         <div class="border-t border-slate-200 pt-6 bg-blue-50/50 -mx-6 px-6 py-6 rounded-b-2xl">
                             <h4 class="font-semibold text-slate-950">Cost Reduction Strategies</h4>
                             <ul class="mt-3 space-y-2 text-sm text-slate-600">
                                 <li>• Explore scholarship opportunities and financial aid programs</li>
-                                <li>• Engage in part-time work during studies (up to 48 hours per fortnight during term)</li>
+                                <li>• Engage in part-time work during studies (up to 48 hours per fortnight, approximately AUD 31/hour in 2026)</li>
                                 <li>• Consider studying in more affordable cities like Adelaide or Brisbane</li>
                                 <li>• Look into pathway programs for reduced tuition entry</li>
                             </ul>
