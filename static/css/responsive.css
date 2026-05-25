@@ -229,23 +229,23 @@
     section {
         padding-left: 0.5rem !important;
         padding-right: 0.5rem !important;
-        padding-top: 2.5rem;
-        padding-bottom: 2.5rem;
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
     }
 
     .py-24 {
-        padding-top: 2.5rem;
-        padding-bottom: 2.5rem;
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
     }
 
     .py-20 {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
+        padding-top: 1.25rem !important;
+        padding-bottom: 1.25rem !important;
     }
 
     .py-16 {
-        padding-top: 1.75rem;
-        padding-bottom: 1.75rem;
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
     }
 
     .px-6 {
@@ -572,12 +572,12 @@
        ======================================== */
     
     #choose-us {
-        padding-top: 2.5rem;
-        padding-bottom: 2.5rem;
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
     }
 
     #choose-us > div {
-        gap: 1.5rem;
+        gap: 1rem !important;
     }
 
     #choose-us .reveal:first-child {
@@ -668,18 +668,18 @@
     }
 
     .py-24 {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
+        padding-top: 1.25rem !important;
+        padding-bottom: 1.25rem !important;
     }
 
     .py-28 {
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
     }
 
     .px-6 {
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
     }
 
     /* Typography - Mobile friendly sizes */
@@ -1019,10 +1019,10 @@
 
 @media (max-width: 480px) {
     section {
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
     }
 
     h1 {
@@ -1046,8 +1046,8 @@
     }
 
     .px-6 {
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
     }
 }
 
