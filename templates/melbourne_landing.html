@@ -3,6 +3,7 @@
 {% block head %}
 <meta name="description" content="Premium University of Melbourne guide for Pakistani students: admissions, IELTS/PTE, scholarships, visa steps, living costs, student life and application support.">
 <meta name="keywords" content="University of Melbourne Pakistani students, study in Australia, Melbourne scholarships, Australian student visa, IELTS PTE requirements">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/premium-animations.css') }}">
 <style>
 :root { --hero-from: #041f3c; --hero-to: #0c4a6e; --accent: #38bdf8; --panel: rgba(255,255,255,0.12); }
 .hero-section { background: radial-gradient(circle at top right, rgba(56,189,248,0.22), transparent 30%), linear-gradient(135deg, var(--hero-from), var(--hero-to)); }
@@ -493,10 +494,88 @@
   background: rgba(255, 255, 255, 0.7);
 }
 
+/* Enhanced Premium Animation Effects */
+.mel-reveal {
+  opacity: 0;
+  animation: revealUp 0.8s var(--ease-smooth) forwards;
+}
+
+.feature-item {
+  opacity: 0;
+  animation: revealUp 0.6s var(--ease-smooth) forwards;
+}
+
+.feature-item:nth-child(1) { animation-delay: 0.1s; }
+.feature-item:nth-child(2) { animation-delay: 0.15s; }
+.feature-item:nth-child(3) { animation-delay: 0.2s; }
+.feature-item:nth-child(4) { animation-delay: 0.25s; }
+.feature-item:nth-child(5) { animation-delay: 0.3s; }
+.feature-item:nth-child(6) { animation-delay: 0.35s; }
+.feature-item:nth-child(7) { animation-delay: 0.4s; }
+.feature-item:nth-child(8) { animation-delay: 0.45s; }
+
+.luxury-card {
+  transition: all var(--transition-slow);
+}
+
+.luxury-card:hover {
+  box-shadow: 0 25px 70px rgba(11, 31, 68, 0.2);
+}
+
+.luxury-card-icon {
+  transition: transform 0.3s var(--ease-smooth);
+}
+
+.luxury-card:hover .luxury-card-icon {
+  animation: float 2s ease-in-out infinite;
+}
+
+.premium-btn-primary {
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.3), transparent 80%);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.premium-btn-primary:hover::after {
+  opacity: 1;
+}
+
+.premium-title {
+  animation: revealDown 0.8s var(--ease-smooth) forwards;
+  opacity: 0;
+}
+
+.premium-subtitle {
+  animation: revealUp 0.8s var(--ease-smooth) forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .feature-item:nth-child(1) { animation-delay: 0.05s; }
+  .feature-item:nth-child(2) { animation-delay: 0.1s; }
+  .feature-item:nth-child(3) { animation-delay: 0.15s; }
+  .feature-item:nth-child(4) { animation-delay: 0.2s; }
+
+  .luxury-card:hover {
+    transform: translateY(-6px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .mel-reveal, .mel-card, .mel-float { transition:none !important; animation:none !important; transform:none !important; opacity:1 !important; }
 }
 </style>
+<script src="{{ url_for('static', filename='js/premium-animations.js') }}"></script>
 {% endblock %}
 {% block content %}
 <div class="mel-wrap text-[var(--mel-ink)]">

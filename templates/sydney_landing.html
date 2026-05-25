@@ -3,6 +3,7 @@
 {% block head %}
 <meta name="description" content="Authentic University of Sydney guide for Pakistani students: admissions, English requirements, scholarships, visa steps, living costs, student life and application support.">
 <meta name="keywords" content="University of Sydney Pakistani students, study in Australia, Sydney scholarships, Australian student visa requirements">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/premium-animations.css') }}">
 <style>
 :root { --hero-from: #041f3c; --hero-to: #0c4a6e; --accent: #38bdf8; --panel: rgba(255,255,255,0.12); }
 .hero-section { background: radial-gradient(circle at top right, rgba(56,189,248,0.22), transparent 30%), linear-gradient(135deg, var(--hero-from), var(--hero-to)); }
@@ -497,6 +498,7 @@
   .mel-reveal, .mel-card, .mel-float { transition:none !important; animation:none !important; transform:none !important; opacity:1 !important; }
 }
 </style>
+<script src="{{ url_for('static', filename='js/premium-animations.js') }}"></script>
 {% endblock %}
 {% block content %}
 <div class="mel-wrap text-[var(--mel-ink)]">
