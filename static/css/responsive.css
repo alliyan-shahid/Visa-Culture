@@ -599,6 +599,26 @@
     }
 
     /* ========================================
+       STUDENT LIFE SECTION - IMAGE MOVED AFTER CONTENT (MOBILE ONLY)
+       ======================================== */
+    
+    /* Reorder grid to flex layout: content first, image second */
+    #life .grid {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    /* Move image to bottom using explicit order */
+    #life .grid > .mel-reveal:first-of-type {
+        order: 2 !important;
+    }
+
+    /* Keep content at top */
+    #life .grid > .mel-reveal:last-of-type {
+        order: 1 !important;
+    }
+
+    /* ========================================
        FORM ELEMENTS - TOUCH FRIENDLY
        ======================================== */
     
