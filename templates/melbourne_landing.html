@@ -580,7 +580,13 @@
 {% block content %}
 <div class="mel-wrap text-[var(--mel-ink)]">
   <section class="hero-section min-h-screen text-white relative overflow-hidden">
-    <div class="absolute inset-0 opacity-30" style="background: url('https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=1200&h=900&fit=crop') center/cover no-repeat;"></div>
+    <div class="absolute inset-0 opacity-30">
+      <picture class="block w-full h-full">
+        <source media="(max-width: 640px)" srcset="{{ url_for('static', filename='images/m hero melbourne.webp') }}" type="image/webp">
+        <source srcset="{{ url_for('static', filename='images/hero melbourne.webp') }}" type="image/webp">
+        <img src="{{ url_for('static', filename='images/hero melbourne.webp') }}" alt="University of Melbourne hero" class="w-full h-full object-cover" style="background: url('https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=1200&h=900&fit=crop') center/cover no-repeat;">
+      </picture>
+    </div>
     <div class="absolute inset-0 bg-slate-950/70"></div>
     <div class="relative max-w-7xl mx-auto px-6 py-28">
       <div class="grid gap-10 lg:grid-cols-[1.3fr_0.9fr] items-center">
