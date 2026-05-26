@@ -949,6 +949,49 @@
         line-height: 1.2;
     }
 
+    /* University Landing Pages - Mobile Image Sizing (NO CROP - Fit to Width) */
+    /* Target all images in mel-wrap with rounded class */
+    .mel-wrap img.rounded-\[2rem\],
+    .mel-wrap .relative img,
+    .mel-wrap picture img {
+        height: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        object-fit: contain !important;
+        display: block !important;
+    }
+
+    /* Direct targeting of section images */
+    section img.object-cover {
+        height: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        object-fit: contain !important;
+    }
+
+    /* Fallback for any university page images */
+    [alt*="Melbourne"] img,
+    img[alt*="Melbourne"] {
+        height: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        object-fit: contain !important;
+    }
+
+    /* Picture elements wrapper fix */
+    .mel-wrap picture {
+        width: 100%;
+        max-width: 100%;
+        display: block;
+    }
+
+    .mel-wrap picture img {
+        height: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        object-fit: contain !important;
+    }
+
     /* Navigation bar - mobile adjustments */
     header {
         padding: 0.75rem 0.75rem;
@@ -1051,6 +1094,31 @@
 
     button, a[class*="btn"] {
         width: 100%;
+    }
+
+    /* University Landing Pages - Extra-small mobile (480px) - NO CROP, Fit to Width */
+    .mel-wrap img,
+    .uni-wrap img {
+        height: auto !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        object-fit: contain !important;
+    }
+
+    .mel-wrap picture img,
+    .uni-wrap picture img {
+        height: auto !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        object-fit: contain !important;
+    }
+
+    img.object-cover {
+        height: auto !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        object-fit: contain !important;
+    }
     }
 
     .px-6 {
