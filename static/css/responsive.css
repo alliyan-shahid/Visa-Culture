@@ -577,17 +577,25 @@
     }
 
     #choose-us > div {
-        gap: 1rem !important;
+        gap: 0 !important;
     }
 
     #choose-us .reveal:first-child {
-        margin-top: 1rem;
+        margin-top: 0 !important;
+        padding: 0 !important;
+        margin-bottom: 1rem !important;
     }
 
     #choose-us .reveal:first-child img {
         height: auto;
         max-height: 280px;
         border-radius: 1rem;
+    }
+
+    /* Remove desktop padding on image and text sections on mobile */
+    #choose-us .reveal {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 
     /* ========================================
