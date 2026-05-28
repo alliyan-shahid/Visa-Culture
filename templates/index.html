@@ -329,11 +329,9 @@
         align-items: center;
         perspective: 1800px;
         overflow: hidden;
-        border-radius: 1.75rem;
-        background:
-            radial-gradient(circle at center, rgba(96, 165, 250, 0.1), transparent 30%),
-            linear-gradient(180deg, rgba(0, 0, 0, 0.98), rgba(11, 11, 14, 0.98));
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 2.1rem;
+        background: #050505;
+        border: 1px solid rgba(255, 255, 255, 0.06);
         box-shadow:
             0 24px 70px rgba(2, 6, 23, 0.16),
             inset 0 1px 0 rgba(255, 255, 255, 0.06);
@@ -346,8 +344,8 @@
         width: 460px;
         height: 460px;
         border-radius: 50%;
-        background: radial-gradient(circle, rgba(59, 130, 246, 0.3), transparent 70%);
-        filter: blur(38px);
+        background: radial-gradient(circle, rgba(59, 130, 246, 0.08), transparent 72%);
+        filter: blur(54px);
         animation: pulseGlow 4s ease-in-out infinite;
         pointer-events: none;
         z-index: 0;
@@ -359,22 +357,22 @@
         width: 180px;
         height: 180px;
         border-radius: 50%;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.34), rgba(56, 189, 248, 0.1) 45%, transparent 72%);
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.14), rgba(56, 189, 248, 0.04) 45%, transparent 72%);
         filter: blur(10px);
-        box-shadow: 0 0 120px rgba(125, 211, 252, 0.32);
+        box-shadow: 0 0 56px rgba(125, 211, 252, 0.12);
         pointer-events: none;
         z-index: 0;
     }
 
     .showcase-ring {
         position: relative;
-        width: 390px;
-        height: 390px;
+        width: 430px;
+        height: 430px;
         transform-style: preserve-3d;
-        animation: rotateRing 24s linear infinite;
+        animation: rotateRing 30s linear infinite;
         will-change: transform;
         z-index: 1;
-        --showcase-depth: 380px;
+        --showcase-depth: 420px;
     }
 
     .services-showcase:hover .showcase-ring {
@@ -393,42 +391,48 @@
         border-radius: 28px;
         background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(18px);
-        border: 1px solid rgba(255, 255, 255, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.34);
         box-shadow:
             0 20px 50px rgba(0, 0, 0, 0.18),
             inset 0 1px 1px rgba(255, 255, 255, 0.3);
         transform-style: preserve-3d;
         transform: rotateY(var(--card-rotate, 0deg)) translateZ(var(--showcase-depth));
-        transition: transform 0.5s ease, background 0.5s ease, box-shadow 0.5s ease;
+        transition:
+            transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+            background 0.7s ease,
+            box-shadow 0.7s ease,
+            border-color 0.7s ease;
         color: white;
         backface-visibility: hidden;
         will-change: transform;
     }
 
     .showcase-card:hover {
-        transform: rotateY(var(--card-rotate, 0deg)) translateZ(calc(var(--showcase-depth) + 40px)) scale(1.08);
-        background: rgba(255, 255, 255, 0.16);
-        box-shadow: 0 25px 70px rgba(37, 99, 235, 0.35);
+        transform: rotateY(var(--card-rotate, 0deg)) translateZ(calc(var(--showcase-depth) + 24px)) scale(1.045);
+        background: rgba(255, 255, 255, 0.13);
+        border-color: rgba(196, 241, 255, 0.45);
+        box-shadow: 0 18px 42px rgba(37, 99, 235, 0.22);
     }
 
     .showcase-card i {
-        width: 38px;
-        height: 38px;
-        color: #7dd3fc;
+        width: 40px;
+        height: 40px;
+        color: #c4f1ff;
     }
 
     .showcase-card h3 {
-        margin-top: 16px;
-        font-size: 1.18rem;
+        margin-top: 17px;
+        font-size: 1.24rem;
         font-weight: 700;
-        color: white;
+        color: #ffffff;
+        text-shadow: 0 1px 10px rgba(255, 255, 255, 0.08);
     }
 
     .showcase-card p {
-        margin-top: 8px;
-        font-size: 0.9rem;
-        line-height: 1.55;
-        color: rgba(255, 255, 255, 0.78);
+        margin-top: 9px;
+        font-size: 0.95rem;
+        line-height: 1.58;
+        color: rgba(255, 255, 255, 0.92);
     }
 
     .showcase-card:nth-child(1) { --card-rotate: 0deg; }
@@ -678,7 +682,7 @@
 
         .services-showcase {
             height: 440px;
-            border-radius: 1.35rem;
+            border-radius: 1.65rem;
         }
 
         .services-showcase::before {
@@ -692,9 +696,9 @@
         }
 
         .showcase-ring {
-            width: 260px;
-            height: 260px;
-            --showcase-depth: 240px;
+            width: 290px;
+            height: 290px;
+            --showcase-depth: 275px;
         }
 
         .showcase-card {
@@ -706,19 +710,20 @@
         }
 
         .showcase-card h3 {
-            margin-top: 12px;
-            font-size: 0.98rem;
+            margin-top: 13px;
+            font-size: 1.04rem;
         }
 
         .showcase-card p {
-            margin-top: 6px;
-            font-size: 0.78rem;
-            line-height: 1.45;
+            margin-top: 7px;
+            font-size: 0.82rem;
+            line-height: 1.48;
         }
 
         .showcase-card i {
-            width: 30px;
-            height: 30px;
+            width: 32px;
+            height: 32px;
+            color: #c4f1ff;
         }
 
         .showcase-card:nth-child(1) { --card-rotate: 0deg; }
