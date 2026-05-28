@@ -1103,22 +1103,22 @@
 <section id="choose-us" class="relative isolate overflow-hidden bg-slate-50 py-16 sm:py-20 lg:py-24">
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(10,77,143,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(148,163,184,0.16),transparent_32%)]"></div>
     <div class="absolute right-0 top-10 h-64 w-64 rounded-full bg-primary/5 blur-3xl"></div>
-    <div class="relative mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="relative mx-auto max-w-7xl px-0 sm:px-6">
         <div class="grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:gap-16">
             <div class="order-1 flex justify-center lg:justify-start">
-                <div class="w-full max-w-[620px] overflow-hidden rounded-[2.2rem] border border-white/80 bg-white shadow-[0_28px_70px_rgba(15,23,42,0.10)]">
-                    <div class="relative overflow-hidden rounded-[1.8rem] bg-slate-100">
-                        <picture class="block w-full">
+                <div class="w-full max-w-none overflow-hidden rounded-[1.85rem] bg-transparent shadow-none sm:max-w-[620px] sm:rounded-[2.2rem] sm:border sm:border-white/80 sm:bg-white sm:shadow-[0_28px_70px_rgba(15,23,42,0.10)]">
+                    <div class="relative overflow-hidden rounded-[1.85rem] bg-transparent sm:rounded-[1.8rem] sm:bg-slate-100">
+                        <picture class="block w-full overflow-hidden rounded-[1.85rem] sm:rounded-[1.8rem]">
                             <source media="(max-width: 640px)" srcset="{{ url_for('static', filename='images/M Why Choose Us.webp') }}" type="image/webp">
                             <source srcset="{{ url_for('static', filename='images/Why Choose Us.webp') }}" type="image/webp">
-                            <img src="{{ url_for('static', filename='images/Why Choose Us.webp') }}" alt="Why Choose Us" class="block h-auto w-full object-contain object-center">
+                            <img src="{{ url_for('static', filename='images/Why Choose Us.webp') }}" alt="Why Choose Us" class="block h-auto w-full rounded-[1.85rem] object-contain object-center sm:rounded-[1.8rem]">
                         </picture>
 
                     </div>
                 </div>
             </div>
 
-            <div class="order-2 pt-0 lg:pt-2">
+            <div class="order-2 px-4 pt-0 lg:px-0 lg:pt-2">
                 <p class="text-sm font-semibold uppercase tracking-[0.28em] text-primary">Why Choose Us</p>
                 <h2 class="mt-3 max-w-2xl text-3xl font-bold leading-tight text-slate-950 sm:text-4xl lg:text-[3rem] lg:leading-[1.05]">Complete Support at Every Step</h2>
                 <p class="mt-4 max-w-xl text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">From your first consultation to final arrival abroad, VisaCulture supports you throughout the entire journey. We guide you through university selection, applications, visas, and beyond, so you never navigate the process alone.</p>
@@ -1126,8 +1126,12 @@
                 <div class="mt-8 border-l-2 border-primary/15 pl-5 sm:pl-6">
                     <div class="space-y-5">
                         <div class="flex gap-4">
-                            <span class="mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                                <i data-feather="award" class="h-4 w-4"></i>
+                            <span class="mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-slate-300 bg-white text-slate-950 shadow-sm">
+                                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <circle cx="12" cy="8" r="6.5"></circle>
+                                    <path d="M8.5 13.2 7 22l5-2.8 5 2.8-1.5-8.8"></path>
+                                    <path d="M9.2 7.9 11 10l3.6-4.3"></path>
+                                </svg>
                             </span>
                             <div>
                                 <p class="text-sm font-semibold uppercase tracking-[0.16em] text-slate-950">Access to top-ranked universities</p>
@@ -1136,8 +1140,15 @@
                         </div>
 
                         <div class="flex gap-4">
-                            <span class="mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                                <i data-feather="sliders" class="h-4 w-4"></i>
+                            <span class="mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-slate-300 bg-white text-slate-950 shadow-sm">
+                                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <line x1="4" y1="6" x2="20" y2="6"></line>
+                                    <circle cx="9" cy="6" r="1.75"></circle>
+                                    <line x1="4" y1="12" x2="20" y2="12"></line>
+                                    <circle cx="15" cy="12" r="1.75"></circle>
+                                    <line x1="4" y1="18" x2="20" y2="18"></line>
+                                    <circle cx="11" cy="18" r="1.75"></circle>
+                                </svg>
                             </span>
                             <div>
                                 <p class="text-sm font-semibold uppercase tracking-[0.16em] text-slate-950">Personalized guidance</p>
@@ -1146,8 +1157,11 @@
                         </div>
 
                         <div class="flex gap-4">
-                            <span class="mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                                <i data-feather="dollar-sign" class="h-4 w-4"></i>
+                            <span class="mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-slate-300 bg-white text-slate-950 shadow-sm">
+                                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M12 2v20"></path>
+                                    <path d="M17 7.5c0-2.2-2.2-4-5-4s-5 1.8-5 4 2.2 3.5 5 4 5 1.8 5 4-2.2 4-5 4-5-1.8-5-4"></path>
+                                </svg>
                             </span>
                             <div>
                                 <p class="text-sm font-semibold uppercase tracking-[0.16em] text-slate-950">Scholarships & financial guidance</p>
@@ -1156,8 +1170,10 @@
                         </div>
 
                         <div class="flex gap-4">
-                            <span class="mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                                <i data-feather="shield" class="h-4 w-4"></i>
+                            <span class="mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-slate-300 bg-white text-slate-950 shadow-sm">
+                                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M12 2.5 19 6v5.5c0 4.8-3.1 8.8-7 10.5-3.9-1.7-7-5.7-7-10.5V6l7-3.5z"></path>
+                                </svg>
                             </span>
                             <div>
                                 <p class="text-sm font-semibold uppercase tracking-[0.16em] text-slate-950">Experience that matters</p>
