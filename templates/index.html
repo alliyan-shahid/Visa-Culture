@@ -316,21 +316,26 @@
     /* =========================
        SERVICES 3D SHOWCASE
     ========================= */
+    #services {
+        background: linear-gradient(180deg, #f8fbff 0%, #edf4fb 100%);
+    }
+
     .services-showcase {
         position: relative;
         width: 100%;
-        height: 720px;
+        height: 560px;
         display: flex;
         justify-content: center;
         align-items: center;
         perspective: 1800px;
         overflow: hidden;
-        border-radius: 2rem;
+        border-radius: 1.75rem;
         background:
-            radial-gradient(circle at center, rgba(56, 189, 248, 0.08), transparent 28%),
-            linear-gradient(180deg, rgba(2, 6, 23, 0.98), rgba(15, 23, 42, 0.94));
+            radial-gradient(circle at center, rgba(96, 165, 250, 0.14), transparent 30%),
+            linear-gradient(180deg, rgba(8, 15, 32, 0.98), rgba(14, 30, 60, 0.96));
+        border: 1px solid rgba(96, 165, 250, 0.16);
         box-shadow:
-            0 30px 80px rgba(2, 6, 23, 0.18),
+            0 24px 70px rgba(2, 6, 23, 0.16),
             inset 0 1px 0 rgba(255, 255, 255, 0.06);
         isolation: isolate;
     }
@@ -338,11 +343,11 @@
     .services-showcase::before {
         content: "";
         position: absolute;
-        width: 560px;
-        height: 560px;
+        width: 460px;
+        height: 460px;
         border-radius: 50%;
         background: radial-gradient(circle, rgba(37, 99, 235, 0.28), transparent 70%);
-        filter: blur(40px);
+        filter: blur(34px);
         animation: pulseGlow 4s ease-in-out infinite;
         pointer-events: none;
         z-index: 0;
@@ -351,8 +356,8 @@
     .services-showcase::after {
         content: "";
         position: absolute;
-        width: 220px;
-        height: 220px;
+        width: 180px;
+        height: 180px;
         border-radius: 50%;
         background: radial-gradient(circle, rgba(255, 255, 255, 0.42), rgba(56, 189, 248, 0.12) 45%, transparent 72%);
         filter: blur(10px);
@@ -363,13 +368,13 @@
 
     .showcase-ring {
         position: relative;
-        width: 420px;
-        height: 420px;
+        width: 360px;
+        height: 360px;
         transform-style: preserve-3d;
         animation: rotateRing 24s linear infinite;
         will-change: transform;
         z-index: 1;
-        --showcase-depth: 420px;
+        --showcase-depth: 340px;
     }
 
     .services-showcase:hover .showcase-ring {
@@ -380,11 +385,11 @@
         position: absolute;
         left: 50%;
         top: 50%;
-        width: 260px;
-        height: 180px;
-        margin-left: -130px;
-        margin-top: -90px;
-        padding: 26px;
+        width: 240px;
+        height: 168px;
+        margin-left: -120px;
+        margin-top: -84px;
+        padding: 22px;
         border-radius: 28px;
         background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(18px);
@@ -407,22 +412,22 @@
     }
 
     .showcase-card i {
-        width: 42px;
-        height: 42px;
+        width: 38px;
+        height: 38px;
         color: #7dd3fc;
     }
 
     .showcase-card h3 {
-        margin-top: 18px;
-        font-size: 1.3rem;
+        margin-top: 16px;
+        font-size: 1.18rem;
         font-weight: 700;
         color: white;
     }
 
     .showcase-card p {
-        margin-top: 10px;
-        font-size: 0.95rem;
-        line-height: 1.6;
+        margin-top: 8px;
+        font-size: 0.9rem;
+        line-height: 1.55;
         color: rgba(255, 255, 255, 0.78);
     }
 
@@ -667,49 +672,53 @@
             font-size: 0.92rem;
         }
 
+        #services {
+            background: linear-gradient(180deg, #f7fbff 0%, #eef5fc 100%);
+        }
+
         .services-showcase {
-            height: 580px;
-            border-radius: 1.5rem;
+            height: 440px;
+            border-radius: 1.35rem;
         }
 
         .services-showcase::before {
-            width: 360px;
-            height: 360px;
+            width: 280px;
+            height: 280px;
         }
 
         .services-showcase::after {
-            width: 160px;
-            height: 160px;
+            width: 120px;
+            height: 120px;
         }
 
         .showcase-ring {
-            width: 280px;
-            height: 280px;
-            --showcase-depth: 260px;
+            width: 240px;
+            height: 240px;
+            --showcase-depth: 220px;
         }
 
         .showcase-card {
-            width: 210px;
-            height: 160px;
-            margin-left: -105px;
-            margin-top: -80px;
-            padding: 18px;
+            width: 180px;
+            height: 140px;
+            margin-left: -90px;
+            margin-top: -70px;
+            padding: 14px;
         }
 
         .showcase-card h3 {
-            margin-top: 14px;
-            font-size: 1.08rem;
+            margin-top: 12px;
+            font-size: 0.98rem;
         }
 
         .showcase-card p {
-            margin-top: 8px;
-            font-size: 0.86rem;
-            line-height: 1.5;
+            margin-top: 6px;
+            font-size: 0.78rem;
+            line-height: 1.45;
         }
 
         .showcase-card i {
-            width: 34px;
-            height: 34px;
+            width: 30px;
+            height: 30px;
         }
 
         .showcase-card:nth-child(1) { --card-rotate: 0deg; }
