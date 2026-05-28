@@ -453,6 +453,15 @@
         }
     }
 
+    @keyframes rotateRingMobile {
+        from {
+            transform: translateY(18px) rotateX(12deg) rotateY(0deg);
+        }
+        to {
+            transform: translateY(18px) rotateX(12deg) rotateY(360deg);
+        }
+    }
+
     @keyframes pulseGlow {
         0%, 100% {
             transform: scale(1);
@@ -681,48 +690,50 @@
         }
 
         .services-showcase {
-            height: 440px;
+            height: 360px;
             border-radius: 1.65rem;
         }
 
         .services-showcase::before {
-            width: 280px;
-            height: 280px;
+            width: 180px;
+            height: 180px;
         }
 
         .services-showcase::after {
-            width: 120px;
-            height: 120px;
+            width: 84px;
+            height: 84px;
         }
 
         .showcase-ring {
             width: 290px;
             height: 290px;
-            --showcase-depth: 275px;
+            --showcase-depth: 210px;
+            animation: rotateRingMobile 30s linear infinite;
+            transform: translateY(18px) rotateX(12deg);
         }
 
         .showcase-card {
-            width: 200px;
-            height: 150px;
-            margin-left: -100px;
-            margin-top: -75px;
-            padding: 14px;
+            width: 142px;
+            height: 114px;
+            margin-left: -71px;
+            margin-top: -57px;
+            padding: 11px;
         }
 
         .showcase-card h3 {
-            margin-top: 13px;
-            font-size: 1.04rem;
+            margin-top: 8px;
+            font-size: 0.92rem;
         }
 
         .showcase-card p {
-            margin-top: 7px;
-            font-size: 0.82rem;
-            line-height: 1.48;
+            margin-top: 4px;
+            font-size: 0.69rem;
+            line-height: 1.36;
         }
 
         .showcase-card i {
-            width: 32px;
-            height: 32px;
+            width: 24px;
+            height: 24px;
             color: #c4f1ff;
         }
 
