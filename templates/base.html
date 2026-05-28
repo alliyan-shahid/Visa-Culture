@@ -40,7 +40,7 @@
     {% block head %}{% endblock %}
     <style>
         html, body { margin: 0; padding: 0; background: #f7f9fc; background-image: radial-gradient(circle at top left, rgba(10, 77, 143, 0.08), transparent 26%), radial-gradient(circle at bottom right, rgba(13, 148, 136, 0.08), transparent 20%); }
-        body { font-family: Manrope, sans-serif; color: #10223a; }
+        body { font-family: Manrope, sans-serif; color: #10223a; overflow-x: hidden; }
         h1, h2, h3 { font-family: "Playfair Display", serif; letter-spacing: -0.02em; }
         header { background: #ffffff !important; backdrop-filter: blur(18px); border-bottom: 1px solid rgba(148, 163, 184, 0.2); }
         .animate-fade-in-up { animation: fade-in-up 0.9s ease-out both; }
@@ -495,7 +495,6 @@
         main {
             height: auto;
             overflow: visible;
-            overflow-x: hidden;
             -webkit-overflow-scrolling: touch;
         }
         main > section,
@@ -908,44 +907,49 @@
     
     <!-- MOBILE TOP NAVBAR (Fixed at Top) -->
     <nav class="mobile-top-navbar">
-        <a href="/" class="mobile-nav-item mobile-nav-active" data-nav="home">
-            <div class="mobile-nav-icon">
-                <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M3 12l9-9 9 9v1h-2v9h-5v-6h-4v6H5v-9H3v-1z" stroke="currentColor" stroke-width="1.5" fill="white"/>
-                </svg>
-            </div>
-            <div class="mobile-nav-label">Home</div>
+        <a href="/" class="mobile-nav-brand" aria-label="Visa Culture home">
+            <img src="{{ url_for('static', filename='images/VisaCulture Logo.webp') }}" alt="Visa Culture logo">
         </a>
-        <a href="#universities" class="mobile-nav-item" data-nav="universities">
-            <div class="mobile-nav-icon">
-                <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M12 2L3 7v4c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z" stroke="currentColor" stroke-width="1.5" fill="white"/>
-                    <path d="M12 12h4" stroke="currentColor" stroke-width="1.5"/>
-                    <path d="M10 14h6" stroke="currentColor" stroke-width="1.5"/>
-                </svg>
-            </div>
-            <div class="mobile-nav-label">Universities</div>
-        </a>
-        <a href="#appointment" class="mobile-nav-item" data-nav="appointment">
-            <div class="mobile-nav-icon">
-                <svg viewBox="0 0 24 24" fill="none">
-                    <rect x="3" y="5" width="18" height="16" rx="3" stroke="currentColor" stroke-width="1.5" fill="white"/>
-                    <path d="M8 3v4M16 3v4M3 10h18" stroke="currentColor" stroke-width="1.5"/>
-                    <path d="M9 15l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <div class="mobile-nav-label">Booking</div>
-        </a>
-        <button class="mobile-nav-item mobile-nav-more" id="mobileNavMore" type="button">
-            <div class="mobile-nav-icon">
-                <svg viewBox="0 0 24 24" fill="none">
-                    <circle cx="6" cy="12" r="2" stroke="currentColor" stroke-width="1.5" fill="white"/>
-                    <circle cx="12" cy="12" r="2" stroke="currentColor" stroke-width="1.5" fill="white"/>
-                    <circle cx="18" cy="12" r="2" stroke="currentColor" stroke-width="1.5" fill="white"/>
-                </svg>
-            </div>
-            <div class="mobile-nav-label">More</div>
-        </button>
+        <div class="mobile-nav-items">
+            <a href="/" class="mobile-nav-item mobile-nav-active" data-nav="home">
+                <div class="mobile-nav-icon">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M3 12l9-9 9 9v1h-2v9h-5v-6h-4v6H5v-9H3v-1z" stroke="currentColor" stroke-width="1.5" fill="white"/>
+                    </svg>
+                </div>
+                <div class="mobile-nav-label">Home</div>
+            </a>
+            <a href="#universities" class="mobile-nav-item" data-nav="universities">
+                <div class="mobile-nav-icon">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2L3 7v4c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z" stroke="currentColor" stroke-width="1.5" fill="white"/>
+                        <path d="M12 12h4" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M10 14h6" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                </div>
+                <div class="mobile-nav-label">Universities</div>
+            </a>
+            <a href="#appointment" class="mobile-nav-item" data-nav="appointment">
+                <div class="mobile-nav-icon">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <rect x="3" y="5" width="18" height="16" rx="3" stroke="currentColor" stroke-width="1.5" fill="white"/>
+                        <path d="M8 3v4M16 3v4M3 10h18" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M9 15l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="mobile-nav-label">Booking</div>
+            </a>
+            <button class="mobile-nav-item mobile-nav-more" id="mobileNavMore" type="button">
+                <div class="mobile-nav-icon">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <circle cx="6" cy="12" r="2" stroke="currentColor" stroke-width="1.5" fill="white"/>
+                        <circle cx="12" cy="12" r="2" stroke="currentColor" stroke-width="1.5" fill="white"/>
+                        <circle cx="18" cy="12" r="2" stroke="currentColor" stroke-width="1.5" fill="white"/>
+                    </svg>
+                </div>
+                <div class="mobile-nav-label">More</div>
+            </button>
+        </div>
     </nav>
 
 </body>
