@@ -510,13 +510,60 @@
   --unsw-cream: #f8fafc;
 }
 .hero-unsw {
-  background: linear-gradient(180deg, rgba(11,18,24,0.88), rgba(15,76,163,0.7)), url('https://images.unsplash.com/photo-1504805572947-34fad45aed93?w=1600&h=1000&fit=crop') center/cover no-repeat;
+  position: relative;
+  overflow: hidden;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: unset !important;
+}
+@media (min-width: 768px) {
+  .hero-unsw {
+    height: 79vh;
+  }
+}
+@media (min-width: 1024px) {
+  .hero-unsw {
+    height: 85vh;
+  }
+}
+.hero-unsw .absolute.inset-0 {
+  z-index: 0;
+}
+.hero-unsw .absolute.inset-0.bg-slate-950\/45 {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .hero-unsw .absolute.inset-0.bg-slate-950\/45 {
+    display: block;
+    z-index: 2;
+  }
+}
+.hero-unsw .relative.mx-auto {
+  z-index: 10;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .hero-unsw .relative.mx-auto {
+    display: none !important;
+  }
+}
+.unsw-front-image { display: none !important; }
+@media (min-width: 1024px) {
+  .unsw-front-image { display: block !important; }
 }
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: radial-gradient(circle at top left, rgba(255,210,0,0.18), transparent 28%), radial-gradient(circle at bottom right, rgba(96,165,250,0.14), transparent 30%);
   pointer-events: none;
+  z-index: 1;
+}
+@media (max-width: 767px) {
+  .hero-overlay {
+    display: none !important;
+  }
 }
 .panel-soft {
   background: rgba(255,255,255,0.94);
@@ -534,25 +581,37 @@
   .hero-unsw { padding-top: 4rem; padding-bottom: 4rem; }
 }
 </style><div class="mel-wrap text-[var(--mel-ink)]">
-  <section class="hero-unsw relative overflow-hidden py-24 lg:py-32 text-white">
-  <div class="hero-overlay"></div>
-  <div class="relative mx-auto max-w-7xl px-6">
-    <div class="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] items-center">
-      <div class="space-y-8">
-        <span class="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm uppercase tracking-[0.35em] text-slate-100">UNSW Sydney Premium</span>
-        <h1 class="text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">Study at <span class="text-amber-300">UNSW Sydney</span> from Pakistan</h1>
-        <p class="max-w-3xl text-lg leading-8 text-slate-200">Choose a distinctive Sydney experience with UNSW's high-ranking research programs, industry partnerships, and strong international student support.</p>
-        <div class="flex flex-col gap-4 sm:flex-row">
-          <a href="#apply" class="btn-unsw inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-semibold shadow-lg shadow-slate-950/20 transition">Start Your UNSW Application</a>
-          <a href="#why-unsw" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-8 py-4 text-sm font-semibold text-white transition hover:bg-white/15">See UNSW Advantages</a>
+  <section class="hero-unsw text-white">
+    <div class="absolute inset-0">
+      <picture class="block w-full h-full">
+        <source media="(max-width: 640px)" srcset="{{ url_for('static', filename='images/m hero unsw.webp') }}" type="image/webp">
+        <source srcset="{{ url_for('static', filename='images/hero unsw.webp') }}" type="image/webp">
+        <img src="{{ url_for('static', filename='images/hero unsw.webp') }}" alt="UNSW Sydney hero" class="w-full h-full object-cover" style="background: url('https://images.unsplash.com/photo-1504805572947-34fad45aed93?w=1600&h=1000&fit=crop') center/cover no-repeat;">
+      </picture>
+    </div>
+    <div class="absolute inset-0 bg-slate-950/45 hidden lg:block"></div>
+    <div class="hero-overlay"></div>
+    <div class="relative mx-auto max-w-7xl px-6">
+      <div class="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] items-center h-full">
+        <div class="space-y-8">
+          <span class="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm uppercase tracking-[0.35em] text-slate-100">UNSW Sydney Premium</span>
+          <h1 class="text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">Study at <span class="text-amber-300">UNSW Sydney</span> from Pakistan</h1>
+          <p class="max-w-3xl text-lg leading-8 text-slate-200">Choose a distinctive Sydney experience with UNSW's high-ranking research programs, industry partnerships, and strong international student support.</p>
+          <div class="flex flex-col gap-4 sm:flex-row">
+            <a href="#apply" class="btn-unsw inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-semibold shadow-lg shadow-slate-950/20 transition">Start Your UNSW Application</a>
+            <a href="#why-unsw" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-8 py-4 text-sm font-semibold text-white transition hover:bg-white/15">See UNSW Advantages</a>
+          </div>
+        </div>
+        <div class="unsw-front-image rounded-[2rem] overflow-hidden panel-soft backdrop-blur-xl">
+          <picture>
+            <source media="(max-width: 640px)" srcset="{{ url_for('static', filename='images/m front hero unsw.webp') }}" type="image/webp">
+            <source srcset="{{ url_for('static', filename='images/front hero unsw.webp') }}" type="image/webp">
+            <img src="{{ url_for('static', filename='images/front hero unsw.webp') }}" alt="UNSW campus" class="h-full w-full object-cover rounded-[1.75rem]">
+          </picture>
         </div>
       </div>
-      <div class="rounded-[2rem] overflow-hidden panel-soft p-3 backdrop-blur-xl">
-        <img src="https://images.unsplash.com/photo-1526401485004-3a43f5aa8f6d?w=1200&h=900&fit=crop" alt="UNSW campus" class="h-full w-full object-cover rounded-[1.75rem]">
-      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <section id="why-unsw" class="premium-section relative py-20 lg:py-28">
     <div class="mx-auto max-w-7xl px-6 relative z-10">
