@@ -517,6 +517,15 @@
             display: block;
         }
 
+        #ideaCarouselSection .stack-card:nth-child(n+4) {
+            display: none;
+        }
+
+        #ideaCarouselSection.is-expanded .stack-card:nth-child(n+4) {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
         .mobile-text-collapsed {
             display: -webkit-box;
             -webkit-line-clamp: var(--mobile-line-clamp, 5);
@@ -1067,7 +1076,7 @@
             <h2 class="mt-4 text-4xl font-bold text-white">Why Choose Australia?</h2>
         </div>
 
-        <div class="stack-cards mx-auto w-full max-w-[1180px]">
+        <div id="australiaWhyChooseCards" class="stack-cards mx-auto w-full max-w-[1180px]">
             <article class="stack-card rounded-[14px] bg-[#17141d] p-6 shadow-[0_16px_50px_rgba(0,0,0,0.45)]">
                 <div class="indicator-line">
                     <div class="indicator-bar"></div>
@@ -1114,6 +1123,7 @@
                 <p class="mt-4 text-sm leading-7 text-slate-300">Enjoy one of the world’s most livable countries with vibrant cities, career opportunities, and a balanced lifestyle.</p>
             </article>
         </div>
+        <button type="button" class="view-more-btn australia-view-more" aria-controls="australiaWhyChooseCards" aria-expanded="false" onclick="toggleAustraliaCards(event)">View More Cards</button>
     </div>
 </section>
 
@@ -1735,6 +1745,16 @@
             btn.classList.remove('expanded');
             btn.textContent = 'View More Universities';
         }
+    }
+
+    function toggleAustraliaCards(event) {
+        event.preventDefault();
+        const btn = event.currentTarget;
+        const section = document.getElementById('ideaCarouselSection');
+        const expanded = section.classList.toggle('is-expanded');
+
+        btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        btn.textContent = expanded ? 'Show Less Cards' : 'View More Cards';
     }
 
     function initMobileTextCollapse() {
