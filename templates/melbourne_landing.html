@@ -6,8 +6,66 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/premium-animations.css') }}">
 <style>
 :root { --hero-from: #041f3c; --hero-to: #0c4a6e; --accent: #38bdf8; --panel: rgba(255,255,255,0.12); }
-.hero-section { background: radial-gradient(circle at top right, rgba(56,189,248,0.22), transparent 30%), linear-gradient(135deg, var(--hero-from), var(--hero-to)); }
-.section-card { background: var(--panel); border: 1px solid rgba(255,255,255,0.1); opacity: 0; animation: fadeInUp 0.9s ease-out forwards; animation-delay: 0.2s; }
+.hero-section { 
+  background: linear-gradient(135deg, var(--hero-from), var(--hero-to));
+  height: 70vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: unset !important;
+}
+@media (min-width: 768px) {
+  .hero-section {
+    height: 79vh;
+    background: radial-gradient(circle at top right, rgba(56,189,248,0.22), transparent 30%), linear-gradient(135deg, var(--hero-from), var(--hero-to));
+  }
+}
+@media (min-width: 1024px) {
+  .hero-section {
+    height: 85vh;
+  }
+}
+/* Hide extra content on mobile */
+.hero-grid-right { display: none !important; }
+@media (min-width: 1024px) {
+  .hero-grid-right { display: block !important; }
+}
+/* Hide badge and description on mobile */
+.hero-section .inline-flex.rounded-full { display: none !important; }
+@media (min-width: 1024px) {
+  .hero-section .inline-flex.rounded-full { display: inline-flex !important; }
+}
+.hero-section p { display: none !important; }
+@media (min-width: 1024px) {
+  .hero-section p { display: block !important; }
+}
+/* Hide buttons on mobile, show as single centered on sm */
+.hero-section .mt-10.flex { display: none !important; }
+@media (min-width: 640px) {
+  .hero-section .mt-10.flex { display: flex !important; }
+}
+@media (min-width: 1024px) {
+  .hero-section .mt-10.flex { display: flex !important; }
+}
+/* Title sizing */
+.hero-section h1 { 
+  font-size: 1.75rem;
+  margin-top: 1rem;
+}
+@media (min-width: 640px) {
+  .hero-section h1 { 
+    font-size: 2.25rem;
+  }
+}
+@media (min-width: 1024px) {
+  .hero-section h1 { 
+    font-size: 3.4rem;
+    margin-top: 2rem;
+  }
+}
+.section-card { background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255,255,255,0.2); opacity: 0; animation: fadeInUp 0.9s ease-out forwards; animation-delay: 0.2s; }
 .hero-highlight { color: var(--accent); text-shadow: 0 0 24px rgba(56,189,248,0.28); }
 .accent-btn { background: var(--accent); color: #0f172a; transition: transform 0.28s ease, box-shadow 0.28s ease; }
 .accent-btn:hover { transform: translateY(-2px); box-shadow: 0 18px 36px rgba(56,189,248,0.22); }
@@ -579,33 +637,33 @@
 {% endblock %}
 {% block content %}
 <div class="mel-wrap text-[var(--mel-ink)]">
-  <section class="hero-section min-h-screen text-white relative overflow-hidden">
-    <div class="absolute inset-0 opacity-30">
+  <section class="hero-section text-white relative overflow-hidden">
+    <div class="absolute inset-0">
       <picture class="block w-full h-full">
         <source media="(max-width: 640px)" srcset="{{ url_for('static', filename='images/m hero melbourne.webp') }}" type="image/webp">
         <source srcset="{{ url_for('static', filename='images/hero melbourne.webp') }}" type="image/webp">
         <img src="{{ url_for('static', filename='images/hero melbourne.webp') }}" alt="University of Melbourne hero" class="w-full h-full object-cover" style="background: url('https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=1200&h=900&fit=crop') center/cover no-repeat;">
       </picture>
     </div>
-    <div class="absolute inset-0 bg-slate-950/70"></div>
-    <div class="relative max-w-7xl mx-auto px-6 py-28">
-      <div class="grid gap-10 lg:grid-cols-[1.3fr_0.9fr] items-center">
-        <div>
-          <div class="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm uppercase tracking-[0.28em] text-slate-200">World-Class Campus</div>
-          <h1 class="mt-8 text-5xl font-black leading-tight sm:text-6xl">Study at the <span class="hero-highlight">University of Melbourne</span> from Pakistan</h1>
+    <div class="absolute inset-0 bg-slate-950/45"></div>
+    <div class="relative max-w-7xl mx-auto px-6">
+      <div class="grid gap-10 lg:grid-cols-[1.3fr_0.9fr] items-center h-full">
+        <div class="flex flex-col justify-center">
+          <div class="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm uppercase tracking-[0.28em] text-slate-200 w-fit">World-Class Campus</div>
+          <h1 class="mt-8 font-black leading-tight">Study at the <span class="hero-highlight">University of Melbourne</span> from Pakistan</h1>
           <p class="mt-6 max-w-2xl text-lg text-slate-200">Melbourne combines academic excellence with cultural diversity for Pakistani students seeking global recognition and a vibrant city experience.</p>
           <div class="mt-10 flex flex-col gap-4 sm:flex-row">
             <a href="#apply" class="accent-btn inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-semibold shadow-lg shadow-sky-400/20">Start Your Melbourne Journey</a>
             <a href="#why-melbourne" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-8 py-4 text-sm text-white transition hover:bg-white/15">See Study Benefits</a>
           </div>
         </div>
-        <div class="space-y-4">
-          <div class="section-card rounded-3xl p-8 backdrop-blur-xl">
+        <div class="hero-grid-right space-y-4">
+          <div class="section-card rounded-3xl p-8">
             <span class="text-sm uppercase tracking-[0.2em] text-slate-300">Why Melbourne</span>
             <h2 class="mt-4 text-3xl font-bold">Academic strength, global reach</h2>
             <p class="mt-3 text-slate-300">Top-ranked university with exceptional research and strong employment outcomes.</p>
           </div>
-          <div class="section-card rounded-3xl p-8 backdrop-blur-xl">
+          <div class="section-card rounded-3xl p-8">
             <span class="text-sm uppercase tracking-[0.2em] text-slate-300">Scholarship opportunity</span>
             <h2 class="mt-4 text-3xl font-bold">Merit-based funding available</h2>
             <p class="mt-3 text-slate-300">Melbourne offers scholarships to talented international students to support your studies.</p>
@@ -615,7 +673,7 @@
     </div>
   </section>
 
-  <section id="why" class="premium-section relative py-20 lg:py-28">
+  <section id="why" class="premium-section relative py-12 lg:py-16">
     <div class="mx-auto max-w-7xl px-6 relative z-10">
       <div class="grid lg:grid-cols-2 gap-14 items-center">
         <div class="mel-reveal space-y-6">
@@ -663,7 +721,7 @@
     </div>
   </section>
 
-  <section id="pak-guide" class="premium-section relative py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-blue-50">
+  <section id="pak-guide" class="premium-section relative py-12 lg:py-16 bg-gradient-to-b from-slate-50 to-blue-50">
     <div class="mx-auto max-w-7xl px-6 relative z-10">
       <div class="grid lg:grid-cols-2 gap-14 items-center">
         <div class="mel-reveal order-2 lg:order-1">
@@ -699,7 +757,7 @@
     </div>
   </section>
 
-  <section id="courses" class="premium-section relative py-20 lg:py-28">
+  <section id="courses" class="premium-section relative py-12 lg:py-16">
     <div class="mx-auto max-w-7xl px-6 relative z-10">
       <div class="text-center mb-14 mel-reveal">
         <p class="premium-subtitle justify-center">Academic Excellence</p>
@@ -752,7 +810,7 @@
     </div>
   </section>
 
-  <section class="premium-section relative py-20 lg:py-28 bg-gradient-to-r from-blue-50 via-white to-blue-50">
+  <section class="premium-section relative py-12 lg:py-16 bg-gradient-to-r from-blue-50 via-white to-blue-50">
     <div class="mx-auto max-w-7xl px-6 relative z-10">
       <div class="text-center mb-14 mel-reveal">
         <p class="premium-subtitle justify-center">By the Numbers</p>
@@ -792,7 +850,7 @@
     </div>
   </section>
 
-  <section id="scholarships" class="premium-section relative py-20 lg:py-28 bg-gradient-to-b from-white to-slate-50">
+  <section id="scholarships" class="premium-section relative py-12 lg:py-16 bg-gradient-to-b from-white to-slate-50">
     <div class="mx-auto max-w-7xl px-6 relative z-10">
       <div class="grid lg:grid-cols-2 gap-14 items-center">
         <div class="mel-reveal space-y-6">
@@ -836,7 +894,7 @@
     </div>
   </section>
 
-  <section id="life" class="premium-section relative py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-blue-50">
+  <section id="life" class="premium-section relative py-12 lg:py-16 bg-gradient-to-b from-slate-50 to-blue-50">
     <div class="mx-auto max-w-7xl px-6 relative z-10">
       <div class="grid lg:grid-cols-2 gap-14 items-center">
         <div class="mel-reveal">
@@ -899,7 +957,7 @@
     </div>
   </section>
 
-  <section id="process" class="premium-section relative py-20 lg:py-28 bg-gradient-to-b from-white to-blue-50">
+  <section id="process" class="premium-section relative py-12 lg:py-16 bg-gradient-to-b from-white to-blue-50">
     <div class="mx-auto max-w-7xl px-6 relative z-10">
       <div class="text-center mb-14 mel-reveal">
         <p class="premium-subtitle justify-center">Step-by-Step</p>
@@ -959,7 +1017,7 @@
     </div>
   </section>
 
-  <section class="premium-section relative py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white">
+  <section class="premium-section relative py-12 lg:py-16 bg-gradient-to-b from-slate-50 to-white">
     <div class="mx-auto max-w-7xl px-6 relative z-10">
       <div class="text-center mb-14 mel-reveal">
         <p class="premium-subtitle justify-center">Success Stories</p>
@@ -999,7 +1057,7 @@
     </div>
   </section>
 
-  <section id="faq" class="premium-section relative py-20 lg:py-28 bg-gradient-to-b from-blue-50 to-slate-50">
+  <section id="faq" class="premium-section relative py-12 lg:py-16 bg-gradient-to-b from-blue-50 to-slate-50">
     <div class="mx-auto max-w-4xl px-6 relative z-10">
       <div class="text-center mb-14 mel-reveal">
         <p class="premium-subtitle justify-center">Frequently Asked</p>
@@ -1042,7 +1100,7 @@
     </div>
   </section>
 
-  <section id="final-cta" class="premium-section relative py-20 lg:py-32">
+  <section id="final-cta" class="premium-section relative py-12 lg:py-16">
     <div class="mx-auto max-w-5xl px-6 relative z-10">
       <div class="relative overflow-hidden rounded-[2rem] p-10 lg:p-16">
         <div class="absolute inset-0 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-800 opacity-95"></div>
