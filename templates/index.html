@@ -383,11 +383,11 @@
         position: absolute;
         left: 50%;
         top: 50%;
-        width: 280px;
-        height: 190px;
-        margin-left: -140px;
-        margin-top: -95px;
-        padding: 22px;
+        width: 260px;
+        min-height: 186px;
+        margin-left: -130px;
+        margin-top: -93px;
+        padding: 11px 16px 13px;
         border-radius: 28px;
         background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(18px);
@@ -405,6 +405,12 @@
         color: white;
         backface-visibility: hidden;
         will-change: transform;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 4px;
+        overflow: hidden;
     }
 
     .showcase-card:hover {
@@ -415,24 +421,28 @@
     }
 
     .showcase-card i {
-        width: 40px;
-        height: 40px;
+        width: 34px;
+        height: 34px;
         color: #c4f1ff;
+        flex: 0 0 auto;
     }
 
     .showcase-card h3 {
-        margin-top: 17px;
-        font-size: 1.24rem;
+        margin: 0;
+        font-size: 0.96rem;
+        line-height: 1.1;
         font-weight: 700;
         color: #ffffff;
         text-shadow: 0 1px 10px rgba(255, 255, 255, 0.08);
+        text-wrap: balance;
     }
 
     .showcase-card p {
-        margin-top: 9px;
-        font-size: 0.95rem;
-        line-height: 1.58;
+        margin: 0;
+        font-size: 0.77rem;
+        line-height: 1.26;
         color: rgba(255, 255, 255, 0.92);
+        overflow-wrap: anywhere;
     }
 
     .showcase-card:nth-child(1) { --card-rotate: 0deg; }
@@ -794,27 +804,28 @@
         }
 
         .showcase-card {
-            width: 142px;
-            height: 114px;
-            margin-left: -71px;
-            margin-top: -57px;
-            padding: 11px;
+            width: 128px;
+            min-height: 112px;
+            margin-left: -64px;
+            margin-top: -58px;
+            padding: 7px 8px 8px;
+            gap: 3px;
+            justify-content: flex-start;
         }
 
         .showcase-card h3 {
-            margin-top: 8px;
-            font-size: 0.92rem;
+            font-size: 0.72rem;
+            line-height: 1.08;
         }
 
         .showcase-card p {
-            margin-top: 4px;
-            font-size: 0.69rem;
-            line-height: 1.36;
+            font-size: 0.57rem;
+            line-height: 1.2;
         }
 
         .showcase-card i {
-            width: 24px;
-            height: 24px;
+            width: 20px;
+            height: 20px;
             color: #c4f1ff;
         }
 
@@ -877,7 +888,7 @@
                     </div>
                     <div class="hero-stats">
                         <div class="hero-stat-card">
-                            <p class="hero-stat-value">3,500+</p>
+                            <p class="hero-stat-value">100+</p>
                             <p class="hero-stat-label">Approved student visas</p>
                         </div>
                         <div class="hero-stat-card">
