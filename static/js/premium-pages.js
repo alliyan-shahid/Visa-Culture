@@ -7,9 +7,9 @@
         root.style.opacity = '1';
     }
 
-    // Add subtle hover lift to all university cards on the homepage
+    // Add subtle hover lift to university cards on the network page
     try {
-        document.querySelectorAll('#universities a').forEach(card => {
+        document.querySelectorAll('[data-university-card]').forEach(card => {
             card.addEventListener('mouseenter', () => card.classList.add('hovered'));
             card.addEventListener('mouseleave', () => card.classList.remove('hovered'));
         });

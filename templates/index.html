@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+﻿{% extends 'base.html' %}
 
 {% block title %}Study in Australia | Visa Culture{% endblock %}
 
@@ -557,52 +557,6 @@
     }
 
     @media (max-width: 768px) {
-        #appointment {
-            padding-top: 3.5rem;
-            padding-bottom: 3.5rem;
-        }
-        #appointment .section-panel {
-            border-radius: 1.25rem;
-            padding: 1rem;
-            border: 1px solid rgba(148, 163, 184, 0.22);
-            background: linear-gradient(180deg, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.88));
-            box-shadow: 0 22px 60px rgba(2, 6, 23, 0.45);
-        }
-        #appointment .section-panel > .mb-6:first-child {
-            margin-bottom: 0.9rem;
-            border-radius: 1rem;
-            padding: 0.8rem 0.9rem;
-            background: rgba(255, 255, 255, 0.07);
-        }
-        #appointment .section-panel label {
-            gap: 0.35rem;
-            font-size: 0.8rem;
-            color: #cbd5e1;
-        }
-        #appointment .section-panel input,
-        #appointment .section-panel textarea {
-            border-radius: 0.95rem;
-            border-color: rgba(100, 116, 139, 0.75);
-            background: rgba(15, 23, 42, 0.92);
-            padding: 0.78rem 0.9rem;
-            font-size: 0.92rem;
-            line-height: 1.35;
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
-        }
-        #appointment .section-panel textarea {
-            min-height: 120px;
-        }
-        #appointment .section-panel button[type="submit"] {
-            margin-top: 1rem;
-            border-radius: 0.95rem;
-            padding-top: 0.85rem;
-            padding-bottom: 0.85rem;
-            font-size: 0.9rem;
-            letter-spacing: 0.01em;
-        }
-    }
-
-    @media (max-width: 768px) {
         #heroCarousel {
             width: 100vw;
             max-width: 100vw;
@@ -660,16 +614,14 @@
 
         #about-us,
         #services,
-        #universities,
-        #appointment {
+        #universities {
             padding-top: 3rem;
             padding-bottom: 3rem;
         }
 
         #about-us h2,
         #services h2,
-        #universities h2,
-        #appointment h2 {
+        #universities h2 {
             font-size: 1.95rem;
             line-height: 1.18;
             margin-top: 0.55rem;
@@ -677,8 +629,7 @@
 
         #about-us p,
         #services p,
-        #universities p,
-        #appointment p {
+        #universities p {
             line-height: 1.58;
         }
 
@@ -890,9 +841,9 @@
             <div class="hero-content">
                 <div class="hero-text-group">
                     <h1>Turning Dreams Into Destinations</h1>
-                    <p>From confusion to clarity — we guide your journey to top universities worldwide.</p>
+                    <p>From confusion to clarity &mdash; we guide your journey to top universities worldwide.</p>
                     <div class="hero-buttons">
-                        <a href="#appointment" class="hero-btn hero-btn-primary">Book Appointment</a>
+                        <a href="{{ url_for('booking_page') }}" class="hero-btn hero-btn-primary">Book Appointment</a>
                         <a href="#services" class="hero-btn hero-btn-secondary">Explore services</a>
                     </div>
                     <div class="hero-stats">
@@ -1072,7 +1023,7 @@
     <div class="mx-auto max-w-7xl px-6">
         <div class="mb-10 text-center">
             <p class="text-sm uppercase tracking-[0.35em] text-slate-400">Study in Australia with the Right Strategy</p>
-            <p class="mx-auto mt-4 max-w-3xl text-base leading-8 text-slate-300">Australia is one of the world’s leading study destinations, offering globally recognized education, strong career pathways, and an exceptional quality of life. With top-ranked universities, post-study work opportunities, and a multicultural environment, Australia provides students with a future-focused international education experience.</p>
+            <p class="mx-auto mt-4 max-w-3xl text-base leading-8 text-slate-300">Australia is one of the world&#39;s leading study destinations, offering globally recognized education, strong career pathways, and an exceptional quality of life. With top-ranked universities, post-study work opportunities, and a multicultural environment, Australia provides students with a future-focused international education experience.</p>
             <h2 class="mt-4 text-4xl font-bold text-white">Why Choose Australia?</h2>
         </div>
 
@@ -1120,7 +1071,7 @@
                     <div class="indicator-bar"></div>
                 </div>
                 <h3 class="text-[1.75rem] font-semibold text-white">High Quality of Life</h3>
-                <p class="mt-4 text-sm leading-7 text-slate-300">Enjoy one of the world’s most livable countries with vibrant cities, career opportunities, and a balanced lifestyle.</p>
+                <p class="mt-4 text-sm leading-7 text-slate-300">Enjoy one of the world&#39;s most livable countries with vibrant cities, career opportunities, and a balanced lifestyle.</p>
             </article>
         </div>
         <button type="button" class="view-more-btn australia-view-more" aria-controls="australiaWhyChooseCards" aria-expanded="false" onclick="toggleAustraliaCards(event)">View More Cards</button>
@@ -1308,7 +1259,7 @@
                 <p class="text-sm text-primary">Our Services</p>
                 <h2 class="mt-3 text-4xl font-bold leading-tight text-slate-950">End-to-End Global Education & Visa Solutions</h2>
             </div>
-            <p class="text-base leading-8 text-slate-600">VisaCulture supports students through every stage of their study abroad journey — from strategic profile planning and university admissions to visa approval and successful international transition.</p>
+            <p class="text-base leading-8 text-slate-600">VisaCulture supports students through every stage of their study abroad journey &mdash; from strategic profile planning and university admissions to visa approval and successful international transition.</p>
         </div>
         <div class="services-showcase">
             <div class="showcase-ring">
@@ -1364,110 +1315,11 @@
     </div>
 </section>
 
-<section id="universities" class="bg-white py-20">
-    <div class="mx-auto max-w-7xl px-6">
-        <div class="mb-12 text-center reveal">
-            <p class="text-sm uppercase tracking-[0.35em] text-primary">University network</p>
-            <h2 class="mt-4 text-4xl font-bold text-slate-950">Your Dream University Is Closer Than You Think — Visa Culture Gets You There</h2>
-            <p class="mx-auto mt-4 max-w-3xl text-base text-slate-600">Visa Culture helps match your profile with the right university, admission pathway, and scholarship opportunities worldwide.</p>
-        </div>
-        <div class="universities-container">
-            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <a href="/universities/university-of-melbourne" class="university-card group block rounded-[1.75rem] border border-slate-200 bg-gradient-to-br from-slate-50 via-white to-slate-100 p-6 shadow-sm ring-1 ring-slate-100/80 focus:outline-none focus:ring-2 focus:ring-sky-300/40">
-                <div class="flex items-start justify-between gap-4">
-                    <span class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Group of Eight</span>
-                    <div class="card-badge inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-sky-500/10 text-sky-700">
-                        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-                    </div>
-                </div>
-                <h3 class="mt-6 text-xl font-semibold text-slate-900">University of Melbourne</h3>
-                <p class="mt-4 text-sm text-slate-600">High-demand courses with premium research and scholarship pathways.</p>
-                <div class="mt-6 flex items-center gap-2 text-sm font-semibold text-slate-900 transition group-hover:text-sky-700">
-                    <span>Explore premium guide</span>
-                    <span class="transition group-hover:translate-x-1">→</span>
-                </div>
-            </a>
-            <a href="/universities/australian-national-university" class="university-card group block rounded-[1.75rem] border border-slate-200 bg-gradient-to-br from-emerald-50 via-white to-slate-100 p-6 shadow-sm ring-1 ring-slate-100/80 focus:outline-none focus:ring-2 focus:ring-emerald-300/40">
-                <div class="flex items-start justify-between gap-4">
-                    <span class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Group of Eight</span>
-                    <div class="card-badge inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-500/10 text-emerald-700">
-                        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-                    </div>
-                </div>
-                <h3 class="mt-6 text-xl font-semibold text-slate-900">Australian National University</h3>
-                <p class="mt-4 text-sm text-slate-600">Research-led pathways with direct access to Canberra's policy ecosystem.</p>
-                <div class="mt-6 flex items-center gap-2 text-sm font-semibold text-slate-900 transition group-hover:text-emerald-700">
-                    <span>Explore premium guide</span>
-                    <span class="transition group-hover:translate-x-1">→</span>
-                </div>
-            </a>
-            <a href="/universities/university-of-sydney" class="university-card group block rounded-[1.75rem] border border-slate-200 bg-gradient-to-br from-cyan-50 via-white to-slate-100 p-6 shadow-sm ring-1 ring-slate-100/80 focus:outline-none focus:ring-2 focus:ring-cyan-300/40">
-                <div class="flex items-start justify-between gap-4">
-                    <span class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Group of Eight</span>
-                    <div class="card-badge inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-cyan-500/10 text-cyan-700">
-                        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-                    </div>
-                </div>
-                <h3 class="mt-6 text-xl font-semibold text-slate-900">University of Sydney</h3>
-                <p class="mt-4 text-sm text-slate-600">City campus prestige with premium student lifestyle and career support.</p>
-                <div class="mt-6 flex items-center gap-2 text-sm font-semibold text-slate-900 transition group-hover:text-cyan-700">
-                    <span>Explore premium guide</span>
-                    <span class="transition group-hover:translate-x-1">→</span>
-                </div>
-            </a>
-            <a href="/universities/unsw-sydney" class="university-card group block rounded-[1.75rem] border border-slate-200 bg-gradient-to-br from-amber-50 via-white to-slate-100 p-6 shadow-sm ring-1 ring-slate-100/80 focus:outline-none focus:ring-2 focus:ring-amber-300/40">
-                <div class="flex items-start justify-between gap-4">
-                    <span class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Go8 and Beyond</span>
-                    <div class="card-badge inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-700">
-                        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-                    </div>
-                </div>
-                <h3 class="mt-6 text-xl font-semibold text-slate-900">UNSW Sydney</h3>
-                <p class="mt-4 text-sm text-slate-600">Innovation-first degrees with industry-backed pathways in tech and business.</p>
-                <div class="mt-6 flex items-center gap-2 text-sm font-semibold text-slate-900 transition group-hover:text-amber-700">
-                    <span>Explore premium guide</span>
-                    <span class="transition group-hover:translate-x-1">→</span>
-                </div>
-            </a>
-            <a href="/universities/monash-university" class="university-card group block rounded-[1.75rem] border border-slate-200 bg-gradient-to-br from-violet-50 via-white to-slate-100 p-6 shadow-sm ring-1 ring-slate-100/80 focus:outline-none focus:ring-2 focus:ring-violet-300/40">
-                <div class="flex items-start justify-between gap-4">
-                    <span class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Go8 and Beyond</span>
-                    <div class="card-badge inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-violet-500/10 text-violet-700">
-                        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-                    </div>
-                </div>
-                <h3 class="mt-6 text-xl font-semibold text-slate-900">Monash University</h3>
-                <p class="mt-4 text-sm text-slate-600">Global-focused study options with strong scholarships and partnership pathways.</p>
-                <div class="mt-6 flex items-center gap-2 text-sm font-semibold text-slate-900 transition group-hover:text-violet-700">
-                    <span>Explore premium guide</span>
-                    <span class="transition group-hover:translate-x-1">→</span>
-                </div>
-            </a>
-            <a href="/universities/university-of-queensland" class="university-card group block rounded-[1.75rem] border border-slate-200 bg-gradient-to-br from-emerald-50 via-white to-slate-100 p-6 shadow-sm ring-1 ring-slate-100/80 focus:outline-none focus:ring-2 focus:ring-emerald-300/40">
-                <div class="flex items-start justify-between gap-4">
-                    <span class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Go8 and Beyond</span>
-                    <div class="card-badge inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-500/10 text-emerald-700">
-                        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-                    </div>
-                </div>
-                <h3 class="mt-6 text-xl font-semibold text-slate-900">University of Queensland</h3>
-                <p class="mt-4 text-sm text-slate-600">Excellent programs and a welcoming student ecosystem in Brisbane.</p>
-                <div class="mt-6 flex items-center gap-2 text-sm font-semibold text-slate-900 transition group-hover:text-emerald-700">
-                    <span>Explore premium guide</span>
-                    <span class="transition group-hover:translate-x-1">→</span>
-                </div>
-            </a>
-            </div>
-            <button class="view-more-btn universities-view-more collapsed" onclick="toggleUniversities(event)">View More Universities</button>
-        </div>
-    </div>
-</section>
-
 <section id="requirements" class="bg-gradient-to-b from-slate-50 to-white py-20">
     <div class="mx-auto max-w-7xl px-6">
         <div class="mb-12 reveal">
             <p class="text-sm uppercase tracking-[0.35em] text-primary">Admission Requirements</p>
-            <h2 class="mt-4 text-4xl font-bold text-slate-950">Study in Australia for Pakistani Students – Universities, Scholarships & Student Visa Guidance</h2>
+            <h2 class="mt-4 text-4xl font-bold text-slate-950">Study in Australia for Pakistani Students &ndash; Universities, Scholarships &amp; Student Visa Guidance</h2>
             <p class="mx-auto mt-4 max-w-3xl text-base text-slate-600">Essential qualifications, required documents, and student visa guidance for Australian university admissions.</p>
         </div>
         
@@ -1478,9 +1330,9 @@
                     <div class="flex items-start justify-between">
                         <div>
                             <p class="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Academic</p>
-                            <h3 class="mt-3 text-lg font-semibold text-slate-950">Minimum 60–70%</h3>
+                            <h3 class="mt-3 text-lg font-semibold text-slate-950">Minimum 60&ndash;70%</h3>
                         </div>
-                        <div class="text-3xl">📚</div>
+                        <div class="text-3xl">&#x1F4DA;</div>
                     </div>
                     <p class="mt-3 text-sm text-slate-600">HSSC/Intermediate or Bachelor's degree qualifications</p>
                 </div>
@@ -1491,7 +1343,7 @@
                             <p class="text-xs font-semibold uppercase tracking-[0.3em] text-primary">English Proficiency</p>
                             <h3 class="mt-3 text-lg font-semibold text-slate-950">IELTS 6.0+</h3>
                         </div>
-                        <div class="text-3xl">🌐</div>
+                        <div class="text-3xl">&#x1F310;</div>
                     </div>
                     <p class="mt-3 text-sm text-slate-600">IELTS, TOEFL, PTE, or Cambridge tests accepted</p>
                 </div>
@@ -1502,7 +1354,7 @@
                             <p class="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Visa Cost</p>
                             <h3 class="mt-3 text-lg font-semibold text-slate-950">AUD 2,000</h3>
                         </div>
-                        <div class="text-3xl">💳</div>
+                        <div class="text-3xl">&#x1F4B3;</div>
                     </div>
                     <p class="mt-3 text-sm text-slate-600">Student Visa Subclass 500 application fee (non-refundable, as of 2026)</p>
                 </div>
@@ -1513,26 +1365,26 @@
                 <!-- Key Requirements - Always Visible -->
                 <div class="requirements-overview">
                     <div class="requirements-item">
-                        <div class="requirements-item-icon">📋</div>
+                        <div class="requirements-item-icon">&#x1F4CB;</div>
                         <div>
                             <h4 class="font-semibold text-slate-950">Required Documents</h4>
-                            <p class="mt-1 text-sm text-slate-600">Academic transcripts • Valid passport (6+ months) • English test results • Statement of Purpose • Letters of recommendation</p>
+                            <p class="mt-1 text-sm text-slate-600">Academic transcripts &bull; Valid passport (6+ months) &bull; English test results &bull; Statement of Purpose &bull; Letters of recommendation</p>
                         </div>
                     </div>
                     
                     <div class="requirements-item">
-                        <div class="requirements-item-icon">💰</div>
+                        <div class="requirements-item-icon">&#x1F4B0;</div>
                         <div>
                             <h4 class="font-semibold text-slate-950">Estimated Annual Costs</h4>
-                            <p class="mt-1 text-sm text-slate-600">Tuition: AUD 20,000–45,000 • Living expenses: AUD 20,000–25,000 • Total: ~AUD 40,000–70,000</p>
+                            <p class="mt-1 text-sm text-slate-600">Tuition: AUD 20,000&ndash;45,000 &bull; Living expenses: AUD 20,000&ndash;25,000 &bull; Total: ~AUD 40,000&ndash;70,000</p>
                         </div>
                     </div>
                     
                     <div class="requirements-item">
-                        <div class="requirements-item-icon">✈️</div>
+                        <div class="requirements-item-icon">&#x2708;&#xFE0F;</div>
                         <div>
                             <h4 class="font-semibold text-slate-950">Visa Processing</h4>
-                            <p class="mt-1 text-sm text-slate-600">Processing time: 4–8 weeks • CoE required • Financial capacity proof needed • Health insurance mandatory</p>
+                            <p class="mt-1 text-sm text-slate-600">Processing time: 4&ndash;8 weeks &bull; CoE required &bull; Financial capacity proof needed &bull; Health insurance mandatory</p>
                         </div>
                     </div>
                 </div>
@@ -1543,65 +1395,65 @@
                         <div class="border-t border-slate-200 pt-6">
                             <h4 class="font-semibold text-slate-950">Academic Qualifications</h4>
                             <ul class="mt-3 space-y-2 text-sm text-slate-600">
-                                <li>• <strong>Undergraduate:</strong> Minimum 60–70% in HSSC/Intermediate</li>
-                                <li>• <strong>Postgraduate:</strong> Minimum 60–65% in Bachelor's degree</li>
-                                <li>• Top universities may require 70–80%</li>
+                                <li>&bull; <strong>Undergraduate:</strong> Minimum 60&ndash;70% in HSSC/Intermediate</li>
+                                <li>&bull; <strong>Postgraduate:</strong> Minimum 60&ndash;65% in Bachelor&#39;s degree</li>
+                                <li>&bull; Top universities may require 70&ndash;80%</li>
                             </ul>
                         </div>
 
                         <div class="border-t border-slate-200 pt-6">
                             <h4 class="font-semibold text-slate-950">English Language Proficiency</h4>
-                            <p class="mt-2 text-sm text-slate-600">Minimum requirement: <strong>IELTS overall score 6.0–6.5</strong> (or equivalent)</p>
+                            <p class="mt-2 text-sm text-slate-600">Minimum requirement: <strong>IELTS overall score 6.0&ndash;6.5</strong> (or equivalent)</p>
                             <ul class="mt-3 space-y-2 text-sm text-slate-600">
-                                <li>• IELTS – minimum 6.0–6.5 overall</li>
-                                <li>• PTE Academic</li>
-                                <li>• TOEFL iBT</li>
-                                <li>• Cambridge C1 Advanced</li>
-                                <li>• Test results must be no more than two years old</li>
+                                <li>&bull; IELTS &ndash; minimum 6.0&ndash;6.5 overall</li>
+                                <li>&bull; PTE Academic</li>
+                                <li>&bull; TOEFL iBT</li>
+                                <li>&bull; Cambridge C1 Advanced</li>
+                                <li>&bull; Test results must be no more than two years old</li>
                             </ul>
                         </div>
 
                         <div class="border-t border-slate-200 pt-6">
-                            <h4 class="font-semibold text-slate-950">Student Visa – Subclass 500</h4>
+                            <h4 class="font-semibold text-slate-950">Student Visa &ndash; Subclass 500</h4>
                             <p class="mt-2 text-sm text-slate-600">Allows full-time study at a registered institution with part-time work up to 48 hours per fortnight during term time. Unlimited hours during university breaks.</p>
                             <ul class="mt-3 space-y-2 text-sm text-slate-600">
-                                <li>• Valid Confirmation of Enrolment (CoE) from CRICOS-registered institution</li>
-                                <li>• <strong>Genuine Student Requirement</strong> – demonstrate primary intent is to study (replaced GTE requirement in 2024)</li>
-                                <li>• Financial capacity proof – minimum annual living cost: <strong>AUD 29,710</strong></li>
-                                <li>• If bringing dependants: <strong>Spouse AUD 10,394/year</strong>, <strong>Child AUD 4,449/year</strong></li>
-                                <li>• Visa fee: <strong>AUD 2,000</strong> (non-refundable)</li>
-                                <li>• Processing time: 4–8 weeks (priority given under Ministerial Direction 115)</li>
+                                <li>&bull; Valid Confirmation of Enrolment (CoE) from CRICOS-registered institution</li>
+                                <li>&bull; <strong>Genuine Student Requirement</strong> &ndash; demonstrate primary intent is to study (replaced GTE requirement in 2024)</li>
+                                <li>&bull; Financial capacity proof &ndash; minimum annual living cost: <strong>AUD 29,710</strong></li>
+                                <li>&bull; If bringing dependants: <strong>Spouse AUD 10,394/year</strong>, <strong>Child AUD 4,449/year</strong></li>
+                                <li>&bull; Visa fee: <strong>AUD 2,000</strong> (non-refundable)</li>
+                                <li>&bull; Processing time: 4&ndash;8 weeks (priority given under Ministerial Direction 115)</li>
                             </ul>
                         </div>
 
                         <div class="border-t border-slate-200 pt-6">
                             <h4 class="font-semibold text-slate-950">Health & Compliance</h4>
                             <ul class="mt-3 space-y-2 text-sm text-slate-600">
-                                <li>• Medical examination with approved panel doctor required</li>
-                                <li>• Overseas Student Health Cover (OSHC) mandatory for entire stay</li>
-                                <li>• Police Clearance Certificate for character requirements</li>
-                                <li>• Maintain CRICOS-registered course enrollment</li>
+                                <li>&bull; Medical examination with approved panel doctor required</li>
+                                <li>&bull; Overseas Student Health Cover (OSHC) mandatory for entire stay</li>
+                                <li>&bull; Police Clearance Certificate for character requirements</li>
+                                <li>&bull; Maintain CRICOS-registered course enrollment</li>
                             </ul>
                         </div>
 
                         <div class="border-t border-slate-200 pt-6">
-                            <h4 class="font-semibold text-slate-950">Post-Study Work Visa – Subclass 485 (2026 Updates)</h4>
-                            <p class="mt-2 text-sm text-slate-600">After graduation, eligible graduates can apply for a <strong>Temporary Graduate Visa (Subclass 485)</strong> to work in Australia for 2–4 years, depending on qualification level.</p>
+                            <h4 class="font-semibold text-slate-950">Post-Study Work Visa &ndash; Subclass 485 (2026 Updates)</h4>
+                            <p class="mt-2 text-sm text-slate-600">After graduation, eligible graduates can apply for a <strong>Temporary Graduate Visa (Subclass 485)</strong> to work in Australia for 2&ndash;4 years, depending on qualification level.</p>
                             <ul class="mt-3 space-y-2 text-sm text-slate-600">
-                                <li>• <strong>Visa fee: AUD 4,600</strong> (as of March 2026 – increased from AUD 2,300)</li>
-                                <li>• Maximum age: <strong>35 years</strong> for most streams (PhDs and Masters by Research remain eligible until age 50)</li>
-                                <li>• Work rights: Full-time employment in your nominated occupation</li>
-                                <li>• Valuable pathway to permanent residency through skilled migration (2–5 years from graduation)</li>
+                                <li>&bull; <strong>Visa fee: AUD 4,600</strong> (as of March 2026 &ndash; increased from AUD 2,300)</li>
+                                <li>&bull; Maximum age: <strong>35 years</strong> for most streams (PhDs and Masters by Research remain eligible until age 50)</li>
+                                <li>&bull; Work rights: Full-time employment in your nominated occupation</li>
+                                <li>&bull; Valuable pathway to permanent residency through skilled migration (2&ndash;5 years from graduation)</li>
                             </ul>
                         </div>
 
                         <div class="border-t border-slate-200 pt-6 bg-blue-50/50 -mx-6 px-6 py-6 rounded-b-2xl">
                             <h4 class="font-semibold text-slate-950">Cost Reduction Strategies</h4>
                             <ul class="mt-3 space-y-2 text-sm text-slate-600">
-                                <li>• Explore scholarship opportunities and financial aid programs</li>
-                                <li>• Engage in part-time work during studies (up to 48 hours per fortnight, approximately AUD 31/hour in 2026)</li>
-                                <li>• Consider studying in more affordable cities like Adelaide or Brisbane</li>
-                                <li>• Look into pathway programs for reduced tuition entry</li>
+                                <li>&bull; Explore scholarship opportunities and financial aid programs</li>
+                                <li>&bull; Engage in part-time work during studies (up to 48 hours per fortnight, approximately AUD 31/hour in 2026)</li>
+                                <li>&bull; Consider studying in more affordable cities like Adelaide or Brisbane</li>
+                                <li>&bull; Look into pathway programs for reduced tuition entry</li>
                             </ul>
                         </div>
                     </div>
@@ -1609,7 +1461,7 @@
                     <!-- View More Button -->
                     <button id="viewMoreBtn" class="requirements-view-more-btn mt-6">
                         <span class="btn-text">View More Details</span>
-                        <span class="btn-icon">▼</span>
+                        <span class="btn-icon">&#x25BC;</span>
                     </button>
                 </div>
             </div>
@@ -1659,94 +1511,34 @@
     </div>
 </section>
 
-<section id="appointment" class="bg-slate-950 py-20">
+<section class="bg-slate-950 py-20">
     <div class="mx-auto max-w-7xl px-6">
-        <div class="grid gap-10 lg:grid-cols-[1fr_0.95fr] lg:items-start">
+        <div class="grid gap-8 rounded-[2.25rem] border border-white/10 bg-white/5 p-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div class="space-y-6 reveal">
                 <p class="text-sm uppercase tracking-[0.35em] text-primary">Book consultancy</p>
-                <h2 class="text-4xl font-bold text-white">Get personalised advice for your Australia application today.</h2>
-                <p class="max-w-xl text-base leading-8 text-slate-300">Complete the form and our experienced team will reach out with clear next steps for your study application.</p>
+                <h2 class="text-4xl font-bold text-white">A focused booking experience, built for students who are ready to move forward.</h2>
+                <p class="max-w-xl text-base leading-8 text-slate-300">Use the dedicated booking page to submit your details in a calmer, more polished layout. Your request goes straight to our consultancy team.</p>
                 <div class="grid gap-3 sm:grid-cols-2">
                     <div class="rounded-[1.75rem] border border-white/10 bg-white/5 p-5 text-sm text-slate-200">
-                        <p class="font-semibold text-white">Free initial consultation</p>
-                        <p class="mt-2 text-slate-300">No commitment until you decide.</p>
+                        <p class="font-semibold text-white">Dedicated booking page</p>
+                        <p class="mt-2 text-slate-300">A focused form without homepage distractions.</p>
                     </div>
                     <div class="rounded-[1.75rem] border border-white/10 bg-white/5 p-5 text-sm text-slate-200">
-                        <p class="font-semibold text-white">Secure document process</p>
-                        <p class="mt-2 text-slate-300">Your details are handled carefully.</p>
+                        <p class="font-semibold text-white">Fast response</p>
+                        <p class="mt-2 text-slate-300">Our team reaches out with the next steps soon after submission.</p>
                     </div>
                 </div>
             </div>
-            <form action="/book" method="post" class="section-panel rounded-[2rem] p-8 text-white reveal reveal-delay">
-                <div class="mb-6 rounded-[1.75rem] bg-white/5 p-4 text-sm text-slate-200">
-                    <p class="font-semibold text-white">Ready in 48 hours</p>
-                    <p class="mt-2 text-slate-300">We'll contact you quickly with the next best step.</p>
-                </div>
-                {% with messages = get_flashed_messages(with_categories=true) %}
-                    {% if messages %}
-                        <div class="mb-6 space-y-3 rounded-3xl border border-primary/20 bg-primary/10 p-4 text-sm text-slate-100">
-                            {% for category, message in messages %}
-                                <p class="{{ 'text-emerald-200' if category == 'success' else 'text-rose-200' }}">{{ message }}</p>
-                            {% endfor %}
-                        </div>
-                    {% endif %}
-                {% endwith %}
-                <div class="grid gap-3 sm:gap-4 sm:grid-cols-2">
-                    <label class="space-y-2 text-sm font-semibold text-slate-200" for="name">
-                        <span>Full name</span>
-                        <input id="name" name="name" type="text" required class="w-full rounded-3xl border border-slate-700/80 bg-slate-900/95 px-5 py-3 text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Your name">
-                    </label>
-                    <label class="space-y-2 text-sm font-semibold text-slate-200" for="phone">
-                        <span>Phone number</span>
-                        <input id="phone" name="phone" type="tel" required class="w-full rounded-3xl border border-slate-700/80 bg-slate-900/95 px-5 py-3 text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="+61 4XX XXX XXX">
-                    </label>
-                </div>
-                <div class="grid gap-3 sm:gap-4 sm:grid-cols-2 mt-3 sm:mt-4">
-                    <label class="space-y-2 text-sm font-semibold text-slate-200" for="email">
-                        <span>Email address</span>
-                        <input id="email" name="email" type="email" class="w-full rounded-3xl border border-slate-700/80 bg-slate-900/95 px-5 py-3 text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="name@example.com">
-                    </label>
-                    <label class="space-y-2 text-sm font-semibold text-slate-200" for="date">
-                        <span>Preferred date</span>
-                        <div class="relative">
-                            <input id="date" name="date" type="date" required class="w-full rounded-3xl border border-slate-700/80 bg-slate-900/95 px-5 py-3 pr-5 text-white outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 cursor-pointer" placeholder="mm/dd/yyyy">
-                        </div>
-                    </label>
-                </div>
-                <label class="mt-3 sm:mt-4 space-y-2 text-sm font-semibold text-slate-200" for="university">
-                    <span>Preferred university</span>
-                    <input id="university" name="university" type="text" required class="w-full rounded-3xl border border-slate-700/80 bg-slate-900/95 px-5 py-3 text-white outline-none placeholder:text-slate-400 focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="University of Melbourne">
-                </label>
-                <label class="mt-3 sm:mt-4 space-y-2 text-sm font-semibold text-slate-200" for="message">
-                    <span>Message</span>
-                    <textarea id="message" name="message" rows="5" class="w-full rounded-3xl border border-slate-700/80 bg-slate-900/95 px-5 py-3 text-white outline-none resize-none overflow-y-auto focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Your study goals"></textarea>
-                </label>
-                <button type="submit" class="mt-6 w-full rounded-3xl bg-gradient-to-r from-primary to-accent px-6 py-4 text-sm font-semibold text-white shadow-[0_20px_60px_rgba(37,99,235,0.32)] transition hover:shadow-[0_24px_72px_rgba(37,99,235,0.38)]">Submit appointment request</button>
-            </form>
+            <div class="flex justify-center lg:justify-end">
+                <a href="{{ url_for('booking_page') }}" class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary to-accent px-8 py-4 text-sm font-semibold text-white shadow-[0_20px_60px_rgba(37,99,235,0.32)] transition hover:translate-y-[-2px] hover:shadow-[0_24px_72px_rgba(37,99,235,0.38)]">
+                    Open booking page
+                </a>
+            </div>
         </div>
     </div>
 </section>
 
 <script>
-    function toggleUniversities(event) {
-        event.preventDefault();
-        const btn = event.target;
-        const container = document.querySelector('.universities-container .grid');
-        const hiddenCards = container.querySelectorAll('.university-card:nth-child(n+4)');
-        
-        if (btn.classList.contains('collapsed')) {
-            hiddenCards.forEach(card => card.classList.add('visible'));
-            btn.classList.remove('collapsed');
-            btn.classList.add('expanded');
-            btn.textContent = 'Show Less Universities';
-        } else {
-            hiddenCards.forEach(card => card.classList.remove('visible'));
-            btn.classList.add('collapsed');
-            btn.classList.remove('expanded');
-            btn.textContent = 'View More Universities';
-        }
-    }
-
     function toggleAustraliaCards(event) {
         event.preventDefault();
         const btn = event.currentTarget;
@@ -1815,3 +1607,5 @@
 </script>
 
 {% endblock %}
+
+
