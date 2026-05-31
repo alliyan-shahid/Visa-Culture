@@ -516,7 +516,13 @@
         </div>
       </div>
       <div class="hero-card rounded-[2rem] p-6 shadow-xl">
-        <div class="overflow-hidden rounded-[1.75rem]"><img src="https://images.unsplash.com/photo-1541233349642-6e425fe6190e?w=1200&h=900&fit=crop" alt="Monash campus" class="h-full w-full object-cover"></div>
+        <div class="overflow-hidden rounded-[1.75rem]">
+          <picture>
+            <source media="(max-width: 640px)" srcset="{{ url_for('static', filename='images/m monash hero.webp') }}" type="image/webp">
+            <source srcset="{{ url_for('static', filename='images/monash hero.webp') }}" type="image/webp">
+            <img src="{{ url_for('static', filename='images/monash hero.webp') }}" alt="Monash campus" class="h-full w-full object-cover" loading="lazy" decoding="async">
+          </picture>
+        </div>
         <div class="mt-6 grid gap-4 sm:grid-cols-2">
           <div class="rounded-[1.5rem] border border-slate-200 p-5">
             <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Scholarship support</p>
