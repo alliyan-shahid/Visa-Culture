@@ -197,6 +197,14 @@
     background: rgba(255,255,255,0.9);
     box-shadow: 0 18px 50px rgba(15,23,42,0.07);
   }
+  /* Hide Go8 type text from cards */
+  .university-card__image p.font-semibold:not([class*="text-sky"]) {
+    display: none !important;
+  }
+  /* Hide intake box completely */
+  .university-card__image .rounded-2xl {
+    display: none !important;
+  }
 
   @media (max-width: 1024px) {
     .hero-media-frame img {
@@ -205,47 +213,69 @@
   }
 
   @media (max-width: 768px) {
+    .uni-page {
+      padding: 0 !important;
+    }
     .page-shell {
-      padding-left: 0.45rem !important;
-      padding-right: 0.45rem !important;
-      padding-top: 0.45rem !important;
-      padding-bottom: 0.7rem !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
     }
     .panel {
-      border-radius: 0.95rem;
+      border-radius: 0;
       padding: 0 !important;
       background: transparent;
       border: 0;
       box-shadow: none;
     }
     .hero-layout {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-    .hero-copy,
-    .hero-actions,
-    .hero-stats,
-    .hero-rail-grid,
-    .eyebrow {
-      display: none !important;
+      position: relative;
+      height: 70vh;
+      display: block;
     }
     .hero-visual {
-      order: 1;
-      margin: 0;
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      margin: 0 !important;
     }
     .hero-media {
       margin: 0 !important;
+      height: 100%;
     }
     .hero-media-frame {
-      border-radius: 0.95rem;
+      border-radius: 0;
       border: 0;
       box-shadow: none;
+      height: 100%;
+      overflow: hidden;
     }
+    .hero-media-frame picture,
     .hero-media-frame img {
-      min-height: 420px;
-      border-radius: 0.95rem;
       width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .hero-copy {
+      display: none !important;
+    }
+    .hero-actions,
+    .hero-stats,
+    .hero-rail-grid,
+    .hero-supporting,
+    .eyebrow {
+      display: none !important;
+    }
+    .hero-title,
+    .hero-copy p,
+    .hero-copy a,
+    .hero-copy .metric-card {
+      display: none !important;
     }
     .university-card__image {
       height: 225px;
@@ -258,11 +288,10 @@
       object-fit: cover;
       object-position: center center;
     }
-    .hero-title,
-    .hero-copy p,
-    .hero-copy a,
-    .hero-copy .metric-card,
-    .hero-supporting {
+    .university-card__image .chip {
+      display: none !important;
+    }
+    .university-card__image .text-white/90 {
       display: none !important;
     }
   }
@@ -299,7 +328,10 @@
 
         <div class="hero-visual hero-media">
           <div class="hero-media-frame">
-            <img src="{{ url_for('static', filename=spotlight.image) }}" alt="{{ spotlight.name }}" loading="eager" decoding="async">
+            <picture>
+              <source media="(max-width: 768px)" srcset="{{ url_for('static', filename='images/m_universities_page.webp') }}">
+              <img src="{{ url_for('static', filename='images/universities_page.webp') }}" alt="{{ spotlight.name }}" loading="eager" decoding="async">
+            </picture>
           </div>
           <div class="hero-rail-grid mt-4 grid gap-3 sm:grid-cols-[1.08fr_0.92fr]">
             <div class="rail-card p-4">
@@ -366,7 +398,11 @@
       <a href="{{ university.url }}" class="university-card group block" data-university-card aria-label="Open guide for {{ university.name }}">
         <div class="university-card__image">
           <picture>
+            {% if loop.first %}
+            <source media="(max-width: 768px)" srcset="{{ url_for('static', filename='images/universities_page.webp') }}">
+            {% else %}
             <source media="(max-width: 768px)" srcset="{{ url_for('static', filename=university.mobile_image) }}">
+            {% endif %}
             <img src="{{ url_for('static', filename=university.image) }}" alt="{{ university.name }} campus" loading="lazy" decoding="async">
           </picture>
           <div class="university-card__shade"></div>
@@ -431,7 +467,6 @@
               Open guide
               <span aria-hidden="true">-></span>
             </span>
-            <span class="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-slate-400">Custom page</span>
           </div>
         </div>
       </a>
