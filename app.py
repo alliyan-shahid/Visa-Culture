@@ -203,6 +203,18 @@ def developer_required(view):
 def landing_page():
     return render_template("index.html")
 
+@app.route("/admission-requirements")
+def admission_requirements():
+    return render_template("admission_requirements.html")
+
+@app.route("/how-we-work")
+def how_we_work():
+    return render_template("how_we_work.html")
+
+@app.route("/how-it-works")
+def how_it_works_redirect():
+    return redirect(url_for("how_we_work"), code=301)
+
 @app.route("/universities/university-of-melbourne")
 def university_of_melbourne():
     return render_template("melbourne_landing.html")

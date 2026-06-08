@@ -585,6 +585,14 @@
             opacity: 1;
             visibility: visible;
             display: block;
+            overflow: visible;
+        }
+        .requirements-cost-block {
+            margin-top: 0.25rem;
+            padding: 1.25rem 1.5rem;
+            border-radius: 1.25rem;
+            background: rgba(239, 246, 255, 0.85);
+            border: 1px solid rgba(59, 130, 246, 0.12);
         }
         .requirements-view-more-btn {
             display: inline-flex;
@@ -729,6 +737,144 @@
                 width: 220px;
             }
         }
+
+        /* More menu accordion */
+        .mobile-nav-more-wrap {
+            position: relative;
+            flex: 1 1 0;
+            min-width: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .mobile-top-navbar,
+        .mobile-nav-items,
+        .mobile-nav-more-wrap {
+            overflow: visible;
+        }
+        .mobile-nav-more-menu {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            width: 280px;
+            max-height: min(70vh, 420px);
+            overflow-x: hidden;
+            overflow-y: auto;
+            background: #fff;
+            border-radius: 12px;
+            border: 1px solid rgba(148, 163, 184, 0.22);
+            box-shadow: 0 24px 64px rgba(15, 23, 42, 0.16);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-6px) scale(0.98);
+            transform-origin: top right;
+            transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+            z-index: 1000002;
+        }
+        .mobile-nav-more-menu.is-open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+        .more-menu-list {
+            list-style: none;
+            margin: 0;
+            padding: 8px 0;
+        }
+        .more-menu-link > a {
+            display: block;
+            padding: 14px 18px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #0f172a;
+            text-decoration: none;
+            transition: color 0.2s ease, background-color 0.2s ease;
+        }
+        .more-menu-link > a:hover,
+        .more-menu-link > a:focus-visible {
+            color: #0a4d8f;
+            background: rgba(10, 77, 143, 0.04);
+            outline: none;
+        }
+        .more-menu-accordion__trigger {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 14px 18px;
+            border: none;
+            background: transparent;
+            font-size: 15px;
+            font-weight: 500;
+            color: #0f172a;
+            text-align: left;
+            cursor: pointer;
+            transition: color 0.2s ease, background-color 0.2s ease;
+        }
+        .more-menu-accordion__trigger:hover,
+        .more-menu-accordion__trigger:focus-visible {
+            background: rgba(10, 77, 143, 0.04);
+            outline: none;
+        }
+        .more-menu-accordion.is-open .more-menu-accordion__trigger {
+            color: #0a4d8f;
+        }
+        .more-menu-chevron {
+            flex-shrink: 0;
+            margin-left: 12px;
+            font-size: 11px;
+            line-height: 1;
+            color: #64748b;
+            transition: transform 0.22s ease, color 0.22s ease;
+        }
+        .more-menu-accordion.is-open .more-menu-chevron {
+            transform: rotate(90deg);
+            color: #0a4d8f;
+        }
+        .more-menu-sublist {
+            list-style: none;
+            margin: 0;
+            padding: 0 0 10px 0;
+            display: none;
+        }
+        .more-menu-accordion.is-open .more-menu-sublist {
+            display: block;
+        }
+        .more-menu-sublist a {
+            display: block;
+            position: relative;
+            padding: 9px 18px 9px 38px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #475569;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .more-menu-sublist a::before {
+            content: "";
+            position: absolute;
+            left: 22px;
+            top: 50%;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            transform: translateY(-50%);
+        }
+        .more-menu-sublist a:hover,
+        .more-menu-sublist a:focus-visible,
+        .more-menu-sublist a.is-active {
+            color: #0a4d8f;
+            outline: none;
+        }
+        .more-menu-sublist a.is-active::before {
+            background: #0a4d8f;
+        }
+        @media (max-width: 480px) {
+            .mobile-nav-more-menu {
+                width: 260px;
+                right: -4px;
+            }
+        }
     </style>
 </head>
 <body class="min-h-screen bg-white text-slate-900 antialiased m-0">
@@ -806,6 +952,8 @@
                         <li><a href="{{ url_for('universities') }}" class="transition hover:text-primary">Universities</a></li>
                         <li><a href="{{ url_for('booking_page') }}" class="transition hover:text-primary">Book Appointment</a></li>
                         <li><a href="{{ url_for('landing_page') }}#about-us" class="transition hover:text-primary">About Us</a></li>
+                        <li><a href="{{ url_for('admission_requirements') }}" class="transition hover:text-primary">Admission Requirements</a></li>
+                        <li><a href="{{ url_for('how_we_work') }}" class="transition hover:text-primary">How We Work</a></li>
                     </ul>
                 </div>
 
@@ -865,88 +1013,6 @@
         // Simple click handler for future use
         document.getElementById('navToggle')?.addEventListener('click', function() {
             document.getElementById('mobileMenu')?.classList.toggle('hidden');
-        });
-
-        /* Mobile navbar hide/show on scroll */
-        const mobileTopNavbar = document.querySelector('.mobile-top-navbar');
-        let lastScrollTop = 0;
-        let scrollTimeout;
-
-        if (mobileTopNavbar && window.innerWidth <= 1024) {
-            window.addEventListener('scroll', function() {
-                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                
-                clearTimeout(scrollTimeout);
-                
-                // Hide navbar when scrolling down
-                if (scrollTop > lastScrollTop && scrollTop > 100) {
-                    mobileTopNavbar.style.opacity = '0';
-                    mobileTopNavbar.style.pointerEvents = 'none';
-                    mobileTopNavbar.style.transform = 'translateY(-100%)';
-                } 
-                // Show navbar when scrolling up
-                else {
-                    mobileTopNavbar.style.opacity = '1';
-                    mobileTopNavbar.style.pointerEvents = 'auto';
-                    mobileTopNavbar.style.transform = 'translateY(0)';
-                }
-                
-                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-            }, false);
-        }
-
-        /* Mobile bottom navbar functionality */
-        const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
-
-        function setMobileNavActive(navName) {
-            mobileNavItems.forEach(item => {
-                const itemNav = item.getAttribute('data-nav');
-                if (itemNav === navName) {
-                    item.classList.add('mobile-nav-active');
-                } else if (itemNav !== 'more') {
-                    item.classList.remove('mobile-nav-active');
-                }
-            });
-        }
-
-        const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
-        if (currentPath.startsWith('/universities')) {
-            setMobileNavActive('universities');
-        } else if (currentPath.startsWith('/booking')) {
-            setMobileNavActive('booking');
-        } else {
-            setMobileNavActive('home');
-        }
-        
-        mobileNavItems.forEach(item => {
-            item.addEventListener('click', function(e) {
-                if (this.classList.contains('mobile-nav-more')) {
-                    e.preventDefault();
-                    // Future: Handle More menu here
-                    return;
-                }
-                
-                // Update active state
-                const navName = this.getAttribute('data-nav');
-                if (navName) {
-                    setMobileNavActive(navName);
-                }
-            });
-        });
-
-        // Auto-detect active section on scroll
-        window.addEventListener('scroll', () => {
-            if (window.location.pathname.startsWith('/universities')) {
-                setMobileNavActive('universities');
-                return;
-            }
-            if (window.location.pathname.startsWith('/booking')) {
-                setMobileNavActive('booking');
-                return;
-            }
-            if (window.scrollY < 120) {
-                setMobileNavActive('home');
-            }
         });
 
         try {
@@ -1075,18 +1141,190 @@
                 </div>
                 <div class="mobile-nav-label">Booking</div>
             </a>
-            <button class="mobile-nav-item mobile-nav-more" id="mobileNavMore" type="button">
-                <div class="mobile-nav-icon">
-                    <svg viewBox="0 0 24 24" fill="none">
-                        <circle cx="6" cy="12" r="2" stroke="currentColor" stroke-width="1.5" fill="white"/>
-                        <circle cx="12" cy="12" r="2" stroke="currentColor" stroke-width="1.5" fill="white"/>
-                        <circle cx="18" cy="12" r="2" stroke="currentColor" stroke-width="1.5" fill="white"/>
-                    </svg>
+            <div class="mobile-nav-more-wrap">
+                <button class="mobile-nav-item mobile-nav-more" id="mobileNavMore" type="button" data-nav="more" aria-expanded="false" aria-controls="mobileNavMoreMenu" aria-haspopup="true">
+                    <div class="mobile-nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <circle cx="6" cy="12" r="2" stroke="currentColor" stroke-width="1.5" fill="white"/>
+                            <circle cx="12" cy="12" r="2" stroke="currentColor" stroke-width="1.5" fill="white"/>
+                            <circle cx="18" cy="12" r="2" stroke="currentColor" stroke-width="1.5" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="mobile-nav-label">More</div>
+                </button>
+                <div class="mobile-nav-more-menu" id="mobileNavMoreMenu" role="menu" aria-label="More pages">
+                    <ul class="more-menu-list">
+                        <li class="more-menu-link">
+                            <a href="{{ url_for('landing_page') }}#about-us" role="menuitem">About Us</a>
+                        </li>
+
+                        <li class="more-menu-accordion{% if request.path in [url_for('admission_requirements'), url_for('how_we_work')] or request.path.startswith('/universities') %} is-open{% endif %}">
+                            <button class="more-menu-accordion__trigger" type="button" aria-expanded="{% if request.path in [url_for('admission_requirements'), url_for('how_we_work')] or request.path.startswith('/universities') %}true{% else %}false{% endif %}">
+                                <span>Education</span>
+                                <span class="more-menu-chevron" aria-hidden="true">&#9654;</span>
+                            </button>
+                            <ul class="more-menu-sublist">
+                                <li><a href="{{ url_for('landing_page') }}#ideaCarouselSection" role="menuitem">Why Choose Australia</a></li>
+                                <li><a href="{{ url_for('admission_requirements') }}" role="menuitem"{% if request.path == url_for('admission_requirements') %} class="is-active"{% endif %}>Admission Requirements</a></li>
+                                <li><a href="{{ url_for('how_we_work') }}" role="menuitem"{% if request.path == url_for('how_we_work') %} class="is-active"{% endif %}>How We Work</a></li>
+                                <li><a href="{{ url_for('universities') }}" role="menuitem"{% if request.path.startswith('/universities') %} class="is-active"{% endif %}>Top Universities</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="more-menu-accordion">
+                            <button class="more-menu-accordion__trigger" type="button" aria-expanded="false">
+                                <span>Student Services</span>
+                                <span class="more-menu-chevron" aria-hidden="true">&#9654;</span>
+                            </button>
+                            <ul class="more-menu-sublist">
+                                <li><a href="{{ url_for('landing_page') }}#choose-us" role="menuitem">Why Choose Us</a></li>
+                                <li><a href="{{ url_for('landing_page') }}#services" role="menuitem">Our Services</a></li>
+                                <li><a href="{{ url_for('booking_page') }}" role="menuitem">Book Consultation</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="more-menu-link">
+                            <a href="{{ url_for('booking_page') }}" role="menuitem">Contact Us</a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="mobile-nav-label">More</div>
-            </button>
+            </div>
         </div>
     </nav>
+
+    <script>
+        (function () {
+            const mobileTopNavbar = document.querySelector('.mobile-top-navbar');
+            const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+            const mobileNavMoreBtn = document.getElementById('mobileNavMore');
+            const mobileNavMoreMenu = document.getElementById('mobileNavMoreMenu');
+            const moreMenuPaths = ['/admission-requirements', '/how-we-work'];
+
+            if (!mobileTopNavbar || !mobileNavItems.length) return;
+
+            function setMobileNavActive(navName) {
+                mobileNavItems.forEach(item => {
+                    const itemNav = item.getAttribute('data-nav');
+                    if (itemNav === navName) {
+                        item.classList.add('mobile-nav-active');
+                    } else {
+                        item.classList.remove('mobile-nav-active');
+                    }
+                });
+            }
+
+            function closeMoreMenu() {
+                mobileNavMoreMenu?.classList.remove('is-open');
+                mobileNavMoreBtn?.setAttribute('aria-expanded', 'false');
+            }
+
+            function openMoreMenu() {
+                mobileNavMoreMenu?.classList.add('is-open');
+                mobileNavMoreBtn?.setAttribute('aria-expanded', 'true');
+            }
+
+            const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
+            if (currentPath.startsWith('/universities')) {
+                setMobileNavActive('universities');
+            } else if (currentPath.startsWith('/booking')) {
+                setMobileNavActive('booking');
+            } else if (moreMenuPaths.includes(currentPath)) {
+                setMobileNavActive('more');
+            } else {
+                setMobileNavActive('home');
+            }
+
+            if (window.innerWidth <= 1024) {
+                let lastScrollTop = 0;
+                window.addEventListener('scroll', function () {
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                    if (scrollTop > lastScrollTop && scrollTop > 100) {
+                        mobileTopNavbar.style.opacity = '0';
+                        mobileTopNavbar.style.pointerEvents = 'none';
+                        mobileTopNavbar.style.transform = 'translateY(-100%)';
+                        closeMoreMenu();
+                    } else {
+                        mobileTopNavbar.style.opacity = '1';
+                        mobileTopNavbar.style.pointerEvents = 'auto';
+                        mobileTopNavbar.style.transform = 'translateY(0)';
+                    }
+
+                    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+                }, false);
+            }
+
+            mobileNavMoreBtn?.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (mobileNavMoreMenu?.classList.contains('is-open')) {
+                    closeMoreMenu();
+                } else {
+                    openMoreMenu();
+                    setMobileNavActive('more');
+                }
+            });
+
+            mobileNavMoreMenu?.querySelectorAll('.more-menu-accordion__trigger').forEach(function (trigger) {
+                trigger.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const group = trigger.closest('.more-menu-accordion');
+                    if (!group) return;
+
+                    const willOpen = !group.classList.contains('is-open');
+                    mobileNavMoreMenu.querySelectorAll('.more-menu-accordion.is-open').forEach(function (openGroup) {
+                        if (openGroup !== group) {
+                            openGroup.classList.remove('is-open');
+                            openGroup.querySelector('.more-menu-accordion__trigger')?.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+
+                    group.classList.toggle('is-open', willOpen);
+                    trigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+                });
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!e.target.closest('.mobile-nav-more-wrap')) {
+                    closeMoreMenu();
+                }
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeMoreMenu();
+            });
+
+            mobileNavItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    const navName = this.getAttribute('data-nav');
+                    if (navName && navName !== 'more') {
+                        closeMoreMenu();
+                        setMobileNavActive(navName);
+                    }
+                });
+            });
+
+            window.addEventListener('scroll', () => {
+                const scrollPath = window.location.pathname.replace(/\/+$/, '') || '/';
+                if (scrollPath.startsWith('/universities')) {
+                    setMobileNavActive('universities');
+                    return;
+                }
+                if (scrollPath.startsWith('/booking')) {
+                    setMobileNavActive('booking');
+                    return;
+                }
+                if (moreMenuPaths.includes(scrollPath)) {
+                    setMobileNavActive('more');
+                    return;
+                }
+                if (window.scrollY < 120) {
+                    setMobileNavActive('home');
+                }
+            });
+        })();
+    </script>
 
     <!-- WhatsApp floating button -->
     <div class="whatsapp-widget" id="whatsappWidget">
