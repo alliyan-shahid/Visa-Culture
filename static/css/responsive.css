@@ -1429,3 +1429,23 @@
     text-transform: uppercase !important;
   }
 }
+
+/* WhatsApp floating button — always bottom-right */
+.whatsapp-widget {
+  position: fixed !important;
+  top: auto !important;
+  left: auto !important;
+  right: calc(24px + env(safe-area-inset-right, 0px)) !important;
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px)) !important;
+  z-index: 1000001 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+}
+
+@media (max-width: 480px) {
+  .whatsapp-widget {
+    right: calc(16px + env(safe-area-inset-right, 0px)) !important;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
