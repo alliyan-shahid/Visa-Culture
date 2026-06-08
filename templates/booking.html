@@ -90,6 +90,23 @@
     box-shadow: 0 0 0 4px rgba(10, 77, 143, 0.09);
     background: #ffffff;
   }
+  .booking-field[type="date"] {
+    color-scheme: light;
+    min-height: 3.1rem;
+    cursor: pointer;
+  }
+  .booking-field[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 1;
+    width: 1.15rem;
+    height: 1.15rem;
+    margin-left: 0.25rem;
+    filter: invert(24%) sepia(72%) saturate(1288%) hue-rotate(182deg) brightness(92%) contrast(93%);
+  }
+  .booking-field[type="date"]::-webkit-datetime-edit,
+  .booking-field[type="date"]::-webkit-datetime-edit-fields-wrapper {
+    color: #0f172a;
+  }
   .booking-label {
     display: grid;
     gap: 0.55rem;
@@ -246,4 +263,28 @@
     </div>
   </div>
 </section>
+<script>
+  (function () {
+    const dateInput = document.getElementById('date');
+    if (!dateInput) return;
+
+    function openDatePicker() {
+      if (typeof dateInput.showPicker === 'function') {
+        try {
+          dateInput.showPicker();
+        } catch (_) {
+          /* already open or unsupported gesture */
+        }
+      }
+    }
+
+    dateInput.addEventListener('click', openDatePicker);
+    dateInput.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openDatePicker();
+      }
+    });
+  })();
+</script>
 {% endblock %}
