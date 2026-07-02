@@ -23,11 +23,12 @@
                 <p class="mt-4 text-4xl font-semibold text-slate-950">{{ clients|length }}</p>
                 <p class="mt-2 text-slate-600">Total registered clients.</p>
             </div>
-            <div class="rounded-[2rem] bg-white p-8 shadow-soft">
+            <a href="{{ url_for('appointments_page') }}" class="group block rounded-[2rem] bg-white p-8 shadow-soft transition hover:-translate-y-1 hover:shadow-2xl">
                 <p class="text-sm uppercase tracking-[0.35em] text-muted">Requests</p>
                 <p class="mt-4 text-4xl font-semibold text-slate-950">{{ requests|length }}</p>
                 <p class="mt-2 text-slate-600">Appointment requests received.</p>
-            </div>
+                <p class="mt-5 text-sm font-semibold text-primary transition group-hover:text-slate-900">View all requests</p>
+            </a>
             <div class="rounded-[2rem] bg-white p-8 shadow-soft">
                 <p class="text-sm uppercase tracking-[0.35em] text-muted">Current user</p>
                 <p class="mt-4 text-4xl font-semibold text-slate-950">{{ user.name }}</p>
@@ -52,6 +53,7 @@
                                 <th class="px-6 py-4 font-semibold uppercase tracking-[0.15em] text-slate-500">University</th>
                                 <th class="px-6 py-4 font-semibold uppercase tracking-[0.15em] text-slate-500">Requested date</th>
                                 <th class="px-6 py-4 font-semibold uppercase tracking-[0.15em] text-slate-500">Status</th>
+                                <th class="px-6 py-4 font-semibold uppercase tracking-[0.15em] text-slate-500">Action</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-200 bg-white">
@@ -60,8 +62,11 @@
                                 <td class="px-6 py-4 text-slate-800">{{ request.name }}</td>
                                 <td class="px-6 py-4 text-slate-600">{{ request.email }}</td>
                                 <td class="px-6 py-4 text-slate-600">{{ request.university or 'N/A' }}</td>
-                                <td class="px-6 py-4 text-slate-600">{{ request.date or request.requested_at }}</td>
+                                <td class="px-6 py-4 text-slate-600">{{ request.date or request.requested_at.strftime('%Y-%m-%d %H:%M') }}</td>
                                 <td class="px-6 py-4 text-slate-600">Pending</td>
+                                <td class="px-6 py-4">
+                                    <a href="{{ url_for('appointment_detail', request_id=request.id) }}" class="inline-flex rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-900">View</a>
+                                </td>
                             </tr>
                             {% endfor %}
                         </tbody>

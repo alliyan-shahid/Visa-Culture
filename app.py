@@ -520,6 +520,21 @@ def developer_stats():
         slow_endpoints=slow_endpoints,
     )
 
+@app.route("/appointments")
+@admin_or_developer_required
+def appointments_page():
+    requests = AppointmentRequest.query.order_by(AppointmentRequest.requested_at.desc()).all()
+    return render_template("appointments.html", requests=requests)
+
+@app.route("/appointments/<int:request_id>")
+@admin_or_developer_required
+def appointment_detail(request_id):
+    appointment = AppointmentRequest.query.get(request_id)
+    if appointment is None:
+        flash("Appointment request not found.", "error")
+        return redirect(url_for("appointments_page"))
+    return render_template("appointment_detail.html", request=appointment)
+
 @app.route("/book", methods=["POST"])
 def book_appointment():
     name = request.form.get("name")

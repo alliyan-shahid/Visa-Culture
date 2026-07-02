@@ -23,11 +23,12 @@
                 <p class="mt-4 text-4xl font-semibold text-slate-950">{{ total_users }}</p>
                 <p class="mt-2 text-slate-600">All accounts currently registered.</p>
             </div>
-            <div class="rounded-[2rem] bg-white p-8 shadow-soft">
+            <a href="{{ url_for('appointments_page') }}" class="group block rounded-[2rem] bg-white p-8 shadow-soft transition hover:-translate-y-1 hover:shadow-2xl">
                 <p class="text-sm uppercase tracking-[0.35em] text-muted">Appointment requests</p>
                 <p class="mt-4 text-4xl font-semibold text-slate-950">{{ total_requests }}</p>
                 <p class="mt-2 text-slate-600">All booking requests in the system.</p>
-            </div>
+                <p class="mt-5 text-sm font-semibold text-primary transition group-hover:text-slate-900">Review requests</p>
+            </a>
             <div class="rounded-[2rem] bg-white p-8 shadow-soft">
                 <p class="text-sm uppercase tracking-[0.35em] text-muted">Active database</p>
                 <p class="mt-4 text-4xl font-semibold text-slate-950">{{ active_db }}</p>

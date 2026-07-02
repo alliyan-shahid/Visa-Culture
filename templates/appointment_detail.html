@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}Appointment Request Details | Visa Culture{% endblock %}
+
+{% block content %}
+<section class="bg-slate-50 py-16">
+    <div class="mx-auto max-w-5xl px-6">
+        <div class="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+                <p class="text-sm uppercase tracking-[0.35em] text-primary">Request Details</p>
+                <h1 class="mt-4 text-4xl font-bold text-slate-950">{{ request.name }} — {{ request.university or 'No university specified' }}</h1>
+                <p class="mt-3 max-w-2xl text-slate-600">Full details for this appointment request, including contact info, message, and requested date.</p>
+            </div>
+            <a href="{{ url_for('appointments_page') }}" class="rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:border-primary">Back to requests</a>
+        </div>
+
+        <div class="rounded-[1.5rem] bg-white p-10 shadow-soft border border-slate-200">
+            <div class="grid gap-8 lg:grid-cols-2">
+                <div>
+                    <h2 class="text-xl font-semibold text-slate-950">Contact information</h2>
+                    <dl class="mt-5 space-y-4 text-sm text-slate-600">
+                        <div>
+                            <dt class="font-semibold text-slate-900">Name</dt>
+                            <dd class="mt-1">{{ request.name }}</dd>
+                        </div>
+                        <div>
+                            <dt class="font-semibold text-slate-900">Email</dt>
+                            <dd class="mt-1">{{ request.email or 'Not provided' }}</dd>
+                        </div>
+                        <div>
+                            <dt class="font-semibold text-slate-900">Phone</dt>
+                            <dd class="mt-1">{{ request.phone }}</dd>
+                        </div>
+                        <div>
+                            <dt class="font-semibold text-slate-900">Address</dt>
+                            <dd class="mt-1">{{ request.address }}</dd>
+                        </div>
+                    </dl>
+                </div>
+                <div>
+                    <h2 class="text-xl font-semibold text-slate-950">Request details</h2>
+                    <dl class="mt-5 space-y-4 text-sm text-slate-600">
+                        <div>
+                            <dt class="font-semibold text-slate-900">University</dt>
+                            <dd class="mt-1">{{ request.university or 'N/A' }}</dd>
+                        </div>
+                        <div>
+                            <dt class="font-semibold text-slate-900">Requested date</dt>
+                            <dd class="mt-1">{{ request.date or request.requested_at.strftime('%Y-%m-%d %H:%M') }}</dd>
+                        </div>
+                        <div>
+                            <dt class="font-semibold text-slate-900">Submitted at</dt>
+                            <dd class="mt-1">{{ request.requested_at.strftime('%Y-%m-%d %H:%M') }}</dd>
+                        </div>
+                        <div>
+                            <dt class="font-semibold text-slate-900">Associated user</dt>
+                            <dd class="mt-1">{{ request.user.name if request.user else 'Guest booking' }}</dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="mt-10">
+                <h2 class="text-xl font-semibold text-slate-950">Message</h2>
+                <div class="mt-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 text-slate-700">
+                    {{ request.message or 'No message provided.' }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
