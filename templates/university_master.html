@@ -1,5 +1,27 @@
 ﻿{% extends 'base.html' %}
 {% block title %}Study at {{ profile.name }} from Pakistan | Visa Culture{% endblock %}
+{% block head %}
+{% if content.faqs %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for faq in content.faqs %}
+    {
+      "@type": "Question",
+      "name": "{{ faq.q | replace('"', '\\"') }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ faq.a | replace('"', '\\"') | replace('\n', ' ') }}"
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+{% endblock %}
 {% block content %}
 <style>
 :root {
@@ -128,7 +150,7 @@
     </div>
     <div class="relative z-10">
       <div class="hero-card-frame">
-        <img src="{{ profile.hero_image }}" alt="{{ profile.name }} campus" class="h-[520px] w-full object-cover">
+        <img src="{{ profile.hero_image }}" alt="{{ profile.name }} campus" class="h-[520px] w-full object-cover" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
@@ -140,5 +162,5 @@
 <section class="sec bg-white"><div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8"><div class="card p-8"><h2 class="text-3xl font-bold">Student Life and Accommodation</h2><ul class="mt-4 space-y-2 text-slate-600">{% for s in content.student_life %}<li>- {{s}}</li>{% endfor %}</ul><h3 class="font-bold mt-6">Accommodation</h3><ul class="mt-3 space-y-2 text-slate-600">{% for a in content.accommodation %}<li>- {{a.type}}: {{a.range}}</li>{% endfor %}</ul></div><div class="card p-8"><h2 class="text-3xl font-bold">Visa, Career and PR</h2><ol class="mt-4 space-y-2 text-slate-600">{% for v in content.visa_steps %}<li>{{loop.index}}. {{v}}</li>{% endfor %}</ol><h3 class="font-bold mt-6">Career Outlook</h3><ul class="mt-3 space-y-2 text-slate-600">{% for c in content.career %}<li>- {{c}}</li>{% endfor %}</ul></div></div></section>
 <section class="sec bg-slate-50"><div class="max-w-7xl mx-auto"><h2 class="text-4xl font-bold">Application Timeline</h2><div class="mt-5 grid md:grid-cols-2 lg:grid-cols-3 gap-4">{% for t in content.timeline %}<div class="card p-5"><p class="text-sm text-slate-500">Step {{loop.index}}</p><p class="font-semibold mt-1">{{t}}</p></div>{% endfor %}</div></div></section>
 <section class="sec bg-white"><div class="max-w-7xl mx-auto"><h2 class="text-4xl font-bold">FAQs</h2><div class="mt-6 space-y-3">{% for f in content.faqs %}<details class="card p-5"><summary class="font-semibold">{{f.q}}</summary><p class="mt-2 text-slate-600">{{f.a}}</p></details>{% endfor %}</div></div></section>
-<section id="apply" class="sec text-white" style="background:var(--h)"><div class="max-w-4xl mx-auto text-center"><h2 class="text-5xl font-bold">Apply with Confidence</h2><p class="mt-4 text-slate-200">Get profile evaluation, scholarship strategy, documentation support, and visa guidance from Visa Culture.</p><a href="{{ url_for('booking_page') }}" class="inline-block mt-7 px-7 py-4 rounded-xl font-semibold" style="background:var(--s)">Book Consultation</a></div></section>
+<section id="apply" class="sec text-white apply-section"><div class="max-w-4xl mx-auto text-center"><h2 class="text-5xl font-bold">Apply with Confidence</h2><p class="mt-4 text-slate-200">Get profile evaluation, scholarship strategy, documentation support, and visa guidance from Visa Culture.</p><a href="{{ url_for('booking_page') }}" class="inline-block mt-7 px-7 py-4 rounded-xl font-semibold apply-button">Book Consultation</a></div></section>
 {% endblock %}

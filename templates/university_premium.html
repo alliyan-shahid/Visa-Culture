@@ -1,6 +1,31 @@
 ﻿{% extends 'base.html' %}
 {% block title %}{{ profile.name }} Guide for Pakistani Students | Visa Culture{% endblock %}
 
+{% block meta_description %}Study at {{ profile.name }} from Pakistan with Visa Culture's step-by-step admissions, scholarship, and student visa guidance.{% endblock %}
+
+{% block head %}
+{% if content.faqs %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for faq in content.faqs %}
+    {
+      "@type": "Question",
+      "name": "{{ faq.q | replace('"', '\\"') }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ faq.a | replace('"', '\\"') | replace('\n', ' ') }}"
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+{% endblock %}
+
 {% block content %}
 <style>
   :root {
@@ -156,7 +181,7 @@
     </div>
     <div class="relative z-10">
       <div class="hero-card-frame">
-        <img src="{{ profile.hero_image }}" alt="{{ profile.name }} campus" class="w-full h-[520px] object-cover">
+        <img src="{{ profile.hero_image }}" alt="{{ profile.name }} campus" class="w-full h-[520px] object-cover" loading="lazy" decoding="async">
       </div>
       <div class="absolute -bottom-5 -left-5 u-card p-4 max-w-xs">
         <p class="text-sm font-bold text-slate-900">Scholarship Advantage</p>
@@ -217,7 +242,7 @@
     <div class="space-y-4">
       {% for b in content.budget_cards %}
       <div class="u-card p-6">
-        <p class="text-sm text-slate-500">{{ b.label }}</p><p class="text-2xl font-bold mt-1" style="color: var(--u-primary);">{{ b.value }}</p>
+        <p class="text-sm text-slate-500">{{ b.label }}</p><p class="text-2xl font-bold mt-1 stat-value">{{ b.value }}</p>
       </div>
       {% endfor %}
     </div>
@@ -301,7 +326,7 @@
       <div class="mt-5 pl-8 space-y-4">
         {% for i in content.timeline %}
         <div class="relative">
-          <span class="absolute -left-10 top-1 w-6 h-6 rounded-full text-white text-xs flex items-center justify-center" style="background: var(--u-secondary);">{{ loop.index }}</span>
+          <span class="absolute -left-10 top-1 w-6 h-6 rounded-full text-white text-xs flex items-center justify-center step-index">{{ loop.index }}</span>
           <p class="font-semibold text-slate-800">{{ i }}</p>
         </div>
         {% endfor %}
@@ -339,12 +364,12 @@
   </div>
 </section>
 
-<section id="apply-plan" class="u-section text-white" style="background: var(--u-hero);">
+<section id="apply-plan" class="u-section text-white apply-plan-section">
   <div class="max-w-5xl mx-auto text-center">
     <p class="text-sm uppercase tracking-[0.35em] text-slate-300">Premium Advisory Support</p>
     <h2 class="mt-5 text-5xl font-bold">Build Your {{ profile.short_name }} Offer Strategy with Visa Culture</h2>
     <p class="mt-5 text-lg text-slate-200">From profile evaluation to scholarship targeting, application drafting, visa file building and pre-departure execution, we manage the full journey for Pakistani students.</p>
-    <a href="{{ url_for('booking_page') }}" class="inline-block mt-8 rounded-xl px-7 py-4 font-semibold" style="background: var(--u-secondary);">Book Your Consultation</a>
+    <a href="{{ url_for('booking_page') }}" class="inline-block mt-8 rounded-xl px-7 py-4 font-semibold apply-plan-button">Book Your Consultation</a>
   </div>
 </section>
 {% endblock %}

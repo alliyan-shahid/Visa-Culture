@@ -2,6 +2,8 @@
 
 {% block title %}Book Appointment | Visa Culture{% endblock %}
 
+{% block meta_description %}Schedule a consultation with Visa Culture for Pakistani students seeking Australian university admission, visa guidance, and scholarship support.{% endblock %}
+
 {% block head %}
 <style>
   .booking-page {
@@ -162,10 +164,10 @@
         <div class="space-y-6">
           <p class="booking-eyebrow">Book consultancy</p>
           <h1 class="booking-title max-w-2xl text-[2.35rem] font-semibold text-slate-950 sm:text-[3.25rem] lg:text-[4.05rem]">
-            {{ page_summary.title }}
+            {{ page_summary.title if page_summary is defined else 'Book Appointment with Visa Culture' }}
           </h1>
           <p class="max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
-            {{ page_summary.subtitle }}
+            {{ page_summary.subtitle if page_summary is defined else 'Schedule a consultation for Australian university admissions, scholarships, and student visa support.' }}
           </p>
           <div class="flex flex-wrap gap-2.5">
             <span class="booking-chip">Free initial consultation</span>

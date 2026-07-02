@@ -5,7 +5,7 @@ from datetime import datetime
 from functools import wraps
 
 from dotenv import load_dotenv
-from flask import Flask, flash, g, has_request_context, redirect, render_template, request, session, url_for
+from flask import Flask, flash, g, has_request_context, make_response, redirect, render_template, request, session, url_for
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import event, text
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -556,6 +556,61 @@ def book_appointment():
 def logout():
     session.pop("user_id", None)
     return redirect(url_for("landing_page"))
+
+@app.route("/robots.txt")
+def robots_txt():
+    content = """User-agent: *
+Disallow: /admin
+Disallow: /developer
+Disallow: /login
+Disallow: /register
+Disallow: /dashboard
+Disallow: /book
+
+Sitemap: {}/sitemap.xml
+""".format(request.url_root.rstrip("/"))
+    response = make_response(content)
+    response.headers["Content-Type"] = "text/plain"
+    return response
+
+@app.route("/sitemap.xml")
+def sitemap_xml():
+    pages = [
+        {"path": "", "priority": 1.0},
+        {"path": "admission-requirements", "priority": 0.8},
+        {"path": "how-we-work", "priority": 0.8},
+        {"path": "universities", "priority": 0.9},
+        {"path": "booking", "priority": 0.7},
+    ]
+    university_pages = [
+        {"path": "universities/university-of-melbourne", "priority": 0.9},
+        {"path": "universities/australian-national-university", "priority": 0.9},
+        {"path": "universities/university-of-sydney", "priority": 0.9},
+        {"path": "universities/unsw-sydney", "priority": 0.9},
+        {"path": "universities/monash-university", "priority": 0.9},
+        {"path": "universities/university-of-queensland", "priority": 0.9},
+    ]
+
+    url_root = request.url_root.rstrip("/")
+    urls = pages + university_pages
+    lastmod = datetime.utcnow().date().isoformat()
+
+    xml_items = [
+        "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+        "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">",
+    ]
+    for entry in urls:
+        xml_items.append("  <url>")
+        xml_items.append(f"    <loc>{url_root}/{entry['path']}</loc>")
+        xml_items.append(f"    <lastmod>{lastmod}</lastmod>")
+        xml_items.append("    <changefreq>weekly</changefreq>")
+        xml_items.append(f"    <priority>{entry['priority']:.1f}</priority>")
+        xml_items.append("  </url>")
+    xml_items.append("</urlset>")
+
+    response = make_response("\n".join(xml_items))
+    response.headers["Content-Type"] = "application/xml"
+    return response
 
 if __name__ == "__main__":
     app.run(debug=True)

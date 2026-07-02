@@ -1,638 +1,64 @@
 ﻿{% extends 'base.html' %}
 {% block title %}Study at University of Melbourne from Pakistan | Visa Culture{% endblock %}
+{% block meta_description %}Premium University of Melbourne guide for Pakistani students: admissions, IELTS/PTE, scholarships, visa steps, living costs, student life and application support.{% endblock %}
 {% block head %}
-<meta name="description" content="Premium University of Melbourne guide for Pakistani students: admissions, IELTS/PTE, scholarships, visa steps, living costs, student life and application support.">
 <meta name="keywords" content="University of Melbourne Pakistani students, study in Australia, Melbourne scholarships, Australian student visa, IELTS PTE requirements">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/premium-animations.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/landing-common.css') }}">
 <style>
 :root { --hero-from: #041f3c; --hero-to: #0c4a6e; --accent: #38bdf8; --panel: rgba(255,255,255,0.12); }
-.hero-section { 
-  background: linear-gradient(135deg, var(--hero-from), var(--hero-to));
-  height: 70vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  min-height: unset !important;
-}
-@media (min-width: 768px) {
-  .hero-section {
-    height: 79vh;
-    background: radial-gradient(circle at top right, rgba(56,189,248,0.22), transparent 30%), linear-gradient(135deg, var(--hero-from), var(--hero-to));
-  }
-}
-@media (min-width: 1024px) {
-  .hero-section {
-    height: 85vh;
-  }
-}
-/* Hide extra content on mobile */
-.hero-grid-right { display: none !important; }
-@media (min-width: 1024px) {
-  .hero-grid-right { display: block !important; }
-}
-/* Hide badge and description on mobile */
-.hero-section .inline-flex.rounded-full { display: none !important; }
-@media (min-width: 1024px) {
-  .hero-section .inline-flex.rounded-full { display: inline-flex !important; }
-}
-.hero-section p { display: none !important; }
-@media (min-width: 1024px) {
-  .hero-section p { display: block !important; }
-}
-/* Hide buttons on mobile, show as single centered on sm */
-.hero-section .mt-10.flex { display: none !important; }
-@media (min-width: 640px) {
-  .hero-section .mt-10.flex { display: flex !important; }
-}
-@media (min-width: 1024px) {
-  .hero-section .mt-10.flex { display: flex !important; }
-}
-/* Title sizing */
-.hero-section h1 { 
-  font-size: 1.75rem;
-  margin-top: 1rem;
-}
-@media (min-width: 640px) {
-  .hero-section h1 { 
-    font-size: 2.25rem;
-  }
-}
-@media (min-width: 1024px) {
-  .hero-section h1 { 
-    font-size: 3.4rem;
-    margin-top: 2rem;
-  }
-}
-.section-card { background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255,255,255,0.2); opacity: 0; animation: fadeInUp 0.9s ease-out forwards; animation-delay: 0.2s; }
-.hero-highlight { color: var(--accent); text-shadow: 0 0 24px rgba(56,189,248,0.28); }
-.accent-btn { background: var(--accent); color: #0f172a; transition: transform 0.28s ease, box-shadow 0.28s ease; }
-.accent-btn:hover { transform: translateY(-2px); box-shadow: 0 18px 36px rgba(56,189,248,0.22); }
-.accordion-button { border: 1px solid rgba(255,255,255,0.14); background: rgba(255,255,255,0.08); }
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
-.hero-fade-in { opacity: 0; animation: fadeInUp 1s ease-out forwards; }
 </style>
-<style>
-  background: linear-gradient(120deg, #fde68a 0%, #fbbf24 52%, #f59e0b 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.hero-secondary-btn {
-  border: 1px solid rgba(147,197,253,.45);
-  background: rgba(255,255,255,.08);
-  color: #e8f2ff;
-}
-.hero-secondary-btn:hover {
-  background: rgba(255,255,255,.14);
-}
-.hero-stat-card {
-  background: linear-gradient(155deg, rgba(255,255,255,.13), rgba(148,163,184,.08));
-  border: 1px solid rgba(148,197,255,.22);
-}
-.hero-stat-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(125,211,252,.45);
-}
-.mel-hero-title {
-  text-shadow: 0 18px 42px rgba(4,11,26,.38);
-}
-.mel-hero-gradient {
-  background: linear-gradient(115deg, #ffffff 0%, #e0f2fe 40%, #93c5fd 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.mel-hero-gold {
-  background: linear-gradient(120deg, #fde68a 0%, #fbbf24 48%, #f59e0b 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.mel-hero-shell {
-  border: 1px solid rgba(147,197,253,.32);
-  background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
-  backdrop-filter: blur(8px);
-  border-radius: 1.25rem;
-  padding: 0.45rem 0.95rem;
-  display: inline-flex;
-}
-.mel-premium-frame {
-  position: relative;
-  border: 1.5px solid rgba(201,162,75,.6);
-  border-radius: 2rem;
-  overflow: hidden;
-  box-shadow: 0 0 30px rgba(201,162,75,.25), inset 0 0 20px rgba(255,255,255,.05);
-  background: rgba(255,255,255,.02);
-}
-.mel-premium-frame::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 2rem;
-  pointer-events: none;
-  background: linear-gradient(135deg, rgba(201,162,75,.3) 0%, transparent 50%, rgba(99,179,255,.2) 100%);
-}
-.mel-premium-orb {
-  position: absolute;
-  border-radius: 9999px;
-  filter: blur(36px);
-  pointer-events: none;
-}
-.mel-primary-btn {
-  background: linear-gradient(135deg, #7dd3fc, #3b82f6);
-  color: #041a3d;
-  box-shadow: 0 18px 44px rgba(30,64,175,.35);
-}
-.mel-primary-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 24px 56px rgba(30,64,175,.45);
-}
-.mel-section-soft {
-  background: linear-gradient(180deg, #f7fbff 0%, #eef5ff 100%);
-}
-.mel-kicker {
-  font-size: .75rem;
-  text-transform: uppercase;
-  letter-spacing: .28em;
-  color: var(--mel-navy-soft);
-  font-weight: 700;
-}
-.mel-copy {
-  color: #475569;
-  line-height: 1.8;
-}
-.mel-list li {
-  position: relative;
-  padding-left: 1.1rem;
-}
-.mel-list li::before {
-  content: "";
-  width: .42rem;
-  height: .42rem;
-  border-radius: 9999px;
-  background: #3b82f6;
-  position: absolute;
-  left: 0;
-  top: .62rem;
-}
-.mel-badge-card {
-  border: 1px solid rgba(96,165,250,.25);
-  background: linear-gradient(145deg, #ffffff, #f0f6ff);
-}
-.mel-timeline::before { content:''; position:absolute; left: 14px; top: 12px; bottom: 12px; width:2px; background: linear-gradient(#1c4788, rgba(28,71,136,.08)); }
-.faq-item[open] { box-shadow: 0 20px 55px rgba(11,31,68,.12); }
-
-/* PREMIUM REDESIGN ANIMATIONS & STYLES */
-.premium-section {
-  position: relative;
-  overflow: hidden;
-}
-
-.premium-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(99,179,255,.08), transparent 50%),
-              radial-gradient(circle at 0% 100%, rgba(201,162,75,.06), transparent 50%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.premium-title {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: #0b1f44;
-  line-height: 1.15;
-}
-
-.premium-subtitle {
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: #1b4f9a;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.premium-subtitle::before {
-  content: '';
-  width: 3rem;
-  height: 2px;
-  background: linear-gradient(90deg, #1b4f9a, transparent);
-  border-radius: 1px;
-}
-
-/* Luxury Cards */
-.luxury-card {
-  position: relative;
-  border-radius: 1.5rem;
-  border: 1px solid rgba(201, 162, 75, 0.2);
-  background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(240,248,255,0.4));
-  backdrop-filter: blur(10px);
-  padding: 1.75rem;
-  transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
-  overflow: hidden;
-}
-
-.luxury-card::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  background: linear-gradient(135deg, rgba(201,162,75,0.3), rgba(99,179,255,0.2));
-  border-radius: 1.5rem;
-  opacity: 0;
-  transition: opacity 0.45s ease;
-  z-index: -1;
-}
-
-.luxury-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(201, 162, 75, 0.5);
-  box-shadow: 0 20px 60px rgba(11, 31, 68, 0.15);
-}
-
-.luxury-card:hover::before {
-  opacity: 1;
-}
-
-.luxury-card-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  display: inline-block;
-}
-
-.luxury-card-title {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #0b1f44;
-  margin-bottom: 0.75rem;
-}
-
-.luxury-card-text {
-  font-size: 0.95rem;
-  color: #475569;
-  line-height: 1.6;
-}
-
-/* Stat Counter Animation */
-.stat-counter {
-  font-family: "Playfair Display", serif;
-  font-size: 2.5rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, #1b4f9a, #3b82f6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-@keyframes count-up {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-.stat-item {
-  animation: count-up 0.8s ease-out forwards;
-}
-
-/* Interactive Timeline */
-.premium-timeline {
-  position: relative;
-  padding: 2rem 0;
-}
-
-.timeline-step {
-  position: relative;
-  padding: 1.5rem 0;
-  display: flex;
-  gap: 1.5rem;
-  align-items: flex-start;
-  animation: timeline-slide 0.6s ease-out forwards;
-  opacity: 0;
-}
-
-@keyframes timeline-slide {
-  from { opacity: 0; transform: translateX(-20px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-.timeline-step:nth-child(1) { animation-delay: 0.1s; }
-.timeline-step:nth-child(2) { animation-delay: 0.2s; }
-.timeline-step:nth-child(3) { animation-delay: 0.3s; }
-.timeline-step:nth-child(4) { animation-delay: 0.4s; }
-.timeline-step:nth-child(5) { animation-delay: 0.5s; }
-.timeline-step:nth-child(6) { animation-delay: 0.6s; }
-
-.timeline-dot {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #7dd3fc, #3b82f6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: 700;
-  flex-shrink: 0;
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
-  font-size: 0.95rem;
-}
-
-.timeline-content {
-  flex: 1;
-  padding-top: 0.25rem;
-}
-
-.timeline-title {
-  font-weight: 700;
-  color: #0b1f44;
-  margin-bottom: 0.5rem;
-  font-size: 1.05rem;
-}
-
-.timeline-desc {
-  color: #475569;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-/* Testimonial Cards */
-.testimonial-card {
-  position: relative;
-  border-radius: 1.75rem;
-  background: linear-gradient(135deg, #ffffff, #f0f8ff);
-  border: 1px solid rgba(96, 165, 250, 0.2);
-  padding: 2rem;
-  transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
-  display: flex;
-  flex-direction: column;
-}
-
-.testimonial-card::before {
-  content: '"';
-  position: absolute;
-  top: 0.5rem;
-  left: 1rem;
-  font-size: 4rem;
-  color: rgba(201, 162, 75, 0.15);
-  font-family: "Playfair Display", serif;
-}
-
-.testimonial-text {
-  color: #1e293b;
-  font-size: 1rem;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-  flex: 1;
-  position: relative;
-  z-index: 1;
-}
+{% block faq_schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What IELTS/PTE scores do I need for Melbourne?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most programs ask for IELTS 6.5 overall with at least 6.0 in each band. Some competitive streams require 7.0. PTE is accepted with equivalent scores. We provide target scores for each course during counseling."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should I apply for intake?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Melbourne has main intakes in February and July. Apply 8-10 months in advance to allow time for admissions, scholarship review, and visa processing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does it cost to live in Melbourne?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Monthly living costs are usually around AUD 1,500 to 2,000 for rent, food, transport, and utilities. With scholarships and part-time work, many students manage a comfortable lifestyle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I work while studying?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. International students can work up to 48 hours per fortnight during term and full-time during university breaks. At approximately AUD 31/hour, this provides meaningful income to support living expenses and gain valuable work experience."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Genuine Student Requirement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Genuine Student requirement assesses whether you are genuinely intending to study. It examines your academic background, course choice, career goals, financial situation, and personal circumstances. A strong, personalized statement showing your genuine intent is critical for visa approval."
+      }
+    }
+  ]
+}
+</script>
+{% endblock %}
 
-.testimonial-author {
-  font-weight: 700;
-  color: #0b1f44;
-  font-size: 1.05rem;
-}
-
-.testimonial-role {
-  color: #64748b;
-  font-size: 0.9rem;
-  margin-top: 0.25rem;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 25px 70px rgba(11, 31, 68, 0.12);
-}
-
-/* Premium FAQ */
-.faq-accordion {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.faq-item {
-  border-radius: 1.5rem;
-  border: 1px solid rgba(96, 165, 250, 0.2);
-  background: linear-gradient(135deg, #ffffff, #f0f8ff);
-  overflow: hidden;
-  transition: all 0.4s ease;
-}
-
-.faq-item[open] {
-  box-shadow: 0 20px 60px rgba(11, 31, 68, 0.1);
-  border-color: rgba(201, 162, 75, 0.4);
-}
-
-.faq-summary {
-  cursor: pointer;
-  padding: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-weight: 700;
-  color: #0b1f44;
-  font-size: 1.05rem;
-  user-select: none;
-  transition: color 0.3s ease;
-}
-
-.faq-item[open] .faq-summary {
-  color: #1b4f9a;
-}
-
-.faq-summary::after {
-  content: '\25BC';
-  transition: transform 0.4s ease;
-  font-size: 0.75rem;
-  color: #1b4f9a;
-}
-
-.faq-item[open] .faq-summary::after {
-  transform: rotate(-180deg);
-}
-
-.faq-content {
-  padding: 0 1.5rem 1.5rem;
-  color: #475569;
-  line-height: 1.8;
-  font-size: 0.95rem;
-}
-
-/* Smooth Parallax */
-.parallax-img {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* Feature Grid with Stagger */
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.75rem;
-  animation: grid-fade-in 0.8s ease-out;
-}
-
-@keyframes grid-fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.feature-item {
-  opacity: 0;
-  animation: feature-slide-up 0.6s ease-out forwards;
-}
-
-.feature-item:nth-child(1) { animation-delay: 0.1s; }
-.feature-item:nth-child(2) { animation-delay: 0.2s; }
-.feature-item:nth-child(3) { animation-delay: 0.3s; }
-.feature-item:nth-child(4) { animation-delay: 0.4s; }
-.feature-item:nth-child(5) { animation-delay: 0.5s; }
-.feature-item:nth-child(6) { animation-delay: 0.6s; }
-.feature-item:nth-child(7) { animation-delay: 0.7s; }
-.feature-item:nth-child(8) { animation-delay: 0.8s; }
-
-@keyframes feature-slide-up {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* CTA Button Styles */
-.premium-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.875rem 2rem;
-  border-radius: 0.875rem;
-  font-weight: 700;
-  font-size: 0.95rem;
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-  cursor: pointer;
-  border: none;
-}
-
-.premium-btn-primary {
-  background: linear-gradient(135deg, #7dd3fc, #3b82f6);
-  color: #041a3d;
-  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.3);
-}
-
-.premium-btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 25px 60px rgba(59, 130, 246, 0.4);
-}
-
-.premium-btn-secondary {
-  border: 2px solid rgba(201, 162, 75, 0.5);
-  background: rgba(255, 255, 255, 0.5);
-  color: #0b1f44;
-  backdrop-filter: blur(8px);
-}
-
-.premium-btn-secondary:hover {
-  border-color: rgba(201, 162, 75, 0.8);
-  background: rgba(255, 255, 255, 0.7);
-}
-
-/* Enhanced Premium Animation Effects */
-.mel-reveal {
-  opacity: 0;
-  animation: revealUp 0.8s var(--ease-smooth) forwards;
-}
-
-.feature-item {
-  opacity: 0;
-  animation: revealUp 0.6s var(--ease-smooth) forwards;
-}
-
-.feature-item:nth-child(1) { animation-delay: 0.1s; }
-.feature-item:nth-child(2) { animation-delay: 0.15s; }
-.feature-item:nth-child(3) { animation-delay: 0.2s; }
-.feature-item:nth-child(4) { animation-delay: 0.25s; }
-.feature-item:nth-child(5) { animation-delay: 0.3s; }
-.feature-item:nth-child(6) { animation-delay: 0.35s; }
-.feature-item:nth-child(7) { animation-delay: 0.4s; }
-.feature-item:nth-child(8) { animation-delay: 0.45s; }
-
-.luxury-card {
-  transition: all var(--transition-slow);
-}
-
-.luxury-card:hover {
-  box-shadow: 0 25px 70px rgba(11, 31, 68, 0.2);
-}
-
-.luxury-card-icon {
-  transition: transform 0.3s var(--ease-smooth);
-}
-
-.luxury-card:hover .luxury-card-icon {
-  animation: float 2s ease-in-out infinite;
-}
-
-.premium-btn-primary {
-  transition: all var(--transition-base);
-  position: relative;
-  overflow: hidden;
-}
-
-.premium-btn-primary::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.3), transparent 80%);
-  opacity: 0;
-  transition: opacity var(--transition-fast);
-}
-
-.premium-btn-primary:hover::after {
-  opacity: 1;
-}
-
-.premium-title {
-  animation: revealDown 0.8s var(--ease-smooth) forwards;
-  opacity: 0;
-}
-
-.premium-subtitle {
-  animation: revealUp 0.8s var(--ease-smooth) forwards;
-  animation-delay: 0.2s;
-  opacity: 0;
-}
-
-@media (max-width: 767px) {
-  .feature-item:nth-child(1) { animation-delay: 0.05s; }
-  .feature-item:nth-child(2) { animation-delay: 0.1s; }
-  .feature-item:nth-child(3) { animation-delay: 0.15s; }
-  .feature-item:nth-child(4) { animation-delay: 0.2s; }
-
-  .luxury-card:hover {
-    transform: translateY(-6px);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .mel-reveal, .mel-card, .mel-float { transition:none !important; animation:none !important; transform:none !important; opacity:1 !important; }
-}
-</style>
 <script src="{{ url_for('static', filename='js/premium-animations.js') }}"></script>
 {% endblock %}
 {% block content %}
@@ -642,7 +68,7 @@
       <picture class="block w-full h-full">
         <source media="(max-width: 640px)" srcset="{{ url_for('static', filename='images/m hero melbourne.webp') }}" type="image/webp">
         <source srcset="{{ url_for('static', filename='images/hero melbourne.webp') }}" type="image/webp">
-        <img src="{{ url_for('static', filename='images/hero melbourne.webp') }}" alt="University of Melbourne hero" class="w-full h-full object-cover" style="background: url('https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=1200&h=900&fit=crop') center/cover no-repeat;">
+        <img src="{{ url_for('static', filename='images/hero melbourne.webp') }}" alt="University of Melbourne hero" class="w-full h-full object-cover"  loading="lazy" decoding="async">
       </picture>
     </div>
     <div class="absolute inset-0 bg-slate-950/45 hidden lg:block"></div>
@@ -1057,11 +483,11 @@
     </div>
   </section>
 
-  <section id="faq" class="premium-section relative py-12 lg:py-16 bg-gradient-to-b from-blue-50 to-slate-50">
+  <section id="faq" aria-labelledby="faq-heading" class="premium-section relative py-12 lg:py-16 bg-gradient-to-b from-blue-50 to-slate-50">
     <div class="mx-auto max-w-4xl px-6 relative z-10">
       <div class="text-center mb-14 mel-reveal">
         <p class="premium-subtitle justify-center">Frequently Asked</p>
-        <h2 class="premium-title">Common questions about studying in Melbourne</h2>
+        <h2 id="faq-heading" class="premium-title">Common questions about studying in Melbourne</h2>
         <p class="mel-copy text-lg mt-4">Everything you need to know about admissions, scholarships, visa, and life in Australia.</p>
       </div>
 
