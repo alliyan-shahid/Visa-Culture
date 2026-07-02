@@ -212,7 +212,7 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     .uni-page {
       padding: 0 !important;
     }
@@ -329,7 +329,7 @@
         <div class="hero-visual hero-media">
           <div class="hero-media-frame">
             <picture>
-              <source media="(max-width: 768px)" srcset="{{ url_for('static', filename='images/m_universities_page.webp') }}">
+              <source media="(max-width: 767px)" srcset="{{ url_for('static', filename='images/m_universities_page.webp') }}">
               <img src="{{ url_for('static', filename='images/universities_page.webp') }}" alt="{{ spotlight.name }}" loading="eager" decoding="async">
             </picture>
           </div>
@@ -399,9 +399,9 @@
         <div class="university-card__image">
           <picture>
             {% if loop.first %}
-            <source media="(max-width: 768px)" srcset="{{ url_for('static', filename='images/universities_page.webp') }}">
+            <source media="(max-width: 767px)" srcset="{{ url_for('static', filename='images/universities_page.webp') }}">
             {% else %}
-            <source media="(max-width: 768px)" srcset="{{ url_for('static', filename=university.mobile_image) }}">
+            <source media="(max-width: 767px)" srcset="{{ url_for('static', filename=university.mobile_image) }}">
             {% endif %}
             <img src="{{ url_for('static', filename=university.image) }}" alt="{{ university.name }} campus" loading="lazy" decoding="async">
           </picture>

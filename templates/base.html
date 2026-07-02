@@ -162,7 +162,7 @@
             border-radius: 9999px;
             background: linear-gradient(180deg, rgba(37, 99, 235, 0.36), rgba(37, 99, 235, 0));
         }
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             .how-it-works-timeline {
                 padding-left: 0.75rem;
                 gap: 1rem;
@@ -301,7 +301,7 @@
             z-index: 1;
             isolation: isolate;
         }
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             .carousel-track {
                 --stage-card-width: calc(100vw - 5.5rem);
                 padding-left: 2.75rem;
@@ -503,7 +503,7 @@
             position: relative;
             z-index: 1;
         }
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             main > section,
             main > footer {
                 position: relative;
@@ -1202,15 +1202,16 @@
                 let lastScrollTop = 0;
                 window.addEventListener('scroll', function () {
                     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const isTabletNav = window.innerWidth >= 768;
                     if (scrollTop > lastScrollTop && scrollTop > 100) {
                         mobileTopNavbar.style.opacity = '0';
                         mobileTopNavbar.style.pointerEvents = 'none';
-                        mobileTopNavbar.style.transform = 'translateY(-100%)';
+                        mobileTopNavbar.style.transform = isTabletNav ? 'translateX(-50%) translateY(-120%)' : 'translateY(-100%)';
                         closeMoreMenu();
                     } else {
                         mobileTopNavbar.style.opacity = '1';
                         mobileTopNavbar.style.pointerEvents = 'auto';
-                        mobileTopNavbar.style.transform = 'translateY(0)';
+                        mobileTopNavbar.style.transform = isTabletNav ? 'translateX(-50%) translateY(0)' : 'translateY(0)';
                     }
                     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
                 }, false);
