@@ -35,10 +35,10 @@
             }
         });
 
-        // fade in on load
+        // Keep first paint visible. Hiding the whole document on load can
+        // produce a white screen while external scripts/styles are still slow.
         document.addEventListener('DOMContentLoaded', function(){
-            root.style.opacity = '0';
-            setTimeout(showPage, 40);
+            showPage(false);
         });
 
         // Browsers can restore the page from the back/forward cache with the

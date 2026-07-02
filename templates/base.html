@@ -254,8 +254,6 @@
             display: none;
         }
         #ideaCarouselSection {
-            /* Allow vertical scroll to propagate to the page when not actively scrolling cards
-               but contain horizontal overscroll so carousel still handles horizontal interaction */
             overscroll-behavior-y: auto;
             overscroll-behavior-x: contain;
         }
@@ -272,7 +270,6 @@
             padding-left: max(2.5rem, calc((100% - var(--stage-card-width)) / 2));
             padding-right: max(2.5rem, calc((100% - var(--stage-card-width)) / 2));
             box-sizing: border-box;
-            /* Allow horizontal scrolling programmatically, but prevent user dragging */
             overflow-x: auto;
             overflow-y: hidden;
             cursor: default;
@@ -378,7 +375,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-        /* Prevent text selection while scrolling */
         .carousel-track {
             user-select: none;
             -webkit-user-select: none;
@@ -389,12 +385,9 @@
             pointer-events: auto;
             cursor: pointer;
             color: #ffffff;
-            /* ensure the native indicator appears white on dark backgrounds */
             -webkit-filter: invert(1) grayscale(0) contrast(100%);
             filter: invert(1) grayscale(0) contrast(100%);
         }
-
-        /* Inline SVG calendar icon next to the input */
         .relative .pointer-events-none svg {
             stroke: #ffffff;
             color: #ffffff;
@@ -635,6 +628,25 @@
             padding: 0 !important;
             pointer-events: none;
         }
+
+        /* Book widget – sits above the WhatsApp button */
+        .book-widget {
+            bottom: calc(24px + 56px + 16px + env(safe-area-inset-bottom, 0px)) !important;
+        }
+
+        @media (max-width: 480px) {
+            .whatsapp-widget {
+                right: calc(16px + env(safe-area-inset-right, 0px)) !important;
+                bottom: calc(16px + env(safe-area-inset-bottom, 0px)) !important;
+            }
+            .book-widget {
+                bottom: calc(16px + 56px + 12px + env(safe-area-inset-bottom, 0px)) !important;
+            }
+            .whatsapp-widget__menu {
+                width: 220px;
+            }
+        }
+
         .whatsapp-widget__btn,
         .whatsapp-widget__menu {
             pointer-events: auto;
@@ -728,14 +740,30 @@
             height: 16px;
             fill: currentColor;
         }
-        @media (max-width: 480px) {
-            .whatsapp-widget {
-                right: calc(16px + env(safe-area-inset-right, 0px)) !important;
-                bottom: calc(16px + env(safe-area-inset-bottom, 0px)) !important;
-            }
-            .whatsapp-widget__menu {
-                width: 220px;
-            }
+
+        /* Book widget specific styles (overrides for feather icons) */
+        .book-widget .whatsapp-widget__btn {
+            background: #0a4d8f;
+            box-shadow: 0 8px 28px rgba(10, 77, 143, 0.45);
+        }
+        .book-widget .whatsapp-widget__btn:hover {
+            box-shadow: 0 12px 36px rgba(10, 77, 143, 0.55);
+        }
+        .book-widget .whatsapp-widget__item-icon {
+            background: rgba(10, 77, 143, 0.12);
+            color: #0a4d8f;
+        }
+        /* Ensure feather calendar-check icons are visible */
+        .book-widget .whatsapp-widget__btn svg,
+        .book-widget .whatsapp-widget__item-icon svg {
+            stroke: white !important;
+            fill: none !important;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .book-widget .whatsapp-widget__item-icon svg {
+            stroke: #0a4d8f !important;
         }
 
         /* More menu accordion */
@@ -1006,11 +1034,6 @@
             window.addEventListener('load', replaceFeatherIcons);
         }
 
-        /* ============================================
-           FLOATING NAVBAR FUNCTIONALITY
-           ============================================ */
-        
-        // Simple click handler for future use
         document.getElementById('navToggle')?.addEventListener('click', function() {
             document.getElementById('mobileMenu')?.classList.toggle('hidden');
         });
@@ -1025,80 +1048,43 @@
                 });
             }, { threshold: 0.18 });
 
-            document.querySelectorAll('.reveal, .reveal-fade').forEach((el) => {
-                revealObserver.observe(el);
-            });
-            // ensure elements already within viewport become visible immediately
+            document.querySelectorAll('.reveal, .reveal-fade').forEach((el) => revealObserver.observe(el));
             document.querySelectorAll('.reveal, .reveal-fade').forEach((el) => {
                 const rect = el.getBoundingClientRect();
-                if (rect.top < window.innerHeight && rect.bottom > 0) {
-                    el.classList.add('is-visible');
-                }
+                if (rect.top < window.innerHeight && rect.bottom > 0) el.classList.add('is-visible');
             });
         } catch (err) {
             console.warn('reveal observer failed', err);
-            // fallback: make reveals visible
             document.querySelectorAll('.reveal, .reveal-fade').forEach((el) => el.classList.add('is-visible'));
         }
 
-        // hero line animation: fade out after 5s, then reveal each line one by one with a professional stagger
         try {
             const heroText = document.getElementById('hero-text');
             const heroLines = heroText ? Array.from(heroText.querySelectorAll('.hero-line')) : [];
             if (heroLines.length) {
-                const fadeOut = () => {
-                    heroLines.forEach((line) => {
-                        line.classList.remove('line-hidden');
-                        line.classList.add('line-fadeout');
-                    });
-                };
+                const fadeOut = () => heroLines.forEach(line => { line.classList.remove('line-hidden'); line.classList.add('line-fadeout'); });
                 const revealSequence = () => {
-                    heroLines.forEach((line) => {
-                        line.classList.remove('line-fadeout');
-                        line.classList.add('line-hidden');
-                    });
-                    setTimeout(() => {
-                        heroLines[0]?.classList.remove('line-hidden');
-                    }, 1000);
-                    setTimeout(() => {
-                        heroLines[1]?.classList.remove('line-hidden');
-                    }, 2000);
-                    setTimeout(() => {
-                        heroLines[2]?.classList.remove('line-hidden');
-                    }, 3000);
+                    heroLines.forEach(line => { line.classList.remove('line-fadeout'); line.classList.add('line-hidden'); });
+                    setTimeout(() => heroLines[0]?.classList.remove('line-hidden'), 1000);
+                    setTimeout(() => heroLines[1]?.classList.remove('line-hidden'), 2000);
+                    setTimeout(() => heroLines[2]?.classList.remove('line-hidden'), 3000);
                 };
-                const runHeroLoop = () => {
-                    fadeOut();
-                    setTimeout(revealSequence, 800);
-                };
-                setTimeout(() => {
-                    runHeroLoop();
-                    setInterval(runHeroLoop, 10000);
-                }, 5000);
+                const runHeroLoop = () => { fadeOut(); setTimeout(revealSequence, 800); };
+                setTimeout(() => { runHeroLoop(); setInterval(runHeroLoop, 10000); }, 5000);
             }
-        } catch (e) {
-            console.warn('hero animation failed', e);
-        }
+        } catch (e) { console.warn('hero animation failed', e); }
 
-        // Requirements Section - View More Toggle
         document.addEventListener('DOMContentLoaded', function() {
             const viewMoreBtn = document.getElementById('viewMoreBtn');
             const collapsibleContent = document.getElementById('collapsibleContent');
-            
             if (viewMoreBtn && collapsibleContent) {
                 viewMoreBtn.addEventListener('click', function() {
                     collapsibleContent.classList.toggle('expanded');
                     viewMoreBtn.classList.toggle('expanded');
-                    
-                    if (collapsibleContent.classList.contains('expanded')) {
-                        viewMoreBtn.querySelector('.btn-text').textContent = 'View Less Details';
-                    } else {
-                        viewMoreBtn.querySelector('.btn-text').textContent = 'View More Details';
-                    }
+                    viewMoreBtn.querySelector('.btn-text').textContent = collapsibleContent.classList.contains('expanded') ? 'View Less Details' : 'View More Details';
                 });
             }
         });
-
     </script>
     <script src="{{ url_for('static', filename='js/premium-pages.js') }}"></script>
     <noscript>
@@ -1107,7 +1093,7 @@
         </style>
     </noscript>
     
-    <!-- MOBILE TOP NAVBAR (Fixed at Top) -->
+    <!-- MOBILE TOP NAVBAR -->
     <nav class="mobile-top-navbar">
         <a href="/" class="mobile-nav-brand" aria-label="Visa Culture home">
             <img src="{{ url_for('static', filename='images/VisaCulture Logo.webp') }}" alt="Visa Culture logo">
@@ -1154,14 +1140,10 @@
                 </button>
                 <div class="mobile-nav-more-menu" id="mobileNavMoreMenu" role="menu" aria-label="More pages">
                     <ul class="more-menu-list">
-                        <li class="more-menu-link">
-                            <a href="{{ url_for('landing_page') }}#about-us" role="menuitem">About Us</a>
-                        </li>
-
+                        <li class="more-menu-link"><a href="{{ url_for('landing_page') }}#about-us" role="menuitem">About Us</a></li>
                         <li class="more-menu-accordion{% if request.path in [url_for('admission_requirements'), url_for('how_we_work')] or request.path.startswith('/universities') %} is-open{% endif %}">
                             <button class="more-menu-accordion__trigger" type="button" aria-expanded="{% if request.path in [url_for('admission_requirements'), url_for('how_we_work')] or request.path.startswith('/universities') %}true{% else %}false{% endif %}">
-                                <span>Education</span>
-                                <span class="more-menu-chevron" aria-hidden="true">&#9654;</span>
+                                <span>Education</span><span class="more-menu-chevron" aria-hidden="true">&#9654;</span>
                             </button>
                             <ul class="more-menu-sublist">
                                 <li><a href="{{ url_for('landing_page') }}#ideaCarouselSection" role="menuitem">Why Choose Australia</a></li>
@@ -1170,11 +1152,9 @@
                                 <li><a href="{{ url_for('universities') }}" role="menuitem"{% if request.path.startswith('/universities') %} class="is-active"{% endif %}>Top Universities</a></li>
                             </ul>
                         </li>
-
                         <li class="more-menu-accordion">
                             <button class="more-menu-accordion__trigger" type="button" aria-expanded="false">
-                                <span>Student Services</span>
-                                <span class="more-menu-chevron" aria-hidden="true">&#9654;</span>
+                                <span>Student Services</span><span class="more-menu-chevron" aria-hidden="true">&#9654;</span>
                             </button>
                             <ul class="more-menu-sublist">
                                 <li><a href="{{ url_for('landing_page') }}#choose-us" role="menuitem">Why Choose Us</a></li>
@@ -1182,10 +1162,7 @@
                                 <li><a href="{{ url_for('booking_page') }}" role="menuitem">Book Consultation</a></li>
                             </ul>
                         </li>
-
-                        <li class="more-menu-link">
-                            <a href="{{ url_for('booking_page') }}" role="menuitem">Contact Us</a>
-                        </li>
+                        <li class="more-menu-link"><a href="{{ url_for('booking_page') }}" role="menuitem">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -1194,6 +1171,8 @@
 
     <script>
         (function () {
+            document.body.classList.add('enhanced-nav-ready');
+
             const mobileTopNavbar = document.querySelector('.mobile-top-navbar');
             const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
             const mobileNavMoreBtn = document.getElementById('mobileNavMore');
@@ -1205,40 +1184,24 @@
             function setMobileNavActive(navName) {
                 mobileNavItems.forEach(item => {
                     const itemNav = item.getAttribute('data-nav');
-                    if (itemNav === navName) {
-                        item.classList.add('mobile-nav-active');
-                    } else {
-                        item.classList.remove('mobile-nav-active');
-                    }
+                    if (itemNav === navName) item.classList.add('mobile-nav-active');
+                    else item.classList.remove('mobile-nav-active');
                 });
             }
 
-            function closeMoreMenu() {
-                mobileNavMoreMenu?.classList.remove('is-open');
-                mobileNavMoreBtn?.setAttribute('aria-expanded', 'false');
-            }
-
-            function openMoreMenu() {
-                mobileNavMoreMenu?.classList.add('is-open');
-                mobileNavMoreBtn?.setAttribute('aria-expanded', 'true');
-            }
+            function closeMoreMenu() { mobileNavMoreMenu?.classList.remove('is-open'); mobileNavMoreBtn?.setAttribute('aria-expanded', 'false'); }
+            function openMoreMenu() { mobileNavMoreMenu?.classList.add('is-open'); mobileNavMoreBtn?.setAttribute('aria-expanded', 'true'); }
 
             const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
-            if (currentPath.startsWith('/universities')) {
-                setMobileNavActive('universities');
-            } else if (currentPath.startsWith('/booking')) {
-                setMobileNavActive('booking');
-            } else if (moreMenuPaths.includes(currentPath)) {
-                setMobileNavActive('more');
-            } else {
-                setMobileNavActive('home');
-            }
+            if (currentPath.startsWith('/universities')) setMobileNavActive('universities');
+            else if (currentPath.startsWith('/booking')) setMobileNavActive('booking');
+            else if (moreMenuPaths.includes(currentPath)) setMobileNavActive('more');
+            else setMobileNavActive('home');
 
             if (window.innerWidth <= 1024) {
                 let lastScrollTop = 0;
                 window.addEventListener('scroll', function () {
                     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
                     if (scrollTop > lastScrollTop && scrollTop > 100) {
                         mobileTopNavbar.style.opacity = '0';
                         mobileTopNavbar.style.pointerEvents = 'none';
@@ -1249,29 +1212,21 @@
                         mobileTopNavbar.style.pointerEvents = 'auto';
                         mobileTopNavbar.style.transform = 'translateY(0)';
                     }
-
                     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
                 }, false);
             }
 
             mobileNavMoreBtn?.addEventListener('click', function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-                if (mobileNavMoreMenu?.classList.contains('is-open')) {
-                    closeMoreMenu();
-                } else {
-                    openMoreMenu();
-                    setMobileNavActive('more');
-                }
+                e.preventDefault(); e.stopPropagation();
+                if (mobileNavMoreMenu?.classList.contains('is-open')) closeMoreMenu();
+                else { openMoreMenu(); setMobileNavActive('more'); }
             });
 
             mobileNavMoreMenu?.querySelectorAll('.more-menu-accordion__trigger').forEach(function (trigger) {
                 trigger.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
+                    e.preventDefault(); e.stopPropagation();
                     const group = trigger.closest('.more-menu-accordion');
                     if (!group) return;
-
                     const willOpen = !group.classList.contains('is-open');
                     mobileNavMoreMenu.querySelectorAll('.more-menu-accordion.is-open').forEach(function (openGroup) {
                         if (openGroup !== group) {
@@ -1279,52 +1234,50 @@
                             openGroup.querySelector('.more-menu-accordion__trigger')?.setAttribute('aria-expanded', 'false');
                         }
                     });
-
                     group.classList.toggle('is-open', willOpen);
                     trigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
                 });
             });
 
-            document.addEventListener('click', function (e) {
-                if (!e.target.closest('.mobile-nav-more-wrap')) {
-                    closeMoreMenu();
-                }
-            });
-
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape') closeMoreMenu();
-            });
+            document.addEventListener('click', function (e) { if (!e.target.closest('.mobile-nav-more-wrap')) closeMoreMenu(); });
+            document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMoreMenu(); });
 
             mobileNavItems.forEach(item => {
                 item.addEventListener('click', function () {
                     const navName = this.getAttribute('data-nav');
-                    if (navName && navName !== 'more') {
-                        closeMoreMenu();
-                        setMobileNavActive(navName);
-                    }
+                    if (navName && navName !== 'more') { closeMoreMenu(); setMobileNavActive(navName); }
                 });
             });
 
             window.addEventListener('scroll', () => {
                 const scrollPath = window.location.pathname.replace(/\/+$/, '') || '/';
-                if (scrollPath.startsWith('/universities')) {
-                    setMobileNavActive('universities');
-                    return;
-                }
-                if (scrollPath.startsWith('/booking')) {
-                    setMobileNavActive('booking');
-                    return;
-                }
-                if (moreMenuPaths.includes(scrollPath)) {
-                    setMobileNavActive('more');
-                    return;
-                }
-                if (window.scrollY < 120) {
-                    setMobileNavActive('home');
-                }
+                if (scrollPath.startsWith('/universities')) setMobileNavActive('universities');
+                else if (scrollPath.startsWith('/booking')) setMobileNavActive('booking');
+                else if (moreMenuPaths.includes(scrollPath)) setMobileNavActive('more');
+                else if (window.scrollY < 120) setMobileNavActive('home');
             });
         })();
     </script>
+
+    <!-- Book floating button (Feather Calendar Check) -->
+    <div class="whatsapp-widget book-widget" id="bookWidget">
+        <div class="whatsapp-widget__menu" id="bookMenu" role="menu" aria-label="Book Appointment">
+            <p class="whatsapp-widget__title">Book Appointment</p>
+            <ul class="whatsapp-widget__list">
+                <li class="whatsapp-widget__item">
+                    <a href="{{ url_for('booking_page') }}" role="menuitem">
+                        <span class="whatsapp-widget__item-icon" aria-hidden="true">
+                            <i data-feather="calendar-check"></i>
+                        </span>
+                        Book Now
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <button class="whatsapp-widget__btn" id="bookBtn" type="button" aria-label="Open booking menu" aria-expanded="false" aria-controls="bookMenu">
+            <i data-feather="calendar-check"></i>
+        </button>
+    </div>
 
     <!-- WhatsApp floating button -->
     <div class="whatsapp-widget" id="whatsappWidget">
@@ -1353,41 +1306,45 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.883 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         </button>
     </div>
+
     <script>
+        (function() {
+            const bookWidget = document.getElementById('bookWidget');
+            const bookBtn = document.getElementById('bookBtn');
+            const bookMenu = document.getElementById('bookMenu');
+            if (!bookWidget || !bookBtn || !bookMenu) return;
+
+            function closeBookMenu() { bookMenu.classList.remove('is-open'); bookBtn.setAttribute('aria-expanded', 'false'); }
+            function openBookMenu() { bookMenu.classList.add('is-open'); bookBtn.setAttribute('aria-expanded', 'true'); }
+
+            bookBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (bookMenu.classList.contains('is-open')) closeBookMenu();
+                else openBookMenu();
+            });
+
+            document.addEventListener('click', function(e) { if (!bookWidget.contains(e.target)) closeBookMenu(); });
+            document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeBookMenu(); });
+        })();
+
         (function () {
             const widget = document.getElementById('whatsappWidget');
             const btn = document.getElementById('whatsappBtn');
             const menu = document.getElementById('whatsappMenu');
             if (!widget || !btn || !menu) return;
 
-            function closeMenu() {
-                menu.classList.remove('is-open');
-                btn.setAttribute('aria-expanded', 'false');
-            }
-
-            function openMenu() {
-                menu.classList.add('is-open');
-                btn.setAttribute('aria-expanded', 'true');
-            }
+            function closeMenu() { menu.classList.remove('is-open'); btn.setAttribute('aria-expanded', 'false'); }
+            function openMenu() { menu.classList.add('is-open'); btn.setAttribute('aria-expanded', 'true'); }
 
             btn.addEventListener('click', function (e) {
                 e.stopPropagation();
-                if (menu.classList.contains('is-open')) {
-                    closeMenu();
-                } else {
-                    openMenu();
-                }
+                if (menu.classList.contains('is-open')) closeMenu();
+                else openMenu();
             });
 
-            document.addEventListener('click', function (e) {
-                if (!widget.contains(e.target)) closeMenu();
-            });
-
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape') closeMenu();
-            });
+            document.addEventListener('click', function (e) { if (!widget.contains(e.target)) closeMenu(); });
+            document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
         })();
     </script>
-
 </body>
 </html>
