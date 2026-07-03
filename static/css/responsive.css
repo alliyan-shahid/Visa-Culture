@@ -1394,7 +1394,7 @@
 
   .mobile-top-navbar {
     position: fixed !important;
-    top: 14px !important;
+    top: 8px !important;
     left: 50% !important;
     right: auto !important;
     transform: translateX(-50%) !important;
