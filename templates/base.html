@@ -65,15 +65,7 @@
             </div>
             <div class="items-center gap-2.5 md:flex">
                 <a href="{{ url_for('booking_page') }}" class="rounded-full border border-slate-200 bg-white/95 px-4 py-1.5 text-sm font-semibold text-slate-900 transition hover:border-primary hover:shadow-soft">Book Appointment</a>
-                {% if current_user %}
-                    <a href="/dashboard" class="rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-white shadow-soft transition hover:bg-slate-900">Dashboard</a>
-                    {% if current_user.role in ['admin', 'developer'] %}
-                        <a href="/register" class="rounded-full border border-primary bg-white px-4 py-1.5 text-sm font-semibold text-primary transition hover:bg-primary hover:text-white">Register</a>
-                    {% endif %}
-                    <a href="/logout" class="rounded-full border border-slate-200 bg-white px-4 py-1.5 text-sm font-semibold text-slate-900 transition hover:border-primary">Logout</a>
-                {% else %}
-                    <a href="/login" class="rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-white shadow-soft transition hover:bg-slate-900">Login</a>
-                {% endif %}
+                <a href="{{ url_for('login') }}" class="rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-white shadow-soft transition hover:bg-slate-900">Login</a>
             </div>
         </div>
     </header>

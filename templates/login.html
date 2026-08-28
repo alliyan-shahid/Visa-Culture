@@ -8,28 +8,19 @@
         <div class="rounded-[2rem] bg-white p-10 shadow-soft">
             <div class="mb-8">
                 <p class="text-sm uppercase tracking-[0.35em] text-primary">Sign in</p>
-                <h1 class="mt-3 text-3xl font-bold text-slate-950">Access your Visa Culture account</h1>
-                <p class="mt-3 text-slate-600">Use your email and password to manage bookings, applications and advisor communication.</p>
+                <h1 class="mt-3 text-3xl font-bold text-slate-950">Login page</h1>
+                <p class="mt-3 text-slate-600">This is a frontend-only login screen. Authentication is not active on the backend.</p>
             </div>
-            {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if messages %}
-                    <div class="mb-6 space-y-3 rounded-3xl border border-primary/20 bg-primary/10 p-4 text-sm text-slate-700">
-                        {% for category, message in messages %}
-                            <p class="{{ 'text-emerald-700' if category == 'success' else 'text-rose-700' }}">{{ message }}</p>
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            {% endwith %}
-            <form action="/login" method="post" class="space-y-6">
+            <form class="space-y-6">
                 <label class="space-y-2 text-sm font-semibold text-slate-700" for="email">
                     <span>Email address</span>
-                    <input id="email" name="email" type="email" required class="w-full rounded-3xl border border-slate-200 bg-slate-50 px-5 py-3 text-slate-900 outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="name@example.com">
+                    <input id="email" name="email" type="email" class="w-full rounded-3xl border border-slate-200 bg-slate-50 px-5 py-3 text-slate-900 outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="name@example.com">
                 </label>
                 <label class="space-y-2 text-sm font-semibold text-slate-700" for="password">
                     <span>Password</span>
-                    <input id="password" name="password" type="password" required class="w-full rounded-3xl border border-slate-200 bg-slate-50 px-5 py-3 text-slate-900 outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Enter your password">
+                    <input id="password" name="password" type="password" class="w-full rounded-3xl border border-slate-200 bg-slate-50 px-5 py-3 text-slate-900 outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Enter your password">
                 </label>
-                <button type="submit" class="w-full rounded-3xl bg-primary px-6 py-4 text-sm font-semibold text-white transition hover:bg-slate-900">Login</button>
+                <button type="button" class="w-full rounded-3xl bg-primary px-6 py-4 text-sm font-semibold text-white transition hover:bg-slate-900">Login</button>
                 <p class="text-center text-sm text-slate-500">Back to <a href="/" class="text-primary underline">landing page</a></p>
             </form>
         </div>
