@@ -1,8 +1,8 @@
 ﻿{% extends 'base.html' %}
 
-{% block title %}Study in Australia | Visa Culture{% endblock %}
+{% block title %}Study Abroad Guidance for Pakistani Students | Visa Culture{% endblock %}
 
-{% block meta_description %}Visa Culture helps Pakistani students apply to Australian universities with custom admissions guidance, scholarship advice, and student visa support.{% endblock %}
+{% block meta_description %}Visa Culture helps Pakistani students explore study opportunities in Australia, USA, UK, Canada, Europe &amp; more with transparent counselling, application support, visa guidance, and IELTS/PTE preparation.{% endblock %}
 
 {% block head %}
 <style>
@@ -827,6 +827,183 @@
             transform: rotate(180deg);
         }
     }
+    /* Study destinations: custom editorial layout */
+    .vc-destinations { position: relative; overflow: hidden; padding: clamp(4.5rem, 8vw, 7rem) 1.25rem; background: #f5f3ef; color: #17151c; }
+    .vc-destinations::before { content: ""; position: absolute; top: -9rem; right: -7rem; width: 24rem; height: 24rem; border: 1px solid rgba(24,20,31,.08); border-radius: 50%; pointer-events: none; }
+    .vc-destinations__container { position: relative; z-index: 1; width: min(100%, 78rem); margin: 0 auto; }
+    .vc-destinations__intro { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(17rem,.8fr); gap: 2rem; align-items: end; margin-bottom: 2.75rem; }
+    .vc-destinations__eyebrow, .vc-destination-card__eyebrow { margin: 0; color: #a47b3d; font-size: .72rem; font-weight: 800; letter-spacing: .22em; line-height: 1.4; text-transform: uppercase; }
+    .vc-destinations__title { max-width: 42rem; margin: .75rem 0 0; color: #17151c; font-size: clamp(2.25rem,5vw,4.35rem); font-weight: 700; letter-spacing: -.055em; line-height: .98; }
+    .vc-destinations__summary { max-width: 27rem; margin: 0; color: #625e68; font-size: 1rem; line-height: 1.85; }
+    .vc-destinations__layout { display: grid; grid-template-columns: minmax(0,.95fr) minmax(0,1.05fr); gap: 1rem; }
+    .vc-destination-card { position: relative; display: flex; min-height: 28rem; flex-direction: column; justify-content: space-between; overflow: hidden; padding: clamp(1.75rem,4vw,3.25rem); border-radius: 1.5rem; background: #17151c; box-shadow: 0 1.5rem 3.5rem rgba(23,21,28,.15); }
+    .vc-destination-card::after { content: "AU"; position: absolute; right: -1.5rem; bottom: -2.5rem; color: rgba(255,255,255,.045); font-size: 12rem; font-weight: 800; letter-spacing: -.12em; line-height: 1; pointer-events: none; }
+    .vc-destination-card__content, .vc-destination-card__footer { position: relative; z-index: 1; }
+    .vc-destination-card__eyebrow { color: #d6ac67; }
+    .vc-destination-card h3 { max-width: 27rem; margin: 1.25rem 0 0; color: #fff; font-size: clamp(1.8rem,3.5vw,3rem); font-weight: 700; letter-spacing: -.04em; line-height: 1.04; }
+    .vc-destination-card p:not(.vc-destination-card__eyebrow) { max-width: 31rem; margin: 1.25rem 0 0; color: #c5c0cb; font-size: .95rem; line-height: 1.8; }
+    .vc-destination-card__footer { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 2rem; }
+    .vc-destination-card__tag { padding: .5rem .75rem; border: 1px solid rgba(255,255,255,.14); border-radius: 999px; color: #e8e2d8; font-size: .72rem; font-weight: 700; letter-spacing: .03em; }
+    .vc-destination-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
+    .vc-destination-link { display: flex; min-height: 13.5rem; flex-direction: column; justify-content: space-between; padding: 1.5rem; border: 1px solid #e2ded7; border-radius: 1.5rem; background: rgba(255,255,255,.65); color: #17151c; text-decoration: none; transition: transform 220ms ease,border-color 220ms ease,background-color 220ms ease,box-shadow 220ms ease; }
+    .vc-destination-link:hover, .vc-destination-link:focus-visible { transform: translateY(-.3rem); border-color: #b18a50; background: #fff; box-shadow: 0 1rem 2rem rgba(23,21,28,.08); outline: none; }
+    .vc-destination-link__number { color: #a47b3d; font-size: .72rem; font-weight: 800; letter-spacing: .12em; }
+    .vc-destination-link__name { display: block; margin-top: 1.2rem; font-size: clamp(1.3rem,2.5vw,1.8rem); font-weight: 700; letter-spacing: -.035em; }
+    .vc-destination-link__description { display: block; margin-top: .55rem; color: #706b74; font-size: .82rem; line-height: 1.55; }
+    .vc-destination-link__arrow { align-self: flex-end; color: #a47b3d; font-size: 1.35rem; line-height: 1; transition: transform 220ms ease; }
+    .vc-destination-link:hover .vc-destination-link__arrow, .vc-destination-link:focus-visible .vc-destination-link__arrow { transform: translate(.2rem,-.2rem); }
+    .vc-destinations__actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.25rem; }
+    .vc-destinations__button { display: inline-flex; align-items: center; justify-content: center; min-height: 3rem; padding: .8rem 1.25rem; border: 1px solid #17151c; border-radius: 999px; background: #17151c; color: #fff; font-size: .86rem; font-weight: 700; text-decoration: none; transition: transform 220ms ease,background-color 220ms ease,color 220ms ease; }
+    .vc-destinations__button:hover, .vc-destinations__button:focus-visible { transform: translateY(-.15rem); background: #a47b3d; border-color: #a47b3d; outline: none; }
+    .vc-destinations__button--light { background: transparent; color: #17151c; }
+    .vc-destinations__button--light:hover, .vc-destinations__button--light:focus-visible { color: #fff; }
+    @media (max-width: 900px) { .vc-destinations__intro, .vc-destinations__layout { grid-template-columns: 1fr; } .vc-destination-card { min-height: 23rem; } }
+    @media (max-width: 560px) { .vc-destinations { padding-right: 1rem; padding-left: 1rem; } .vc-destinations__intro { gap: 1.25rem; margin-bottom: 1.75rem; } .vc-destinations__title { font-size: clamp(2.25rem,12vw,3.2rem); } .vc-destination-list { grid-template-columns: 1fr; } .vc-destination-link { min-height: 10.5rem; } .vc-destinations__actions { flex-direction: column; } .vc-destinations__button { width: 100%; } }
+    @media (prefers-reduced-motion: reduce) { .vc-destination-link, .vc-destination-link__arrow, .vc-destinations__button { transition: none; } .vc-destination-link:hover, .vc-destination-link:focus-visible, .vc-destinations__button:hover, .vc-destinations__button:focus-visible { transform: none; } }
+    /* Open editorial destination treatment: intentionally non-card based */
+    .vc-destinations { padding-top: clamp(5rem, 10vw, 9rem); padding-bottom: clamp(5rem, 10vw, 9rem); background: #fbfaf8; }
+    .vc-destinations::before { display: none; }
+    .vc-destinations__intro { grid-template-columns: minmax(0,1fr) minmax(18rem,.55fr); gap: 3rem; margin-bottom: clamp(3rem,7vw,5.5rem); }
+    .vc-destinations__title { max-width: 50rem; font-size: clamp(2.6rem,6vw,5.5rem); letter-spacing: -.065em; line-height: .94; }
+    .vc-destinations__summary { max-width: 23rem; padding-top: 1rem; font-size: .94rem; line-height: 1.9; }
+    .vc-destinations__layout { grid-template-columns: minmax(15rem,.48fr) minmax(0,1.52fr); gap: clamp(2rem,6vw,6rem); align-items: start; }
+    .vc-destination-card { min-height: 0; padding: 0 2rem 2rem 0; border-radius: 0; border-right: 1px solid #d8d2c8; background: transparent; box-shadow: none; }
+    .vc-destination-card::after { display: none; }
+    .vc-destination-card h3 { max-width: 23rem; margin-top: 1rem; color: #17151c; font-size: clamp(2rem,4vw,3.6rem); letter-spacing: -.06em; line-height: .98; }
+    .vc-destination-card p:not(.vc-destination-card__eyebrow) { max-width: 24rem; margin-top: 1.5rem; color: #625e68; font-size: .94rem; line-height: 1.85; }
+    .vc-destination-card__eyebrow { color: #a47b3d; }
+    .vc-destination-card__footer { margin-top: 2rem; gap: .45rem 1.1rem; }
+    .vc-destination-card__tag { padding: 0; border: 0; border-radius: 0; color: #625e68; font-size: .72rem; letter-spacing: .05em; }
+    .vc-destination-card__tag::before { content: "— "; color: #a47b3d; }
+    .vc-destination-list { display: block; }
+    .vc-destination-link { display: grid; grid-template-columns: 4.5rem minmax(0,1fr) 2rem; min-height: 0; gap: 1.25rem; align-items: center; padding: 1.5rem 0; border: 0; border-top: 1px solid #d8d2c8; border-radius: 0; background: transparent; }
+    .vc-destination-link:last-of-type { border-bottom: 1px solid #d8d2c8; }
+    .vc-destination-link:hover, .vc-destination-link:focus-visible { transform: none; border-color: #d8d2c8; background: transparent; box-shadow: none; }
+    .vc-destination-link__number { align-self: start; padding-top: .35rem; color: #a47b3d; font-size: .68rem; }
+    .vc-destination-link__name { margin-top: 0; font-size: clamp(1.45rem,3vw,2.35rem); letter-spacing: -.045em; line-height: 1; }
+    .vc-destination-link__description { margin-top: .45rem; color: #716b72; font-size: .82rem; }
+    .vc-destination-link__arrow { color: #17151c; font-size: 1.6rem; }
+    .vc-destination-link:hover .vc-destination-link__arrow, .vc-destination-link:focus-visible .vc-destination-link__arrow { transform: translate(.25rem,-.25rem); color: #a47b3d; }
+    .vc-destinations__actions { margin-top: 1.5rem; }
+    .vc-destinations__button { min-height: 2.75rem; padding: .7rem 1rem; border-radius: 0; background: #17151c; }
+    .vc-destinations__button--light { border-color: transparent; background: transparent; color: #17151c; }
+    .vc-destinations__button--light:hover, .vc-destinations__button--light:focus-visible { background: transparent; color: #a47b3d; }
+    @media (max-width: 900px) { .vc-destinations__intro { grid-template-columns: 1fr minmax(15rem,.7fr); } .vc-destinations__layout { grid-template-columns: 1fr; gap: 2.5rem; } .vc-destination-card { align-self: auto; justify-content: flex-start; padding: 0 0 2rem; border-right: 0; border-bottom: 1px solid #d8d2c8; } }
+    @media (max-width: 560px) { .vc-destinations__intro { grid-template-columns: 1fr; gap: 1rem; } .vc-destinations__summary { padding-top: 0; } .vc-destination-link { grid-template-columns: 3.2rem minmax(0,1fr) 1.5rem; gap: .7rem; padding: 1.25rem 0; } .vc-destination-link__description { max-width: 15rem; } }
+    /* Prominent open treatment */
+    .vc-destinations { background: #15131b; color: #fff; }
+    .vc-destinations__eyebrow, .vc-destination-card__eyebrow { color: #d5a85e; }
+    .vc-destinations__title { color: #fff; }
+    .vc-destinations__summary { color: #bcb7c1; }
+    .vc-destination-card { border-color: rgba(255,255,255,.2); }
+    .vc-destination-card h3 { color: #fff; }
+    .vc-destination-card p:not(.vc-destination-card__eyebrow) { color: #bcb7c1; }
+    .vc-destination-card__tag { color: #d7d0c6; }
+    .vc-destination-link { border-color: rgba(255,255,255,.2); color: #fff; }
+    .vc-destination-link:last-of-type { border-color: rgba(255,255,255,.2); }
+    .vc-destination-link:hover, .vc-destination-link:focus-visible { border-color: rgba(213,168,94,.85); background: rgba(255,255,255,.035); }
+    .vc-destination-link__number { color: #d5a85e; }
+    .vc-destination-link__description { color: #a9a4ae; }
+    .vc-destination-link__arrow { color: #d5a85e; }
+    .vc-destination-link:hover .vc-destination-link__arrow, .vc-destination-link:focus-visible .vc-destination-link__arrow { color: #fff; }
+    .vc-destinations__button { border-color: #d5a85e; background: #d5a85e; color: #15131b; }
+    .vc-destinations__button:hover, .vc-destinations__button:focus-visible { border-color: #fff; background: #fff; color: #15131b; }
+    .vc-destinations__button--light { border-color: transparent; background: transparent; color: #fff; }
+    .vc-destinations__button--light:hover, .vc-destinations__button--light:focus-visible { border-color: transparent; background: transparent; color: #d5a85e; }
+    @media (max-width: 900px) { .vc-destination-card { border-color: rgba(255,255,255,.2); } }
+
+    /* Budget guidance: warm editorial treatment */
+    #budget-guidance { position: relative; overflow: hidden; padding-top: clamp(2.5rem, 4.5vw, 4rem); padding-bottom: clamp(2.5rem, 4.5vw, 4rem); background: #f1eee8 !important; }
+    #budget-guidance::before { content: ""; position: absolute; top: -12rem; right: -8rem; width: 28rem; height: 28rem; border: 1px solid rgba(164,123,61,.2); border-radius: 50%; pointer-events: none; }
+    #budget-guidance::after { content: ""; position: absolute; top: -6rem; right: -2rem; width: 16rem; height: 16rem; border: 1px solid rgba(164,123,61,.13); border-radius: 50%; pointer-events: none; }
+    #budget-guidance > div { position: relative; z-index: 1; }
+    #budget-guidance > div:first-child { align-items: start; gap: clamp(2.5rem, 8vw, 8rem); }
+    #budget-guidance h2 { max-width: 48rem; font-size: clamp(2.25rem, 5vw, 4.8rem); letter-spacing: -.06em; line-height: .98; }
+    #budget-guidance > div:first-child > div:first-child > p:not(:first-child) { max-width: 42rem; }
+    #budget-guidance > div:first-child > div:nth-child(2) { margin-top: .5rem; padding-left: 1.75rem; border-left-width: 1px; border-left-color: rgba(164,123,61,.55); }
+    #budget-guidance > div:first-child > div:nth-child(2)::before { content: "A clear plan starts with a clear picture"; display: block; margin-bottom: 1.15rem; color: #a47b3d; font-size: .7rem; font-weight: 800; letter-spacing: .17em; line-height: 1.4; text-transform: uppercase; }
+    #budget-guidance > div:nth-child(2), #budget-guidance > div:nth-child(3) { position: relative; z-index: 1; }
+    #budget-guidance > div:nth-child(2) { margin-top: clamp(3.5rem, 7vw, 6rem); padding-top: 2.25rem; border-top-color: #d6d0c6; }
+    #budget-guidance > div:nth-child(2) > div { gap: 2.5rem; }
+    #budget-guidance > div:nth-child(3) { margin-top: clamp(3.5rem, 7vw, 6rem); padding-top: 2.25rem; border-top-color: #d6d0c6; }
+    #budget-guidance > div:nth-child(3) h3 { max-width: 24rem; font-size: clamp(1.8rem, 3vw, 2.7rem); letter-spacing: -.045em; line-height: 1.02; }
+    #budget-guidance a { text-underline-offset: .25rem; }
+    @media (max-width: 640px) { #budget-guidance::before { right: -15rem; } #budget-guidance > div:first-child > div:nth-child(2) { margin-top: 1rem; padding-left: 1.25rem; } #budget-guidance > div:nth-child(2), #budget-guidance > div:nth-child(3) { margin-top: 3.5rem; } }
+
+    /* Electric blue budget section */
+    #budget-guidance { background: #0a4d8f !important; color: #fff; }
+    #budget-guidance::before { border-color: rgba(191,224,255,.24); }
+    #budget-guidance::after { border-color: rgba(191,224,255,.15); }
+    #budget-guidance .text-slate-950 { color: #fff !important; }
+    #budget-guidance .text-slate-600 { color: #d9eafa !important; }
+    #budget-guidance .text-primary { color: #bfe0ff !important; }
+    #budget-guidance strong { color: #fff !important; }
+    #budget-guidance .border-primary\\/20 { border-color: rgba(191,224,255,.7) !important; }
+    #budget-guidance .border-slate-200 { border-color: rgba(191,224,255,.3) !important; }
+    #budget-guidance > div:first-child > div:nth-child(2) { border-left-color: rgba(191,224,255,.7); }
+    #budget-guidance > div:first-child > div:nth-child(2)::before { color: #bfe0ff; }
+    #budget-guidance a { color: #bfe0ff; }
+    #budget-guidance a:hover { color: #fff !important; }
+    #budget-guidance .budget-guidance__title { max-width: 36rem; font-size: clamp(2.4rem, 5vw, 4.7rem); letter-spacing: -.065em; line-height: .97; }
+    #budget-guidance .budget-guidance__title span, #budget-guidance .budget-guidance__title strong { display: block; }
+    #budget-guidance .budget-guidance__title strong { margin-top: .25em; color: #bfe0ff !important; font-weight: 500; }
+    #budget-guidance .budget-guidance__list { margin-top: 1.5rem; }
+    #budget-guidance .budget-guidance__list li { display: grid; grid-template-columns: 2rem minmax(0,1fr); gap: .65rem; align-items: start; padding: .55rem 0; border-bottom: 1px solid rgba(191,224,255,.2); line-height: 1.55; }
+    #budget-guidance .budget-guidance__list li:last-child { border-bottom: 0; }
+    #budget-guidance .budget-guidance__list li > span:first-child { color: #bfe0ff !important; font-size: .7rem; font-weight: 800; letter-spacing: .08em; line-height: 1.8; }
+    #budget-guidance > div:nth-child(2) { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); }
+    #budget-guidance > div:nth-child(2) > div { padding-right: 1.5rem; border-right: 1px solid rgba(191,224,255,.25); }
+    #budget-guidance > div:nth-child(2) > div:last-child { border-right: 0; }
+    @media (max-width: 800px) { #budget-guidance > div:nth-child(2) { grid-template-columns: repeat(2,minmax(0,1fr)); row-gap: 2rem; } #budget-guidance > div:nth-child(2) > div:nth-child(2) { border-right: 0; } }
+    @media (max-width: 520px) { #budget-guidance > div:nth-child(2) { grid-template-columns: 1fr; } #budget-guidance > div:nth-child(2) > div { padding-right: 0; border-right: 0; border-bottom: 1px solid rgba(191,224,255,.25); padding-bottom: 1.25rem; } #budget-guidance > div:nth-child(2) > div:last-child { border-bottom: 0; } }
+    #budget-guidance .budget-guidance__aside-intro { margin: 0 0 2.25rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(191,224,255,.4); }
+    #budget-guidance .budget-guidance__aside-intro > span { display: block; color: #bfe0ff; font-size: .7rem; font-weight: 800; letter-spacing: .18em; line-height: 1.4; text-transform: uppercase; }
+    #budget-guidance .budget-guidance__aside-intro h3 { max-width: 22rem; margin: .65rem 0 0; color: #fff; font-size: clamp(1.55rem, 3vw, 2.35rem); font-weight: 600; letter-spacing: -.04em; line-height: 1.08; }
+    #budget-guidance .budget-guidance__aside-intro p { max-width: 24rem; margin: .85rem 0 0; color: #d9eafa; font-size: .88rem; line-height: 1.7; }
+    /* Destination typography fit */
+    .vc-destinations { padding-top: clamp(2.5rem, 5vw, 4.5rem); padding-bottom: clamp(2.5rem, 5vw, 4.5rem); }
+    .vc-destinations__container { width: min(100%, 74rem); }
+    .vc-destinations__intro { grid-template-columns: minmax(0,1.15fr) minmax(17rem,.65fr); gap: clamp(2rem,6vw,5rem); align-items: center; margin-bottom: clamp(2.5rem,5vw,4rem); }
+    .vc-destinations__summary { padding-top: 0; }
+    .vc-destinations__layout { gap: clamp(2rem,5vw,4.5rem); align-items: stretch; }
+    .vc-destination-card { align-self: stretch; justify-content: center; padding-right: clamp(1.25rem,3vw,2.75rem); }
+    .vc-destination-card p:not(.vc-destination-card__eyebrow) { margin-top: 1.25rem; }
+    .vc-destination-card__footer { margin-top: 1.75rem; }
+    .vc-destination-link { grid-template-columns: 3.75rem minmax(0,1fr) 1.75rem; gap: 1rem; padding: 1.25rem 0; }
+    .vc-destinations__actions { gap: .5rem 1rem; margin-top: 1.25rem; }
+    .vc-destinations__actions .vc-destinations__button { min-height: 3.15rem; padding: .85rem 1.35rem; border-radius: 999px; font-size: .82rem; letter-spacing: .01em; }
+    .vc-destinations__actions .vc-destinations__button:first-child { box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.18); }
+    .vc-destinations__actions .vc-destinations__button:first-child span { display: inline-flex; align-items: center; justify-content: center; width: 1.35rem; height: 1.35rem; margin-left: .45rem; border-radius: 50%; background: rgba(21,19,27,.16); }
+    .vc-destinations__actions .vc-destinations__button--light { border: 1px solid rgba(191,224,255,.65); background: transparent; color: #fff; box-shadow: none; }
+    .vc-destinations__actions .vc-destinations__button--light:hover, .vc-destinations__actions .vc-destinations__button--light:focus-visible { border-color: #fff; background: rgba(255,255,255,.08); color: #fff; }
+    .vc-destinations__eyebrow, .vc-destination-card__eyebrow { font-size: .76rem; letter-spacing: .16em; }
+    .vc-destinations__title { max-width: 43rem; font-size: clamp(2.15rem, 4.4vw, 4rem); line-height: 1; }
+    .vc-destinations__summary { font-size: .9rem; line-height: 1.75; }
+    .vc-destination-card h3 { font-size: clamp(1.75rem, 3.2vw, 3rem); line-height: 1.03; }
+    .vc-destination-link__name { font-size: clamp(1.25rem, 2.35vw, 1.95rem); }
+    .vc-destination-link__description { font-size: .78rem; }
+    @media (max-width: 560px) { .vc-destinations__eyebrow, .vc-destination-card__eyebrow { font-size: .68rem; letter-spacing: .13em; } .vc-destinations__title { font-size: clamp(2rem, 10vw, 3rem); } .vc-destination-card h3 { font-size: clamp(1.8rem, 8vw, 2.45rem); } .vc-destination-link { grid-template-columns: 2.75rem minmax(0,1fr) 1.25rem; gap: .65rem; } .vc-destination-link__description { max-width: 100%; } }
+
+    /* IELTS/PTE section: teal academic treatment */
+    #ielts-pte { position: relative; overflow: hidden; background: #0b756d !important; color: #fff; }
+    #ielts-pte::before { content: ""; position: absolute; right: -8rem; bottom: -12rem; width: 30rem; height: 30rem; border: 1px solid rgba(210,255,246,.18); border-radius: 50%; pointer-events: none; }
+    #ielts-pte > div { position: relative; z-index: 1; }
+    #ielts-pte .text-primary { color: #baf4e8 !important; }
+    #ielts-pte .text-slate-950 { color: #fff !important; }
+    #ielts-pte .text-slate-600, #ielts-pte .text-slate-500 { color: #d5f1ec !important; }
+    #ielts-pte h2 { max-width: 40rem; font-size: clamp(2.25rem, 5vw, 4.4rem); letter-spacing: -.06em; line-height: .98; }
+    #ielts-pte .border-slate-200 { border-color: rgba(210,255,246,.3) !important; }
+    #ielts-pte .border-y { border-color: rgba(210,255,246,.42) !important; }
+    #ielts-pte .text-primary { font-weight: 700; }
+    #ielts-pte a { border: 1px solid #f4b942; background: #f4b942; color: #173f3a; box-shadow: 0 .8rem 1.8rem rgba(0,0,0,.18); }
+    #ielts-pte a:hover, #ielts-pte a:focus-visible { border-color: #ffd477; background: #ffd477; color: #173f3a; }
+    #ielts-pte .ielts-pte__features { padding-top: .25rem; }
+    #ielts-pte .ielts-pte__features-heading { display: flex; flex-direction: column; gap: .65rem; padding: 0 0 1.5rem; border-bottom: 1px solid rgba(210,255,246,.42); }
+    #ielts-pte .ielts-pte__features-heading span { color: #baf4e8; font-size: .7rem; font-weight: 800; letter-spacing: .18em; line-height: 1.4; text-transform: uppercase; }
+    #ielts-pte .ielts-pte__features-heading strong { max-width: 29rem; color: #fff; font-size: clamp(1.4rem, 2.8vw, 2.15rem); font-weight: 600; letter-spacing: -.035em; line-height: 1.12; }
+    #ielts-pte .ielts-pte__feature { min-height: 4.25rem; display: flex; align-items: center; border-color: rgba(210,255,246,.3) !important; line-height: 1.45; }
+    #ielts-pte .ielts-pte__feature > span { color: #baf4e8 !important; font-size: .7rem; letter-spacing: .08em; }
+    @media (max-width: 640px) { #ielts-pte h2 { font-size: clamp(2.15rem, 10vw, 3.25rem); } }
 </style>
 {% endblock %}
 
@@ -842,24 +1019,24 @@
             </picture>
             <div class="hero-content">
                 <div class="hero-text-group">
-                    <h1>Turning Dreams Into Destinations</h1>
-                    <p>From confusion to clarity &mdash; we guide your journey to top universities worldwide.</p>
+                    <h1>Your Journey to Global Education Starts Here</h1>
+                    <p>Personalized study-abroad guidance and IELTS/PTE preparation for Pakistani students planning their future in Australia, USA, UK, Canada, Europe &amp; more.</p>
                     <div class="hero-buttons">
-                        <a href="{{ url_for('booking_page') }}" class="hero-btn hero-btn-primary">Book Appointment</a>
-                        <a href="#services" class="hero-btn hero-btn-secondary">Explore services</a>
+                        <a href="#destinations" class="hero-btn hero-btn-primary">Explore Study Destinations</a>
+                        <a href="{{ url_for('booking_page') }}" class="hero-btn hero-btn-secondary">Book Free Consultation</a>
                     </div>
                     <div class="hero-stats">
                         <div class="hero-stat-card">
-                            <p class="hero-stat-value">100+</p>
-                            <p class="hero-stat-label">Approved student visas</p>
+                            <p class="hero-stat-value">5</p>
+                            <p class="hero-stat-label">Study destinations</p>
                         </div>
                         <div class="hero-stat-card">
-                            <p class="hero-stat-value">98%</p>
-                            <p class="hero-stat-label">Application success rate</p>
+                            <p class="hero-stat-value">2</p>
+                            <p class="hero-stat-label">IELTS &amp; PTE pathways</p>
                         </div>
                         <div class="hero-stat-card">
-                            <p class="hero-stat-value">24/7</p>
-                            <p class="hero-stat-label">Student support access</p>
+                            <p class="hero-stat-value">1:1</p>
+                            <p class="hero-stat-label">Profile-led guidance</p>
                         </div>
                     </div>
                 </div>
@@ -1024,9 +1201,9 @@
 <section id="ideaCarouselSection" class="relative overflow-hidden bg-[#100e17] py-5 text-white">
     <div class="mx-auto max-w-7xl px-6">
         <div class="mb-10 text-center">
-            <p class="text-sm uppercase tracking-[0.35em] text-slate-400">Study in Australia with the Right Strategy</p>
-            <p class="mx-auto mt-4 max-w-3xl text-base leading-8 text-slate-300">Australia is one of the world&#39;s leading study destinations, offering globally recognized education, strong career pathways, and an exceptional quality of life. With top-ranked universities, post-study work opportunities, and a multicultural environment, Australia provides students with a future-focused international education experience.</p>
-            <h2 class="mt-4 text-4xl font-bold text-white">Why Choose Australia?</h2>
+            <p class="text-sm uppercase tracking-[0.35em] text-slate-400">Plan Your Study Abroad Journey With Clarity</p>
+            <p class="mx-auto mt-4 max-w-3xl text-base leading-8 text-slate-300">From Australia, USA, UK, Canada, Europe &amp; more, each destination offers distinct courses, entry requirements, English-language expectations, tuition costs, intakes, and visa pathways. We help you choose the right study destination for your academic profile, budget, and long-term goals.</p>
+            <h2 class="mt-4 text-4xl font-bold text-white">Why Study Abroad With Visa Culture?</h2>
         </div>
 
         <div id="australiaWhyChooseCards" class="stack-cards mx-auto w-full max-w-[1180px]">
@@ -1034,49 +1211,163 @@
                 <div class="indicator-line">
                     <div class="indicator-bar"></div>
                 </div>
-                <h3 class="text-[1.75rem] font-semibold text-white">Globally Ranked Universities</h3>
-                <p class="mt-4 text-sm leading-7 text-slate-300">Study at internationally recognized universities known for academic excellence, practical learning, and strong graduate outcomes.</p>
+                <h3 class="text-[1.75rem] font-semibold text-white">Recognised Education &amp; Quality Assurance</h3>
+                <p class="mt-4 text-sm leading-7 text-slate-300">Find universities and registered courses with clear entry requirements, course outcomes, tuition details, and support services before submitting an application.</p>
             </article>
 
             <article class="stack-card rounded-[14px] bg-[#17141d] p-6 shadow-[0_16px_50px_rgba(0,0,0,0.45)]">
                 <div class="indicator-line">
                     <div class="indicator-bar"></div>
                 </div>
-                <h3 class="text-[1.75rem] font-semibold text-white">Post-Study Work Opportunities</h3>
-                <p class="mt-4 text-sm leading-7 text-slate-300">Benefit from post-study work visa pathways that allow eligible graduates to gain valuable international work experience.</p>
+                <h3 class="text-[1.75rem] font-semibold text-white">Practical, Industry-Linked Learning</h3>
+                <p class="mt-4 text-sm leading-7 text-slate-300">Explore programs that combine academic knowledge with projects, placements, laboratories, and career-focused skills relevant to your chosen field.</p>
             </article>
 
             <article class="stack-card rounded-[14px] bg-[#17141d] p-6 shadow-[0_16px_50px_rgba(0,0,0,0.45)]">
                 <div class="indicator-line">
                     <div class="indicator-bar"></div>
                 </div>
-                <h3 class="text-[1.75rem] font-semibold text-white">Safe & Multicultural Lifestyle</h3>
-                <p class="mt-4 text-sm leading-7 text-slate-300">Live in a welcoming, diverse, and student-friendly environment with excellent healthcare, safety, and modern infrastructure.</p>
+                <h3 class="text-[1.75rem] font-semibold text-white">A Diverse Student Experience</h3>
+                <p class="mt-4 text-sm leading-7 text-slate-300">Choose from multicultural cities and student communities while planning accommodation, transport, living costs, wellbeing support, and a realistic arrival budget.</p>
             </article>
 
             <article class="stack-card rounded-[14px] bg-[#17141d] p-6 shadow-[0_16px_50px_rgba(0,0,0,0.45)]">
                 <div class="indicator-line">
                     <div class="indicator-bar"></div>
                 </div>
-                <h3 class="text-[1.75rem] font-semibold text-white">Scholarships & Career Pathways</h3>
-                <p class="mt-4 text-sm leading-7 text-slate-300">Access scholarship opportunities and industry-focused programs designed to support long-term career growth.</p>
+                <h3 class="text-[1.75rem] font-semibold text-white">Budget, Scholarships &amp; Course Planning</h3>
+                <p class="mt-4 text-sm leading-7 text-slate-300">Review tuition, living costs, scholarship possibilities, financial documentation, and course duration together so your study plan is realistic from the beginning.</p>
             </article>
             <article class="stack-card rounded-[14px] bg-[#17141d] p-6 shadow-[0_16px_50px_rgba(0,0,0,0.45)]">
                 <div class="indicator-line">
                     <div class="indicator-bar"></div>
                 </div>
-                <h3 class="text-[1.75rem] font-semibold text-white">Practical & Industry-Focused Education</h3>
-                <p class="mt-4 text-sm leading-7 text-slate-300">Australian universities combine academic learning with real-world skills, helping students build strong global careers.</p>
+                <h3 class="text-[1.75rem] font-semibold text-white">English Preparation for Your Application</h3>
+                <p class="mt-4 text-sm leading-7 text-slate-300">Prepare through structured IELTS and PTE classes with updated material, mock tests, feedback, and a clear plan for meeting your institution’s English requirement.</p>
             </article>
             <article class="stack-card rounded-[14px] bg-[#17141d] p-6 shadow-[0_16px_50px_rgba(0,0,0,0.45)]">
                 <div class="indicator-line">
                     <div class="indicator-bar"></div>
                 </div>
-                <h3 class="text-[1.75rem] font-semibold text-white">High Quality of Life</h3>
-                <p class="mt-4 text-sm leading-7 text-slate-300">Enjoy one of the world&#39;s most livable countries with vibrant cities, career opportunities, and a balanced lifestyle.</p>
+                <h3 class="text-[1.75rem] font-semibold text-white">Study Destinations We Offer</h3>
+                <p class="mt-4 text-sm leading-7 text-slate-300">Explore study pathways in <strong class="text-white">Australia, USA, UK, Canada, Europe &amp; More</strong>. We help you identify the best destination according to your academic profile, budget, preferred course, English score, career goals, intakes, and current visa requirements.</p>
             </article>
         </div>
         <button type="button" class="view-more-btn australia-view-more" aria-controls="australiaWhyChooseCards" aria-expanded="false" onclick="toggleAustraliaCards(event)">View More Cards</button>
+    </div>
+</section>
+
+<section id="destinations" class="vc-destinations">
+    <div class="vc-destinations__container">
+        <div class="vc-destinations__intro">
+            <div>
+                <p class="vc-destinations__eyebrow">Study destinations we offer</p>
+                <h2 class="vc-destinations__title">Find the right route for your future.</h2>
+            </div>
+            <p class="vc-destinations__summary">Your best destination depends on your course, academic profile, budget, English score, career goals, intakes, and current visa conditions.</p>
+        </div>
+
+        <div class="vc-destinations__layout">
+            <article class="vc-destination-card">
+                <div class="vc-destination-card__content">
+                    <p class="vc-destination-card__eyebrow">Featured destination · Australia</p>
+                    <h3>A stronger start for your global education journey.</h3>
+                </div>
+                <div class="vc-destination-card__footer" aria-label="Australia highlights">
+                    <span class="vc-destination-card__tag">Quality education</span>
+                    <span class="vc-destination-card__tag">Practical learning</span>
+                    <span class="vc-destination-card__tag">Student support</span>
+                </div>
+            </article>
+
+            <div class="vc-destination-list" aria-label="Study destination options">
+                <a class="vc-destination-link" href="{{ url_for('universities') }}">
+                    <span class="vc-destination-link__number">01</span>
+                    <span><strong class="vc-destination-link__name">Australia</strong><span class="vc-destination-link__description">Practical education and globally recognised programs.</span></span>
+                    <span class="vc-destination-link__arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="vc-destination-link" href="{{ url_for('booking_page') }}">
+                    <span class="vc-destination-link__number">02</span>
+                    <span><strong class="vc-destination-link__name">USA</strong><span class="vc-destination-link__description">Flexible degrees, research, and campus pathways.</span></span>
+                    <span class="vc-destination-link__arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="vc-destination-link" href="{{ url_for('booking_page') }}">
+                    <span class="vc-destination-link__number">03</span>
+                    <span><strong class="vc-destination-link__name">United Kingdom</strong><span class="vc-destination-link__description">Focused degrees with a wide choice of institutions.</span></span>
+                    <span class="vc-destination-link__arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="vc-destination-link" href="{{ url_for('booking_page') }}">
+                    <span class="vc-destination-link__number">04</span>
+                    <span><strong class="vc-destination-link__name">Canada</strong><span class="vc-destination-link__description">Career-oriented study pathways and support.</span></span>
+                    <span class="vc-destination-link__arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="vc-destination-link" href="{{ url_for('booking_page') }}">
+                    <span class="vc-destination-link__number">05</span>
+                    <span><strong class="vc-destination-link__name">Europe</strong><span class="vc-destination-link__description">Country-specific options across diverse education systems.</span></span>
+                    <span class="vc-destination-link__arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="vc-destination-link" href="{{ url_for('booking_page') }}">
+                    <span class="vc-destination-link__number">06</span>
+                    <span><strong class="vc-destination-link__name">&amp; More</strong><span class="vc-destination-link__description">Explore additional study opportunities suited to your goals.</span></span>
+                    <span class="vc-destination-link__arrow" aria-hidden="true">↗</span>
+                </a>
+                <div class="vc-destinations__actions">
+                    <a class="vc-destinations__button" href="{{ url_for('booking_page') }}">Find Your Best Destination <span aria-hidden="true">&nbsp;↗</span></a>
+                    <a class="vc-destinations__button vc-destinations__button--light" href="{{ url_for('booking_page') }}">Book a Consultation</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="budget-guidance" class="bg-slate-50 py-16">
+    <div class="mx-auto grid max-w-7xl gap-8 px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div>
+            <p class="text-sm uppercase tracking-[0.28em] text-primary">Plan responsibly</p>
+            <h2 class="budget-guidance__title mt-3 text-3xl font-bold leading-tight text-slate-950 sm:text-4xl"><span>A smarter study plan begins with</span><strong>the right budget.</strong></h2>
+            <p class="mt-4 max-w-2xl text-base leading-8 text-slate-600">Every study destination requires a different level of investment. We help you understand the complete cost of your preferred pathway—including tuition, financial requirements, visa conditions, and living costs—before you commit.</p>
+            <p class="mt-4 max-w-2xl text-base leading-8 text-slate-600">We turn your academic profile, available funds, English score, preferred course, and career goals into a realistic pathway—so you can plan with clarity before beginning your application.</p>
+        </div>
+        <div class="border-l-2 border-primary/20 pl-6 text-sm leading-8 text-slate-600">
+            <div class="budget-guidance__aside-intro">
+                <span>Financial clarity</span>
+                <h3>Know the plan before you commit.</h3>
+                <p>We help you understand your realistic pathway before you begin the application process.</p>
+            </div>
+            <p class="font-semibold text-slate-950">What we help you plan</p>
+            <ul class="budget-guidance__list mt-3 space-y-1.5">
+                <li><span class="mr-2 text-primary">01</span><span>Tuition fees and initial application costs</span></li>
+                <li><span class="mr-2 text-primary">02</span><span>Living expenses and arrival planning</span></li>
+                <li><span class="mr-2 text-primary">03</span><span>English preparation and entry requirements</span></li>
+                <li><span class="mr-2 text-primary">04</span><span>Financial documents and visa preparation</span></li>
+            </ul>
+            <p class="mt-5 font-semibold text-slate-950">Find an option within your budget.</p>
+            <a href="{{ url_for('booking_page') }}" class="mt-3 inline-flex items-center font-semibold text-primary hover:text-slate-950">Start with a consultation <span class="ml-2" aria-hidden="true">→</span></a>
+        </div>
+    </div>
+</section>
+
+<script>
+    (function () {
+        const destinations = document.getElementById('destinations');
+        const budgetGuidance = document.getElementById('budget-guidance');
+        if (destinations && budgetGuidance) budgetGuidance.after(destinations);
+    }());
+</script>
+
+<section id="ielts-pte" class="bg-white py-20">
+    <div class="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
+        <div>
+            <p class="text-sm uppercase tracking-[0.28em] text-primary">IELTS &amp; PTE preparation</p>
+            <h2 class="mt-4 text-4xl font-bold leading-tight text-slate-950">Prepare with purpose. Perform with confidence.</h2>
+            <p class="mt-5 max-w-xl text-base leading-8 text-slate-600">Build the English skills and test strategy you need for your preferred study destination with advanced facilitated classes, experienced trainers, and a focused learning environment.</p>
+            <p class="mt-4 max-w-xl text-sm leading-7 text-slate-500">Develop reading, writing, speaking, and listening skills through updated material, mock tests, individual feedback, and progress tracking. Verified IELTS 7+ and PTE 65+ achievements may be added when approved evidence is available.</p>
+            <a href="{{ url_for('booking_page') }}" class="mt-8 inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-slate-900">Start IELTS/PTE preparation <span class="ml-2" aria-hidden="true">↗</span></a>
+        </div>
+        <div class="ielts-pte__features">
+            <div class="ielts-pte__features-heading"><span>Inside the classroom</span><strong>A structured path from preparation to performance.</strong></div>
+            <div class="grid gap-x-8 sm:grid-cols-2">{% for item in ['Experienced instructors','Updated preparation material','Reading, writing, speaking & listening','Mock tests and exam practice','Individual feedback','Progress monitoring'] %}<div class="ielts-pte__feature border-b border-slate-200 py-5 text-sm font-semibold text-slate-950"><span class="mr-3 text-primary">0{{ loop.index }}</span>{{ item }}</div>{% endfor %}</div>
+        </div>
     </div>
 </section>
 
@@ -1101,7 +1392,7 @@
                     </summary>
                     <div class="px-5 pb-5">
                         <p class="text-sm leading-7 text-slate-600">
-                            We help students move beyond admissions and toward a future built on clarity, confidence, and ambition.
+                            We help Pakistani students move beyond admissions and toward a future built on clarity, confidence, and ambition across Australia, USA, UK, Canada, Europe &amp; more.
                         </p>
                     </div>
                 </details>
@@ -1117,7 +1408,7 @@
                     </summary>
                     <div class="px-5 pb-5">
                         <p class="text-sm leading-7 text-slate-600">
-                            What many students need is the right direction, strategy, and guidance to unlock global opportunities with confidence.
+                            What many students need is the right direction, strategy, and guidance to choose a destination, course, English preparation plan, and budget with confidence.
                         </p>
                     </div>
                 </details>
@@ -1133,7 +1424,7 @@
                     </summary>
                     <div class="px-5 pb-5">
                         <p class="text-sm leading-7 text-slate-600">
-                            From profile evaluation to final admission and visa success, we make every step structured, strategic, and stress-free.
+                            From profile evaluation to application, visa assistance, and pre-departure planning, we make every step structured, strategic, and transparent.
                         </p>
                     </div>
                 </details>
@@ -1149,7 +1440,7 @@
                     </summary>
                     <div class="px-5 pb-5">
                         <p class="text-sm leading-7 text-slate-600">
-                            We guide ambitious students toward universities, global exposure, and long-term career opportunities that truly match their goals.
+                            We guide ambitious students toward study destinations, IELTS/PTE preparation, and long-term career opportunities that truly match their goals.
                         </p>
                     </div>
                 </details>
@@ -1188,7 +1479,7 @@
             <div class="order-1 px-4 pt-0 lg:order-2 lg:px-0 lg:pt-2">
                 <p class="text-sm font-semibold uppercase tracking-[0.28em] text-primary">Why Choose Us</p>
                 <h2 class="mt-3 max-w-2xl text-3xl font-bold leading-tight text-slate-950 sm:text-4xl lg:text-[3rem] lg:leading-[1.05]">Complete Support at Every Step</h2>
-                <p class="mt-4 max-w-xl text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">From your first consultation to final arrival abroad, VisaCulture supports you throughout the entire journey. We guide you through university selection, applications, visas, and beyond, so you never navigate the process alone.</p>
+                <p class="mt-4 max-w-xl text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">From your first consultation to final arrival abroad, VisaCulture supports you throughout the entire journey. We guide you through destination and university selection, applications, visas, IELTS/PTE preparation, and beyond.</p>
 
                 <div class="mt-8 border-l-2 border-primary/15 pl-5 sm:pl-6">
                     <div class="space-y-5">
@@ -1201,8 +1492,8 @@
                                 </svg>
                             </span>
                             <div>
-                                <p class="text-sm font-semibold uppercase tracking-[0.16em] text-slate-950">Access to top-ranked universities</p>
-                                <p class="mt-1.5 text-sm leading-7 text-slate-600">We help students pursue admissions to globally recognized universities known for academic excellence, career opportunities, and long-term value.</p>
+                                <p class="text-sm font-semibold uppercase tracking-[0.16em] text-slate-950">Multiple international destinations</p>
+                                <p class="mt-1.5 text-sm leading-7 text-slate-600">We help students find the best choice across Australia, USA, UK, Canada, Europe &amp; more according to academic fit, budget, and career direction.</p>
                             </div>
                         </div>
 
@@ -1219,7 +1510,7 @@
                             </span>
                             <div>
                                 <p class="text-sm font-semibold uppercase tracking-[0.16em] text-slate-950">Personalized guidance</p>
-                                <p class="mt-1.5 text-sm leading-7 text-slate-600">Your goals shape our strategy. We create tailored study plans based on your academic profile, interests, and future ambitions.</p>
+                                <p class="mt-1.5 text-sm leading-7 text-slate-600">Your goals shape our strategy. We create tailored study plans based on your academic profile, interests, budget, and future ambitions.</p>
                             </div>
                         </div>
 
@@ -1231,8 +1522,8 @@
                                 </svg>
                             </span>
                             <div>
-                                <p class="text-sm font-semibold uppercase tracking-[0.16em] text-slate-950">Scholarships & financial guidance</p>
-                                <p class="mt-1.5 text-sm leading-7 text-slate-600">VisaCulture helps students identify scholarship opportunities and prepare stronger applications, making global education more accessible and achievable.</p>
+                                <p class="text-sm font-semibold uppercase tracking-[0.16em] text-slate-950">Honest financial guidance</p>
+                                <p class="mt-1.5 text-sm leading-7 text-slate-600">We help you understand tuition, financial documentation, scholarships, and living costs without promising a guaranteed outcome.</p>
                             </div>
                         </div>
 
@@ -1243,8 +1534,8 @@
                                 </svg>
                             </span>
                             <div>
-                                <p class="text-sm font-semibold uppercase tracking-[0.16em] text-slate-950">Experience that matters</p>
-                                <p class="mt-1.5 text-sm leading-7 text-slate-600">Our experienced team simplifies complex admission and visa processes into a clear, transparent pathway students can follow with confidence.</p>
+                                <p class="text-sm font-semibold uppercase tracking-[0.16em] text-slate-950">IELTS &amp; PTE preparation</p>
+                                <p class="mt-1.5 text-sm leading-7 text-slate-600">Advanced facilitated classes, updated material, mock tests, feedback, and progress tracking under one roof.</p>
                             </div>
                         </div>
                     </div>
@@ -1312,26 +1603,6 @@
                     <h3>Post-Arrival Student Support</h3>
                     <p>Continued assistance after arrival to help students adjust confidently to their new academic and living environment.</p>
                 </article>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="border-t border-slate-200 bg-white py-12">
-    <div class="mx-auto max-w-7xl px-6">
-        <div class="reveal flex flex-col items-center gap-6 rounded-[1.5rem] border border-slate-200 bg-slate-50 px-6 py-8 sm:flex-row sm:justify-between sm:px-8">
-            <div class="text-center sm:text-left">
-                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Guides</p>
-                <h2 class="mt-2 text-2xl font-bold text-slate-950">Admission &amp; process details</h2>
-                <p class="mt-2 max-w-md text-sm leading-7 text-slate-600">Full requirements and our step-by-step flow are on dedicated pages — open them from here or the More menu in the navbar.</p>
-            </div>
-            <div class="flex shrink-0 flex-wrap items-center justify-center gap-3">
-                <a href="{{ url_for('admission_requirements') }}" class="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-soft transition hover:bg-slate-900">
-                    Admission Requirements
-                </a>
-                <a href="{{ url_for('how_we_work') }}" class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 transition hover:border-primary hover:text-primary">
-                    How We Work
-                </a>
             </div>
         </div>
     </div>
