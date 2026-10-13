@@ -2,7 +2,7 @@
 
 {% block title %}Book Appointment | Visa Culture{% endblock %}
 
-{% block meta_description %}Schedule a consultation with Visa Culture for Pakistani students seeking Australian university admission, visa guidance, and scholarship support.{% endblock %}
+{% block meta_description %}Schedule a consultation with Visa Culture for international study destinations, university admission, English preparation, and student visa guidance.{% endblock %}
 
 {% block head %}
 <style>
@@ -153,6 +153,192 @@
       border-radius: 1.25rem;
     }
   }
+  /* Booking page refinement: editorial layout instead of stacked panels */
+  .booking-page {
+    background: #f5f2ec;
+  }
+  .booking-page::before {
+    background-image: linear-gradient(rgba(10,77,143,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(10,77,143,.07) 1px, transparent 1px);
+    background-size: 96px 96px;
+    opacity: .2;
+  }
+  .booking-panel {
+    overflow: visible;
+    border: 0;
+    border-top: 1px solid rgba(23,21,28,.2);
+    border-bottom: 1px solid rgba(23,21,28,.2);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+  .booking-panel > .grid { gap: clamp(2.5rem,7vw,7rem); }
+  .booking-eyebrow {
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    padding: 0;
+    color: #0a4d8f;
+    box-shadow: none;
+  }
+  .booking-eyebrow::before { content: ""; width: 2.6rem; height: 1px; background: #b08a4b; }
+  .booking-title { color: #17151c; font-size: clamp(2.7rem,5vw,5.3rem) !important; line-height: .93; }
+  .booking-panel > .grid > .space-y-6 > p.max-w-xl { max-width: 32rem; color: #625e68; line-height: 1.9; }
+  .booking-chip { border: 0; border-bottom: 1px solid rgba(164,123,61,.45); border-radius: 0; padding: .45rem .1rem; background: transparent; color: #625e68; font-size: .66rem; letter-spacing: .12em; }
+  .booking-info-item { border: 0; border-top: 1px solid rgba(23,21,28,.18); border-radius: 0; background: transparent; padding: 1.1rem 0 !important; box-shadow: none; }
+  .booking-info-item p:first-child { color: #17151c; font-size: .85rem; }
+  .booking-info-item p:last-child { color: #716b72; line-height: 1.65; }
+  .booking-form-card {
+    border: 1px solid rgba(23,21,28,.14);
+    border-top: 3px solid #0a4d8f;
+    border-radius: 1rem;
+    background: rgba(255,255,255,.86);
+    box-shadow: 0 1.5rem 3rem rgba(23,21,28,.09);
+  }
+  .booking-form-intro { margin-bottom: 1.75rem !important; padding: 0 0 1.1rem !important; border-bottom: 1px solid rgba(23,21,28,.14); border-radius: 0 !important; background: transparent !important; color: #716b72; }
+  .booking-form-intro p:first-child { color: #17151c; }
+  .booking-form-intro p:last-child { color: #716b72; }
+  .booking-label { color: #45404a; font-size: .78rem; letter-spacing: .01em; }
+  .booking-field { border: 0; border-bottom: 1px solid rgba(23,21,28,.2); border-radius: 0; background: transparent; padding: .85rem 0; }
+  .booking-field:focus { border-color: #0a4d8f; background: rgba(10,77,143,.035); box-shadow: 0 2px 0 #0a4d8f; }
+  .booking-submit { border-radius: .3rem; background: #0a4d8f; box-shadow: none; }
+  .booking-submit:hover { background: #0d9488; box-shadow: 0 .8rem 1.5rem rgba(10,77,143,.16); }
+  .booking-step { border: 0; border-top: 1px solid rgba(23,21,28,.18); border-radius: 0; background: transparent; padding: 1.25rem 0 !important; box-shadow: none; }
+  .booking-step h2 { color: #17151c; font-size: 1rem; }
+  .booking-step p:last-child { color: #716b72; line-height: 1.65; }
+  @media (max-width: 767px) {
+    .booking-shell { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
+    .booking-panel { border-top: 0; }
+    .booking-panel > .grid { gap: 2.75rem; }
+    .booking-title { font-size: clamp(2.55rem,13vw,4rem) !important; }
+    .booking-form-card { border-radius: .8rem; }
+  }
+  /* Final premium pass */
+  .booking-shell { max-width: 86rem; }
+  .booking-panel > .grid > .space-y-6 { position: relative; padding-left: clamp(0rem,2.5vw,2rem); }
+  .booking-panel > .grid > .space-y-6::before { content: ""; position: absolute; top: .25rem; bottom: .25rem; left: 0; width: 2px; background: linear-gradient(180deg, #0a4d8f, #d5a85e 55%, transparent); opacity: .75; }
+  .booking-title { max-width: 39rem !important; }
+  .booking-title::first-line { letter-spacing: -.07em; }
+  .booking-panel > .grid > .space-y-6 > .flex { gap: .8rem; }
+  .booking-chip { position: relative; transition: color .25s ease, border-color .25s ease; }
+  .booking-chip:hover { border-color: #0d9488; color: #0a4d8f; }
+  .booking-info-item { position: relative; }
+  .booking-info-item::after { content: "↗"; position: absolute; top: 1rem; right: .1rem; color: #b08a4b; font-size: 1rem; opacity: .7; }
+  .booking-form-card { position: relative; overflow: hidden; }
+  .booking-form-card::before { content: "CONSULTATION REQUEST"; position: absolute; top: 1.25rem; right: 1.5rem; color: rgba(10,77,143,.45); font-size: .58rem; font-weight: 800; letter-spacing: .18em; }
+  .booking-form-card form { position: relative; z-index: 1; }
+  .booking-label > span { font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+  .booking-field::placeholder { color: #9b9690; }
+  .booking-submit { position: relative; overflow: hidden; min-height: 3.4rem; letter-spacing: .01em; }
+  .booking-submit::after { content: "↗"; margin-left: .5rem; font-size: 1rem; transition: transform .25s ease; }
+  .booking-submit:hover::after { transform: translate(.2rem,-.2rem); }
+  .booking-step { position: relative; padding-left: 3.25rem !important; }
+  .booking-step::before { content: "01"; position: absolute; top: 1.4rem; left: 0; color: #0a4d8f; font-size: .68rem; font-weight: 800; letter-spacing: .12em; }
+  .booking-step:nth-child(2)::before { content: "02"; }
+  .booking-step:nth-child(3)::before { content: "03"; }
+  .booking-step p:first-child { color: #a47b3d !important; font-size: .65rem; letter-spacing: .18em; }
+  @media (max-width: 767px) {
+    .booking-panel > .grid > .space-y-6 { padding-left: 1rem; }
+    .booking-panel > .grid > .space-y-6::before { left: 0; }
+    .booking-form-card::before { position: static; display: block; margin-bottom: 1.1rem; }
+    .booking-step { padding-left: 2.5rem !important; }
+  }
+  /* Body experience: form, fields and supporting content */
+  .booking-form-card { padding: clamp(1.35rem,3vw,2.25rem) !important; }
+  .booking-form-card form { display: grid; gap: 1.35rem; }
+  .booking-form-card form > * + * { margin-top: 0 !important; }
+  .booking-form-card form > div { display: grid; gap: 1.2rem; }
+  .booking-label { min-width: 0; gap: .45rem; }
+  .booking-field { min-height: 3.05rem; font-size: .92rem; line-height: 1.45; }
+  textarea.booking-field { min-height: 8rem; padding-top: .95rem; resize: vertical; }
+  .booking-field[type="date"] { min-height: 3.05rem; }
+  .booking-form-card form > label:focus-within > span,
+  .booking-form-card form > div label:focus-within > span { color: #0a4d8f; }
+  .booking-form-card form > div + label { margin-top: .15rem; }
+  .booking-info-item p:last-child { max-width: 19rem; }
+  .booking-proof-list { display: flex; flex-wrap: wrap; align-items: center; gap: 0; margin-top: .25rem; border-top: 1px solid rgba(23,21,28,.16); border-bottom: 1px solid rgba(23,21,28,.16); }
+  .booking-proof { display: inline-flex; align-items: center; min-height: 2.7rem; padding: .45rem 1rem; color: #625e68; font-size: .68rem; font-weight: 700; letter-spacing: .07em; line-height: 1.35; text-transform: uppercase; }
+  .booking-proof:first-child { padding-left: 0; }
+  .booking-proof + .booking-proof { border-left: 1px solid rgba(164,123,61,.42); }
+  .booking-proof::before { content: ""; width: .32rem; height: .32rem; margin-right: .5rem; border-radius: 50%; background: #0d9488; }
+  .booking-proof:first-child::before { background: #d5a85e; }
+  @media (min-width: 768px) {
+    .booking-proof { flex: 1 1 0; justify-content: center; text-align: center; }
+    .booking-proof:first-child { padding-left: 1rem; }
+  }
+  .booking-step p:last-child { max-width: 20rem; }
+  .booking-step:hover { border-color: rgba(10,77,143,.4); }
+  .booking-step:hover::before { color: #d5a85e; }
+  .booking-form-card .mb-5 + .space-y-4 { margin-top: .25rem; }
+  @media (min-width: 768px) {
+    .booking-form-card form > div { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    .booking-form-card form > div:last-of-type { align-items: end; }
+  }
+  @media (max-width: 767px) {
+    .booking-form-card form { gap: 1.15rem; }
+    .booking-form-card form > div { gap: 1.15rem; }
+    .booking-field { min-height: 2.9rem; }
+    textarea.booking-field { min-height: 7rem; }
+    .booking-proof-list { display: grid; grid-template-columns: 1fr; padding: .35rem 0; }
+    .booking-proof { min-height: 2rem; padding: .35rem 0; }
+    .booking-proof:first-child { padding-left: 0; }
+    .booking-proof + .booking-proof { border-top: 1px solid rgba(164,123,61,.22); border-left: 0; }
+  }
+  /* Modern conversion-focused form treatment */
+  .booking-form-card {
+    border: 1px solid rgba(10,77,143,.12);
+    border-top: 4px solid transparent;
+    border-image: linear-gradient(90deg, #0a4d8f, #0d9488, #d5a85e) 1;
+    border-radius: 1.65rem;
+    background: rgba(255,255,255,.96);
+    box-shadow: 0 1.5rem 3.5rem rgba(23,21,28,.12), 0 0 0 1px rgba(255,255,255,.75) inset;
+  }
+  .booking-form-intro { padding: 0 0 1.4rem !important; margin-bottom: 1.7rem !important; border-bottom: 1px solid rgba(10,77,143,.13); }
+  .booking-form-intro p:first-child { font-size: 1.2rem; letter-spacing: -.02em; }
+  .booking-form-intro p:last-child { max-width: 32rem; font-size: .82rem; line-height: 1.7; }
+  .booking-form-card form { gap: 1.1rem; }
+  .booking-label { gap: .5rem; color: #344255; }
+  .booking-label > span { color: #526174; font-size: .66rem; letter-spacing: .1em; }
+  .booking-field, textarea.booking-field {
+    min-height: 3.15rem;
+    padding: .85rem .95rem;
+    border: 1px solid rgba(100,116,139,.2);
+    border-radius: .7rem;
+    background: #f8fafc;
+    color: #132238;
+    box-shadow: 0 1px 1px rgba(15,23,42,.02) inset;
+    transition: border-color .2s ease, background-color .2s ease, box-shadow .2s ease, transform .2s ease;
+  }
+  textarea.booking-field { min-height: 7.5rem; }
+  .booking-field:hover { border-color: rgba(10,77,143,.35); background: #fff; }
+  .booking-field:focus { border-color: #0a4d8f; background: #fff; box-shadow: 0 0 0 4px rgba(10,77,143,.1), 0 5px 16px rgba(10,77,143,.06); transform: translateY(-1px); }
+  .booking-field[type="date"] { padding-right: .8rem; }
+  .booking-submit {
+    min-height: 3.4rem;
+    margin-top: .35rem;
+    border-radius: .7rem;
+    background: linear-gradient(110deg, #0a4d8f, #0d9488);
+    box-shadow: 0 .8rem 1.8rem rgba(10,77,143,.2);
+    font-size: .85rem;
+    letter-spacing: .01em;
+    transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+  }
+  .booking-submit:hover { transform: translateY(-2px); filter: saturate(1.08); box-shadow: 0 1rem 2.2rem rgba(10,77,143,.26); }
+  .booking-form-note { display: flex; align-items: center; justify-content: center; gap: .4rem; margin-top: -.25rem; color: #748195; font-size: .68rem; line-height: 1.5; text-align: center; }
+  .booking-form-note span { display: inline-flex; align-items: center; justify-content: center; width: 1rem; height: 1rem; border-radius: 50%; background: rgba(13,148,136,.12); color: #0d9488; font-size: .62rem; font-weight: 800; }
+  /* Keep the lower process area quiet and editorial */
+  .booking-page::before { display: none; }
+  .booking-panel { border-top: 0; border-bottom: 0; }
+  .booking-shell > .mt-6 { margin-top: clamp(3rem,6vw,5rem) !important; }
+  .booking-step { border: 0 !important; padding: 1rem 0 !important; background: transparent; }
+  .booking-step::before { content: none; display: none; }
+  .booking-shell > .mt-6 .booking-step { border-top: 1px solid rgba(23,21,28,.16) !important; padding-top: 1.35rem !important; }
+  .booking-step:hover { border-top-color: rgba(23,21,28,.16) !important; }
+  @media (max-width: 767px) {
+    .booking-form-card { border-radius: 1.2rem; }
+    .booking-form-intro p:first-child { font-size: 1.08rem; }
+    .booking-field, textarea.booking-field { min-height: 3rem; }
+  }
 </style>
 {% endblock %}
 
@@ -167,29 +353,31 @@
             {{ page_summary.title if page_summary is defined else 'Book Appointment with Visa Culture' }}
           </h1>
           <p class="max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
-            {{ page_summary.subtitle if page_summary is defined else 'Schedule a consultation for Australian university admissions, scholarships, and student visa support.' }}
+            {{ page_summary.subtitle if page_summary is defined else 'Schedule a consultation for Australia, USA, UK, Canada, Europe and more — with guidance shaped around your study goals.' }}
           </p>
           <div class="flex flex-wrap gap-2.5">
-            <span class="booking-chip">Free initial consultation</span>
-            <span class="booking-chip">Fast response</span>
-            <span class="booking-chip">Secure handling</span>
+            <div class="booking-proof-list" aria-label="Consultation benefits">
+              <span class="booking-proof">Free initial consultation</span>
+              <span class="booking-proof">Fast response</span>
+              <span class="booking-proof">Secure handling</span>
+            </div>
           </div>
           <div class="grid gap-3 sm:grid-cols-2">
-            <div class="booking-card p-5">
+            <div class="booking-card booking-info-item p-5">
               <p class="text-sm font-semibold text-slate-950">Clear next steps</p>
               <p class="mt-2 text-sm leading-7 text-slate-600">We review your details and respond with a practical direction for the next stage.</p>
             </div>
-            <div class="booking-card p-5">
+            <div class="booking-card booking-info-item p-5">
               <p class="text-sm font-semibold text-slate-950">Personalised guidance</p>
               <p class="mt-2 text-sm leading-7 text-slate-600">Your booking is matched with the right consultancy support based on your profile.</p>
             </div>
           </div>
         </div>
 
-        <div class="booking-card p-5 sm:p-6 lg:p-7">
-          <div class="mb-5 rounded-[1.3rem] bg-slate-950 p-4 text-sm text-slate-200">
-            <p class="font-semibold text-white">Ready to book?</p>
-            <p class="mt-2 text-slate-300">Complete the form below and our team will contact you soon.</p>
+        <div class="booking-card booking-form-card p-5 sm:p-6 lg:p-7">
+          <div class="booking-form-intro mb-5 rounded-[1.3rem] bg-slate-950 p-4 text-sm text-slate-200">
+            <p class="font-semibold text-white">Tell us where you want to go next.</p>
+            <p class="mt-2 text-slate-300">Share a few details — it takes about two minutes and helps us prepare a more useful first conversation.</p>
           </div>
 
           {% with messages = get_flashed_messages(with_categories=true) %}
@@ -210,7 +398,7 @@
               </label>
               <label class="booking-label" for="phone">
                 <span>Phone number</span>
-                <input id="phone" name="phone" type="tel" required class="booking-field" placeholder="+61 4XX XXX XXX">
+                <input id="phone" name="phone" type="tel" required class="booking-field" placeholder="+92 3XX XXX XXXX">
               </label>
             </div>
 
@@ -226,13 +414,13 @@
             </div>
 
             <label class="booking-label" for="university">
-              <span>Preferred university</span>
-              <input id="university" name="university" type="text" required class="booking-field" placeholder="University of Melbourne">
+              <span>Preferred destination</span>
+              <input id="university" name="university" type="text" required class="booking-field" placeholder="Any Country">
             </label>
 
             <label class="booking-label" for="address">
               <span>Address</span>
-              <input id="address" name="address" type="text" required class="booking-field" placeholder="Your city or full address">
+              <input id="address" name="address" type="text" required class="booking-field" placeholder="Your city or current address">
             </label>
 
             <label class="booking-label" for="message">
@@ -240,24 +428,25 @@
               <textarea id="message" name="message" rows="5" class="booking-field resize-none" placeholder="Tell us about your study goals"></textarea>
             </label>
 
-            <button type="submit" class="booking-submit w-full">Submit appointment request</button>
+            <button type="submit" class="booking-submit w-full">Start my consultation request</button>
+            <p class="booking-form-note"><span aria-hidden="true">✓</span> Your details are used only to prepare your consultation.</p>
           </form>
         </div>
       </div>
     </div>
 
     <div class="mt-6 grid gap-4 md:grid-cols-3">
-      <div class="booking-card p-5">
+      <div class="booking-card booking-step p-5">
         <p class="text-xs font-semibold uppercase tracking-[0.24em] text-primary">Step 1</p>
         <h2 class="mt-3 text-xl font-bold text-slate-950">Submit details</h2>
         <p class="mt-2 text-sm leading-7 text-slate-600">Share your profile, preferences, and preferred university in one simple form.</p>
       </div>
-      <div class="booking-card p-5">
+      <div class="booking-card booking-step p-5">
         <p class="text-xs font-semibold uppercase tracking-[0.24em] text-primary">Step 2</p>
         <h2 class="mt-3 text-xl font-bold text-slate-950">We review quickly</h2>
         <p class="mt-2 text-sm leading-7 text-slate-600">Our team checks your request and prepares the right guidance for you.</p>
       </div>
-      <div class="booking-card p-5">
+      <div class="booking-card booking-step p-5">
         <p class="text-xs font-semibold uppercase tracking-[0.24em] text-primary">Step 3</p>
         <h2 class="mt-3 text-xl font-bold text-slate-950">Get your next step</h2>
         <p class="mt-2 text-sm leading-7 text-slate-600">You receive direction on consultation, university fit, and application planning.</p>
