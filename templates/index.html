@@ -2115,6 +2115,7 @@
             if (paragraph.dataset.mobileProcessed === 'true') return;
             if (paragraph.closest('.hero-content')) return;
             if (paragraph.closest('form')) return;
+            if (paragraph.closest('#budget-guidance')) return;
 
             const text = paragraph.textContent ? paragraph.textContent.trim() : '';
             if (text.length < 170) return;
