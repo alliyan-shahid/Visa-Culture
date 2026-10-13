@@ -1004,6 +1004,140 @@
     #ielts-pte .ielts-pte__feature { min-height: 4.25rem; display: flex; align-items: center; border-color: rgba(210,255,246,.3) !important; line-height: 1.45; }
     #ielts-pte .ielts-pte__feature > span { color: #baf4e8 !important; font-size: .7rem; letter-spacing: .08em; }
     @media (max-width: 640px) { #ielts-pte h2 { font-size: clamp(2.15rem, 10vw, 3.25rem); } }
+
+    /* Services: open animated flow */
+    #services { background: #f8fbff !important; }
+    #services .services-flow { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 0 3.5rem; width: 100%; height: auto; min-height: 0; padding: .5rem 0; overflow: visible; border: 0; border-radius: 0; background: transparent; box-shadow: none; perspective: none; }
+    #services .services-flow__line { position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: linear-gradient(180deg, transparent, rgba(10,77,143,.25) 12%, rgba(10,77,143,.25) 88%, transparent); pointer-events: none; }
+    #services .services-flow__line::after { content: ""; position: absolute; top: 0; left: -2px; width: 5px; height: 5rem; border-radius: 999px; background: linear-gradient(180deg, transparent, #0a4d8f, transparent); animation: servicesScan 5s ease-in-out infinite; }
+    #services .services-flow__item { position: relative; z-index: 1; display: grid; grid-template-columns: 2.5rem 2rem minmax(0,1fr); gap: .9rem; align-items: start; min-height: 10.5rem; padding: 1.8rem 0; border-top: 1px solid rgba(10,77,143,.16); color: #10223a; opacity: 0; transform: translateY(1.25rem); transition: opacity .65s ease, transform .65s cubic-bezier(.22,1,.36,1), background-color .3s ease; }
+    #services .services-flow__item.is-visible { opacity: 1; transform: translateY(0); }
+    #services .services-flow__item:nth-of-type(2) { transition-delay: .08s; }
+    #services .services-flow__item:nth-of-type(3) { transition-delay: .16s; }
+    #services .services-flow__item:nth-of-type(4) { transition-delay: .24s; }
+    #services .services-flow__item:nth-of-type(5) { transition-delay: .32s; }
+    #services .services-flow__item:nth-of-type(6) { transition-delay: .4s; }
+    #services .services-flow__item:nth-of-type(7) { transition-delay: .48s; }
+    #services .services-flow__item:nth-of-type(8) { transition-delay: .56s; }
+    #services .services-flow__item:nth-of-type(9) { transition-delay: .64s; }
+    #services .services-flow__item:hover { background: rgba(255,255,255,.7); }
+    #services .services-flow__number { color: #0a4d8f; font-size: .72rem; font-weight: 800; letter-spacing: .08em; line-height: 1.7; }
+    #services .services-flow__item i { width: 1.45rem; height: 1.45rem; color: #0a4d8f; stroke-width: 1.7; }
+    #services .services-flow__item h3 { margin: 0; color: #10223a; font-size: 1.05rem; font-weight: 700; letter-spacing: -.015em; line-height: 1.3; }
+    #services .services-flow__item p { max-width: 25rem; margin: .55rem 0 0; color: #5d6b7a; font-size: .82rem; line-height: 1.65; }
+    @keyframes servicesScan { 0%, 100% { transform: translateY(0); opacity: .25; } 50% { transform: translateY(calc(100% + 18rem)); opacity: 1; } }
+    @media (max-width: 760px) { #services .services-flow { grid-template-columns: 1fr; gap: 0; padding-left: 1rem; } #services .services-flow__line { left: .2rem; } #services .services-flow__item { grid-template-columns: 2.25rem 1.8rem minmax(0,1fr); min-height: 0; padding: 1.5rem 0; } }
+    @media (prefers-reduced-motion: reduce) { #services .services-flow__line::after { animation: none; } #services .services-flow__item { opacity: 1; transform: none; transition: none; } }
+
+    /* Services: vibrant aurora motion system */
+    #services { position: relative; overflow: hidden; background: #07162f !important; color: #fff; }
+    #services::before { content: ""; position: absolute; top: -22rem; left: -12rem; width: 42rem; height: 42rem; border-radius: 50%; background: radial-gradient(circle, rgba(0,205,255,.24), rgba(39,91,255,.12) 36%, transparent 70%); filter: blur(20px); animation: servicesAuroraA 11s ease-in-out infinite alternate; pointer-events: none; }
+    #services::after { content: ""; position: absolute; right: -15rem; bottom: -25rem; width: 48rem; height: 48rem; border-radius: 50%; background: radial-gradient(circle, rgba(168,72,255,.25), rgba(15,118,110,.12) 38%, transparent 70%); filter: blur(24px); animation: servicesAuroraB 14s ease-in-out infinite alternate; pointer-events: none; }
+    #services > .mx-auto { position: relative; z-index: 1; }
+    #services .text-primary { color: #6ee7ff !important; letter-spacing: .18em; }
+    #services h2 { max-width: 48rem; color: #fff; letter-spacing: -.055em; }
+    #services .mb-12 > div > p:last-child, #services .mb-12 > p { color: #b9cbe2 !important; }
+    #services .services-flow { isolation: isolate; }
+    #services .services-flow::before { content: ""; position: absolute; inset: 0; background: linear-gradient(105deg, transparent 0%, rgba(41,216,255,.035) 35%, rgba(139,92,246,.07) 68%, transparent 100%); background-size: 220% 100%; animation: servicesSweep 9s ease-in-out infinite; pointer-events: none; }
+    #services .services-flow__line { background: linear-gradient(180deg, transparent, rgba(110,231,255,.5) 15%, rgba(139,92,246,.9) 50%, rgba(110,231,255,.5) 85%, transparent); box-shadow: 0 0 18px rgba(57,213,255,.4); }
+    #services .services-flow__line::after { width: 9px; left: -4px; height: 8rem; background: linear-gradient(180deg, transparent, #67e8f9 35%, #c084fc 65%, transparent); box-shadow: 0 0 20px #22d3ee, 0 0 38px rgba(168,85,247,.8); animation: servicesEnergy 4.2s cubic-bezier(.45,0,.55,1) infinite; }
+    #services .services-flow__item { border-top-color: rgba(148,196,255,.2); color: #fff; }
+    #services .services-flow__item::before { content: ""; position: absolute; top: -3px; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, #22d3ee, #a78bfa, transparent); opacity: 0; transition: width .65s cubic-bezier(.22,1,.36,1), opacity .3s ease; }
+    #services .services-flow__item:hover { background: linear-gradient(90deg, rgba(34,211,238,.1), rgba(139,92,246,.05), transparent); }
+    #services .services-flow__item:hover::before { width: 78%; opacity: 1; }
+    #services .services-flow__number { color: #67e8f9; text-shadow: 0 0 12px rgba(34,211,238,.6); }
+    #services .services-flow__item i { color: #c4b5fd; filter: drop-shadow(0 0 8px rgba(167,139,250,.65)); transition: transform .45s cubic-bezier(.22,1,.36,1), color .3s ease; }
+    #services .services-flow__item:hover i { color: #67e8f9; transform: translateY(-3px) rotate(-8deg) scale(1.12); }
+    #services .services-flow__item h3 { color: #f8fbff; }
+    #services .services-flow__item p { color: #aebfd5; }
+    @keyframes servicesAuroraA { from { transform: translate3d(-3%, -2%, 0) scale(.92); } to { transform: translate3d(18%, 14%, 0) scale(1.15); } }
+    @keyframes servicesAuroraB { from { transform: translate3d(8%, 4%, 0) scale(1); } to { transform: translate3d(-15%, -12%, 0) scale(1.18); } }
+    @keyframes servicesSweep { 0%, 100% { background-position: 0% 50%; opacity: .5; } 50% { background-position: 100% 50%; opacity: 1; } }
+    @keyframes servicesEnergy { 0% { transform: translateY(0); opacity: 0; } 12% { opacity: 1; } 72% { opacity: 1; } 100% { transform: translateY(calc(100% + 22rem)); opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { #services::before, #services::after, #services .services-flow::before, #services .services-flow__line::after { animation: none; } #services .services-flow__item:hover i { transform: none; } }
+
+    /* Services: education consultancy coral-orange palette */
+    #services { background: #e8755f !important; }
+    #services::before { background: radial-gradient(circle, rgba(255,231,190,.3), rgba(255,173,122,.16) 38%, transparent 70%); filter: blur(24px); }
+    #services::after { background: radial-gradient(circle, rgba(255,196,119,.28), rgba(173,57,58,.14) 38%, transparent 70%); filter: blur(28px); }
+    #services .text-primary { color: #fff0d2 !important; }
+    #services .mb-12 > div > p:last-child, #services .mb-12 > p { color: #fff0e3 !important; }
+    #services .services-flow::before { background: linear-gradient(105deg, transparent 0%, rgba(255,244,220,.06) 35%, rgba(255,199,126,.1) 68%, transparent 100%); }
+    #services .services-flow__line { background: linear-gradient(180deg, transparent, rgba(255,239,207,.72) 15%, rgba(255,190,113,.95) 50%, rgba(255,239,207,.72) 85%, transparent); box-shadow: 0 0 18px rgba(255,226,170,.45); }
+    #services .services-flow__line::after { background: linear-gradient(180deg, transparent, #fff1cf 35%, #ffc36e 65%, transparent); box-shadow: 0 0 20px #ffe4a8, 0 0 38px rgba(255,153,85,.7); }
+    #services .services-flow__item { border-top-color: rgba(255,245,225,.3); }
+    #services .services-flow__item::before { background: linear-gradient(90deg, #fff0c8, #ffc36e, transparent); }
+    #services .services-flow__item:hover { background: linear-gradient(90deg, rgba(255,248,226,.12), rgba(255,197,121,.08), transparent); }
+    #services .services-flow__number { color: #fff0c8; text-shadow: 0 0 12px rgba(255,226,166,.6); }
+    #services .services-flow__item i { color: #ffe1b2; filter: drop-shadow(0 0 8px rgba(255,220,157,.55)); }
+    #services .services-flow__item:hover i { color: #fff8e8; }
+    #services .services-flow__item h3 { color: #fffaf1; }
+    #services .services-flow__item p { color: #ffe5d4; }
+    /* Remove rectangular treatment: open service typography */
+    #services .services-flow__item { min-height: 9.5rem; padding: 1.65rem .25rem 1.65rem 0; border-top: 0; background: transparent !important; transition: opacity .65s ease, transform .65s cubic-bezier(.22,1,.36,1); }
+    #services .services-flow__item::before { top: auto; bottom: 0; width: 3.25rem; height: 1px; opacity: .7; transition: width .5s cubic-bezier(.22,1,.36,1), opacity .3s ease; }
+    #services .services-flow__item:hover { transform: translateX(.35rem); background: transparent !important; }
+    #services .services-flow__item:hover::before { width: 7rem; opacity: 1; }
+    #services .services-flow__item i { width: 1.2rem; height: 1.2rem; }
+    #services .services-flow__item h3 { font-size: 1.02rem; }
+    #services .services-flow__item p { max-width: 24rem; font-size: .8rem; }
+    @media (max-width: 760px) { #services .services-flow__item { min-height: 0; padding: 1.45rem 0; } #services .services-flow__item:hover { transform: translateX(.2rem); } }
+
+    /* Services showcase stage */
+    #services .services-stage { position: relative; display: grid; grid-template-columns: minmax(16rem,.82fr) minmax(0,1.18fr); gap: clamp(2rem,6vw,6rem); align-items: stretch; min-height: 31rem; margin-top: 2rem; }
+    #services .services-stage__rail { display: flex; flex-direction: column; justify-content: center; border-left: 1px solid rgba(255,245,225,.4); }
+    #services .services-stage__tab { position: relative; display: grid; grid-template-columns: 2.2rem minmax(0,1fr) 1.5rem; gap: .75rem; align-items: center; min-height: 3.25rem; padding: .85rem 1rem; border: 0; border-bottom: 1px solid rgba(255,245,225,.18); background: transparent; color: #ffe7d8; font: inherit; text-align: left; cursor: pointer; transition: color .3s ease, background-color .3s ease, padding-left .35s ease; }
+    #services .services-stage__tab:first-child { border-top: 1px solid rgba(255,245,225,.18); }
+    #services .services-stage__tab::before { content: ""; position: absolute; left: -1px; top: 0; bottom: 0; width: 2px; background: #ffe1a8; transform: scaleY(0); transform-origin: center; transition: transform .35s ease; }
+    #services .services-stage__tab span { color: #ffd89a; font-size: .7rem; font-weight: 800; letter-spacing: .08em; }
+    #services .services-stage__tab strong { font-size: .86rem; font-weight: 600; line-height: 1.35; }
+    #services .services-stage__tab i { color: #ffc98e; font-size: 1rem; font-style: normal; opacity: .45; transition: transform .35s ease, opacity .3s ease; }
+    #services .services-stage__tab:hover, #services .services-stage__tab.is-active { padding-left: 1.35rem; background: rgba(255,245,225,.1); color: #fffaf1; }
+    #services .services-stage__tab.is-active::before { transform: scaleY(1); }
+    #services .services-stage__tab.is-active i, #services .services-stage__tab:hover i { opacity: 1; transform: translate(.2rem,-.2rem); }
+    #services .services-stage__display { position: relative; display: flex; min-height: 31rem; align-items: center; overflow: hidden; padding: clamp(2rem,6vw,5rem); border: 1px solid rgba(255,245,225,.24); border-radius: 2.25rem; background: linear-gradient(135deg, rgba(112,37,43,.42), rgba(255,190,111,.13)); box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1.5rem 4rem rgba(116,44,34,.22); }
+    #services .services-stage__display::before { content: ""; position: absolute; inset: 1px; border-radius: 2.15rem; background: radial-gradient(circle at 75% 26%, rgba(255,215,150,.24), transparent 23%), radial-gradient(circle at 20% 85%, rgba(255,242,211,.11), transparent 29%); pointer-events: none; }
+    #services .services-stage__orb { position: absolute; top: 13%; right: 12%; width: 12rem; height: 12rem; border: 1px solid rgba(255,236,191,.4); border-radius: 50%; box-shadow: 0 0 0 1.5rem rgba(255,219,155,.04), 0 0 4rem rgba(255,205,129,.18); animation: stageOrbit 8s ease-in-out infinite; }
+    #services .services-stage__orb::after { content: ""; position: absolute; top: 12%; right: 7%; width: .65rem; height: .65rem; border-radius: 50%; background: #ffe2a8; box-shadow: 0 0 1rem #ffe2a8; }
+    #services .services-stage__counter { position: absolute; top: 2rem; right: 2.5rem; z-index: 2; color: #ffe0b0; font-size: .75rem; letter-spacing: .1em; }
+    #services .services-stage__counter strong { color: #fffaf1; font-size: 2.4rem; letter-spacing: -.07em; line-height: 1; }
+    #services .services-stage__slides { position: relative; z-index: 2; width: min(100%, 34rem); min-height: 15rem; }
+    #services .services-stage__slide { position: absolute; inset: 0; opacity: 0; transform: translateY(1.4rem) scale(.98); filter: blur(5px); pointer-events: none; transition: opacity .65s ease, transform .75s cubic-bezier(.22,1,.36,1), filter .65s ease; }
+    #services .services-stage__slide.is-active { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); pointer-events: auto; }
+    #services .services-stage__slide i { width: 2.4rem; height: 2.4rem; color: #ffe4b5; filter: drop-shadow(0 0 .7rem rgba(255,226,170,.65)); }
+    #services .services-stage__slide h3 { max-width: 31rem; margin: 1.4rem 0 0; color: #fffaf1; font-size: clamp(2rem,4vw,3.8rem); font-weight: 700; letter-spacing: -.065em; line-height: .98; }
+    #services .services-stage__slide p { max-width: 29rem; margin: 1.25rem 0 0; color: #ffe4d1; font-size: .95rem; line-height: 1.8; }
+    #services .services-stage__progress { position: absolute; right: 2.5rem; bottom: 2rem; left: 2.5rem; z-index: 2; height: 2px; background: rgba(255,245,225,.22); }
+    #services .services-stage__progress span { display: block; width: 12.5%; height: 100%; background: #ffe1a8; box-shadow: 0 0 .75rem rgba(255,225,168,.85); transition: width .6s cubic-bezier(.22,1,.36,1); }
+    @keyframes stageOrbit { 0%,100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(-1rem,1rem,0) scale(1.08); } }
+    @media (max-width: 900px) { #services .services-stage { grid-template-columns: 1fr; gap: 2rem; } #services .services-stage__rail { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); border-left: 0; } #services .services-stage__tab { min-height: 3.5rem; padding: .75rem; } #services .services-stage__tab:first-child { border-top: 0; } #services .services-stage__tab::before { top: auto; right: 0; bottom: -1px; left: 0; width: auto; height: 2px; transform: scaleX(0); } #services .services-stage__tab.is-active::before { transform: scaleX(1); } #services .services-stage__tab:hover, #services .services-stage__tab.is-active { padding-left: .95rem; } }
+    @media (max-width: 560px) { #services .services-stage__rail { grid-template-columns: 1fr; } #services .services-stage__display { min-height: 27rem; padding: 2rem 1.5rem; border-radius: 1.5rem; } #services .services-stage__display::before { border-radius: 1.4rem; } #services .services-stage__counter { top: 1.5rem; right: 1.5rem; } #services .services-stage__progress { right: 1.5rem; bottom: 1.5rem; left: 1.5rem; } #services .services-stage__slide h3 { font-size: clamp(2rem,10vw,3rem); } }
+    @media (prefers-reduced-motion: reduce) { #services .services-stage__orb { animation: none; } #services .services-stage__slide { transition: none; filter: none; } }
+
+    /* Services: brand palette override */
+    #services { background: linear-gradient(118deg, #0a4d8f 0%, #0d9488 54%, #0a4d8f 100%) !important; }
+    #services::before { background: radial-gradient(circle, rgba(92,224,211,.28), rgba(10,77,143,.12) 42%, transparent 72%); }
+    #services::after { background: radial-gradient(circle, rgba(196,154,58,.25), rgba(13,148,136,.12) 40%, transparent 72%); }
+    #services .text-primary { color: #f6d98a !important; }
+    #services .mb-12 > div > p:last-child, #services .mb-12 > p { color: #d9f5f0 !important; }
+    #services .services-stage__rail { border-left-color: rgba(236,255,251,.42); }
+    #services .services-stage__tab { border-color: rgba(236,255,251,.2); color: #d9f5f0; }
+    #services .services-stage__tab::before { background: #f6d98a; }
+    #services .services-stage__tab span { color: #f6d98a; }
+    #services .services-stage__tab i { color: #b8f3e9; }
+    #services .services-stage__tab:hover, #services .services-stage__tab.is-active { background: rgba(255,255,255,.1); color: #fff; }
+    #services .services-stage__display { border-color: rgba(236,255,251,.3); background: linear-gradient(135deg, rgba(5,49,96,.35), rgba(13,148,136,.25)); box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 1.5rem 4rem rgba(4,47,83,.28); }
+    #services .services-stage__display::before { background: radial-gradient(circle at 75% 26%, rgba(196,154,58,.28), transparent 23%), radial-gradient(circle at 20% 85%, rgba(155,246,232,.14), transparent 29%); }
+    #services .services-stage__orb { border-color: rgba(246,217,138,.55); box-shadow: 0 0 0 1.5rem rgba(196,154,58,.06), 0 0 4rem rgba(196,154,58,.22); }
+    #services .services-stage__orb::after { background: #f6d98a; box-shadow: 0 0 1rem #f6d98a; }
+    #services .services-stage__counter { color: #f6d98a; }
+    #services .services-stage__counter strong { color: #fff; }
+    #services .services-stage__slide i { color: #b8f3e9; filter: drop-shadow(0 0 .7rem rgba(184,243,233,.65)); }
+    #services .services-stage__slide h3 { color: #fff; }
+    #services .services-stage__slide p { color: #d9f5f0; }
+    #services .services-stage__progress { background: rgba(236,255,251,.24); }
+    #services .services-stage__progress span { background: #f6d98a; box-shadow: 0 0 .75rem rgba(246,217,138,.85); }
+    .vc-ampersand { display: inline-block; margin: 0 .08em; font-family: Baskerville, "Baskerville Old Face", Garamond, Georgia, serif; font-size: 1.16em; font-style: normal; font-weight: 700; line-height: .82; vertical-align: -.04em; }
 </style>
 {% endblock %}
 
@@ -1270,7 +1404,7 @@
         <div class="vc-destinations__layout">
             <article class="vc-destination-card">
                 <div class="vc-destination-card__content">
-                    <p class="vc-destination-card__eyebrow">Featured destination · Australia</p>
+                    <p class="vc-destination-card__eyebrow">Featured destinations </p>
                     <h3>A stronger start for your global education journey.</h3>
                 </div>
                 <div class="vc-destination-card__footer" aria-label="Australia highlights">
@@ -1308,7 +1442,7 @@
                 </a>
                 <a class="vc-destination-link" href="{{ url_for('booking_page') }}">
                     <span class="vc-destination-link__number">06</span>
-                    <span><strong class="vc-destination-link__name">&amp; More</strong><span class="vc-destination-link__description">Explore additional study opportunities suited to your goals.</span></span>
+                    <span><strong class="vc-destination-link__name">&amp; More Destinations </strong><span class="vc-destination-link__description">Explore additional study opportunities suited to your goals.</span></span>
                     <span class="vc-destination-link__arrow" aria-hidden="true">↗</span>
                 </a>
                 <div class="vc-destinations__actions">
@@ -1549,63 +1683,76 @@
         <div class="mb-12 grid gap-6 reveal lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
             <div>
                 <p class="text-sm text-primary">Our Services</p>
-                <h2 class="mt-3 text-4xl font-bold leading-tight text-slate-950">End-to-End Global Education & Visa Solutions</h2>
+                <h2 class="mt-3 text-4xl font-bold leading-tight text-slate-950">End-to-End Global Education <span class="vc-ampersand">&amp;</span> Visa Solutions</h2>
             </div>
             <p class="text-base leading-8 text-slate-600">VisaCulture supports students through every stage of their study abroad journey &mdash; from strategic profile planning and university admissions to visa approval and successful international transition.</p>
         </div>
-        <div class="services-showcase">
-            <div class="showcase-ring">
-                <article class="showcase-card">
-                    <i data-feather="message-circle"></i>
-                    <h3>Career & Study Counselling</h3>
-                    <p>Personalized guidance to help students choose the right study pathway, career direction, and international opportunities with confidence.</p>
-                </article>
-
-                <article class="showcase-card">
-                    <i data-feather="edit-3"></i>
-                    <h3>Admission & Application Guidance</h3>
-                    <p>Strategic support for university applications, profile building, SOPs, and document preparation to improve admission success.</p>
-                </article>
-
-                <article class="showcase-card">
-                    <i data-feather="globe"></i>
-                    <h3>University & Course Selection</h3>
-                    <p>Find universities, courses, and destinations aligned with your academic background, career goals, and budget.</p>
-                </article>
-
-                <article class="showcase-card">
-                    <i data-feather="shield"></i>
-                    <h3>Student Visa Assistance</h3>
-                    <p>Complete visa application support including documentation, compliance checks, financial guidance, and interview preparation.</p>
-                </article>
-
-                <article class="showcase-card">
-                    <i data-feather="user-check"></i>
-                    <h3>Scholarship & Financial Guidance</h3>
-                    <p>Guidance on scholarships, financial planning, and funding opportunities to make global education more accessible.</p>
-                </article>
-
-                <article class="showcase-card">
-                    <i data-feather="send"></i>
-                    <h3>Pre-Departure Support</h3>
-                    <p>Essential guidance on accommodation, travel preparation, student life, banking, and settling abroad smoothly.</p>
-                </article>
-
-                <article class="showcase-card">
-                    <i data-feather="life-buoy"></i>
-                    <h3>Travel & Arrival Assistance</h3>
-                    <p>Support with travel arrangements, arrival planning, and practical guidance for a stress-free transition.</p>
-                </article>
-
-                <article class="showcase-card">
-                    <i data-feather="dollar-sign"></i>
-                    <h3>Post-Arrival Student Support</h3>
-                    <p>Continued assistance after arrival to help students adjust confidently to their new academic and living environment.</p>
-                </article>
+        <div class="services-stage" data-services-stage aria-label="Visa Culture services">
+            <div class="services-stage__rail" role="tablist" aria-label="Service categories">
+                <button class="services-stage__tab is-active" type="button" role="tab" aria-selected="true" data-service-tab="0"><span>01</span><strong>Career <span class="vc-ampersand">&amp;</span> Study Counselling</strong><i aria-hidden="true">↗</i></button>
+                <button class="services-stage__tab" type="button" role="tab" aria-selected="false" data-service-tab="1"><span>02</span><strong>Admission <span class="vc-ampersand">&amp;</span> Application Guidance</strong><i aria-hidden="true">↗</i></button>
+                <button class="services-stage__tab" type="button" role="tab" aria-selected="false" data-service-tab="2"><span>03</span><strong>University <span class="vc-ampersand">&amp;</span> Course Selection</strong><i aria-hidden="true">↗</i></button>
+                <button class="services-stage__tab" type="button" role="tab" aria-selected="false" data-service-tab="3"><span>04</span><strong>Student Visa Assistance</strong><i aria-hidden="true">↗</i></button>
+                <button class="services-stage__tab" type="button" role="tab" aria-selected="false" data-service-tab="4"><span>05</span><strong>Scholarship <span class="vc-ampersand">&amp;</span> Financial Guidance</strong><i aria-hidden="true">↗</i></button>
+                <button class="services-stage__tab" type="button" role="tab" aria-selected="false" data-service-tab="5"><span>06</span><strong>Pre-Departure Support</strong><i aria-hidden="true">↗</i></button>
+                <button class="services-stage__tab" type="button" role="tab" aria-selected="false" data-service-tab="6"><span>07</span><strong>Travel &amp; Arrival Assistance</strong><i aria-hidden="true">↗</i></button>
+                <button class="services-stage__tab" type="button" role="tab" aria-selected="false" data-service-tab="7"><span>08</span><strong>Post-Arrival Student Support</strong><i aria-hidden="true">↗</i></button>
+            </div>
+            <div class="services-stage__display" aria-live="polite">
+                <div class="services-stage__orb" aria-hidden="true"></div>
+                <div class="services-stage__counter"><strong data-service-count>01</strong><span>/ 08</span></div>
+                <div class="services-stage__slides">
+                    <article class="services-stage__slide is-active" data-service-slide="0"><i data-feather="message-circle" aria-hidden="true"></i><h3>Career <span class="vc-ampersand">&amp;</span> Study Counselling</h3><p>Personalised guidance to choose a study pathway, career direction, and destination with confidence.</p></article>
+                    <article class="services-stage__slide" data-service-slide="1"><i data-feather="edit-3" aria-hidden="true"></i><h3>Admission <span class="vc-ampersand">&amp;</span> Application Guidance</h3><p>Strategic support for applications, profile building, statements, and document preparation.</p></article>
+                    <article class="services-stage__slide" data-service-slide="2"><i data-feather="globe" aria-hidden="true"></i><h3>University <span class="vc-ampersand">&amp;</span> Course Selection</h3><p>Find courses and institutions aligned with your academic background, budget, and future goals.</p></article>
+                    <article class="services-stage__slide" data-service-slide="3"><i data-feather="shield" aria-hidden="true"></i><h3>Student Visa Assistance</h3><p>Structured support with documentation, financial guidance, compliance checks, and preparation.</p></article>
+                    <article class="services-stage__slide" data-service-slide="4"><i data-feather="user-check" aria-hidden="true"></i><h3>Scholarship <span class="vc-ampersand">&amp;</span> Financial Guidance</h3><p>Understand scholarship opportunities, funding requirements, and a realistic education budget.</p></article>
+                    <article class="services-stage__slide" data-service-slide="5"><i data-feather="send" aria-hidden="true"></i><h3>Pre-Departure Support</h3><p>Prepare for accommodation, travel, student life, banking, and a confident move abroad.</p></article>
+                    <article class="services-stage__slide" data-service-slide="6"><i data-feather="life-buoy" aria-hidden="true"></i><h3>Travel &amp; Arrival Assistance</h3><p>Practical arrival guidance to help you settle into your new study destination smoothly.</p></article>
+                    <article class="services-stage__slide" data-service-slide="7"><i data-feather="dollar-sign" aria-hidden="true"></i><h3>Post-Arrival Student Support</h3><p>Continued guidance to help you adjust confidently to your academic and living environment.</p></article>
+                </div>
+                <div class="services-stage__progress" aria-hidden="true"><span data-service-progress></span></div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+    (function () {
+        const stage = document.querySelector('[data-services-stage]');
+        if (!stage) return;
+        const tabs = Array.from(stage.querySelectorAll('[data-service-tab]'));
+        const slides = Array.from(stage.querySelectorAll('[data-service-slide]'));
+        const counter = stage.querySelector('[data-service-count]');
+        const progress = stage.querySelector('[data-service-progress]');
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        let active = 0;
+        let timer;
+
+        function showService(index) {
+            active = (index + slides.length) % slides.length;
+            tabs.forEach((tab, i) => {
+                const selected = i === active;
+                tab.classList.toggle('is-active', selected);
+                tab.setAttribute('aria-selected', selected ? 'true' : 'false');
+            });
+            slides.forEach((slide, i) => slide.classList.toggle('is-active', i === active));
+            if (counter) counter.textContent = String(active + 1).padStart(2, '0');
+            if (progress) progress.style.width = `${((active + 1) / slides.length) * 100}%`;
+        }
+
+        function start() {
+            if (!reduceMotion) timer = window.setInterval(() => showService(active + 1), 4600);
+        }
+        function reset() { window.clearInterval(timer); start(); }
+
+        tabs.forEach((tab, index) => tab.addEventListener('click', () => { showService(index); reset(); }));
+        stage.addEventListener('mouseenter', () => window.clearInterval(timer));
+        stage.addEventListener('mouseleave', start);
+        showService(0);
+        start();
+    }());
+</script>
 
 <section class="bg-slate-950 py-20">
     <div class="mx-auto max-w-7xl px-6">
