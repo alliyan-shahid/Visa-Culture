@@ -1027,16 +1027,16 @@
                     </div>
                     <div class="hero-stats">
                         <div class="hero-stat-card">
-                            <p class="hero-stat-value">5</p>
-                            <p class="hero-stat-label">Study destinations</p>
+                            <p class="hero-stat-value">100+</p>
+                            <p class="hero-stat-label">Approved student visas</p>
                         </div>
                         <div class="hero-stat-card">
-                            <p class="hero-stat-value">2</p>
-                            <p class="hero-stat-label">IELTS &amp; PTE pathways</p>
+                            <p class="hero-stat-value">98%</p>
+                            <p class="hero-stat-label">Application success rate</p>
                         </div>
                         <div class="hero-stat-card">
-                            <p class="hero-stat-value">1:1</p>
-                            <p class="hero-stat-label">Profile-led guidance</p>
+                            <p class="hero-stat-value">24/7</p>
+                            <p class="hero-stat-label">Student support access</p>
                         </div>
                     </div>
                 </div>
@@ -1313,7 +1313,6 @@
                 </a>
                 <div class="vc-destinations__actions">
                     <a class="vc-destinations__button" href="{{ url_for('booking_page') }}">Find Your Best Destination <span aria-hidden="true">&nbsp;↗</span></a>
-                    <a class="vc-destinations__button vc-destinations__button--light" href="{{ url_for('booking_page') }}">Book a Consultation</a>
                 </div>
             </div>
         </div>
@@ -1359,14 +1358,14 @@
     <div class="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
         <div>
             <p class="text-sm uppercase tracking-[0.28em] text-primary">IELTS &amp; PTE preparation</p>
-            <h2 class="mt-4 text-4xl font-bold leading-tight text-slate-950">Prepare with purpose. Perform with confidence.</h2>
-            <p class="mt-5 max-w-xl text-base leading-8 text-slate-600">Build the English skills and test strategy you need for your preferred study destination with advanced facilitated classes, experienced trainers, and a focused learning environment.</p>
-            <p class="mt-4 max-w-xl text-sm leading-7 text-slate-500">Develop reading, writing, speaking, and listening skills through updated material, mock tests, individual feedback, and progress tracking. Verified IELTS 7+ and PTE 65+ achievements may be added when approved evidence is available.</p>
+            <h2 class="mt-4 text-4xl font-bold leading-tight text-slate-950">Your target score starts with the right preparation.</h2>
+            <p class="mt-5 max-w-xl text-base leading-8 text-slate-600">Prepare for IELTS or PTE with expert-led instruction, advanced facilitated classes, updated material, and a focused learning environment designed around your target score.</p>
+            <p class="mt-4 max-w-xl text-sm leading-7 text-slate-500">Strengthen every skill through guided practice, timed mock tests, individual feedback, and progress tracking—so you know what to improve and how to improve it.</p>
             <a href="{{ url_for('booking_page') }}" class="mt-8 inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-slate-900">Start IELTS/PTE preparation <span class="ml-2" aria-hidden="true">↗</span></a>
         </div>
         <div class="ielts-pte__features">
-            <div class="ielts-pte__features-heading"><span>Inside the classroom</span><strong>A structured path from preparation to performance.</strong></div>
-            <div class="grid gap-x-8 sm:grid-cols-2">{% for item in ['Experienced instructors','Updated preparation material','Reading, writing, speaking & listening','Mock tests and exam practice','Individual feedback','Progress monitoring'] %}<div class="ielts-pte__feature border-b border-slate-200 py-5 text-sm font-semibold text-slate-950"><span class="mr-3 text-primary">0{{ loop.index }}</span>{{ item }}</div>{% endfor %}</div>
+            <div class="ielts-pte__features-heading"><span>Inside the classroom</span><strong>A clear learning system for steady progress.</strong></div>
+            <div class="grid gap-x-8 sm:grid-cols-2">{% for item in ['Expert-led instruction','Updated course material','Complete skill development','Timed mock tests','Individual feedback','Progress tracking'] %}<div class="ielts-pte__feature border-b border-slate-200 py-5 text-sm font-semibold text-slate-950"><span class="mr-3 text-primary">0{{ loop.index }}</span>{{ item }}</div>{% endfor %}</div>
         </div>
     </div>
 </section>
