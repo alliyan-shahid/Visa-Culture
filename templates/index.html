@@ -1162,6 +1162,42 @@
     @media (max-width: 900px) { #services .mb-12 { align-items: start; } #services .mb-12 > p { max-width: 34rem; } #services .services-stage__display { min-height: 29rem; } }
     @media (max-width: 560px) { #services h2 { font-size: clamp(2rem, 9vw, 2.8rem); } #services .services-heading__title { font-size: clamp(2rem, 9vw, 2.8rem); } #services .services-heading__eyebrow { font-size: .62rem; letter-spacing: .18em; } #services .mb-12 { margin-bottom: 1.5rem; padding-bottom: 1.1rem; } #services .services-stage__slide h3 { font-size: clamp(1.7rem, 8vw, 2.35rem); } }
     .vc-ampersand { display: inline-block; margin: 0 .08em; font-family: Baskerville, "Baskerville Old Face", Garamond, Georgia, serif; font-size: 1.16em; font-style: normal; font-weight: 700; line-height: .82; vertical-align: -.04em; }
+
+    /* Rainbow reveal service card stack */
+    #services .services-stage__display { isolation: isolate; }
+    #services .services-stage__display::after { content: ""; position: absolute; inset: 12% 8%; z-index: 0; border-radius: 2rem; background: conic-gradient(from 210deg, rgba(34,211,238,.3), rgba(246,217,138,.28), rgba(244,114,182,.25), rgba(167,139,250,.3), rgba(34,211,238,.3)); filter: blur(28px); opacity: .6; animation: rainbowBreath 7s ease-in-out infinite; }
+    #services .services-stage__slides { min-height: 19rem; z-index: 3; perspective: 900px; }
+    #services .services-stage__slide { display: flex; flex-direction: column; justify-content: center; width: min(100%, 31rem); min-height: 18rem; padding: 2.5rem 2.75rem; border: 1px solid rgba(255,255,255,.4); border-radius: 1.75rem; background: linear-gradient(135deg, var(--card-tint, rgba(255,255,255,.18)), rgba(7,43,82,.62)); box-shadow: 0 1.5rem 3rem rgba(1,31,60,.26), inset 0 1px 0 rgba(255,255,255,.3); transform-origin: 50% 100%; overflow: hidden; }
+    #services .services-stage__slide::before { content: ""; position: absolute; top: 0; right: 0; left: 0; height: 4px; background: var(--card-accent, #f6d98a); box-shadow: 0 0 1rem var(--card-accent, #f6d98a); }
+    #services .services-stage__slide::after { content: ""; position: absolute; right: -3rem; bottom: -4rem; width: 12rem; height: 12rem; border: 1px solid color-mix(in srgb, var(--card-accent, #f6d98a) 70%, transparent); border-radius: 50%; opacity: .55; }
+    #services .services-stage__slide.is-active { z-index: 5; opacity: 1; transform: translate3d(0,0,0) rotate(0deg) scale(1); filter: blur(0); }
+    #services .services-stage__slide.is-next { z-index: 3; opacity: .82; transform: translate3d(2.2rem, 1rem, -35px) rotate(4deg) scale(.94); filter: blur(.2px); pointer-events: none; }
+    #services .services-stage__slide.is-prev { z-index: 2; opacity: .58; transform: translate3d(-2rem, 1.65rem, -70px) rotate(-5deg) scale(.89); filter: blur(.5px); pointer-events: none; }
+    #services .services-stage__slide:not(.is-active):not(.is-next):not(.is-prev) { z-index: 1; opacity: 0; transform: translate3d(0, 2rem, -100px) scale(.84); pointer-events: none; }
+    #services .services-stage__slide:nth-child(1) { --card-accent: #f6d98a; --card-tint: rgba(196,154,58,.22); }
+    #services .services-stage__slide:nth-child(2) { --card-accent: #70e1d4; --card-tint: rgba(13,148,136,.24); }
+    #services .services-stage__slide:nth-child(3) { --card-accent: #8ed0ff; --card-tint: rgba(10,77,143,.3); }
+    #services .services-stage__slide:nth-child(4) { --card-accent: #ffb58d; --card-tint: rgba(196,93,65,.24); }
+    #services .services-stage__slide:nth-child(5) { --card-accent: #d9b6ff; --card-tint: rgba(129,78,165,.25); }
+    #services .services-stage__slide:nth-child(6) { --card-accent: #a4efbd; --card-tint: rgba(35,126,87,.23); }
+    #services .services-stage__slide:nth-child(7) { --card-accent: #f8c8ef; --card-tint: rgba(180,82,145,.22); }
+    #services .services-stage__slide:nth-child(8) { --card-accent: #ffe4a8; --card-tint: rgba(180,121,46,.23); }
+    #services .services-stage__slide h3 { position: relative; z-index: 1; max-width: 23rem; margin-top: 1.05rem; font-size: clamp(1.7rem, 3vw, 2.7rem); }
+    #services .services-stage__slide p { position: relative; z-index: 1; max-width: 24rem; }
+    #services .services-stage__slide i { position: relative; z-index: 1; }
+    @keyframes rainbowBreath { 0%,100% { transform: rotate(0deg) scale(.94); opacity: .45; } 50% { transform: rotate(15deg) scale(1.05); opacity: .8; } }
+    @media (max-width: 560px) { #services .services-stage__slides { min-height: 21rem; } #services .services-stage__slide { min-height: 19.5rem; padding: 2.25rem 1.5rem; } #services .services-stage__slide.is-next { transform: translate3d(1rem,.8rem,-25px) rotate(3deg) scale(.95); } #services .services-stage__slide.is-prev { transform: translate3d(-.9rem,1.2rem,-45px) rotate(-4deg) scale(.91); } }
+    @media (prefers-reduced-motion: reduce) { #services .services-stage__display::after { animation: none; } }
+    /* Final stack cleanup: prevent legacy styles and ghosted card copy */
+    #services .services-stage__slide { font-family: Manrope, sans-serif; }
+    #services .services-stage__slide h3 { font-family: Manrope, sans-serif !important; font-style: normal; font-weight: 600; }
+    #services .services-stage__slide:not(.is-active) > * { opacity: 0; visibility: hidden; }
+    #services .services-stage__slide:not(.is-active)::before { opacity: .7; }
+    #services .services-stage__slide.is-next, #services .services-stage__slide.is-prev { opacity: .42; }
+    #services .services-stage__slide.is-next::after, #services .services-stage__slide.is-prev::after { opacity: .35; }
+    #services .services-stage__slide.is-active > * { opacity: 1; visibility: visible; }
+    #services .services-stage__slide.is-active h3 { font-size: clamp(1.65rem, 2.8vw, 2.65rem); }
+    @media (max-width: 560px) { #services .services-stage__slide.is-active h3 { font-size: clamp(1.7rem, 8vw, 2.35rem); } }
 </style>
 {% endblock %}
 
@@ -1760,7 +1796,11 @@
                 tab.classList.toggle('is-active', selected);
                 tab.setAttribute('aria-selected', selected ? 'true' : 'false');
             });
-            slides.forEach((slide, i) => slide.classList.toggle('is-active', i === active));
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('is-active', i === active);
+                slide.classList.toggle('is-next', i === (active + 1) % slides.length);
+                slide.classList.toggle('is-prev', i === (active - 1 + slides.length) % slides.length);
+            });
             if (counter) counter.textContent = String(active + 1).padStart(2, '0');
             if (progress) progress.style.width = `${((active + 1) / slides.length) * 100}%`;
         }
