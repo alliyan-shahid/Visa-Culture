@@ -1,14 +1,23 @@
 import os
+import smtplib
+import ssl
 from datetime import datetime
+from email.message import EmailMessage
+from email.utils import parseaddr
 
 from dotenv import load_dotenv
-from flask import Flask, make_response, redirect, render_template, request, url_for
+from flask import Flask, flash, make_response, redirect, render_template, request, url_for
 
 load_dotenv(override=False)
 
 
 class Config:
     SECRET_KEY = "***Removed***"
+    SMTP_HOST = "***Removed***"
+    SMTP_PORT = "***Removed***"
+    SMTP_USER = "***Removed***"
+    SMTP_PASSWORD = "***Removed***"
+    BOOKING_RECIPIENTS = "***Removed***"
 
 
 app = Flask(__name__)
@@ -205,14 +214,103 @@ def universities():
         },
     )
 
-@app.route("/booking")
+def _valid_reply_to(value):
+    """Return a safe reply-to address or an empty string."""
+    if not value or "\r" in value or "\n" in value:
+        return ""
+    _, address = parseaddr(value)
+    return address if "@" in address else ""
+
+
+def send_booking_email(form_data):
+    sender = app.config["SMTP_USER"]
+    password = app.config["SMTP_PASSWORD"]
+    recipients = [
+        address.strip()
+        for address in app.config["BOOKING_RECIPIENTS"].split(",")
+        if address.strip()
+    ]
+    if not sender or not password or not recipients:
+        raise RuntimeError("Booking email settings are not configured")
+
+    fields = [
+        ("Full name", form_data.get("name") or "Not provided"),
+        ("Phone number", form_data.get("phone") or "Not provided"),
+        ("Email address", form_data.get("email") or "Not provided"),
+        ("Preferred date", form_data.get("date") or "Not provided"),
+        ("Preferred destination", form_data.get("university") or "Not provided"),
+        ("Address", form_data.get("address") or "Not provided"),
+        ("Message", form_data.get("message") or "Not provided"),
+    ]
+    details = "\n".join(f"{label}: {value}" for label, value in fields)
+
+    applicant_email = _valid_reply_to(form_data.get("email", "").strip())
+
+    message = EmailMessage()
+    message["Subject"] = f"New Consultation Booking Request | {form_data.get('name') or 'Website Visitor'} | Visa Culture"
+    message["From"] = sender
+    message["To"] = ", ".join(recipients)
+    if applicant_email:
+        message["Reply-To"] = applicant_email
+    message.set_content(
+        "A new consultation request was submitted through the Visa Culture booking form.\n\n"
+        "BOOKING DETAILS\n"
+        "================\n"
+        f"{details}\n\n"
+        "Please follow up with the applicant using the details above."
+    )
+
+    context = ssl.create_default_context()
+    with smtplib.SMTP_SSL(app.config["SMTP_HOST"], app.config["SMTP_PORT"], context=context) as smtp:
+        smtp.login(sender, password)
+        smtp.send_message(message)
+        if applicant_email:
+            confirmation = EmailMessage()
+            confirmation["Subject"] = "Booking Received — Visa Culture Will Contact You Soon"
+            confirmation["From"] = sender
+            confirmation["To"] = applicant_email
+            confirmation.set_content(
+                f"Dear {form_data.get('name') or 'Applicant'},\n\n"
+                "Thank you for contacting Visa Culture. We have received your booking request successfully.\n\n"
+                "Our team will review your details and contact you shortly regarding the next steps.\n\n"
+                "Regards,\n"
+                "Visa Culture Team\n"
+                "info@visaculture.com"
+            )
+            smtp.send_message(confirmation)
+
+
+@app.route("/booking", methods=["GET", "POST"])
 def booking_page():
+    if request.method == "POST":
+        form_data = {key: value.strip() for key, value in request.form.items()}
+        missing = [label for key, label in (("name", "full name"), ("phone", "phone number"), ("address", "address")) if not form_data.get(key)]
+        if missing:
+            flash(f"Please fill in the required field(s): {', '.join(missing)}.", "error")
+            return render_template(
+                "booking.html",
+                page_summary={
+                    "title": "Book a consultation with Visa Culture",
+                    "subtitle": "Move your appointment flow into a dedicated page with a calmer, more focused experience.",
+                },
+                form_data=form_data,
+            )
+        try:
+            send_booking_email(form_data)
+        except Exception:
+            app.logger.exception("Booking email could not be sent")
+            flash("We could not send your request right now. Please try again shortly.", "error")
+        else:
+            flash("Thank you. Your consultation request has been sent successfully.", "success")
+            return redirect(url_for("booking_page"))
+
     return render_template(
         "booking.html",
         page_summary={
             "title": "Book a consultation with Visa Culture",
             "subtitle": "Move your appointment flow into a dedicated page with a calmer, more focused experience.",
         },
+        form_data=request.form,
     )
 
 @app.route("/login")
@@ -270,4 +368,4 @@ def sitemap_xml():
     return response
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)

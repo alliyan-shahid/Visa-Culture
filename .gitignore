@@ -4,3 +4,6 @@
 /TESTING_CHECKLIST.md
 /VERTICAL_ONLY_UPDATE.md
 /__pycache__
+.env
+.env.*
+!.env.example

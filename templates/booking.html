@@ -390,42 +390,42 @@
             {% endif %}
           {% endwith %}
 
-          <form class="space-y-4">
+          <form class="space-y-4" method="post" action="{{ url_for('booking_page') }}">
             <div class="grid gap-4 sm:grid-cols-2">
               <label class="booking-label" for="name">
                 <span>Full name</span>
-                <input id="name" name="name" type="text" required class="booking-field" placeholder="Your name">
+                <input id="name" name="name" type="text" required class="booking-field" placeholder="Your name" value="{{ form_data.get('name', '') if form_data is defined else '' }}">
               </label>
               <label class="booking-label" for="phone">
                 <span>Phone number</span>
-                <input id="phone" name="phone" type="tel" required class="booking-field" placeholder="+92 3XX XXX XXXX">
+                <input id="phone" name="phone" type="text" required class="booking-field" placeholder="Your phone number" value="{{ form_data.get('phone', '') if form_data is defined else '' }}">
               </label>
             </div>
 
             <div class="grid gap-4 sm:grid-cols-2">
               <label class="booking-label" for="email">
-                <span>Email address</span>
-                <input id="email" name="email" type="email" class="booking-field" placeholder="name@example.com">
+                <span>Email address <small class="ml-1 text-[0.65rem] font-normal normal-case tracking-normal text-slate-400">(Optional)</small></span>
+                <input id="email" name="email" type="email" class="booking-field" placeholder="name@example.com" value="{{ form_data.get('email', '') if form_data is defined else '' }}">
               </label>
               <label class="booking-label" for="date">
-                <span>Preferred date</span>
-                <input id="date" name="date" type="date" required class="booking-field">
+                <span>Preferred date <small class="ml-1 text-[0.65rem] font-normal normal-case tracking-normal text-slate-400">(Optional)</small></span>
+                <input id="date" name="date" type="date" class="booking-field" value="{{ form_data.get('date', '') if form_data is defined else '' }}">
               </label>
             </div>
 
             <label class="booking-label" for="university">
-              <span>Preferred destination</span>
-              <input id="university" name="university" type="text" required class="booking-field" placeholder="Any Country">
+              <span>Preferred destination <small class="ml-1 text-[0.65rem] font-normal normal-case tracking-normal text-slate-400">(Optional)</small></span>
+              <input id="university" name="university" type="text" class="booking-field" placeholder="Any Country" value="{{ form_data.get('university', '') if form_data is defined else '' }}">
             </label>
 
             <label class="booking-label" for="address">
               <span>Address</span>
-              <input id="address" name="address" type="text" required class="booking-field" placeholder="Your city or current address">
+              <input id="address" name="address" type="text" required class="booking-field" placeholder="Your city or current address" value="{{ form_data.get('address', '') if form_data is defined else '' }}">
             </label>
 
             <label class="booking-label" for="message">
-              <span>Message</span>
-              <textarea id="message" name="message" rows="5" class="booking-field resize-none" placeholder="Tell us about your study goals"></textarea>
+              <span>Message <small class="ml-1 text-[0.65rem] font-normal normal-case tracking-normal text-slate-400">(Optional)</small></span>
+              <textarea id="message" name="message" rows="5" class="booking-field resize-none" placeholder="Tell us about your study goals">{{ form_data.get('message', '') if form_data is defined else '' }}</textarea>
             </label>
 
             <button type="submit" class="booking-submit w-full">Start my consultation request</button>
