@@ -12,21 +12,39 @@ steps:
       - "${_IMAGE_URI}"
 
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
-    entrypoint: bash
+    entrypoint: gcloud
     args:
-      - "-c"
-      - |
-        gcloud run deploy "${_SERVICE_NAME}" \
-          --image "${_IMAGE_URI}" \
-          --region "${_REGION}" \
-          --platform managed \
-          --allow-unauthenticated \
-          --port 8080 \
-          --memory 1Gi \
-          --cpu 1 \
-          --min-instances 0 \
-          --max-instances 3 \
-          --set-env-vars="^|^DB_URI=${_DB_URI}|FORCE_ONLINE_DB=${_FORCE_ONLINE_DB}|SECRET_KEY=${_SECRET_KEY}|ADMIN_PASSWORD=${_ADMIN_PASSWORD}|DEVELOPER_EMAIL=${_DEVELOPER_EMAIL}|DEVELOPER_PASSWORD=${_DEVELOPER_PASSWORD}|SMTP_HOST=${_SMTP_HOST}|SMTP_PORT=${_SMTP_PORT}|SMTP_USER=${_SMTP_USER}|BOOKING_RECIPIENTS=${_BOOKING_RECIPIENTS}|SMTP_PASSWORD=${_SMTP_PASSWORD}"
+      - "run"
+      - "deploy"
+      - "${_SERVICE_NAME}"
+      - "--image"
+      - "${_IMAGE_URI}"
+      - "--region"
+      - "${_REGION}"
+      - "--platform"
+      - "managed"
+      - "--allow-unauthenticated"
+      - "--port"
+      - "8080"
+      - "--memory"
+      - "1Gi"
+      - "--cpu"
+      - "1"
+      - "--min-instances"
+      - "0"
+      - "--max-instances"
+      - "3"
+      - "--set-env-vars=DB_URI=${_DB_URI}"
+      - "--set-env-vars=FORCE_ONLINE_DB=${_FORCE_ONLINE_DB}"
+      - "--set-env-vars=SECRET_KEY=${_SECRET_KEY}"
+      - "--set-env-vars=ADMIN_PASSWORD=${_ADMIN_PASSWORD}"
+      - "--set-env-vars=DEVELOPER_EMAIL=${_DEVELOPER_EMAIL}"
+      - "--set-env-vars=DEVELOPER_PASSWORD=${_DEVELOPER_PASSWORD}"
+      - "--set-env-vars=SMTP_HOST=${_SMTP_HOST}"
+      - "--set-env-vars=SMTP_PORT=${_SMTP_PORT}"
+      - "--set-env-vars=SMTP_USER=${_SMTP_USER}"
+      - "--set-env-vars=^|^BOOKING_RECIPIENTS=${_BOOKING_RECIPIENTS}"
+      - "--set-env-vars=SMTP_PASSWORD=${_SMTP_PASSWORD}"
 
 substitutions:
   _REGION: "asia-southeast1"
