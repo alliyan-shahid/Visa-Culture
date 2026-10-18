@@ -52,6 +52,8 @@ def validate_turnstile(token):
         )
         with urlopen(verification_request, timeout=5) as response:
             result = json.loads(response.read().decode("utf-8"))
+        if not result.get("success"):
+            app.logger.warning("Turnstile rejected token: %s", result.get("error-codes", []))
         return bool(result.get("success"))
     except Exception:
         app.logger.exception("Turnstile verification request failed")

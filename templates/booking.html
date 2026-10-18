@@ -394,7 +394,7 @@
           {% endwith %}
 
           <form class="space-y-4" method="post" action="{{ url_for('booking_page') }}">
-            <div class="hidden" aria-hidden="true">
+            <div aria-hidden="true" style="display:none!important;position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important;">
               <label for="website">Website</label>
               <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
             </div>
@@ -446,7 +446,7 @@
             </label>
 
             {% if turnstile_sitekey %}
-              <div class="cf-turnstile" data-sitekey="{{ turnstile_sitekey }}" data-theme="light"></div>
+              <div class="cf-turnstile" data-sitekey="{{ turnstile_sitekey }}" data-theme="light" data-appearance="always"></div>
             {% endif %}
 
             <button type="submit" class="booking-submit w-full">Start my consultation request</button>
