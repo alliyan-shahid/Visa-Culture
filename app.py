@@ -2,9 +2,12 @@
 import os
 import smtplib
 import ssl
+import json
 from datetime import datetime
 from email.message import EmailMessage
 from email.utils import parseaddr
+from urllib.parse import urlencode
+from urllib.request import Request, urlopen
 
 from dotenv import load_dotenv
 from flask import Flask, flash, make_response, redirect, render_template, request, url_for
@@ -19,6 +22,40 @@ class Config:
     SMTP_USER = "***Removed***"
     SMTP_PASSWORD = "***Removed***"
     BOOKING_RECIPIENTS = "***Removed***"
+    TURNSTILE_SITEKEY = "***Removed***"
+    TURNSTILE_SECRET_KEY = "***Removed***"
+
+
+def turnstile_is_configured():
+    return bool(app.config["TURNSTILE_SITEKEY"] and app.config["TURNSTILE_SECRET_KEY"])
+
+
+def validate_turnstile(token):
+    """Validate a Turnstile token without adding another runtime dependency."""
+    if not turnstile_is_configured():
+        app.logger.warning("Turnstile keys are not configured; CAPTCHA validation is skipped")
+        return True
+    if not token:
+        return False
+
+    payload = urlencode({
+        "secret": app.config["TURNSTILE_SECRET_KEY"],
+        "response": token,
+        "remoteip": request.remote_addr or "",
+    }).encode("utf-8")
+    try:
+        verification_request = Request(
+            "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+            data=payload,
+            headers={"Content-Type": "application/x-www-form-urlencoded"},
+            method="POST",
+        )
+        with urlopen(verification_request, timeout=5) as response:
+            result = json.loads(response.read().decode("utf-8"))
+        return bool(result.get("success"))
+    except Exception:
+        app.logger.exception("Turnstile verification request failed")
+        return False
 
 
 app = Flask(__name__)
@@ -285,6 +322,18 @@ def send_booking_email(form_data):
 def booking_page():
     if request.method == "POST":
         form_data = {key: value.strip() for key, value in request.form.items()}
+        if form_data.get("website"):
+            flash("We could not verify this request. Please try again.", "error")
+            return render_template("booking.html", page_summary={
+                "title": "Book a consultation with Visa Culture",
+                "subtitle": "Move your appointment flow into a dedicated page with a calmer, more focused experience.",
+            }, form_data=form_data, turnstile_sitekey=app.config["TURNSTILE_SITEKEY"])
+        if not validate_turnstile(request.form.get("cf-turnstile-response", "")):
+            flash("Please complete the security check and try submitting again.", "error")
+            return render_template("booking.html", page_summary={
+                "title": "Book a consultation with Visa Culture",
+                "subtitle": "Move your appointment flow into a dedicated page with a calmer, more focused experience.",
+            }, form_data=form_data, turnstile_sitekey=app.config["TURNSTILE_SITEKEY"])
         missing = [label for key, label in (("name", "full name"), ("phone", "phone number"), ("address", "address")) if not form_data.get(key)]
         if missing:
             flash(f"Please fill in the required field(s): {', '.join(missing)}.", "error")
@@ -295,6 +344,7 @@ def booking_page():
                     "subtitle": "Move your appointment flow into a dedicated page with a calmer, more focused experience.",
                 },
                 form_data=form_data,
+                turnstile_sitekey=app.config["TURNSTILE_SITEKEY"],
             )
         try:
             send_booking_email(form_data)
@@ -312,6 +362,7 @@ def booking_page():
             "subtitle": "Move your appointment flow into a dedicated page with a calmer, more focused experience.",
         },
         form_data=request.form,
+        turnstile_sitekey=app.config["TURNSTILE_SITEKEY"],
     )
 
 @app.route("/login")

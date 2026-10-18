@@ -5,6 +5,9 @@
 {% block meta_description %}Schedule a consultation with Visa Culture for international study destinations, university admission, English preparation, and student visa guidance.{% endblock %}
 
 {% block head %}
+{% if turnstile_sitekey %}
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+{% endif %}
 <style>
   .booking-page {
     position: relative;
@@ -391,6 +394,10 @@
           {% endwith %}
 
           <form class="space-y-4" method="post" action="{{ url_for('booking_page') }}">
+            <div class="hidden" aria-hidden="true">
+              <label for="website">Website</label>
+              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
             <div class="grid gap-4 sm:grid-cols-2">
               <label class="booking-label" for="name">
                 <span>Full name</span>
@@ -427,6 +434,10 @@
               <span>Message <small class="ml-1 text-[0.65rem] font-normal normal-case tracking-normal text-slate-400">(Optional)</small></span>
               <textarea id="message" name="message" rows="5" class="booking-field resize-none" placeholder="Tell us about your study goals">{{ form_data.get('message', '') if form_data is defined else '' }}</textarea>
             </label>
+
+            {% if turnstile_sitekey %}
+              <div class="cf-turnstile" data-sitekey="{{ turnstile_sitekey }}" data-theme="light"></div>
+            {% endif %}
 
             <button type="submit" class="booking-submit w-full">Start my consultation request</button>
             <p class="booking-form-note"><span aria-hidden="true">✓</span> Your details are used only to prepare your consultation.</p>
