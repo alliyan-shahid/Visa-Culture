@@ -420,8 +420,18 @@
               </label>
             </div>
 
+            <label class="booking-label" for="service_type">
+              <span>What do you need?</span>
+              {% set selected_service = form_data.get('service_type', '') if form_data is defined else '' %}
+              <select id="service_type" name="service_type" required class="booking-field">
+                <option value="" disabled {% if not selected_service %}selected{% endif %}>Select an option</option>
+                <option value="consultancy" {% if selected_service == 'consultancy' %}selected{% endif %}>Consultancy</option>
+                <option value="test_preparation" {% if selected_service == 'test_preparation' %}selected{% endif %}>Test Preparation</option>
+              </select>
+            </label>
+
             <label class="booking-label" for="university">
-              <span>Preferred destination <small class="ml-1 text-[0.65rem] font-normal normal-case tracking-normal text-slate-400">(Optional)</small></span>
+              <span id="preferred-choice-label">Preferred destination <small class="ml-1 text-[0.65rem] font-normal normal-case tracking-normal text-slate-400">(Optional)</small></span>
               <input id="university" name="university" type="text" class="booking-field" placeholder="Any Country" value="{{ form_data.get('university', '') if form_data is defined else '' }}">
             </label>
 
@@ -468,6 +478,22 @@
 <script>
   (function () {
     const dateInput = document.getElementById('date');
+    const serviceType = document.getElementById('service_type');
+    const preferredChoiceLabel = document.getElementById('preferred-choice-label');
+    const preferredChoiceInput = document.getElementById('university');
+
+    function updatePreferredChoice() {
+      if (!serviceType || !preferredChoiceLabel || !preferredChoiceInput) return;
+      const isTestPreparation = serviceType.value === 'test_preparation';
+      preferredChoiceLabel.firstChild.textContent = isTestPreparation ? 'Preferred test ' : 'Preferred destination ';
+      preferredChoiceInput.placeholder = isTestPreparation ? 'e.g. IELTS, PTE, TOEFL' : 'Any Country';
+    }
+
+    if (serviceType) {
+      serviceType.addEventListener('change', updatePreferredChoice);
+      updatePreferredChoice();
+    }
+
     if (!dateInput) return;
 
     function openDatePicker() {

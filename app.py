@@ -275,8 +275,12 @@ def send_booking_email(form_data):
         ("Full name", form_data.get("name") or "Not provided"),
         ("Phone number", form_data.get("phone") or "Not provided"),
         ("Email address", form_data.get("email") or "Not provided"),
+        ("Service type", form_data.get("service_type") or "Not provided"),
         ("Preferred date", form_data.get("date") or "Not provided"),
-        ("Preferred destination", form_data.get("university") or "Not provided"),
+        (
+            "Preferred test" if form_data.get("service_type") == "test_preparation" else "Preferred destination",
+            form_data.get("university") or "Not provided",
+        ),
         ("Address", form_data.get("address") or "Not provided"),
         ("Message", form_data.get("message") or "Not provided"),
     ]
@@ -334,7 +338,7 @@ def booking_page():
                 "title": "Book a consultation with Visa Culture",
                 "subtitle": "Move your appointment flow into a dedicated page with a calmer, more focused experience.",
             }, form_data=form_data, turnstile_sitekey=app.config["TURNSTILE_SITEKEY"])
-        missing = [label for key, label in (("name", "full name"), ("phone", "phone number"), ("address", "address")) if not form_data.get(key)]
+        missing = [label for key, label in (("name", "full name"), ("phone", "phone number"), ("address", "address"), ("service_type", "service type")) if not form_data.get(key)]
         if missing:
             flash(f"Please fill in the required field(s): {', '.join(missing)}.", "error")
             return render_template(
