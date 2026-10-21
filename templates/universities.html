@@ -1,553 +1,111 @@
 {% extends 'base.html' %}
 
-{% block title %}Top Universities in Australia | Visa Culture{% endblock %}
-
-{% block meta_description %}Compare top Australian universities and find the best fit for Pakistani student visas, scholarships, and admission success with Visa Culture.{% endblock %}
+{% block title %}Study in Australia | Visa Culture{% endblock %}
+{% block meta_description %}A practical guide to studying, living, working and settling in Australia, with course guidance and six leading university profiles for international students.{% endblock %}
 
 {% block head %}
 <style>
-  .uni-page {
-    position: relative;
-    overflow: hidden;
-    background:
-      radial-gradient(circle at 8% 8%, rgba(10, 77, 143, 0.18), transparent 24%),
-      radial-gradient(circle at 92% 16%, rgba(13, 148, 136, 0.14), transparent 22%),
-      radial-gradient(circle at 50% 100%, rgba(196, 154, 58, 0.08), transparent 30%),
-      linear-gradient(180deg, #f7fbff 0%, #eef4fb 100%);
-  }
-  .uni-page::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.48) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.48) 1px, transparent 1px);
-    background-size: 72px 72px;
-    opacity: 0.2;
-    pointer-events: none;
-  }
-  .page-shell {
-    position: relative;
-    z-index: 1;
-  }
-  .eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    border-radius: 9999px;
-    border: 1px solid rgba(10, 77, 143, 0.16);
-    background: rgba(255,255,255,0.92);
-    padding: 0.72rem 1rem;
-    font-size: 0.74rem;
-    font-weight: 800;
-    letter-spacing: 0.26em;
-    text-transform: uppercase;
-    color: #0a4d8f;
-    box-shadow: 0 14px 30px rgba(10,77,143,0.08);
-  }
-  .hero-title {
-    font-family: "Playfair Display", Georgia, serif;
-    letter-spacing: -0.05em;
-    line-height: 0.9;
-    text-wrap: balance;
-    max-width: 11ch;
-  }
-  .panel,
-  .soft-card,
-  .metric-card {
-    border: 1px solid rgba(148, 163, 184, 0.16);
-    background: rgba(255,255,255,0.86);
-    backdrop-filter: blur(14px);
-    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
-  }
-  .panel {
-    position: relative;
-    overflow: hidden;
-    border-radius: 2rem;
-  }
-  .panel::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0));
-    pointer-events: none;
-  }
-  .button-pill {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    border-radius: 9999px;
-    padding: 0.95rem 1.45rem;
-    font-weight: 700;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-  }
-  .button-pill:hover {
-    transform: translateY(-2px);
-  }
-  .button-pill.primary {
-    background: linear-gradient(135deg, #0a4d8f 0%, #0d9488 100%);
-    color: #fff;
-    box-shadow: 0 18px 45px rgba(10,77,143,0.24);
-  }
-  .button-pill.secondary {
-    border: 1px solid rgba(148,163,184,0.22);
-    background: rgba(255,255,255,0.92);
-    color: #10223a;
-    box-shadow: 0 18px 45px rgba(15,23,42,0.08);
-  }
-  .metric-card {
-    position: relative;
-    overflow: hidden;
-    border-radius: 1.45rem;
-  }
-  .metric-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(10,77,143,0.08), transparent 60%);
-    pointer-events: none;
-  }
-  .hero-media {
-    position: relative;
-  }
-  .hero-media-frame {
-    position: relative;
-    overflow: hidden;
-    border-radius: 1.8rem;
-    border: 1px solid rgba(148,163,184,0.16);
-    box-shadow: 0 24px 80px rgba(15,23,42,0.12);
-  }
-  .hero-media-frame img {
-    width: 100%;
-    min-height: 540px;
-    object-fit: cover;
-    display: block;
-  }
-  .chip {
-    display: inline-flex;
-    align-items: center;
-    border-radius: 9999px;
-    padding: 0.5rem 0.84rem;
-    font-size: 0.72rem;
-    font-weight: 800;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-  }
-  .section-label {
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: #0a4d8f;
-  }
-  .rail-card {
-    border-radius: 1.5rem;
-    border: 1px solid rgba(148,163,184,0.16);
-    background: rgba(255,255,255,0.9);
-    box-shadow: 0 18px 50px rgba(15,23,42,0.08);
-  }
-  .university-card {
-    position: relative;
-    overflow: hidden;
-    border-radius: 1.7rem;
-    border: 1px solid rgba(148,163,184,0.16);
-    background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(249,250,251,0.96));
-    box-shadow: 0 24px 80px rgba(15,23,42,0.08);
-    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-  }
-  .university-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 34px 100px rgba(15,23,42,0.14);
-    border-color: rgba(37,99,235,0.16);
-  }
-  .university-card__image {
-    position: relative;
-    height: 190px;
-    overflow: hidden;
-  }
-  .university-card__image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.55s ease;
-    transform: scale(1.01);
-  }
-  .university-card:hover .university-card__image img {
-    transform: scale(1.06);
-  }
-  .university-card__shade {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(3,7,18,0), rgba(3,7,18,0.72));
-  }
-  .mini-pill {
-    display: inline-flex;
-    align-items: center;
-    border-radius: 9999px;
-    padding: 0.4rem 0.68rem;
-    font-size: 0.7rem;
-    font-weight: 700;
-    color: #475569;
-    background: rgba(255,255,255,0.82);
-    border: 1px solid rgba(148,163,184,0.18);
-  }
-  .story-card {
-    border-radius: 1.5rem;
-    padding: 1.25rem;
-    border: 1px solid rgba(148,163,184,0.16);
-    background: rgba(255,255,255,0.9);
-    box-shadow: 0 18px 50px rgba(15,23,42,0.07);
-  }
-  /* Hide Go8 type text from cards */
-  .university-card__image p.font-semibold:not([class*="text-sky"]) {
-    display: none !important;
-  }
-  /* Hide intake box completely */
-  .university-card__image .rounded-2xl {
-    display: none !important;
-  }
+  .au-guide{--ink:#17202a;--muted:#68727a;--line:rgba(23,32,42,.16);--gold:#b8843f;--blue:#0b527a;--paper:#f7f5ef;background:var(--paper);color:var(--ink);overflow:hidden}
+  .au-guide__shell{width:min(100%,90rem);margin:0 auto;padding:clamp(3.25rem,7vw,7rem) clamp(1.1rem,4vw,3rem) clamp(4rem,8vw,8rem)}
+  .au-guide__hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(18rem,.85fr);gap:clamp(3rem,9vw,9rem);align-items:end;padding-bottom:clamp(3.5rem,7vw,6.5rem);border-bottom:1px solid var(--line)}
+  .au-guide__eyebrow,.au-guide__label{margin:0;color:var(--gold);font-size:.68rem;font-weight:800;letter-spacing:.2em;line-height:1.4;text-transform:uppercase}
+  .au-guide__eyebrow{display:flex;align-items:center;gap:.75rem}.au-guide__eyebrow:before{content:"";width:2.8rem;height:1px;background:var(--gold)}
+  .au-guide h1,.au-guide h2,.au-guide h3{text-wrap:balance}
+  .au-guide__title{max-width:9ch;margin:1rem 0 0;font-family:"Playfair Display",Georgia,serif;font-size:clamp(3.2rem,7vw,7.4rem);font-weight:600;letter-spacing:-.075em;line-height:.86}
+  .au-guide__lead{max-width:39rem;margin:1.6rem 0 0;color:var(--muted);font-size:clamp(.94rem,1.4vw,1.08rem);line-height:1.85}
+  .au-guide__actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}.au-guide__button{display:inline-flex;align-items:center;justify-content:center;min-height:3.05rem;padding:.8rem 1.25rem;border:1px solid var(--ink);color:var(--ink);font-size:.76rem;font-weight:800;text-decoration:none;transition:background .25s ease,color .25s ease,transform .25s ease}.au-guide__button:hover,.au-guide__button:focus-visible{background:var(--ink);color:#fff;transform:translateY(-2px);outline:none}.au-guide__button--quiet{border-color:var(--line);color:var(--muted)}
+  .au-guide__glance{padding-top:1rem;border-top:2px solid var(--blue)}.au-guide__glance-title{margin:.65rem 0 1.3rem;font-size:clamp(1.6rem,3vw,2.55rem);font-weight:700;letter-spacing:-.06em;line-height:1}.au-guide__facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--line)}.au-guide__fact{padding:1rem .9rem 1rem 0;border-bottom:1px solid var(--line)}.au-guide__fact:nth-child(odd){border-right:1px solid var(--line)}.au-guide__fact:nth-child(even){padding-left:1rem}.au-guide__fact strong{display:block;font-size:1.75rem;letter-spacing:-.06em}.au-guide__fact span{display:block;margin-top:.3rem;color:var(--muted);font-size:.7rem;line-height:1.45}
+  .au-guide__section{padding-top:clamp(4rem,8vw,8rem)}.au-guide__section-head{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:clamp(2rem,7vw,7rem);align-items:end;padding-bottom:1.5rem;border-bottom:1px solid var(--line)}.au-guide__heading{max-width:27rem;margin:.65rem 0 0;font-size:clamp(2.15rem,4.4vw,4.2rem);font-weight:700;letter-spacing:-.07em;line-height:.94}.au-guide__section-copy{max-width:39rem;margin:0;color:var(--muted);font-size:.9rem;line-height:1.85}
+  .au-guide__open-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(2rem,6vw,6rem)}.au-guide__open-item{padding:1.35rem 0 1.5rem;border-bottom:1px solid var(--line)}.au-guide__open-item:nth-child(odd){padding-right:1rem}.au-guide__open-item:nth-child(even){padding-left:1rem;border-left:1px solid var(--line)}.au-guide__open-item h3{margin:.55rem 0 0;font-size:1.25rem;letter-spacing:-.04em}.au-guide__open-item p{margin:.5rem 0 0;color:var(--muted);font-size:.78rem;line-height:1.75}.au-guide__index{color:var(--blue);font-size:.66rem;font-weight:800;letter-spacing:.14em}
+  .au-guide__band{margin-top:clamp(4rem,8vw,8rem);padding:clamp(2.5rem,5vw,5rem) clamp(1.2rem,4vw,4rem);background:#082b45;color:#f8f5ed}.au-guide__band .au-guide__label{color:#e0b968}.au-guide__band .au-guide__section-head{border-color:rgba(255,255,255,.2)}.au-guide__band .au-guide__section-copy{color:rgba(248,245,237,.72)}.au-guide__sector-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:1rem}.au-guide__sector{padding:1.35rem 1.3rem 1.5rem 0;border-bottom:1px solid rgba(255,255,255,.2)}.au-guide__sector:nth-child(3n+2),.au-guide__sector:nth-child(3n+3){padding-left:1.3rem;border-left:1px solid rgba(255,255,255,.2)}.au-guide__sector h3{margin:.5rem 0 0;font-size:1.18rem;letter-spacing:-.03em}.au-guide__sector p{margin:.45rem 0 0;color:rgba(248,245,237,.7);font-size:.76rem;line-height:1.65}
+  .au-guide__city-list{margin-top:1rem;border-top:1px solid var(--line)}.au-guide__city{display:grid;grid-template-columns:8rem minmax(0,1fr) 1fr;gap:clamp(1rem,4vw,4rem);align-items:start;padding:1.3rem 0;border-bottom:1px solid var(--line)}.au-guide__city-name{font-size:1.25rem;font-weight:700;letter-spacing:-.04em}.au-guide__city-tag{color:var(--gold);font-size:.65rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.au-guide__city p{margin:0;color:var(--muted);font-size:.78rem;line-height:1.7}
+  .au-guide__settle{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(2rem,8vw,8rem)}.au-guide__settle-intro{border-top:2px solid var(--gold);padding-top:1rem}.au-guide__settle-intro p{max-width:26rem;margin:1rem 0 0;color:var(--muted);font-size:.84rem;line-height:1.8}.au-guide__settle-list{border-top:1px solid var(--line)}.au-guide__settle-row{display:grid;grid-template-columns:2.5rem minmax(0,1fr);gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--line)}.au-guide__settle-row span{color:var(--gold);font-size:.68rem;font-weight:800}.au-guide__settle-row h3{margin:0;font-size:1.05rem;letter-spacing:-.025em}.au-guide__settle-row p{margin:.35rem 0 0;color:var(--muted);font-size:.76rem;line-height:1.65}
+  .au-guide__network{margin-top:clamp(4rem,8vw,8rem);padding-top:clamp(3rem,6vw,5rem);border-top:1px solid var(--line)}.au-guide__network-list{margin-top:1rem;border-top:1px solid var(--line)}.au-guide__university{display:grid;grid-template-columns:7rem minmax(0,1fr) auto;gap:1.5rem;align-items:center;padding:1.15rem 0;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;transition:padding-left .25s ease,border-color .25s ease}.au-guide__university:hover{padding-left:.55rem;border-color:var(--gold)}.au-guide__university-image{width:7rem;height:5rem;overflow:hidden;background:#ded9d0}.au-guide__university-image img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.7);transition:transform .4s ease,filter .4s ease}.au-guide__university:hover img{transform:scale(1.06);filter:saturate(1)}.au-guide__university-meta{color:var(--gold);font-size:.63rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.au-guide__university-name{margin:.3rem 0 0;font-size:clamp(1.15rem,2.2vw,1.75rem);font-weight:700;letter-spacing:-.045em}.au-guide__university-summary{margin:.35rem 0 0;color:var(--muted);font-size:.75rem;line-height:1.55}.au-guide__university-arrow{color:var(--blue);font-size:1.2rem}
+  .au-guide__cta{display:flex;justify-content:space-between;gap:2rem;align-items:end;margin-top:clamp(4rem,8vw,8rem);padding-top:1.5rem;border-top:1px solid var(--line)}.au-guide__cta h2{max-width:36rem;margin:.65rem 0 0;font-family:"Playfair Display",Georgia,serif;font-size:clamp(2rem,4vw,3.7rem);letter-spacing:-.065em;line-height:.95}.au-guide__cta p{max-width:31rem;margin:.9rem 0 0;color:var(--muted);font-size:.82rem;line-height:1.75}
+  .au-guide__life{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(2.5rem,8vw,8rem);align-items:start;padding-top:clamp(4rem,8vw,7rem)}.au-guide__life-intro{position:sticky;top:2rem;padding-top:1rem;border-top:2px solid var(--gold)}.au-guide__life-intro h2{max-width:28rem;margin:.75rem 0 0;font-family:Manrope,sans-serif;font-size:clamp(2.25rem,4.4vw,4rem);font-weight:800;letter-spacing:-.075em;line-height:.96}.au-guide__life-intro>p:not(.au-guide__label){max-width:27rem;margin:1.25rem 0 0;color:#625e68;font-size:.88rem;line-height:1.85}.au-guide__life-note{display:flex;flex-direction:column;gap:.35rem;margin-top:2rem;padding-top:1rem;border-top:1px solid var(--line)}.au-guide__life-note span{color:var(--gold);font-size:.66rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.au-guide__life-note strong{color:var(--ink);font-size:.8rem;font-weight:700}.au-guide__life .au-guide__city-list{margin-top:0;border-top:1px solid var(--line)}.au-guide__life .au-guide__city{grid-template-columns:2.6rem minmax(0,1fr) 1.5rem;gap:1rem;align-items:start;padding:1.5rem 0;color:var(--ink);text-decoration:none;transition:padding-left .25s ease,border-color .25s ease}.au-guide__life .au-guide__city:hover{padding-left:.55rem;border-color:var(--gold)}.au-guide__city-number{padding-top:.25rem;color:var(--gold);font-size:.68rem;font-weight:800;letter-spacing:.13em}.au-guide__life .au-guide__city-name{display:block;font-size:clamp(1.4rem,2.7vw,2.25rem);line-height:1}.au-guide__life .au-guide__city-tag{display:block;margin-top:.5rem;color:var(--gold);font-size:.63rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.au-guide__life .au-guide__city p{max-width:34rem;margin:.65rem 0 0;color:var(--muted);font-size:.78rem;line-height:1.7}.au-guide__city-arrow{padding-top:.15rem;color:var(--ink);font-size:1.4rem;transition:transform .25s ease,color .25s ease}.au-guide__life .au-guide__city:hover .au-guide__city-arrow{color:var(--gold);transform:translate(.2rem,-.2rem)}
+  @media (max-width:900px){.au-guide__hero,.au-guide__section-head,.au-guide__settle,.au-guide__life{grid-template-columns:1fr;gap:2rem}.au-guide__life-intro{position:static}.au-guide__title{max-width:11ch}.au-guide__sector-list{grid-template-columns:repeat(2,minmax(0,1fr))}.au-guide__sector:nth-child(3n+2),.au-guide__sector:nth-child(3n+3){padding-left:0;border-left:0}.au-guide__sector:nth-child(even){padding-left:1.3rem;border-left:1px solid rgba(255,255,255,.2)}}
+  @media (max-width:650px){.au-guide__shell{padding:3rem 1rem 4rem}.au-guide__title{font-size:clamp(3rem,14vw,4.8rem)}.au-guide__lead{font-size:.88rem;line-height:1.78}.au-guide__actions,.au-guide__cta{display:block}.au-guide__button{width:100%}.au-guide__actions .au-guide__button+.au-guide__button,.au-guide__cta .au-guide__button{margin-top:.65rem}.au-guide__open-grid,.au-guide__sector-list{display:block}.au-guide__open-item:nth-child(odd),.au-guide__open-item:nth-child(even){padding-left:0;padding-right:0;border-left:0}.au-guide__sector:nth-child(even){padding-left:0;border-left:0}.au-guide__life{gap:2.5rem}.au-guide__life-intro h2{font-size:clamp(2.15rem,10vw,3.2rem)}.au-guide__life .au-guide__city{grid-template-columns:2rem minmax(0,1fr) 1.2rem;gap:.65rem;padding:1.25rem 0}.au-guide__life .au-guide__city-name{font-size:1.45rem}.au-guide__university{grid-template-columns:4.8rem minmax(0,1fr);gap:.85rem}.au-guide__university-image{width:4.8rem;height:4.4rem}.au-guide__university-arrow{grid-column:2;margin-top:-.5rem}.au-guide__university-summary{display:none}.au-guide__cta .au-guide__button{margin-top:1.25rem}}
+  @media (prefers-reduced-motion:reduce){.au-guide__button,.au-guide__university,.au-guide__university-image img{transition:none}}
 
-  @media (max-width: 1024px) {
-    .hero-media-frame img {
-      min-height: 460px;
-    }
-  }
-
-  @media (max-width: 767px) {
-    .uni-page {
-      padding: 0 !important;
-    }
-    .page-shell {
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-      padding-top: 0 !important;
-      padding-bottom: 0 !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-    }
-    .panel {
-      border-radius: 0;
-      padding: 0 !important;
-      background: transparent;
-      border: 0;
-      box-shadow: none;
-    }
-    .hero-layout {
-      position: relative;
-      height: 70vh;
-      display: block;
-    }
-    .hero-visual {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      margin: 0 !important;
-    }
-    .hero-media {
-      margin: 0 !important;
-      height: 100%;
-    }
-    .hero-media-frame {
-      border-radius: 0;
-      border: 0;
-      box-shadow: none;
-      height: 100%;
-      overflow: hidden;
-    }
-    .hero-media-frame picture,
-    .hero-media-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-    }
-    .hero-copy {
-      display: none !important;
-    }
-    .hero-actions,
-    .hero-stats,
-    .hero-rail-grid,
-    .hero-supporting,
-    .eyebrow {
-      display: none !important;
-    }
-    .hero-title,
-    .hero-copy p,
-    .hero-copy a,
-    .hero-copy .metric-card {
-      display: none !important;
-    }
-    .university-card__image {
-      height: 225px;
-    }
-    .university-card__image picture,
-    .university-card__image picture img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
-    }
-    .university-card__image .chip {
-      display: none !important;
-    }
-    .university-card__image .text-white/90 {
-      display: none !important;
-    }
-  }
+  /* Final Visa Culture theme alignment: the guide should feel like part of the homepage, not a separate microsite. */
+  .au-guide { background:#fbfaf8; color:#17151c; }
+  .au-guide__shell { width:min(100%,78rem); padding-top:0; }
+  .au-guide__hero { position:relative; grid-template-columns:minmax(0,1.1fr) minmax(18rem,.7fr); gap:clamp(2rem,6vw,5rem); align-items:center; margin:0 calc(clamp(1.1rem,4vw,3rem) * -1); padding:clamp(2.6rem,5vw,5rem) clamp(1.1rem,4vw,3rem) clamp(3rem,6vw,5.5rem); background:linear-gradient(130deg,#15131b 0%,#102b4a 68%,#0d766f 145%); border:0; color:#fff; }
+  .au-guide__hero:after { content:"AU"; position:absolute; right:clamp(1rem,5vw,5rem); bottom:-2.5rem; color:rgba(255,255,255,.045); font-size:clamp(8rem,22vw,18rem); font-weight:800; letter-spacing:-.14em; line-height:.8; pointer-events:none; }
+  .au-guide__hero > div,.au-guide__glance { position:relative; z-index:1; }
+  .au-guide__eyebrow,.au-guide__label { font-family:Manrope,sans-serif; }
+  .au-guide__eyebrow { color:#d5a85e; }
+  .au-guide__eyebrow:before { background:#d5a85e; }
+  .au-guide__title { max-width:15ch; margin-top:.9rem; font-family:Manrope,sans-serif; font-size:clamp(2.8rem,6vw,5.5rem); font-weight:800; letter-spacing:-.075em; line-height:.94; }
+  .au-guide__lead { max-width:37rem; color:#d8e1e8; font-size:clamp(.9rem,1.2vw,1rem); line-height:1.78; }
+  .au-guide__glance { border-top-color:#d5a85e; }
+  .au-guide__glance-title { color:#fff; font-family:Manrope,sans-serif; font-size:clamp(1.45rem,2.5vw,2.2rem); line-height:1.06; }
+  .au-guide__facts { border-top-color:rgba(255,255,255,.22); }
+  .au-guide__fact { border-bottom-color:rgba(255,255,255,.22); }
+  .au-guide__fact:nth-child(odd) { border-right-color:rgba(255,255,255,.22); }
+  .au-guide__fact strong { color:#fff; font-family:Manrope,sans-serif; }
+  .au-guide__fact span { color:#bfcbd5; }
+  .au-guide__button { border-radius:999px; border-color:#d5a85e; background:#d5a85e; color:#15131b; box-shadow:0 .7rem 1.4rem rgba(0,0,0,.18); }
+  .au-guide__button:hover,.au-guide__button:focus-visible { background:#fff; border-color:#fff; color:#15131b; }
+  .au-guide__button--quiet { border-color:rgba(255,255,255,.55); background:transparent; color:#fff; box-shadow:none; }
+  .au-guide__button--quiet:hover,.au-guide__button--quiet:focus-visible { background:rgba(255,255,255,.1); border-color:#fff; color:#fff; }
+  .au-guide__section { padding-top:clamp(3.5rem,7vw,6.5rem); }
+  .au-guide__heading,.au-guide__open-item h3,.au-guide__sector h3,.au-guide__city-name,.au-guide__settle-row h3,.au-guide__university-name { font-family:Manrope,sans-serif; }
+  .au-guide__heading { font-size:clamp(2rem,3.8vw,3.5rem); line-height:1; }
+  .au-guide__section-head { align-items:center; }
+  .au-guide__section-copy,.au-guide__open-item p,.au-guide__city p,.au-guide__settle-row p { color:#625e68; }
+  .au-guide__label { color:#a47b3d; }
+  .au-guide__index,.au-guide__university-meta { color:#a47b3d; }
+  .au-guide__open-item:nth-child(even) { border-left-color:#d8d2c8; }
+  .au-guide__band { background:linear-gradient(135deg,#082b45 0%,#0a4d8f 66%,#0b756d 145%); }
+  .au-guide__network { margin-top:clamp(3.5rem,7vw,6.5rem); }
+  .au-guide__network .au-guide__heading { max-width:31rem; }
+  .au-guide__university { padding:1.25rem 0; }
+  .au-guide__university:hover { padding-left:.45rem; }
+  .au-guide__cta h2 { font-family:Manrope,sans-serif; font-size:clamp(2rem,3.8vw,3.5rem); font-weight:800; line-height:1; }
+  /* Full-bleed treatment used by the homepage's major colour sections. */
+  .au-guide__hero,
+  .au-guide__band { width:100vw; margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw); padding-left:max(1.1rem,calc((100vw - 78rem) / 2 + 3rem)); padding-right:max(1.1rem,calc((100vw - 78rem) / 2 + 3rem)); }
+  .au-guide__hero { padding-top:20px; }
+  .au-guide__band { margin-top:clamp(4rem,8vw,8rem); }
+  @media (max-width:650px) { .au-guide__shell { padding-top:0; } .au-guide__hero { margin:0 -1rem; padding:20px 1rem 3rem; } .au-guide__title { font-size:clamp(2.65rem,12vw,4rem); } .au-guide__hero:after { right:-1rem; bottom:-1.5rem; font-size:8rem; } }
 </style>
 {% endblock %}
 
 {% block content %}
-<section class="uni-page">
-  <div class="page-shell mx-auto max-w-7xl px-6 py-14 lg:py-18">
-    <div class="panel p-5 sm:p-7 lg:p-8">
-      <div class="hero-layout grid gap-7 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-        <div class="hero-copy relative z-10">
-          <p class="eyebrow">University Network</p>
-          <h1 class="hero-title mt-5 text-[2.5rem] font-semibold text-slate-950 sm:text-[3.35rem] lg:text-[4rem]">
-            Top universities, styled for confident admissions.
-          </h1>
-          <p class="mt-5 max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
-            {{ page_summary.subtitle if page_summary is defined else 'Compare top Australian universities and move to a tailored admissions path with Visa Culture.' }}
-          </p>
-          <div class="hero-actions mt-7 flex flex-wrap gap-3">
-            <a href="#network" class="button-pill primary">Explore universities</a>
-            <a href="{{ url_for('booking_page') }}" class="button-pill secondary">Book consultation</a>
-          </div>
+<main class="au-guide">
+  <div class="au-guide__shell">
+    <section class="au-guide__hero" aria-labelledby="australia-guide-title">
+      <div><p class="au-guide__eyebrow">Australia destination guide</p><h1 id="australia-guide-title" class="au-guide__title">Study in Australia. Build your next chapter.</h1><p class="au-guide__lead">Australia brings together internationally respected education, practical learning, welcoming communities, vibrant cities and a lifestyle that gives your study journey room to grow. We help you understand the destination before you choose your course and pathway.</p><div class="au-guide__actions"><a class="au-guide__button" href="#network">Explore the university network <span aria-hidden="true">&nbsp;↗</span></a><a class="au-guide__button au-guide__button--quiet" href="{{ url_for('booking_page') }}">Book a consultation</a></div></div>
+      <aside class="au-guide__glance" aria-label="Australia at a glance"><p class="au-guide__label">Australia at a glance</p><h2 class="au-guide__glance-title">Education with life beyond the classroom.</h2><div class="au-guide__facts">{% for stat in hero_stats %}<div class="au-guide__fact"><strong>{{ stat.value }}</strong><span>{{ stat.label }}</span></div>{% endfor %}</div></aside>
+    </section>
 
-          <div class="hero-stats mt-8 grid gap-3 sm:grid-cols-2">
-            {% for stat in hero_stats %}
-            <div class="metric-card p-4">
-              <p class="text-2xl font-bold text-slate-950">{{ stat.value }}</p>
-              <p class="mt-2 text-sm leading-6 text-slate-600">{{ stat.label }}</p>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
+    <section class="au-guide__section" aria-labelledby="why-australia-title"><div class="au-guide__section-head"><div><p class="au-guide__label">Why Australia</p><h2 id="why-australia-title" class="au-guide__heading">A destination designed for the whole journey.</h2></div><p class="au-guide__section-copy">Australia offers a balanced student experience: respected institutions, applied learning, diverse communities and the space to build confidence in a new country. Your best route still depends on your academic profile, budget, English score, course direction and current visa conditions.</p></div><div class="au-guide__open-grid"><article class="au-guide__open-item"><span class="au-guide__index">01</span><h3>Quality education</h3><p>Universities, pathway providers and vocational institutions offer structured learning with strong academic support and practical direction.</p></article><article class="au-guide__open-item"><span class="au-guide__index">02</span><h3>Learning that feels relevant</h3><p>Many courses connect theory with projects, placements, laboratories and industry-informed learning—depending on the program you choose.</p></article><article class="au-guide__open-item"><span class="au-guide__index">03</span><h3>Multicultural everyday life</h3><p>Meet people from around the world, experience different communities and build a wider perspective while living in a welcoming study environment.</p></article><article class="au-guide__open-item"><span class="au-guide__index">04</span><h3>Support for international students</h3><p>Campuses commonly provide orientation, academic guidance, wellbeing services and practical support to help students settle into study.</p></article></div></section>
 
-        <div class="hero-visual hero-media">
-          <div class="hero-media-frame">
-            <picture>
-              <source media="(max-width: 767px)" srcset="{{ url_for('static', filename='images/m_universities_page.webp') }}">
-              <img src="{{ url_for('static', filename='images/universities_page.webp') }}" alt="{{ spotlight.name if spotlight is defined else 'Unified university guide' }}" loading="eager" decoding="async">
-            </picture>
-          </div>
-          <div class="hero-rail-grid mt-4 grid gap-3 sm:grid-cols-[1.08fr_0.92fr]">
-            {% if spotlight is defined %}
-            <div class="rail-card p-4">
-              <p class="text-xs font-semibold uppercase tracking-[0.26em] text-primary">Featured route</p>
-              <h2 class="mt-2 text-2xl font-bold text-slate-950">{{ spotlight.name }}</h2>
-              <p class="mt-2 text-sm leading-7 text-slate-600">
-                A strong fit for students who want globally recognized academics, premium research pathways, and a polished city-campus experience.
-              </p>
-            </div>
-            <div class="grid gap-3">
-              <div class="rail-card p-4">
-                <p class="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-slate-500">Best for</p>
-                <p class="mt-1.5 text-sm font-semibold text-slate-900">{{ spotlight.best_for }}</p>
-              </div>
-              <div class="flex flex-wrap gap-2">
-                {% for tag in spotlight.tags %}
-                <span class="chip bg-white/92 text-slate-800">{{ tag }}</span>
-                {% endfor %}
-                <span class="chip bg-slate-950/82 text-white">{{ spotlight.ranking }}</span>
-              </div>
-            </div>
-            {% else %}
-            <div class="rail-card p-4">
-              <p class="text-xs font-semibold uppercase tracking-[0.26em] text-primary">Featured route</p>
-              <h2 class="mt-2 text-2xl font-bold text-slate-950">Top university pathways</h2>
-              <p class="mt-2 text-sm leading-7 text-slate-600">
-                A strong fit for students who want globally recognized academics, premium research pathways, and a polished city-campus experience.
-              </p>
-            </div>
-            <div class="grid gap-3">
-              <div class="rail-card p-4">
-                <p class="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-slate-500">Best for</p>
-                <p class="mt-1.5 text-sm font-semibold text-slate-900">Research, scholarships, global campus experience</p>
-              </div>
-              <div class="flex flex-wrap gap-2">
-                <span class="chip bg-white/92 text-slate-800">Scholarships</span>
-                <span class="chip bg-white/92 text-slate-800">Research</span>
-                <span class="chip bg-white/92 text-slate-800">Career outcomes</span>
-                <span class="chip bg-slate-950/82 text-white">#1 for Australian university guidance</span>
-              </div>
-            </div>
-            {% endif %}
-          </div>
-        </div>
+    <section class="au-guide__section" aria-labelledby="education-title"><div class="au-guide__section-head"><div><p class="au-guide__label">Education in Australia</p><h2 id="education-title" class="au-guide__heading">Choose a qualification with a clear direction.</h2></div><p class="au-guide__section-copy">From undergraduate and postgraduate degrees to pathway and vocational options, the right choice is the one that connects your previous study, ability, career goals and realistic budget.</p></div><div class="au-guide__open-grid"><article class="au-guide__open-item"><span class="au-guide__index">Study structure</span><h3>Courses with a practical purpose</h3><p>Look for the balance of academic depth, assessment style, facilities, work-integrated learning and support that suits the way you learn.</p></article><article class="au-guide__open-item"><span class="au-guide__index">The right pathway</span><h3>Start at the level that fits</h3><p>Diploma, foundation, English preparation and packaged pathways may provide a more suitable route when direct entry is not the best choice.</p></article><article class="au-guide__open-item"><span class="au-guide__index">English readiness</span><h3>Prepare before the pressure starts</h3><p>IELTS or PTE preparation can help you build the reading, writing, speaking and listening skills required for your intended course.</p></article><article class="au-guide__open-item"><span class="au-guide__index">A realistic plan</span><h3>Know the full cost early</h3><p>Plan tuition, living expenses, English preparation, application costs, financial evidence and arrival costs before committing to an intake.</p></article></div></section>
+
+    <section class="au-guide__band" aria-labelledby="sectors-title"><div class="au-guide__section-head"><div><p class="au-guide__label">Work and future direction</p><h2 id="sectors-title" class="au-guide__heading">Where growing skills can meet opportunity.</h2></div><p class="au-guide__section-copy">Australia has established sectors across cities and regions. Work opportunities, graduate pathways and long-term outcomes depend on your qualification, skills, location, eligibility, work rights and changing market conditions.</p></div><div class="au-guide__sector-list"><article class="au-guide__sector"><span class="au-guide__index">01</span><h3>Healthcare and social assistance</h3><p>A broad field for students interested in care, health services, community support and allied professions.</p></article><article class="au-guide__sector"><span class="au-guide__index">02</span><h3>Technology and digital</h3><p>Explore software, data, cybersecurity, cloud, design and digital business pathways shaped by evolving demand.</p></article><article class="au-guide__sector"><span class="au-guide__index">03</span><h3>Engineering and construction</h3><p>Infrastructure, built environment, engineering systems and project delivery remain important areas across Australia.</p></article><article class="au-guide__sector"><span class="au-guide__index">04</span><h3>Business and finance</h3><p>Build commercial, analytical, accounting, marketing and management skills for a changing global economy.</p></article><article class="au-guide__sector"><span class="au-guide__index">05</span><h3>Education and research</h3><p>Universities and communities offer pathways for people drawn to teaching, research, policy and innovation.</p></article><article class="au-guide__sector"><span class="au-guide__index">06</span><h3>Tourism and hospitality</h3><p>Australia’s cities, coastline and visitor economy create varied study and service-industry environments.</p></article></div></section>
+
+    <section class="au-guide__life" aria-labelledby="lifestyle-title">
+      <div class="au-guide__life-intro">
+        <p class="au-guide__label">Life in Australia</p>
+        <h2 id="lifestyle-title">Study in a place that gives your life room to grow.</h2>
+        <p>Australia is more than a classroom. It is an opportunity to experience a new rhythm of life—open spaces, different cultures, coastal cities, community, sport and the confidence that comes from becoming independent.</p>
+        <div class="au-guide__life-note"><span>Find your city rhythm</span><strong>Course fit · daily life · future direction</strong></div>
       </div>
-
-      <div class="hero-supporting mt-6 grid gap-4 md:grid-cols-3">
-        <div class="rail-card p-5">
-          <p class="section-label">Quick read</p>
-          <h3 class="mt-3 text-xl font-bold text-slate-950">Shortlist made visually clear</h3>
-          <p class="mt-2 text-sm leading-7 text-slate-600">Each university is presented with a calmer, more editorial feel so students can decide faster.</p>
-        </div>
-        <div class="rail-card p-5">
-          <p class="section-label">Best route</p>
-          <h3 class="mt-3 text-xl font-bold text-slate-950">{{ spotlight.best_for if spotlight is defined else 'Research, scholarships, global campus experience' }}</h3>
-          <p class="mt-2 text-sm leading-7 text-slate-600">The featured route is styled like a premium recommendation, not a flat promotional box.</p>
-        </div>
-        <div class="rail-card p-5">
-          <p class="section-label">Need guidance?</p>
-          <h3 class="mt-3 text-xl font-bold text-slate-950">Open consultation when ready</h3>
-          <p class="mt-2 text-sm leading-7 text-slate-600">Use the page to compare options, then move to a tailored consultation flow.</p>
-        </div>
+      <div class="au-guide__city-list">
+        <a class="au-guide__city" href="#network"><span class="au-guide__city-number">01</span><div><strong class="au-guide__city-name">Melbourne</strong><span class="au-guide__city-tag">Culture · education · community</span><p>A creative, diverse city known for arts, food, sport, student communities and a broad university environment.</p></div><span class="au-guide__city-arrow" aria-hidden="true">↗</span></a>
+        <a class="au-guide__city" href="#network"><span class="au-guide__city-number">02</span><div><strong class="au-guide__city-name">Sydney</strong><span class="au-guide__city-tag">Global · energetic · coastal</span><p>A major international city with a fast-moving professional atmosphere, iconic coastline and varied study options.</p></div><span class="au-guide__city-arrow" aria-hidden="true">↗</span></a>
+        <a class="au-guide__city" href="#network"><span class="au-guide__city-number">03</span><div><strong class="au-guide__city-name">Brisbane</strong><span class="au-guide__city-tag">Warm · growing · balanced</span><p>A welcoming, warm-climate city with a relaxed pace, expanding professional sectors and nearby natural spaces.</p></div><span class="au-guide__city-arrow" aria-hidden="true">↗</span></a>
+        <a class="au-guide__city" href="#network"><span class="au-guide__city-number">04</span><div><strong class="au-guide__city-name">Canberra</strong><span class="au-guide__city-tag">Research · policy · focus</span><p>Australia’s purpose-built capital offers a focused academic setting, public institutions and a close-knit lifestyle.</p></div><span class="au-guide__city-arrow" aria-hidden="true">↗</span></a>
       </div>
-    </div>
+    </section>
+
+    <section class="au-guide__section au-guide__settle" aria-labelledby="settling-title"><div class="au-guide__settle-intro"><p class="au-guide__label">Settling into your new life</p><h2 id="settling-title" class="au-guide__heading">Prepare for the first day and the years after it.</h2><p>Good preparation makes arrival calmer. We help you understand the practical details alongside your application, while keeping advice aligned with current official requirements.</p></div><div class="au-guide__settle-list"><div class="au-guide__settle-row"><span>01</span><div><h3>Accommodation and location</h3><p>Plan where you will live, how far it is from campus, what is included and which costs need to be paid upfront.</p></div></div><div class="au-guide__settle-row"><span>02</span><div><h3>Transport and everyday setup</h3><p>Understand public transport, banking, phone services, local shopping and the routine that will make your first weeks easier.</p></div></div><div class="au-guide__settle-row"><span>03</span><div><h3>Health, insurance and support</h3><p>Prepare the documents, insurance arrangements and campus contacts relevant to your student journey.</p></div></div><div class="au-guide__settle-row"><span>04</span><div><h3>Work rights and responsibilities</h3><p>Check current visa conditions and official guidance before making plans around part-time work or future pathways.</p></div></div><div class="au-guide__settle-row"><span>05</span><div><h3>Community and confidence</h3><p>Join student groups, use available support and give yourself time to build a comfortable life in a new environment.</p></div></div></div></section>
+
+    <section id="network" class="au-guide__network" aria-labelledby="network-title"><div class="au-guide__section-head"><div><p class="au-guide__label">University network</p><h2 id="network-title" class="au-guide__heading">Six leading university guides to begin your search.</h2></div><p class="au-guide__section-copy">Explore each profile for its academic focus, city, tuition direction, intakes and student-fit notes. Your final choice should be based on the complete picture—not a single ranking.</p></div><div class="au-guide__network-list">{% for university in universities %}<a class="au-guide__university" href="{{ university.url }}" aria-label="Open guide for {{ university.name }}"><div class="au-guide__university-image"><img src="{{ url_for('static', filename=university.image) }}" alt="{{ university.name }} campus" loading="lazy" decoding="async"></div><div><span class="au-guide__university-meta">{{ university.category }} · {{ university.region }}</span><h3 class="au-guide__university-name">{{ university.name }}</h3><p class="au-guide__university-summary">{{ university.summary }}</p></div><span class="au-guide__university-arrow" aria-hidden="true">↗</span></a>{% endfor %}</div></section>
+
+    <section class="au-guide__cta" aria-label="Australia destination consultation"><div><p class="au-guide__label">Your Australia plan</p><h2>Turn the dream into a route you can understand.</h2><p>Start with your profile, preferred course, English score, budget and future direction. We will help you identify a sensible next step.</p></div><a class="au-guide__button" href="{{ url_for('booking_page') }}">Start a consultation <span aria-hidden="true">&nbsp;↗</span></a></section>
   </div>
-</section>
-
-<section id="network" class="py-14">
-  <div class="mx-auto max-w-7xl px-6">
-    <div class="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-      <div class="max-w-3xl">
-        <p class="section-label">Top picks</p>
-        <h2 class="mt-4 text-4xl font-bold text-slate-950 sm:text-5xl">A clean shortlist with direct paths into each university guide</h2>
-        <p class="mt-4 max-w-2xl text-base leading-7 text-slate-600">
-          The cards are intentionally compact and refined so they work better across mobile, tablet, laptop, and desktop.
-        </p>
-      </div>
-      <div class="rail-card rounded-full px-5 py-3 text-sm font-semibold text-slate-700">
-        Curated for Pakistani students and consultancy-led planning
-      </div>
-    </div>
-
-    <div class="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-      {% for university in universities %}
-      <a href="{{ university.url }}" class="university-card group block" data-university-card aria-label="Open guide for {{ university.name }}">
-        <div class="university-card__image">
-          <picture>
-            {% if loop.first %}
-            <source media="(max-width: 767px)" srcset="{{ url_for('static', filename='images/universities_page.webp') }}">
-            {% else %}
-            <source media="(max-width: 767px)" srcset="{{ url_for('static', filename=university.mobile_image) }}">
-            {% endif %}
-            <img src="{{ url_for('static', filename=university.image) }}" alt="{{ university.name }} campus" loading="lazy" decoding="async">
-          </picture>
-          <div class="university-card__shade"></div>
-          <div class="absolute left-4 top-4 flex flex-wrap gap-2">
-            <span class="chip bg-white/92 text-slate-800">{{ university.badge }}</span>
-            <span class="chip bg-slate-950/82 text-white">{{ university.region }}</span>
-          </div>
-          <div class="absolute inset-x-0 bottom-0 p-4">
-            <div class="flex items-end justify-between gap-4 text-white">
-              <div>
-                <p class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-sky-200">{{ university.ranking }}</p>
-                <p class="mt-1 text-sm font-semibold text-white/90">{{ university.type }}</p>
-              </div>
-              <div class="rounded-2xl bg-white/12 px-3 py-2 text-right backdrop-blur-md">
-                <p class="text-[0.65rem] uppercase tracking-[0.22em] text-slate-200">Intake</p>
-                <p class="mt-1 text-sm font-semibold">{{ university.intake }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="relative p-6 sm:p-6 lg:p-6">
-          <div class="flex items-start justify-between gap-4">
-            <div>
-              <p class="section-label" class="category-chip">{{ university.category }}</p>
-              <h3 class="mt-2 text-xl font-bold text-slate-950 lg:text-[1.6rem]">{{ university.name }}</h3>
-            </div>
-            <div class="flex h-11 w-11 items-center justify-center rounded-2xl" class="university-badge">
-              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="M12 5l7 7-7 7"></path>
-              </svg>
-            </div>
-          </div>
-
-          <p class="mt-3 text-sm leading-7 text-slate-600">{{ university.summary }}</p>
-
-          <div class="mt-5 grid grid-cols-2 gap-3">
-            <div class="rounded-[1.15rem] border border-slate-200 bg-white p-3.5">
-              <p class="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-slate-500">Tuition</p>
-              <p class="mt-1.5 text-sm font-semibold text-slate-900">{{ university.tuition }}</p>
-            </div>
-            <div class="rounded-[1.15rem] border border-slate-200 bg-white p-3.5">
-              <p class="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-slate-500">Focus</p>
-              <p class="mt-1.5 text-sm font-semibold text-slate-900">{{ university.approval_focus }}</p>
-            </div>
-          </div>
-
-          <div class="mt-5 flex flex-wrap gap-2">
-            {% for tag in university.tags %}
-            <span class="mini-pill">{{ tag }}</span>
-            {% endfor %}
-          </div>
-
-          <div class="mt-5 border-t border-slate-200 pt-4">
-            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Best for</p>
-            <p class="mt-1 text-sm font-semibold text-slate-900">{{ university.best_for }}</p>
-          </div>
-
-          <div class="mt-5 flex items-center justify-between gap-4">
-            <span class="inline-flex items-center gap-2 text-sm font-semibold" class="category-chip">
-              Open guide
-              <span aria-hidden="true">-></span>
-            </span>
-          </div>
-        </div>
-      </a>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="pb-20 pt-4">
-  <div class="mx-auto max-w-7xl px-6">
-    <div class="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
-      <div class="story-card bg-slate-950 p-7 text-white sm:p-9">
-        <p class="section-label text-sky-300">Why this page works</p>
-        <h2 class="mt-4 text-3xl font-bold text-white sm:text-4xl">It feels like a professional admissions desk, not a generic listing page.</h2>
-        <p class="mt-4 max-w-xl text-sm leading-7 text-slate-300">
-          The page is intentionally simple: stronger visuals, tighter spacing, and direct access to the detailed university pages.
-        </p>
-        <div class="mt-7 space-y-3.5">
-          <div class="rounded-[1.3rem] border border-white/10 bg-white/6 p-4">
-            <p class="text-sm font-semibold text-white">Comparative structure</p>
-            <p class="mt-1.5 text-sm leading-6 text-slate-300">Students can review ranking, tuition, intake, and fit at a glance.</p>
-          </div>
-          <div class="rounded-[1.3rem] border border-white/10 bg-white/6 p-4">
-            <p class="text-sm font-semibold text-white">Designed for decision making</p>
-            <p class="mt-1.5 text-sm leading-6 text-slate-300">Each card feels like a curated recommendation instead of a plain box.</p>
-          </div>
-          <div class="rounded-[1.3rem] border border-white/10 bg-white/6 p-4">
-            <p class="text-sm font-semibold text-white">Built for consultancy flow</p>
-            <p class="mt-1.5 text-sm leading-6 text-slate-300">Once a university feels right, the student can open its tailored guide immediately.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid gap-6 sm:grid-cols-2">
-        {% for step in journey_steps %}
-        <div class="story-card p-6">
-          <p class="text-xs font-semibold uppercase tracking-[0.28em] text-primary">Step {{ loop.index }}</p>
-          <h3 class="mt-3 text-2xl font-bold text-slate-950">{{ step.title }}</h3>
-          <p class="mt-2.5 text-sm leading-7 text-slate-600">{{ step.text }}</p>
-        </div>
-        {% endfor %}
-        <div class="story-card sm:col-span-2 overflow-hidden p-0">
-          <div class="grid gap-0 lg:grid-cols-[0.98fr_1.02fr]">
-            <div class="bg-gradient-to-br from-primary via-slate-950 to-accent p-8 text-white sm:p-9">
-              <p class="section-label text-sky-200">Need guidance?</p>
-              <h3 class="mt-4 text-3xl font-bold text-white">We can help turn shortlist choices into a practical application strategy.</h3>
-              <p class="mt-4 text-sm leading-7 text-slate-200">
-                From profile evaluation to scholarship targeting, the goal is to make the student feel supported at every step.
-              </p>
-            </div>
-            <div class="flex items-center justify-center p-8 sm:p-9">
-              <a href="{{ url_for('booking_page') }}" class="button-pill primary text-sm">Start consultation</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+</main>
 {% endblock %}

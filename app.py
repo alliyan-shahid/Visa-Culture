@@ -67,18 +67,6 @@ app.config.from_object(Config)
 def landing_page():
     return render_template("index.html")
 
-@app.route("/admission-requirements")
-def admission_requirements():
-    return render_template("admission_requirements.html")
-
-@app.route("/how-we-work")
-def how_we_work():
-    return render_template("how_we_work.html")
-
-@app.route("/how-it-works")
-def how_it_works_redirect():
-    return redirect(url_for("how_we_work"), code=301)
-
 @app.route("/universities/university-of-melbourne")
 def university_of_melbourne():
     return render_template("melbourne_landing.html")
@@ -222,10 +210,10 @@ def universities():
         },
     ]
     hero_stats = [
-        {"value": "6", "label": "dedicated university guides"},
-        {"value": "100%", "label": "built for Pakistani students"},
-        {"value": "1", "label": "clear route to each university page"},
-        {"value": "24/7", "label": "consultancy support direction"},
+        {"value": "6", "label": "leading university guides"},
+        {"value": "8", "label": "major study cities"},
+        {"value": "1", "label": "globally respected destination"},
+        {"value": "24/7", "label": "student support direction"},
     ]
     journey_steps = [
         {
@@ -249,8 +237,8 @@ def universities():
         journey_steps=journey_steps,
         spotlight=spotlight,
         page_summary={
-            "title": "Top universities with dedicated consultancy-grade guides",
-            "subtitle": "Compare the best Australian universities in one polished shortlist, then jump straight into a designed page for each one.",
+            "title": "Study in Australia with a clearer plan",
+            "subtitle": "Explore education, lifestyle, work possibilities, cities, and leading universities through one practical destination guide.",
         },
     )
 
@@ -390,8 +378,6 @@ Sitemap: {}/sitemap.xml
 def sitemap_xml():
     pages = [
         {"path": "", "priority": 1.0},
-        {"path": "admission-requirements", "priority": 0.8},
-        {"path": "how-we-work", "priority": 0.8},
         {"path": "universities", "priority": 0.9},
         {"path": "booking", "priority": 0.7},
     ]

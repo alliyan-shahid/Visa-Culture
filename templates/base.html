@@ -114,8 +114,6 @@
                         <li><a href="{{ url_for('universities') }}" class="transition hover:text-primary">Universities</a></li>
                         <li><a href="{{ url_for('booking_page') }}" class="transition hover:text-primary">Book Appointment</a></li>
                         <li><a href="{{ url_for('landing_page') }}#about-us" class="transition hover:text-primary">About Us</a></li>
-                        <li><a href="{{ url_for('admission_requirements') }}" class="transition hover:text-primary">Admission Requirements</a></li>
-                        <li><a href="{{ url_for('how_we_work') }}" class="transition hover:text-primary">How We Work</a></li>
                     </ul>
                 </div>
 
@@ -323,14 +321,12 @@
                 <div class="mobile-nav-more-menu" id="mobileNavMoreMenu" role="menu" aria-label="More pages">
                     <ul class="more-menu-list">
                         <li class="more-menu-link"><a href="{{ url_for('landing_page') }}#about-us" role="menuitem">About Us</a></li>
-                        <li class="more-menu-accordion{% if request.path in [url_for('admission_requirements'), url_for('how_we_work')] or request.path.startswith('/universities') %} is-open{% endif %}">
-                            <button class="more-menu-accordion__trigger" type="button" aria-expanded="{% if request.path in [url_for('admission_requirements'), url_for('how_we_work')] or request.path.startswith('/universities') %}true{% else %}false{% endif %}">
+                        <li class="more-menu-accordion{% if request.path.startswith('/universities') %} is-open{% endif %}">
+                            <button class="more-menu-accordion__trigger" type="button" aria-expanded="{% if request.path.startswith('/universities') %}true{% else %}false{% endif %}">
                                 <span>Education</span><span class="more-menu-chevron" aria-hidden="true">&#9654;</span>
                             </button>
                             <ul class="more-menu-sublist">
                                 <li><a href="{{ url_for('landing_page') }}#ideaCarouselSection" role="menuitem">Why Study Abroad With Us</a></li>
-                                <li><a href="{{ url_for('admission_requirements') }}" role="menuitem"{% if request.path == url_for('admission_requirements') %} class="is-active"{% endif %}>Admission Requirements</a></li>
-                                <li><a href="{{ url_for('how_we_work') }}" role="menuitem"{% if request.path == url_for('how_we_work') %} class="is-active"{% endif %}>How We Work</a></li>
                                 <li><a href="{{ url_for('universities') }}" role="menuitem"{% if request.path.startswith('/universities') %} class="is-active"{% endif %}>Top Universities</a></li>
                             </ul>
                         </li>
@@ -359,7 +355,7 @@
             const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
             const mobileNavMoreBtn = document.getElementById('mobileNavMore');
             const mobileNavMoreMenu = document.getElementById('mobileNavMoreMenu');
-            const moreMenuPaths = ['/admission-requirements', '/how-we-work'];
+            const moreMenuPaths = [];
 
             if (!mobileTopNavbar || !mobileNavItems.length) return;
 
