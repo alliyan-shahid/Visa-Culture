@@ -1757,7 +1757,7 @@
             </article>
 
             <div class="vc-destination-list" aria-label="Study destination options">
-                <a class="vc-destination-link" href="{{ url_for('universities') }}">
+                <a class="vc-destination-link" href="{{ url_for('australia_destination') }}">
                     <span class="vc-destination-link__number">01</span>
                     <span><strong class="vc-destination-link__name">Australia</strong><span class="vc-destination-link__description">Practical education and globally recognised programs.</span></span>
                     <span class="vc-destination-link__arrow" aria-hidden="true">↗</span>
@@ -2151,6 +2151,7 @@
             if (paragraph.closest('form')) return;
             if (paragraph.closest('#budget-guidance')) return;
             if (paragraph.closest('#services')) return;
+            if (paragraph.closest('#ielts-pte')) return;
 
             const text = paragraph.textContent ? paragraph.textContent.trim() : '';
             if (text.length < 170) return;

@@ -67,32 +67,32 @@ app.config.from_object(Config)
 def landing_page():
     return render_template("index.html")
 
-@app.route("/universities/university-of-melbourne")
+@app.route("/australia/university-of-melbourne")
 def university_of_melbourne():
     return render_template("melbourne_landing.html")
 
-@app.route("/universities/australian-national-university")
+@app.route("/australia/australian-national-university")
 def australian_national_university():
     return render_template("anu_landing.html")
 
-@app.route("/universities/university-of-sydney")
+@app.route("/australia/university-of-sydney")
 def university_of_sydney():
     return render_template("sydney_landing.html")
 
-@app.route("/universities/unsw-sydney")
+@app.route("/australia/unsw-sydney")
 def unsw_sydney():
     return render_template("unsw_landing.html")
 
-@app.route("/universities/monash-university")
+@app.route("/australia/monash-university")
 def monash_university():
     return render_template("monash_landing.html")
 
-@app.route("/universities/university-of-queensland")
+@app.route("/australia/university-of-queensland")
 def university_of_queensland():
     return render_template("uq_landing.html")
 
-@app.route("/universities")
-def universities():
+@app.route("/australia")
+def australia_destination():
     university_cards = [
         {
             "name": "University of Melbourne",
@@ -382,12 +382,12 @@ def sitemap_xml():
         {"path": "booking", "priority": 0.7},
     ]
     university_pages = [
-        {"path": "universities/university-of-melbourne", "priority": 0.9},
-        {"path": "universities/australian-national-university", "priority": 0.9},
-        {"path": "universities/university-of-sydney", "priority": 0.9},
-        {"path": "universities/unsw-sydney", "priority": 0.9},
-        {"path": "universities/monash-university", "priority": 0.9},
-        {"path": "universities/university-of-queensland", "priority": 0.9},
+        {"path": "australia/university-of-melbourne", "priority": 0.9},
+        {"path": "australia/australian-national-university", "priority": 0.9},
+        {"path": "australia/university-of-sydney", "priority": 0.9},
+        {"path": "australia/unsw-sydney", "priority": 0.9},
+        {"path": "australia/monash-university", "priority": 0.9},
+        {"path": "australia/university-of-queensland", "priority": 0.9},
     ]
 
     url_root = request.url_root.rstrip("/")
@@ -412,4 +412,4 @@ def sitemap_xml():
     return response
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
