@@ -18,44 +18,45 @@
 </style>
 
 <script src="{{ url_for('static', filename='js/premium-animations.js') }}"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/university-editorial.css') }}?v=3">
 {% endblock %}
 {% block content %}
 <div class="mel-wrap text-[var(--mel-ink)]">
-  <section class="hero-monash relative overflow-hidden py-24">
-  <div class="absolute inset-x-0 top-0 h-72 bg-gradient-to-b from-white via-white/70 to-transparent"></div>
-  <div class="relative mx-auto max-w-7xl px-6">
-    <div class="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] items-center">
-      <div class="space-y-6">
-        <span class="inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold uppercase tracking-[0.32em] text-slate-700 bg-slate-100">Monash University - Melbourne</span>
-        <h1 class="text-4xl font-black tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">Apply to <span class="text-monash-gold">Monash University</span> from Pakistan with Visa Culture</h1>
-        <p class="max-w-3xl text-lg leading-8 text-slate-600">Enjoy a modern Melbourne campus, premium scholarships, and strong industry pathways in business, engineering, IT, and health.</p>
-        <div class="flex flex-col gap-4 sm:flex-row">
-          <a href="#apply" class="btn-monash inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-semibold shadow-lg shadow-slate-900/10">Start Your Monash Application</a>
-          <a href="#why-monash" class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-8 py-4 text-sm font-semibold text-slate-700 transition hover:bg-slate-50">Discover Monash Pathways</a>
-        </div>
-      </div>
-      <div class="hero-card rounded-[2rem] p-6 shadow-xl">
-        <div class="overflow-hidden rounded-[1.75rem]">
-          <picture>
-            <source media="(max-width: 640px)" srcset="{{ url_for('static', filename='images/m monash hero.webp') }}" type="image/webp">
-            <source srcset="{{ url_for('static', filename='images/monash hero.webp') }}" type="image/webp">
-            <img src="{{ url_for('static', filename='images/monash hero.webp') }}" alt="Monash campus" class="h-full w-full object-cover" loading="lazy" decoding="async">
-          </picture>
-        </div>
-        <div class="mt-6 grid gap-4 sm:grid-cols-2">
-          <div class="rounded-[1.5rem] border border-slate-200 p-5">
-            <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Scholarship support</p>
-            <p class="mt-3 text-xl font-semibold text-slate-900">Apply with guidance on every Monash award.</p>
+  <section class="hero-section text-white relative overflow-hidden hero-fade-in">
+    <div class="absolute inset-0">
+      <picture class="block w-full h-full">
+        <source media="(max-width: 640px)" srcset="{{ url_for('static', filename='images/m monash hero.webp') }}" type="image/webp">
+        <source srcset="{{ url_for('static', filename='images/monash hero.webp') }}" type="image/webp">
+        <img src="{{ url_for('static', filename='images/monash hero.webp') }}" alt="Monash University campus" class="w-full h-full object-cover" loading="eager" fetchpriority="high" decoding="async">
+      </picture>
+    </div>
+    <div class="absolute inset-0 bg-slate-950/45 hidden lg:block"></div>
+    <div class="relative max-w-7xl mx-auto px-6">
+      <div class="grid gap-10 lg:grid-cols-[1.3fr_0.9fr] items-center h-full">
+        <div class="flex flex-col justify-center">
+          <div class="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm uppercase tracking-[0.28em] text-slate-200 w-fit">World-class Melbourne campus</div>
+          <h1 class="mt-8 font-black leading-tight">Study at <span class="hero-highlight">Monash University</span> from Pakistan</h1>
+          <p class="mt-6 max-w-2xl text-lg text-slate-200">Build a future through globally respected education, practical learning, and strong industry pathways across business, engineering, IT, and health.</p>
+          <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+            <a href="#apply" class="accent-btn inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-semibold">Start Your Monash Journey</a>
+            <a href="#why-monash" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-8 py-4 text-sm text-white">See Study Benefits</a>
           </div>
-          <div class="rounded-[1.5rem] border border-slate-200 p-5">
-            <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Fast intake help</p>
-            <p class="mt-3 text-xl font-semibold text-slate-900">Choose the ideal intake and get visa-ready faster.</p>
+        </div>
+        <div class="hero-grid-right space-y-4">
+          <div class="section-card rounded-3xl p-8">
+            <span class="text-sm uppercase tracking-[0.2em] text-slate-300">Why Monash</span>
+            <h2 class="mt-4 text-3xl font-bold">Research strength, global reach</h2>
+            <p class="mt-3 text-slate-300">A Group of Eight university with practical learning and strong employer connections across Melbourne.</p>
+          </div>
+          <div class="section-card rounded-3xl p-8">
+            <span class="text-sm uppercase tracking-[0.2em] text-slate-300">Scholarship opportunity</span>
+            <h2 class="mt-4 text-3xl font-bold">Funding routes for international talent</h2>
+            <p class="mt-3 text-slate-300">Explore merit, faculty, and international awards with a clear application strategy.</p>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <section id="why-monash" class="premium-section relative py-20 lg:py-28">
     <div class="mx-auto max-w-7xl px-6 relative z-10">
@@ -412,28 +413,28 @@
       <div class="grid md:grid-cols-3 gap-8">
         <div class="mel-reveal">
           <div class="testimonial-card">
-            <p class="testimonial-text">"Visa Culture helped me align scholarships and my SOP perfectly. I got my Monash offer faster than expected and felt supported the whole way."</p>
+            <p class="testimonial-text">“Monash’s industry-connected course options helped me narrow my interests into a direction that feels useful for my future career.”</p>
             <div class="pt-4 border-t border-slate-200">
-              <p class="testimonial-author">Ayesha Khan</p>
-              <p class="testimonial-role">MS Data Science</p>
+              <p class="testimonial-author">Postgraduate applicant</p>
+              <p class="testimonial-role">Monash course planning</p>
             </div>
           </div>
         </div>
         <div class="mel-reveal">
           <div class="testimonial-card">
-            <p class="testimonial-text">"The visa and Genuine Student requirement guidance was clear and practical. Every step was handled professionally, and now I'm thriving at Monash."</p>
+            <p class="testimonial-text">“Reviewing my academic record and financial evidence helped me prepare a stronger, more consistent application file.”</p>
             <div class="pt-4 border-t border-slate-200">
-              <p class="testimonial-author">Hamza Ali</p>
-              <p class="testimonial-role">Bachelor of Engineering</p>
+              <p class="testimonial-author">Undergraduate applicant</p>
+              <p class="testimonial-role">Monash admission guidance</p>
             </div>
           </div>
         </div>
         <div class="mel-reveal">
           <div class="testimonial-card">
-            <p class="testimonial-text">"From university shortlist to accommodation planning, the support felt premium and reliable. I had a smooth arrival and strong start."</p>
+            <p class="testimonial-text">“The Melbourne lifestyle guidance—from transport to halal food and student networks—made settling in feel much less intimidating.”</p>
             <div class="pt-4 border-t border-slate-200">
-              <p class="testimonial-author">Mariam Siddiqui</p>
-              <p class="testimonial-role">Master of Business Analytics</p>
+              <p class="testimonial-author">International student perspective</p>
+              <p class="testimonial-role">Melbourne arrival planning</p>
             </div>
           </div>
         </div>
@@ -484,32 +485,14 @@
     </div>
   </section>
 
-  <section id="final-cta" class="premium-section relative py-20 lg:py-32">
-    <div class="mx-auto max-w-5xl px-6 relative z-10">
-      <div class="relative overflow-hidden rounded-[2rem] p-10 lg:p-16">
-        <div class="absolute inset-0 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-800 opacity-95"></div>
-        <div class="absolute inset-0 opacity-10">
-          <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-          <div class="absolute bottom-0 left-0 w-96 h-96 bg-amber-300 rounded-full blur-3xl"></div>
-        </div>
-
-        <div class="relative z-10 text-center text-white space-y-8">
-          <div class="mel-reveal">
-            <p class="text-sm uppercase tracking-[0.2em] text-blue-200 font-bold">Ready to transform your future?</p>
-            <h2 class="text-4xl lg:text-5xl font-bold font-display mt-4 leading-tight">Begin your Monash University journey today</h2>
-            <p class="text-lg text-blue-100 max-w-2xl mx-auto mt-6">Get expert guidance on admissions, scholarships, visa strategy, and campus life. Your personalized pathway to Monash University starts with a consultation.</p>
-          </div>
-
-          <div class="mel-reveal flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <a href="{{ url_for('booking_page') }}" class="premium-btn premium-btn-primary">Book Free Consultation<span>&rarr;</span></a>
-            <a href="#pak-guide" class="premium-btn premium-btn-secondary">Learn More</a>
-          </div>
-
-          <div class="mel-reveal pt-4">
-            <p class="text-sm text-blue-200">    Personalized support &nbsp; | &nbsp;     Scholarship-ready strategy &nbsp; | &nbsp;     Smooth visa preparation</p>
-          </div>
-        </div>
+  <section id="final-cta" class="melbourne-cta">
+    <div class="melbourne-cta__inner">
+      <div class="melbourne-cta__copy">
+        <p class="melbourne-cta__label">Your Monash plan</p>
+        <h2>Turn your Monash ambition into a route you can understand.</h2>
+        <p>Start with your academic profile, preferred course, English score, budget and future direction. We will help you identify a sensible next step.</p>
       </div>
+      <a class="melbourne-cta__button" href="{{ url_for('booking_page') }}">Start a consultation ↗</a>
     </div>
   </section>
 </div>
