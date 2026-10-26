@@ -111,7 +111,7 @@
     min-height: 100%;
     grid-template-columns: minmax(0, .92fr) minmax(18rem, .78fr) !important;
     gap: clamp(2.5rem, 8vw, 8rem) !important;
-    align-items: end !important;
+    align-items: center !important;
   }
   .mel-wrap .hero-section .inline-flex.rounded-full {
     display: inline-flex !important;
@@ -146,9 +146,9 @@
   .mel-wrap .hero-section .accent-btn { background: #e1b35f; color: #172331; box-shadow: none; }
   .mel-wrap .hero-section .hero-grid-right {
     display: grid !important;
-    align-self: end;
+    align-self: center;
     gap: 0 !important;
-    margin-bottom: .25rem;
+    margin-bottom: 0;
     border-top: 1px solid rgba(255,255,255,.34);
   }
   .mel-wrap .hero-section .hero-grid-right .section-card {
@@ -336,6 +336,21 @@
     .mel-wrap #final-cta > .mx-auto > div > .relative.z-10 > div:nth-child(2) { display: flex; flex-direction: column; align-items: stretch; gap: .65rem; padding-top: 1.25rem; }
     .mel-wrap #final-cta .premium-btn { width: 100%; justify-content: center; }
   }
+
+/* Keep every editorial image fully visible; only the hero remains full-bleed. */
+.mel-wrap .relative.group,
+.mel-wrap .relative.group picture { height: auto !important; }
+.mel-wrap .relative.group img {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  transform: none !important;
+}
+@media (max-width: 639px) {
+  .mel-wrap .relative.group img { width: 100% !important; object-fit: contain !important; }
+}
 
   .melbourne-cta {
     width: 100vw;
