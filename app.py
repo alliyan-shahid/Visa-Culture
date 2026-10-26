@@ -96,7 +96,7 @@ def australia_destination():
     university_cards = [
         {
             "name": "University of Melbourne",
-            "ranking": "#1 in Australia",
+            "ranking": "Australia #2 · QS #=22 worldwide (2027)",
             "badge": "Group of Eight",
             "region": "Melbourne",
             "category": "Research-led",
@@ -115,7 +115,7 @@ def australia_destination():
         },
         {
             "name": "Australian National University",
-            "ranking": "#2 in Australia",
+            "ranking": "Australia #4 · QS #29 worldwide (2027)",
             "badge": "Policy hub",
             "region": "Canberra",
             "category": "Research-first",
@@ -134,7 +134,7 @@ def australia_destination():
         },
         {
             "name": "University of Sydney",
-            "ranking": "#3 in Australia",
+            "ranking": "Australia #3 · QS #28 worldwide (2027)",
             "badge": "Historic prestige",
             "region": "Sydney",
             "category": "City campus",
@@ -153,7 +153,7 @@ def australia_destination():
         },
         {
             "name": "UNSW Sydney",
-            "ranking": "#4 in Australia",
+            "ranking": "Australia #1 · QS #19 worldwide (2027)",
             "badge": "Innovation focus",
             "region": "Sydney",
             "category": "Career-driven",
@@ -172,7 +172,7 @@ def australia_destination():
         },
         {
             "name": "Monash University",
-            "ranking": "#5 in Australia",
+            "ranking": "Australia #5 · QS #31 worldwide (2027)",
             "badge": "Global campus",
             "region": "Melbourne",
             "category": "International outlook",
@@ -191,7 +191,7 @@ def australia_destination():
         },
         {
             "name": "University of Queensland",
-            "ranking": "#6 in Australia",
+            "ranking": "Australia #6 · QS #=40 worldwide (2027)",
             "badge": "Top research",
             "region": "Brisbane",
             "category": "Balanced excellence",
