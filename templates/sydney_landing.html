@@ -57,7 +57,10 @@
 .mel-wrap picture { display:block; margin:0; padding:0; background:transparent!important; }
 .mel-wrap .relative.group { overflow:hidden; border-radius:1.25rem; background:transparent!important; border:0!important; box-shadow:none!important; padding:0!important; }
 .mel-wrap .relative.group > .absolute { display:none!important; }
-.mel-wrap .relative.group img { display:block; width:100%; height:auto!important; min-height:0!important; max-height:none!important; object-fit:contain!important; border-radius:1.25rem!important; box-shadow:none!important; transform:scale(1.02)!important; transform-origin:center; transition:none!important; }
+.mel-wrap .relative.group img { display:block; width:100%; height:auto!important; min-height:0!important; max-height:none!important; object-fit:contain!important; border-radius:1.25rem!important; box-shadow:none!important; transform:none!important; transition:none!important; }
+.mel-wrap .relative.group picture { overflow:hidden!important; }
+.mel-wrap .relative.group img[src*="Sydney 1.webp"] { margin-top:-1%; }
+.mel-wrap .relative.group img[src*="Sydney 3.webp"] { margin-top:-1%; margin-bottom:-1%; }
 .mel-wrap #life .flex.items-start.gap-3 { display:block; }
 .mel-wrap #life .flex-shrink-0 { display:none; }
 .mel-wrap #final-cta { width:100%; padding:0!important; background:linear-gradient(125deg,#082b45 0%,#0a4d8f 62%,#0b756d 145%)!important; }
@@ -87,7 +90,7 @@
   .mel-wrap .mel-copy { font-size:.91rem!important; line-height:1.75; }
   .mel-wrap .feature-grid { grid-template-columns:1fr; }
   .mel-wrap .relative.group,.mel-wrap .relative.group picture { overflow:hidden!important; border-radius:2rem!important; clip-path:inset(0 round 2rem); -webkit-clip-path:inset(0 round 2rem); -webkit-mask-image:-webkit-radial-gradient(white,black); }
-  .mel-wrap .relative.group img { height:auto!important; border-radius:0!important; clip-path:none!important; transform:scale(1.02)!important; transform-origin:center; }
+  .mel-wrap .relative.group img { height:auto!important; border-radius:0!important; clip-path:none!important; transform:none!important; }
   .mel-wrap #final-cta > .mx-auto > div { min-height:0; padding:3.5rem 1.25rem!important; }
   .mel-wrap #final-cta > .mx-auto > div > .relative.z-10 { display:block; }
   .mel-wrap #final-cta > .mx-auto > div > .relative.z-10 > div:nth-child(2) { display:flex; flex-direction:column; align-items:stretch; gap:.65rem; padding-top:1.25rem; }
@@ -110,6 +113,7 @@
   .melbourne-cta__button { width:100%; margin-top:1.5rem; }
 }
 </style>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/university-editorial.css') }}?v=3">
 {% block faq_schema %}
 <script type="application/ld+json">
 {

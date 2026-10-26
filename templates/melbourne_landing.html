@@ -349,6 +349,11 @@
   transform: scale(1.02) !important;
   transform-origin: center !important;
 }
+.mel-wrap .relative.group img { transform: none !important; }
+.mel-wrap .relative.group picture { overflow: hidden !important; }
+.mel-wrap .relative.group img[src*="Melbourne 1.webp"],
+.mel-wrap .relative.group img[src*="Melbourne 2.webp"],
+.mel-wrap .relative.group img[src*="Melbourne 4.webp"] { margin-top: -1%; margin-bottom: -1%; }
 @media (max-width: 639px) {
   .mel-wrap .relative.group img { width: 100% !important; object-fit: contain !important; }
 }
@@ -385,6 +390,7 @@
     .melbourne-cta__button { width: 100%; margin-top: 1.5rem; }
   }
 </style>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/university-editorial.css') }}?v=3">
 {% endblock %}
 {% block content %}
 <div class="mel-wrap text-[var(--mel-ink)]">
