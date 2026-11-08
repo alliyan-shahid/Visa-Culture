@@ -231,7 +231,7 @@ def australia_destination():
     ]
     spotlight = university_cards[0]
     return render_template(
-        "universities.html",
+        "australia.html",
         hero_stats=hero_stats,
         universities=university_cards,
         journey_steps=journey_steps,
