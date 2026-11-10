@@ -125,6 +125,60 @@ def usa_destination():
     ]
     return render_template("usa.html", universities=universities)
 
+@app.route("/uk")
+def uk_destination():
+    universities = [
+        {
+            "id": "oxford",
+            "name": "University of Oxford",
+            "category": "Collegiate university",
+            "region": "Oxford, England",
+            "summary": "Explore humanities, sciences and social sciences in a collegiate system where undergraduate tutorials are central to teaching.",
+            "url": "https://www.ox.ac.uk/",
+        },
+        {
+            "id": "cambridge",
+            "name": "University of Cambridge",
+            "category": "Collegiate university",
+            "region": "Cambridge, England",
+            "summary": "Choose from arts, sciences and engineering, with small-group undergraduate teaching known as supervisions.",
+            "url": "https://www.cam.ac.uk/",
+        },
+        {
+            "id": "imperial",
+            "name": "Imperial College London",
+            "category": "Specialist research university",
+            "region": "London, England",
+            "summary": "Study science, engineering, medicine or business at a university with a strong focus on applied research.",
+            "url": "https://www.imperial.ac.uk/",
+        },
+        {
+            "id": "ucl",
+            "name": "University College London (UCL)",
+            "category": "Research university",
+            "region": "London, England",
+            "summary": "Explore architecture, education, health sciences, engineering and the humanities at a university based in central London.",
+            "url": "https://www.ucl.ac.uk/",
+        },
+        {
+            "id": "edinburgh",
+            "name": "University of Edinburgh",
+            "category": "Research university",
+            "region": "Edinburgh, Scotland",
+            "summary": "Explore subjects from informatics and medicine to literature and social sciences in Scotland’s capital.",
+            "url": "https://www.ed.ac.uk/",
+        },
+        {
+            "id": "manchester",
+            "name": "University of Manchester",
+            "category": "Research university",
+            "region": "Manchester, England",
+            "summary": "Choose from engineering, science, business and humanities programmes at a large university in northern England.",
+            "url": "https://www.manchester.ac.uk/",
+        },
+    ]
+    return render_template("uk.html", universities=universities)
+
 @app.route("/australia/australian-national-university")
 def australian_national_university():
     return render_template("anu_landing.html")
@@ -434,6 +488,7 @@ def sitemap_xml():
         {"path": "", "priority": 1.0},
         {"path": "universities", "priority": 0.9},
         {"path": "usa", "priority": 0.9},
+        {"path": "uk", "priority": 0.9},
         {"path": "booking", "priority": 0.7},
     ]
     university_pages = [
