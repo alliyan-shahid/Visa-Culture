@@ -179,6 +179,60 @@ def uk_destination():
     ]
     return render_template("uk.html", universities=universities)
 
+@app.route("/canada")
+def canada_destination():
+    universities = [
+        {
+            "id": "toronto",
+            "name": "University of Toronto",
+            "category": "Research university",
+            "region": "Greater Toronto Area, Ontario",
+            "summary": "Explore programs in computing, engineering, health sciences, humanities and social sciences across three campuses.",
+            "url": "https://www.utoronto.ca/",
+        },
+        {
+            "id": "ubc",
+            "name": "University of British Columbia (UBC)",
+            "category": "Research university",
+            "region": "Vancouver and Kelowna, British Columbia",
+            "summary": "Compare programs in science, forestry, engineering and business at the Vancouver and Okanagan campuses.",
+            "url": "https://www.ubc.ca/",
+        },
+        {
+            "id": "mcgill",
+            "name": "McGill University",
+            "category": "Research university",
+            "region": "Montréal, Québec",
+            "summary": "Explore programs in life sciences, engineering, management and the arts in an English-language university in Montréal.",
+            "url": "https://www.mcgill.ca/",
+        },
+        {
+            "id": "waterloo",
+            "name": "University of Waterloo",
+            "category": "Research university",
+            "region": "Waterloo, Ontario",
+            "summary": "Explore mathematics, computer science and engineering, with co-op options in many undergraduate programs.",
+            "url": "https://uwaterloo.ca/",
+        },
+        {
+            "id": "alberta",
+            "name": "University of Alberta",
+            "category": "Research university",
+            "region": "Edmonton, Alberta",
+            "summary": "Compare programs in engineering, computing, agriculture, health sciences and the humanities.",
+            "url": "https://www.ualberta.ca/",
+        },
+        {
+            "id": "mcmaster",
+            "name": "McMaster University",
+            "category": "Research university",
+            "region": "Hamilton, Ontario",
+            "summary": "Explore health sciences, engineering, business and the humanities, including programs with inquiry-based learning.",
+            "url": "https://www.mcmaster.ca/",
+        },
+    ]
+    return render_template("canada.html", universities=universities)
+
 @app.route("/australia/australian-national-university")
 def australian_national_university():
     return render_template("anu_landing.html")
@@ -489,6 +543,7 @@ def sitemap_xml():
         {"path": "universities", "priority": 0.9},
         {"path": "usa", "priority": 0.9},
         {"path": "uk", "priority": 0.9},
+        {"path": "canada", "priority": 0.9},
         {"path": "booking", "priority": 0.7},
     ]
     university_pages = [
