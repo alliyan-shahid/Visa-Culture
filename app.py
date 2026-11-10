@@ -233,6 +233,49 @@ def canada_destination():
     ]
     return render_template("canada.html", universities=universities)
 
+
+@app.route("/europe")
+def europe_destination():
+    countries = [
+        {
+            "id": "germany",
+            "name": "Germany",
+            "summary": "Compare research universities and universities of applied sciences. Many public programmes have low tuition, with exceptions by state, institution and course.",
+            "url": "https://www.study-in-germany.de/en/",
+        },
+        {
+            "id": "france",
+            "name": "France",
+            "summary": "Explore public universities, grandes écoles and specialist schools. Compare French- and English-taught programmes and check which international fees apply.",
+            "url": "https://www.campusfrance.org/en",
+        },
+        {
+            "id": "hungary",
+            "name": "Hungary",
+            "summary": "Explore programmes taught in English and check whether you qualify for the Stipendium Hungaricum scholarship.",
+            "url": "https://education.ec.europa.eu/study-in-europe/country-profiles/hungary",
+        },
+        {
+            "id": "italy",
+            "name": "Italy",
+            "summary": "Explore programmes in design, architecture, engineering, sciences and the humanities. Compare tuition and regional scholarships.",
+            "url": "https://www.universitaly.it/",
+        },
+        {
+            "id": "sweden",
+            "name": "Sweden",
+            "summary": "Explore English-taught programmes in fields such as sustainability, engineering and design. Compare university and national scholarship eligibility.",
+            "url": "https://studyinsweden.se/",
+        },
+        {
+            "id": "netherlands",
+            "name": "Netherlands",
+            "summary": "Compare English-taught programmes at research universities and universities of applied sciences. Check tuition and start looking for housing early.",
+            "url": "https://www.studyinnl.org/",
+        },
+    ]
+    return render_template("europe.html", countries=countries)
+
 @app.route("/australia/australian-national-university")
 def australian_national_university():
     return render_template("anu_landing.html")
@@ -544,6 +587,7 @@ def sitemap_xml():
         {"path": "usa", "priority": 0.9},
         {"path": "uk", "priority": 0.9},
         {"path": "canada", "priority": 0.9},
+        {"path": "europe", "priority": 0.9},
         {"path": "booking", "priority": 0.7},
     ]
     university_pages = [
