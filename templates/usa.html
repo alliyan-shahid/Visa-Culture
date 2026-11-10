@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+
+{% block title %}Study in USA | Visa Culture{% endblock %}
+{% block meta_description %}Explore U.S. universities, admissions, tuition, scholarships, living costs, F-1 student visas and career opportunities for international students.{% endblock %}
+{% block meta_keywords %}study in USA Pakistani students, U.S. university admissions, F-1 student visa, international scholarships, Visa Culture{% endblock %}
+{% block organization_description %}Visa Culture helps Pakistani students explore U.S. university admissions, scholarships and student visas.{% endblock %}
+
+{% block head %}
+{% with desktop_hero='images/study in usa.webp', mobile_hero='images/m study in usa.webp', desktop_ratio='1920 / 820', mobile_ratio='1159 / 1358' %}
+{% include '_destination_guide_styles.html' %}
+{% endwith %}
+<style>
+  #usa-title { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+  .au-guide__university[id] { scroll-margin-top:5rem; }
+</style>
+{% endblock %}
+
+{% block content %}
+<main class="au-guide">
+  <div class="au-guide__shell">
+    <section class="au-guide__hero" aria-labelledby="usa-title">
+      <h1 id="usa-title">Study in USA</h1>
+    </section>
+
+    <section class="au-guide__section" aria-labelledby="why-usa-title">
+      <div class="au-guide__section-head">
+        <div>
+          <p class="au-guide__label">Why the USA</p>
+          <h2 id="why-usa-title" class="au-guide__heading">Find a university that fits how you want to learn.</h2>
+        </div>
+        <p class="au-guide__section-copy">The United States offers everything from community colleges and small liberal arts colleges to large public universities and private research institutions. Compare programs, academic support and total costs as you build your shortlist.</p>
+      </div>
+      <div class="au-guide__open-grid">
+        <article class="au-guide__open-item">
+          <span class="au-guide__index">01</span><h3>Flexible undergraduate degrees</h3>
+          <p>Many colleges let you take courses across disciplines before choosing a major. Check when you must declare and whether your intended major has separate entry requirements.</p>
+        </article>
+        <article class="au-guide__open-item">
+          <span class="au-guide__index">02</span><h3>Research and applied learning</h3>
+          <p>Depending on your program, you can build experience through faculty research, labs, capstone projects and internships.</p>
+        </article>
+        <article class="au-guide__open-item">
+          <span class="au-guide__index">03</span><h3>Community college transfer</h3>
+          <p>Start with an associate degree and apply to transfer into a bachelor's program. Check transfer agreements and which credits count toward your major.</p>
+        </article>
+        <article class="au-guide__open-item">
+          <span class="au-guide__index">04</span><h3>International student support</h3>
+          <p>Look for an international student office, academic advising and orientation. Ask about housing support, campus employment guidance and career services.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="au-guide__section" aria-labelledby="education-title">
+      <div class="au-guide__section-head">
+        <div>
+          <p class="au-guide__label">Education in the USA</p>
+          <h2 id="education-title" class="au-guide__heading">Plan your application and budget.</h2>
+        </div>
+        <p class="au-guide__section-copy">Requirements and deadlines vary by college, degree and intake. Start with the official program checklist and compare application, scholarship and enrollment deadlines. <a class="underline" href="https://educationusa.state.gov/your-5-steps-us-study/complete-your-application">EducationUSA application guide</a></p>
+      </div>
+      <div class="au-guide__open-grid">
+        <article class="au-guide__open-item">
+          <span class="au-guide__index">Admissions</span><h3>Prepare your academic records</h3>
+          <p>Undergraduate applicants generally submit secondary-school records, such as HSSC or A-level results. Colleges may also ask for essays and recommendations. Graduate applicants typically submit degree transcripts, references and a statement of purpose. Check translation and credential evaluation rules.</p>
+        </article>
+        <article class="au-guide__open-item">
+          <span class="au-guide__index">Testing</span><h3>Check English and test requirements</h3>
+          <p>Check which English proficiency tests your university accepts, its minimum scores and any waiver criteria. SAT or ACT policies vary for undergraduate admission. Graduate programs set their own GRE or GMAT policies.</p>
+        </article>
+        <article class="au-guide__open-item">
+          <span class="au-guide__index">Tuition</span><h3>Compare annual tuition and fees</h3>
+          <p>For 2026–27, published U.S. undergraduate tuition and fees averaged USD 32,730 at public four-year colleges for out-of-state students and USD 46,350 at private nonprofit four-year colleges. Use your school's international rate or graduate program quote for your budget. <a class="underline" href="https://research.collegeboard.org/trends/college-pricing/highlights">College Board pricing data</a></p>
+        </article>
+        <article class="au-guide__open-item">
+          <span class="au-guide__index">Funding</span><h3>Look for scholarships and aid early</h3>
+          <p>Ask colleges about merit scholarships, need-based aid for international students and separate deadlines. Graduate students can ask departments about fellowships and teaching or research assistantships that offer a stipend or tuition support. <a class="underline" href="https://educationusa.state.gov/your-5-steps-us-study/finance-your-studies">EducationUSA funding guide</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="au-guide__band" aria-labelledby="sectors-title">
+      <div class="au-guide__section-head">
+        <div>
+          <p class="au-guide__label">Work and future direction</p>
+          <h2 id="sectors-title" class="au-guide__heading">Connect your degree to a career.</h2>
+        </div>
+        <p class="au-guide__section-copy">Compare internship support, alumni networks and graduate outcomes. If you hold F-1 status, ask your designated school official about Curricular Practical Training (CPT) for eligible placements or Optional Practical Training (OPT) for work related to your degree. OPT can provide up to 12 months of training, with a 24-month extension for eligible STEM graduates. <a class="underline" href="https://www.uscis.gov/working-in-the-united-states/students-and-exchange-visitors/optional-practical-training-opt-for-f-1-students">USCIS guidance on OPT</a></p>
+      </div>
+      <div class="au-guide__sector-list">
+        <article class="au-guide__sector"><span class="au-guide__index">01</span><h3>Healthcare and life sciences</h3><p>Explore biotechnology, public health and health data. Check state licensing requirements for clinical roles.</p></article>
+        <article class="au-guide__sector"><span class="au-guide__index">02</span><h3>Technology and computing</h3><p>Build skills for software engineering, data science, cybersecurity and cloud infrastructure.</p></article>
+        <article class="au-guide__sector"><span class="au-guide__index">03</span><h3>Engineering and manufacturing</h3><p>Explore civil and electrical engineering, robotics, energy systems and advanced manufacturing.</p></article>
+        <article class="au-guide__sector"><span class="au-guide__index">04</span><h3>Business and finance</h3><p>Develop skills for accounting, financial analysis, marketing, consulting and supply chain management.</p></article>
+        <article class="au-guide__sector"><span class="au-guide__index">05</span><h3>Education and research</h3><p>Explore research roles in universities, labs and policy organizations. Check state certification rules for school teaching.</p></article>
+        <article class="au-guide__sector"><span class="au-guide__index">06</span><h3>Media and design</h3><p>Build a portfolio through programs in communication, digital media, design or human-computer interaction.</p></article>
+      </div>
+    </section>
+
+    <section class="au-guide__life" aria-labelledby="lifestyle-title">
+      <div class="au-guide__life-intro">
+        <p class="au-guide__label">Life in the USA</p>
+        <h2 id="lifestyle-title">Choose a campus and a city you can afford.</h2>
+        <p>Budget for rent, meals, health insurance, local transportation, books and personal expenses. For example, MIT budgets USD 22,194 for undergraduate housing and food in 2026–27. Check each campus's cost of attendance and whether its estimate covers the summer. <a class="underline" href="https://sfs.mit.edu/undergraduate-students/the-cost-of-attendance/coa/">MIT cost of attendance</a></p>
+        <div class="au-guide__life-note"><span>Compare campus locations</span><strong>Housing · transportation · access to campus</strong></div>
+      </div>
+      <div class="au-guide__city-list">
+        <a class="au-guide__city" href="#mit"><span class="au-guide__city-number">01</span><div><strong class="au-guide__city-name">Cambridge and Boston</strong><span class="au-guide__city-tag">Massachusetts</span><p>MIT and Harvard are in Cambridge. Compare residence halls with apartments near public transit across Greater Boston.</p></div><span class="au-guide__city-arrow" aria-hidden="true">↗</span></a>
+        <a class="au-guide__city" href="#stanford"><span class="au-guide__city-number">02</span><div><strong class="au-guide__city-name">San Francisco Bay Area</strong><span class="au-guide__city-tag">Northern California</span><p>Stanford and UC Berkeley sit on different sides of the Bay. Compare housing and travel times around each campus.</p></div><span class="au-guide__city-arrow" aria-hidden="true">↗</span></a>
+        <a class="au-guide__city" href="#caltech"><span class="au-guide__city-number">03</span><div><strong class="au-guide__city-name">Pasadena</strong><span class="au-guide__city-tag">Southern California</span><p>Caltech is in the Los Angeles area. Check student housing options and transit routes for trips beyond campus.</p></div><span class="au-guide__city-arrow" aria-hidden="true">↗</span></a>
+        <a class="au-guide__city" href="#princeton"><span class="au-guide__city-number">04</span><div><strong class="au-guide__city-name">Princeton</strong><span class="au-guide__city-tag">New Jersey</span><p>Princeton has a residential campus in a smaller town. Check which housing and meal plans are available for your degree.</p></div><span class="au-guide__city-arrow" aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="au-guide__section au-guide__settle" aria-labelledby="settling-title">
+      <div class="au-guide__settle-intro">
+        <div>
+          <p class="au-guide__label">Student visa and arrival</p>
+          <h2 id="settling-title" class="au-guide__heading">Prepare for your F-1 visa and first weeks.</h2>
+          <p>Most international students pursuing an academic degree in the U.S. apply for an F-1 visa after admission. Follow the instructions from your school and the U.S. embassy or consulate where you apply. <a class="underline" href="https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html">U.S. Department of State student visa guide</a></p>
+        </div>
+        <div class="au-guide__settle-route">
+          <div><span>Admission</span><strong>Get your I-20</strong></div>
+          <div><span>Visa</span><strong>Apply for F-1</strong></div>
+          <div><span>Arrival</span><strong>Check in on campus</strong></div>
+        </div>
+      </div>
+      <div class="au-guide__settle-list">
+        <div class="au-guide__settle-row"><span>01</span><div><h3>Get your Form I-20</h3><p>Accept an offer from a school certified by the Student and Exchange Visitor Program (SEVP). Provide the financial evidence your school requests so it can issue your Form I-20.</p></div></div>
+        <div class="au-guide__settle-row"><span>02</span><div><h3>Pay fees and submit your application</h3><p>Pay the USD 350 I-901 SEVIS fee, submit Form DS-160 and follow the consulate's instructions for the USD 185 visa application fee and interview. Check for any additional fees that apply.</p></div></div>
+        <div class="au-guide__settle-row"><span>03</span><div><h3>Gather documents for the interview</h3><p>Prepare your passport, signed I-20, DS-160 confirmation and fee receipts. The consulate may ask for academic records, proof of funding and evidence that you intend to depart after your studies.</p></div></div>
+        <div class="au-guide__settle-row"><span>04</span><div><h3>Plan your arrival</h3><p>New F-1 students may enter up to 30 days before the program start date on Form I-20. Confirm housing, health insurance, orientation and school check-in dates before traveling.</p></div></div>
+        <div class="au-guide__settle-row"><span>05</span><div><h3>Maintain your status</h3><p>Follow your school's full-time enrollment rules. Eligible F-1 on-campus work is generally limited to 20 hours per week while school is in session. Consult your designated school official before taking off-campus work.</p></div></div>
+      </div>
+    </section>
+
+    <section id="network" class="au-guide__network" aria-labelledby="network-title">
+      <div class="au-guide__section-head">
+        <div>
+          <p class="au-guide__label">University network</p>
+          <h2 id="network-title" class="au-guide__heading">Six leading U.S. universities to explore.</h2>
+        </div>
+        <p class="au-guide__section-copy">Visit each university's official website to explore its programs, campus life and admissions information.</p>
+      </div>
+      <div class="au-guide__network-list">
+        {% for university in universities %}
+        <a id="{{ university.id }}" class="au-guide__university" href="{{ university.url }}" aria-label="{{ university.name }} official website">
+          <div>
+            <span class="au-guide__university-meta">{{ university.category }} · {{ university.region }}</span>
+            <h3 class="au-guide__university-name">{{ university.name }}</h3>
+            <p class="au-guide__university-summary">{{ university.summary }}</p>
+          </div>
+          <span class="au-guide__university-arrow" aria-hidden="true">↗</span>
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="au-guide__cta" aria-label="USA destination consultation">
+      <div>
+        <p class="au-guide__label">Your USA plan</p>
+        <h2>Build your U.S. study plan.</h2>
+        <p>Bring your academic records, intended degree, English test results and budget. We'll help you identify programs and map out your application timeline.</p>
+      </div>
+      <a class="au-guide__button" href="{{ url_for('booking_page') }}">Start a consultation <span aria-hidden="true">&nbsp;↗</span></a>
+    </section>
+  </div>
+</main>
+{% endblock %}

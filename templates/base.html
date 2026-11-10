@@ -27,7 +27,7 @@
             "https://www.facebook.com/share/1GgypN8tfx/",
             "https://www.instagram.com/visa.culture/"
           ],
-          "description": "Visa Culture helps Pakistani students apply to Australian universities in Australia with visa guidance, admissions support, and scholarship strategy."
+          "description": "{% block organization_description %}Visa Culture helps Pakistani students apply to Australian universities in Australia with visa guidance, admissions support, and scholarship strategy.{% endblock %}"
         },
         {
           "@type": "WebSite",
@@ -95,7 +95,7 @@
                     </button>
                     <div class="desktop-destination-dropdown" role="menu" aria-label="Study destinations">
                         <a href="{{ url_for('australia_destination') }}" role="menuitem">Australia</a>
-                        <a href="{{ url_for('booking_page') }}" role="menuitem">USA</a>
+                        <a href="{{ url_for('usa_destination') }}" role="menuitem">USA</a>
                         <a href="{{ url_for('booking_page') }}" role="menuitem">UK</a>
                         <a href="{{ url_for('booking_page') }}" role="menuitem">Canada</a>
                         <a href="{{ url_for('booking_page') }}" role="menuitem">Europe</a>
@@ -330,7 +330,7 @@
                 </button>
                 <div class="mobile-nav-destination-menu" id="mobileNavDestinationsMenu" role="menu" aria-label="Study destinations">
                     <a href="{{ url_for('australia_destination') }}" role="menuitem">Australia</a>
-                    <a href="{{ url_for('booking_page') }}" role="menuitem">USA</a>
+                    <a href="{{ url_for('usa_destination') }}" role="menuitem">USA</a>
                     <a href="{{ url_for('booking_page') }}" role="menuitem">UK</a>
                     <a href="{{ url_for('booking_page') }}" role="menuitem">Canada</a>
                     <a href="{{ url_for('booking_page') }}" role="menuitem">Europe</a>
@@ -362,8 +362,8 @@
                 <div class="mobile-nav-more-menu" id="mobileNavMoreMenu" role="menu" aria-label="More pages">
                     <ul class="more-menu-list">
                         <li class="more-menu-link"><a href="{{ url_for('landing_page') }}#about-us" role="menuitem">About Us</a></li>
-                        <li class="more-menu-accordion{% if request.path.startswith('/universities') or request.path.startswith('/australia') %} is-open{% endif %}">
-                            <button class="more-menu-accordion__trigger" type="button" aria-expanded="{% if request.path.startswith('/universities') or request.path.startswith('/australia') %}true{% else %}false{% endif %}">
+                        <li class="more-menu-accordion{% if request.path.startswith('/universities') or request.path.startswith('/australia') or request.endpoint == 'usa_destination' %} is-open{% endif %}">
+                            <button class="more-menu-accordion__trigger" type="button" aria-expanded="{% if request.path.startswith('/universities') or request.path.startswith('/australia') or request.endpoint == 'usa_destination' %}true{% else %}false{% endif %}">
                                 <span>Education</span><span class="more-menu-chevron" aria-hidden="true">&#9654;</span>
                             </button>
                             <ul class="more-menu-sublist">
@@ -416,7 +416,7 @@
             function openDestinationsMenu() { closeMoreMenu(); mobileNavDestMenu?.classList.add('is-open'); mobileNavDestBtn?.setAttribute('aria-expanded', 'true'); setMobileNavActive('destinations'); }
 
             const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
-            if (currentPath.startsWith('/universities') || currentPath.startsWith('/australia')) setMobileNavActive('home');
+            if (currentPath.startsWith('/universities') || currentPath.startsWith('/australia') || currentPath === {{ url_for('usa_destination')|tojson }}) setMobileNavActive('home');
             else if (currentPath.startsWith('/booking')) setMobileNavActive('booking');
             else if (moreMenuPaths.includes(currentPath)) setMobileNavActive('more');
             else setMobileNavActive('home');
@@ -482,7 +482,7 @@
 
             window.addEventListener('scroll', () => {
                 const scrollPath = window.location.pathname.replace(/\/+$/, '') || '/';
-                if (scrollPath.startsWith('/universities') || scrollPath.startsWith('/australia')) setMobileNavActive('home');
+                if (scrollPath.startsWith('/universities') || scrollPath.startsWith('/australia') || scrollPath === {{ url_for('usa_destination')|tojson }}) setMobileNavActive('home');
                 else if (scrollPath.startsWith('/booking')) setMobileNavActive('booking');
                 else if (moreMenuPaths.includes(scrollPath)) setMobileNavActive('more');
                 else if (window.scrollY < 120) setMobileNavActive('home');

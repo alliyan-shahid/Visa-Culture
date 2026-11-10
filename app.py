@@ -71,6 +71,60 @@ def landing_page():
 def university_of_melbourne():
     return render_template("melbourne_landing.html")
 
+@app.route("/usa")
+def usa_destination():
+    universities = [
+        {
+            "id": "mit",
+            "name": "Massachusetts Institute of Technology (MIT)",
+            "category": "Private research university",
+            "region": "Cambridge, Massachusetts",
+            "summary": "Explore engineering, computing and the sciences, with hands-on research through MIT's Undergraduate Research Opportunities Program.",
+            "url": "https://www.mit.edu/",
+        },
+        {
+            "id": "stanford",
+            "name": "Stanford University",
+            "category": "Private research university",
+            "region": "Stanford, California",
+            "summary": "Explore engineering, computer science, humanities and interdisciplinary study in Silicon Valley.",
+            "url": "https://www.stanford.edu/",
+        },
+        {
+            "id": "harvard",
+            "name": "Harvard University",
+            "category": "Private research university",
+            "region": "Cambridge, Massachusetts",
+            "summary": "Harvard College offers a liberal arts and sciences education with concentrations across the humanities, social sciences and natural sciences.",
+            "url": "https://www.harvard.edu/",
+        },
+        {
+            "id": "caltech",
+            "name": "California Institute of Technology (Caltech)",
+            "category": "Private research university",
+            "region": "Pasadena, California",
+            "summary": "A small institution focused on science and engineering, with undergraduate research opportunities in areas such as physics and aerospace.",
+            "url": "https://www.caltech.edu/",
+        },
+        {
+            "id": "princeton",
+            "name": "Princeton University",
+            "category": "Private research university",
+            "region": "Princeton, New Jersey",
+            "summary": "Explore liberal arts and engineering programs that emphasize independent work, including junior projects and senior theses.",
+            "url": "https://www.princeton.edu/",
+        },
+        {
+            "id": "berkeley",
+            "name": "University of California, Berkeley",
+            "category": "Public research university",
+            "region": "Berkeley, California",
+            "summary": "A University of California campus offering programs across engineering, computing, business, the sciences and the liberal arts.",
+            "url": "https://www.berkeley.edu/",
+        },
+    ]
+    return render_template("usa.html", universities=universities)
+
 @app.route("/australia/australian-national-university")
 def australian_national_university():
     return render_template("anu_landing.html")
@@ -379,6 +433,7 @@ def sitemap_xml():
     pages = [
         {"path": "", "priority": 1.0},
         {"path": "universities", "priority": 0.9},
+        {"path": "usa", "priority": 0.9},
         {"path": "booking", "priority": 0.7},
     ]
     university_pages = [
