@@ -276,6 +276,49 @@ def europe_destination():
     ]
     return render_template("europe.html", countries=countries)
 
+
+@app.route("/more")
+def more_destinations():
+    countries = [
+        {
+            "id": "japan",
+            "name": "Japan",
+            "summary": "Compare Japanese- and English-taught degrees in engineering, robotics, design and other fields. Check MEXT and university scholarship options.",
+            "url": "https://www.studyinjapan.go.jp/en/planning/",
+        },
+        {
+            "id": "singapore",
+            "name": "Singapore",
+            "summary": "Explore computing, engineering, business and life sciences. Compare entry requirements and check the terms of any tuition grant before accepting it.",
+            "url": "https://www.ica.gov.sg/information-and-e-services/long-term-visit-and-study/student-s-pass/student%27s-pass-application-renewal/institutes-of-higher-learning",
+        },
+        {
+            "id": "uae",
+            "name": "United Arab Emirates (UAE)",
+            "summary": "Compare local universities and international branch campuses. Check accreditation for your exact programme and ask about student residence sponsorship.",
+            "url": "https://u.ae/en/information-and-services/education/higher-education/Student-admission-and-qualification-recognition",
+        },
+        {
+            "id": "malaysia",
+            "name": "Malaysia",
+            "summary": "Compare local universities and international branch campuses with English-taught options in computing, business and engineering.",
+            "url": "https://studymalaysia.com/",
+        },
+        {
+            "id": "ireland",
+            "name": "Ireland",
+            "summary": "Explore English-taught programmes in technology, business and life sciences. Budget for housing and check which graduate options apply to your degree.",
+            "url": "https://www.educationinireland.com/en/plan-your-study-abroad",
+        },
+        {
+            "id": "south-korea",
+            "name": "South Korea",
+            "summary": "Compare Korean- and English-taught programmes in engineering, computing, business and design. Check Global Korea Scholarship eligibility.",
+            "url": "https://www.studyinkorea.go.kr/en/plan/main.do",
+        },
+    ]
+    return render_template("more.html", countries=countries)
+
 @app.route("/australia/australian-national-university")
 def australian_national_university():
     return render_template("anu_landing.html")
@@ -588,6 +631,7 @@ def sitemap_xml():
         {"path": "uk", "priority": 0.9},
         {"path": "canada", "priority": 0.9},
         {"path": "europe", "priority": 0.9},
+        {"path": "more", "priority": 0.9},
         {"path": "booking", "priority": 0.7},
     ]
     university_pages = [
