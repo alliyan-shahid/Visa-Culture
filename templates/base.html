@@ -29,6 +29,26 @@
           ],
           "description": "{% block organization_description %}Visa Culture helps Pakistani students explore study opportunities in Australia, USA, UK, Canada, Europe and other international destinations with admissions support, scholarship guidance and student visa guidance.{% endblock %}"
         },
+        {% if request.endpoint == 'landing_page' %}
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://visaculture.com/#sheikhupura-office",
+          "name": "Visa Culture",
+          "url": "https://visaculture.com/",
+          "description": "Educational consultant in Sheikhupura, Pakistan.",
+          "telephone": "+923001021116",
+          "email": "info@visaculture.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Main Sargodha Road Near Underpass Nabipura",
+            "addressLocality": "Sheikhupura",
+            "addressCountry": "PK"
+          },
+          "parentOrganization": {
+            "@id": "https://visaculture.com#organization"
+          }
+        },
+        {% endif %}
         {
           "@type": "WebSite",
           "url": "https://visaculture.com",
