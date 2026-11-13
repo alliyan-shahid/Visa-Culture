@@ -9,32 +9,32 @@
     <meta property="og:title" content="{% block og_title %}{{ self.title() }}{% endblock %}">
     <meta property="og:description" content="{% block og_description %}{{ self.meta_description() }}{% endblock %}">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ request.url }}">
-    <meta property="og:image" content="{{ url_for('static', filename='images/VisaCulture Logo.webp', _external=True) }}">
+    <meta property="og:url" content="{{ 'https://visaculture.com' ~ request.path }}">
+    <meta property="og:image" content="{{ 'https://visaculture.com' ~ url_for('static', filename='images/VisaCulture Logo.webp') }}">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="canonical" href="{{ request.url }}">
+    <link rel="canonical" href="{{ 'https://visaculture.com' ~ request.path }}">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
           "@type": "Organization",
-          "@id": "{{ request.url_root.rstrip('/') }}#organization",
+          "@id": "https://visaculture.com#organization",
           "name": "Visa Culture",
-          "url": "{{ request.url_root.rstrip('/') }}",
-          "logo": "{{ url_for('static', filename='images/VisaCulture Logo.webp', _external=True) }}",
+          "url": "https://visaculture.com",
+          "logo": "{{ 'https://visaculture.com' ~ url_for('static', filename='images/VisaCulture Logo.webp') }}",
           "sameAs": [
             "https://www.facebook.com/share/1GgypN8tfx/",
             "https://www.instagram.com/visa.culture/"
           ],
-          "description": "{% block organization_description %}Visa Culture helps Pakistani students apply to Australian universities in Australia with visa guidance, admissions support, and scholarship strategy.{% endblock %}"
+          "description": "{% block organization_description %}Visa Culture helps Pakistani students explore study opportunities in Australia, USA, UK, Canada, Europe and other international destinations with admissions support, scholarship guidance and student visa guidance.{% endblock %}"
         },
         {
           "@type": "WebSite",
-          "url": "{{ request.url_root.rstrip('/') }}",
+          "url": "https://visaculture.com",
           "name": "Visa Culture",
           "publisher": {
-            "@id": "{{ request.url_root.rstrip('/') }}#organization"
+            "@id": "https://visaculture.com#organization"
           }
         }
       ]
@@ -48,7 +48,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
     {% block head %}{% endblock %}
-    {% block faq_schema %}{% endblock %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base-inline.css') }}">
     <style>
         .vc-ampersand { display: inline-block; margin: 0 .08em; font-family: Baskerville, "Baskerville Old Face", Garamond, Georgia, serif; font-size: 1.16em; font-style: normal; font-weight: 700; line-height: .82; vertical-align: -.04em; }

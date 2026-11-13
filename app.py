@@ -617,7 +617,7 @@ def robots_txt():
 Disallow: /login
 
 Sitemap: {}/sitemap.xml
-""".format(request.url_root.rstrip("/"))
+""".format("https://visaculture.com")
     response = make_response(content)
     response.headers["Content-Type"] = "text/plain"
     return response
@@ -626,7 +626,7 @@ Sitemap: {}/sitemap.xml
 def sitemap_xml():
     pages = [
         {"path": "", "priority": 1.0},
-        {"path": "universities", "priority": 0.9},
+        {"path": "australia", "priority": 0.9},
         {"path": "usa", "priority": 0.9},
         {"path": "uk", "priority": 0.9},
         {"path": "canada", "priority": 0.9},
@@ -643,9 +643,8 @@ def sitemap_xml():
         {"path": "australia/university-of-queensland", "priority": 0.9},
     ]
 
-    url_root = request.url_root.rstrip("/")
+    url_root = "https://visaculture.com"
     urls = pages + university_pages
-    lastmod = datetime.utcnow().date().isoformat()
 
     xml_items = [
         "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
@@ -654,7 +653,6 @@ def sitemap_xml():
     for entry in urls:
         xml_items.append("  <url>")
         xml_items.append(f"    <loc>{url_root}/{entry['path']}</loc>")
-        xml_items.append(f"    <lastmod>{lastmod}</lastmod>")
         xml_items.append("    <changefreq>weekly</changefreq>")
         xml_items.append(f"    <priority>{entry['priority']:.1f}</priority>")
         xml_items.append("  </url>")
