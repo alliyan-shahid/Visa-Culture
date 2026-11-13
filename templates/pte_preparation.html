@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %}PTE Preparation in Sheikhupura | Visa Culture{% endblock %}
+{% block meta_description %}Prepare for PTE in Sheikhupura with in-person guidance, unlimited practice on Visa Culture’s own platform, timed mock tests and individual feedback.{% endblock %}
+{% block meta_keywords %}{% endblock %}
+
+{% macro enquiry() %}<a href="{{ url_for('booking_page') }}" class="inline-flex items-center justify-center rounded-full bg-slate-900 px-8 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-slate-800">Enquire About PTE Classes</a>{% endmacro %}
+{% macro panel(title) %}<section class="border-t border-slate-200 py-8"><h2 class="mb-5 text-2xl font-bold text-slate-950 md:text-3xl">{{ title }}</h2><div class="space-y-4 text-base leading-8 text-slate-600">{{ caller() }}</div></section>{% endmacro %}
+
+{% block content %}
+<section class="bg-white py-16 md:py-20">
+  <div class="mx-auto max-w-4xl px-6">
+    <nav aria-label="Breadcrumb" class="mb-8 text-sm text-slate-600"><a href="{{ url_for('landing_page') }}" class="inline min-h-0 text-primary underline">Home</a><span aria-hidden="true"> / </span><span aria-current="page">PTE preparation</span></nav>
+    <div class="mb-10 space-y-5">
+      <h1 class="text-4xl font-bold leading-tight text-slate-950 md:text-5xl">PTE Preparation in Sheikhupura</h1>
+      <p class="text-lg leading-8 text-slate-600">Prepare for PTE with in-person guidance at Visa Culture in Sheikhupura. We offer preparation for PTE Academic, PTE Academic UKVI and PTE Core.</p>
+      <p class="text-base leading-8 text-slate-600">Practise on a computer using Visa Culture’s own platform, with unlimited practice. Combine practice with timed mock tests and individual feedback to understand what to work on next.</p>
+      {{ enquiry() }}
+    </div>
+
+    {% call panel('Start with the correct PTE test') %}
+      <p>Different PTE tests serve different purposes. Check the exact test accepted for your application before choosing preparation or paying for an examination.</p>
+      <ul class="list-disc space-y-3 pl-6">
+        <li><strong>PTE Academic:</strong> Intended for academic English assessment and accepted by participating institutions.</li>
+        <li><strong>PTE Academic UKVI:</strong> Check whether your application specifically requires this version.</li>
+        <li><strong>PTE Core:</strong> Assesses general English and serves different application purposes from PTE Academic. Do not assume that it is interchangeable with Academic for university admission.</li>
+      </ul>
+      <p>Use Pearson’s information about <a class="inline min-h-0 text-primary underline" href="https://www.pearsonpte.com/pte-academic/">PTE Academic</a> and <a class="inline min-h-0 text-primary underline" href="https://www.pearsonpte.com/pte-core/">PTE Core</a> alongside the requirements published by your receiving institution or authority.</p>
+    {% endcall %}
+
+    {% call panel('Computer-based practice with a purpose') %}
+      <p>PTE preparation involves more than knowing vocabulary. You also need to understand task instructions, organize a response and work within the relevant time limits.</p>
+      <p>Visa Culture provides unlimited practice on its own preparation platform. Ask us about account access, classroom arrangements and any equipment you need before joining.</p>
+      <p>Use each attempt to identify a specific improvement rather than repeating questions without reviewing your responses.</p>
+    {% endcall %}
+
+    {% call panel('Connect practice across the four skills') %}
+      <div class="grid gap-6 md:grid-cols-2">
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6"><h3 class="mb-3 text-xl font-bold text-slate-950">Speaking</h3><p>Practise producing clear, relevant spoken responses. Pay attention to pronunciation, fluency and completing the task rather than relying on memorized answers that may not fit the question.</p></div>
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6"><h3 class="mb-3 text-xl font-bold text-slate-950">Writing</h3><p>Work on sentence accuracy, organization and responding to instructions. Review the grammar and vocabulary choices that affect how clearly your meaning is expressed.</p></div>
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6"><h3 class="mb-3 text-xl font-bold text-slate-950">Reading</h3><p>Develop your understanding of written passages, sentence relationships and context. Practise selecting answers based on meaning rather than matching individual words.</p></div>
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6"><h3 class="mb-3 text-xl font-bold text-slate-950">Listening</h3><p>Practise following spoken information and identifying important details. Build a review habit so that missed information becomes a focus for your next attempt.</p></div>
+      </div>
+      <p>The task types you practise should match your chosen PTE test. Pearson publishes separate format guides for <a class="inline min-h-0 text-primary underline" href="https://www.pearsonpte.com/pte-academic/test-format/">Academic and Academic UKVI</a> and <a class="inline min-h-0 text-primary underline" href="https://www.pearsonpte.com/pte-core/test-format/">Core</a>.</p>
+    {% endcall %}
+
+    {% call panel('Timed mock tests and individual feedback') %}
+      <p>Timed mock tests help you practise pacing and recognize tasks that need more attention. Individual feedback supports focused work on the responses and English skills you are developing.</p>
+      <p>Visa Culture’s practice platform should not be confused with Pearson’s official scored practice products. Pearson describes its own Scored Practice Tests as using its official scoring engine. <a class="inline min-h-0 text-primary underline" href="https://www.pearsonpte.com/pte-academic/preparation/">Explore Pearson’s official preparation products</a>.</p>
+      <p>Practice performance does not guarantee an official score, admission or a visa outcome.</p>
+    {% endcall %}
+
+    {% call panel('In-person preparation in Sheikhupura') %}
+      <p>Attend PTE preparation at Visa Culture’s Sheikhupura office.</p>
+      <p><strong>Address:</strong> Main Sargodha Road Near Underpass Nabipura, Sheikhupura, Pakistan<br><strong>Telephone:</strong> <a href="tel:+923001021116" class="inline min-h-0 text-primary underline">+92 300 1021116</a></p>
+      <p>Contact us for current class availability, timings, fees and platform access arrangements. General and spoken-English training is included in preparation and is also available separately on request.</p>
+    {% endcall %}
+
+    {% call panel('Official Pearson resources') %}
+      <ul class="list-disc space-y-2 pl-6">
+        <li><a class="inline min-h-0 text-primary underline" href="https://www.pearsonpte.com/preparation/">Choose official PTE preparation resources</a></li>
+        <li><a class="inline min-h-0 text-primary underline" href="https://www.pearsonpte.com/pte-academic/test-format/">PTE Academic and Academic UKVI test format</a></li>
+        <li><a class="inline min-h-0 text-primary underline" href="https://www.pearsonpte.com/pte-core/test-format/">PTE Core test format</a></li>
+      </ul>
+      <p>Check the current official guidance for your test. These links do not imply Pearson partnership or official test-centre status.</p>
+    {% endcall %}
+
+    {% call panel('PTE preparation questions') %}
+      <h3 class="text-lg font-bold text-slate-950">Which PTE tests do you prepare students for?</h3><p>Visa Culture offers preparation for PTE Academic, PTE Academic UKVI and PTE Core.</p>
+      <h3 class="text-lg font-bold text-slate-950">Do classes include computer-based practice?</h3><p>Yes. Practice takes place on a computer using Visa Culture’s own preparation platform.</p>
+      <h3 class="text-lg font-bold text-slate-950">Is practice unlimited?</h3><p>Yes, unlimited practice is available on our platform. Contact us to confirm account access arrangements and what is included with your preparation.</p>
+      <h3 class="text-lg font-bold text-slate-950">Is Visa Culture’s platform Pearson’s official scoring platform?</h3><p>It is Visa Culture’s own preparation platform. Pearson’s official practice products are separate resources available through Pearson.</p>
+      <h3 class="text-lg font-bold text-slate-950">Are classes held in person?</h3><p>Yes. Classes are held at the Sheikhupura office.</p>
+      <h3 class="text-lg font-bold text-slate-950">Should I choose PTE Academic or PTE Core?</h3><p>Choose the test required for your application. They have different purposes and should not be treated as interchangeable. Check the receiving institution or authority’s requirements before booking.</p>
+      <h3 class="text-lg font-bold text-slate-950">What score will I achieve?</h3><p>An official score cannot be guaranteed. Preparation and feedback help you identify weaknesses and practise more effectively.</p>
+    {% endcall %}
+
+    {% call panel('Plan your PTE preparation') %}
+      <p>Tell us which PTE test you need, any required scores and your intended application timeline. We can explain the available classes and practice arrangements.</p>
+      <div>{{ enquiry() }}</div>
+      <p>Comparing preparation options? Explore our <a class="inline min-h-0 text-primary underline" href="{{ url_for('ielts_preparation') }}">IELTS preparation in Sheikhupura</a>.</p>
+    {% endcall %}
+  </div>
+</section>
+{% endblock %}

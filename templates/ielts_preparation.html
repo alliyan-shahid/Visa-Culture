@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title %}IELTS Preparation in Sheikhupura | Visa Culture{% endblock %}
+{% block meta_description %}Prepare for IELTS in Sheikhupura with Visa Culture. In-person classes, four-skill practice, timed mock tests and individual feedback.{% endblock %}
+{% block meta_keywords %}{% endblock %}
+
+{% macro enquiry() %}<a href="{{ url_for('booking_page') }}" class="inline-flex items-center justify-center rounded-full bg-slate-900 px-8 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-slate-800">Enquire About IELTS Classes</a>{% endmacro %}
+{% macro panel(title) %}<section class="border-t border-slate-200 py-8"><h2 class="mb-5 text-2xl font-bold text-slate-950 md:text-3xl">{{ title }}</h2><div class="space-y-4 text-base leading-8 text-slate-600">{{ caller() }}</div></section>{% endmacro %}
+
+{% block content %}
+<section class="bg-white py-16 md:py-20">
+  <div class="mx-auto max-w-4xl px-6">
+    <nav aria-label="Breadcrumb" class="mb-8 text-sm text-slate-600"><a href="{{ url_for('landing_page') }}" class="inline min-h-0 text-primary underline">Home</a><span aria-hidden="true"> / </span><span aria-current="page">IELTS preparation</span></nav>
+    <div class="mb-10 space-y-5">
+      <h1 class="text-4xl font-bold leading-tight text-slate-950 md:text-5xl">IELTS Preparation in Sheikhupura</h1>
+      <p class="text-lg leading-8 text-slate-600">Prepare for IELTS through in-person classes at Visa Culture in Sheikhupura, Pakistan. Build listening, reading, writing and speaking skills through guided practice, timed mock tests and individual feedback.</p>
+      <p class="text-base leading-8 text-slate-600">We offer preparation for IELTS Academic, General Training and UKVI. Tell us which test you need, your intended application and any English-language requirement you have received.</p>
+      {{ enquiry() }}
+    </div>
+
+    {% call panel('Choose preparation for the right IELTS test') %}
+      <p>Before beginning preparation, check the exact test and scores required by your university or relevant authority. The overall score and individual skill requirements can differ between applications.</p>
+      <ul class="list-disc space-y-3 pl-6">
+        <li><strong>IELTS Academic:</strong> Commonly used for higher education. Preparation should match the Academic Reading and Writing tasks.</li>
+        <li><strong>IELTS General Training:</strong> Uses different Reading and Writing tasks from Academic. Choose it only where it meets your application requirements.</li>
+        <li><strong>IELTS for UKVI:</strong> Confirm the exact approved test required for your application before booking.</li>
+      </ul>
+      <p>Academic and General Training share Listening and Speaking components, but their Reading and Writing components differ. Use the official <a class="inline min-h-0 text-primary underline" href="https://ielts.org/take-a-test/test-types">IELTS test-type guidance</a> to understand the options.</p>
+    {% endcall %}
+
+    {% call panel('Develop each skill with a clear purpose') %}
+      <div class="grid gap-6 md:grid-cols-2">
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6"><h3 class="mb-3 text-xl font-bold text-slate-950">Listening</h3><p>Practise following spoken information, identifying key details and checking that your answer matches the question. Review missed answers to understand whether the difficulty was vocabulary, attention or interpreting the recording.</p></div>
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6"><h3 class="mb-3 text-xl font-bold text-slate-950">Reading</h3><p>Work on finding information, understanding meaning and managing your time. Practise reading the instructions carefully rather than choosing an answer because it contains familiar words.</p></div>
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6"><h3 class="mb-3 text-xl font-bold text-slate-950">Writing</h3><p>Focus on answering the task, organizing ideas and expressing them clearly. Use individual feedback to identify weaknesses in grammar, vocabulary and sentence structure.</p><p class="mt-4">Your practice should match the Writing tasks in the IELTS test you plan to take.</p></div>
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6"><h3 class="mb-3 text-xl font-bold text-slate-950">Speaking</h3><p>Build confidence in developing answers and explaining your ideas. Work on clear pronunciation, vocabulary and fluency while giving responses that address the question.</p><p class="mt-4">General and spoken-English training is included in preparation and is also available separately on request.</p></div>
+      </div>
+    {% endcall %}
+
+    {% call panel('Timed mock tests and individual feedback') %}
+      <p>Timed mock tests help you practise working within limits and identify skills that need further attention. Individual feedback gives you a clearer direction for your next practice session.</p>
+      <p>Use practice to improve your responses, not simply to repeat the same mistakes. A preparation result does not guarantee an official IELTS score, admission or a visa outcome.</p>
+    {% endcall %}
+
+    {% call panel('Attend classes in Sheikhupura') %}
+      <p>IELTS classes are held in person at Visa Culture.</p>
+      <p><strong>Address:</strong> Main Sargodha Road Near Underpass Nabipura, Sheikhupura, Pakistan<br><strong>Telephone:</strong> <a href="tel:+923001021116" class="inline min-h-0 text-primary underline">+92 300 1021116</a></p>
+      <p>Contact us for current class availability, timings, fees and preparation arrangements. Bring any university offer or English-language requirement you want to discuss.</p>
+    {% endcall %}
+
+    {% call panel('Official IELTS resources') %}
+      <p>Use official resources alongside your classes:</p>
+      <ul class="list-disc space-y-2 pl-6">
+        <li><a class="inline min-h-0 text-primary underline" href="https://ielts.org/take-a-test/test-types">IELTS test types</a></li>
+        <li><a class="inline min-h-0 text-primary underline" href="https://ielts.org/take-a-test/preparation-resources">Official IELTS preparation resources</a></li>
+        <li><a class="inline min-h-0 text-primary underline" href="https://ielts.org/take-a-test/preparation-resources/sample-test-questions">Official IELTS sample questions</a></li>
+      </ul>
+      <p>These links lead to IELTS resources. They do not imply that Visa Culture is an official IELTS partner or test centre.</p>
+    {% endcall %}
+
+    {% call panel('IELTS preparation questions') %}
+      <h3 class="text-lg font-bold text-slate-950">Are your IELTS classes held in Sheikhupura?</h3><p>Yes. Visa Culture offers in-person IELTS preparation at its Sheikhupura office.</p>
+      <h3 class="text-lg font-bold text-slate-950">Which IELTS tests do you prepare students for?</h3><p>We offer preparation for IELTS Academic, General Training and UKVI. Confirm your exact test requirement with us before joining.</p>
+      <h3 class="text-lg font-bold text-slate-950">Do classes include mock tests and feedback?</h3><p>Yes. Preparation includes timed mock tests and individual feedback across the skills you are developing.</p>
+      <h3 class="text-lg font-bold text-slate-950">Can I study spoken English separately?</h3><p>Yes. General and spoken-English training is included in preparation and is also available separately on request.</p>
+      <h3 class="text-lg font-bold text-slate-950">How long will I need to prepare?</h3><p>Preparation needs depend on your current English, target requirements and available study time. Contact us to discuss your circumstances and current class arrangements.</p>
+      <h3 class="text-lg font-bold text-slate-950">What IELTS score do I need?</h3><p>Check your exact university, course and application requirements. There is no single IELTS score suitable for every institution or visa application.</p>
+    {% endcall %}
+
+    {% call panel('Discuss your IELTS preparation') %}
+      <p>Tell us your intended test, application plans and any target scores you have been given. We can explain the preparation available at our Sheikhupura office.</p>
+      <div>{{ enquiry() }}</div>
+      <p>Considering another test? Explore our <a class="inline min-h-0 text-primary underline" href="{{ url_for('pte_preparation') }}">PTE preparation in Sheikhupura</a>.</p>
+    {% endcall %}
+  </div>
+</section>
+{% endblock %}
