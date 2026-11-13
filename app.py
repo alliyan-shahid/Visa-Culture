@@ -83,6 +83,30 @@ def ielts_preparation_legacy():
 def pte_preparation_legacy():
     return redirect("https://visaculture.com/pte-preparation", code=301)
 
+@app.route("/universities/university-of-melbourne")
+def legacy_university_of_melbourne():
+    return redirect("https://visaculture.com/australia/university-of-melbourne", code=301)
+
+@app.route("/universities/australian-national-university")
+def legacy_australian_national_university():
+    return redirect("https://visaculture.com/australia/australian-national-university", code=301)
+
+@app.route("/universities/university-of-sydney")
+def legacy_university_of_sydney():
+    return redirect("https://visaculture.com/australia/university-of-sydney", code=301)
+
+@app.route("/universities/unsw-sydney")
+def legacy_unsw_sydney():
+    return redirect("https://visaculture.com/australia/unsw-sydney", code=301)
+
+@app.route("/universities/monash-university")
+def legacy_monash_university():
+    return redirect("https://visaculture.com/australia/monash-university", code=301)
+
+@app.route("/universities/university-of-queensland")
+def legacy_university_of_queensland():
+    return redirect("https://visaculture.com/australia/university-of-queensland", code=301)
+
 @app.route("/australia/university-of-melbourne")
 def university_of_melbourne():
     return render_template("melbourne_landing.html")
