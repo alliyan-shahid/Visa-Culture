@@ -67,13 +67,21 @@ app.config.from_object(Config)
 def landing_page():
     return render_template("index.html")
 
-@app.route("/ielts-preparation-sheikhupura")
+@app.route("/ielts-preparation")
 def ielts_preparation():
     return render_template("ielts_preparation.html")
 
-@app.route("/pte-preparation-sheikhupura")
+@app.route("/pte-preparation")
 def pte_preparation():
     return render_template("pte_preparation.html")
+
+@app.route("/ielts-preparation-sheikhupura")
+def ielts_preparation_legacy():
+    return redirect("https://visaculture.com/ielts-preparation", code=301)
+
+@app.route("/pte-preparation-sheikhupura")
+def pte_preparation_legacy():
+    return redirect("https://visaculture.com/pte-preparation", code=301)
 
 @app.route("/australia/university-of-melbourne")
 def university_of_melbourne():
@@ -641,8 +649,8 @@ def sitemap_xml():
         {"path": "europe", "priority": 0.9},
         {"path": "more", "priority": 0.9},
         {"path": "booking", "priority": 0.7},
-        {"path": "ielts-preparation-sheikhupura", "priority": 0.7},
-        {"path": "pte-preparation-sheikhupura", "priority": 0.7},
+        {"path": "ielts-preparation", "priority": 0.7},
+        {"path": "pte-preparation", "priority": 0.7},
     ]
     university_pages = [
         {"path": "australia/university-of-melbourne", "priority": 0.9},
