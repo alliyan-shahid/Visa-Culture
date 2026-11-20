@@ -647,14 +647,10 @@ def booking_page():
         turnstile_sitekey=app.config["TURNSTILE_SITEKEY"],
     )
 
-@app.route("/login")
-def login():
-    return render_template("login.html")
-
 @app.route("/robots.txt")
 def robots_txt():
     content = """User-agent: *
-Disallow: /login
+Disallow:
 
 Sitemap: {}/sitemap.xml
 """.format("https://visaculture.com")
