@@ -1,0 +1,20 @@
+<section id="network" class="au-guide__network" aria-labelledby="network-title">
+  <div class="au-guide__section-head">
+    <div>
+      <p class="au-guide__label">Study destinations</p>
+      <h2 id="network-title" class="au-guide__heading">Explore six study destinations.</h2>
+    </div>
+    <p class="au-guide__section-copy">Explore guidance for international students on study planning, admissions and student passes.</p>
+  </div>
+  <div class="au-guide__network-list">
+        {% for country in countries %}
+        <a id="{{ country.id }}" class="au-guide__university" href="{{ country.url }}" aria-label="{{ country.name }} study guide">
+          <div>
+      <h3 class="au-guide__university-name">{{ country.name }}</h3>
+      <p class="au-guide__university-summary">{{ country.summary }}</p>
+    </div>
+          <span class="au-guide__university-arrow" aria-hidden="true">↗</span>
+        </a>
+        {% endfor %}
+      </div>
+</section>

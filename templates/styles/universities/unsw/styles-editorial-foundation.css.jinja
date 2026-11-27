@@ -1,0 +1,103 @@
+:root {
+  --unsw-black: #0b1218;
+  --unsw-gold: #ffd200;
+  --unsw-blue: #0f4ca3;
+  --unsw-sky: #60a5fa;
+  --unsw-cream: #f8fafc;
+}
+
+.hero-unsw {
+  position: relative;
+  overflow: hidden;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: unset !important;
+}
+
+@media (min-width: 768px) {
+  .hero-unsw {
+    height: 79vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-unsw {
+    height: 85vh;
+  }
+}
+
+.hero-unsw .absolute.inset-0 {
+  z-index: 0;
+}
+
+.hero-unsw .absolute.inset-0.bg-slate-950\/45 {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .hero-unsw .absolute.inset-0.bg-slate-950\/45 {
+    display: block;
+    z-index: 2;
+  }
+}
+
+.hero-unsw .relative.mx-auto {
+  z-index: 10;
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  .hero-unsw .relative.mx-auto {
+    display: none !important;
+  }
+}
+
+.unsw-front-image {
+  display: none !important;
+}
+
+@media (min-width: 1024px) {
+  .unsw-front-image {
+    display: block !important;
+  }
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(255,210,0,0.18), transparent 28%), radial-gradient(circle at bottom right, rgba(96,165,250,0.14), transparent 30%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media (max-width: 767px) {
+  .hero-overlay {
+    display: none !important;
+  }
+}
+
+.panel-soft {
+  background: rgba(255,255,255,0.94);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 28px 80px rgba(15, 23, 42, 0.08);
+}
+
+.btn-unsw {
+  background: linear-gradient(90deg, var(--unsw-black), var(--unsw-blue));
+  color: white;
+}
+
+.btn-unsw:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 767px) {
+  .hero-unsw {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+/*UNSW editorial layout — same approved system as ANU, Melbourne and Sydney.*/

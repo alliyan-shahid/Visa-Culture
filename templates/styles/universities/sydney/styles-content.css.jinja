@@ -1,0 +1,224 @@
+.mel-wrap .premium-section {
+  background: var(--editorial-paper) !important;
+  padding-top: clamp(3rem,5.5vw,5.25rem) !important;
+  padding-bottom: clamp(3rem,5.5vw,5.25rem) !important;
+}
+
+.mel-wrap .premium-section:nth-of-type(even) {
+  background: #edf3f4 !important;
+}
+
+.mel-wrap .premium-title {
+  max-width: 12ch;
+  color: var(--editorial-ink);
+  font-family: Manrope,sans-serif;
+  font-size: clamp(2.4rem,4.8vw,5rem);
+  font-weight: 800;
+  letter-spacing: -.08em;
+  line-height: .94;
+}
+
+.mel-wrap .text-center > .premium-title,.mel-wrap .text-center > .mel-copy {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mel-wrap .premium-subtitle.justify-center {
+  justify-content: center;
+}
+
+.mel-wrap .premium-subtitle {
+  color: var(--editorial-blue);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.mel-wrap .mel-copy {
+  color: var(--editorial-muted);
+  line-height: 1.85;
+}
+
+.mel-wrap .luxury-card {
+  border: 0;
+  border-top: 1px solid rgba(23,35,49,.2);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: 1.2rem 0 !important;
+}
+
+.mel-wrap .luxury-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.mel-wrap .luxury-card-icon {
+  display: none;
+}
+
+.mel-wrap .luxury-card-title {
+  color: var(--editorial-ink);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -.02em;
+}
+
+.mel-wrap .luxury-card-text {
+  margin-top: .4rem;
+  color: var(--editorial-muted);
+  font-size: .82rem;
+  line-height: 1.7;
+}
+
+.mel-wrap .feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 0 2rem;
+  border-top: 1px solid rgba(23,35,49,.2);
+}
+
+.mel-wrap .feature-grid .feature-item {
+  border-bottom: 1px solid rgba(23,35,49,.2);
+  padding: 1.35rem 0 !important;
+}
+
+.mel-wrap .stat-item .luxury-card {
+  text-align: left;
+  padding: 1.25rem 0 !important;
+}
+
+.mel-wrap .stat-counter {
+  color: var(--editorial-blue);
+  font-size: clamp(2rem,4vw,3.6rem);
+  font-weight: 800;
+  letter-spacing: -.08em;
+}
+
+.mel-wrap .premium-timeline {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  border-top: 1px solid rgba(23,35,49,.2);
+}
+
+.mel-wrap .timeline-step {
+  display: grid;
+  grid-template-columns: 3.4rem minmax(0,1fr);
+  gap: 1.25rem;
+  align-items: start;
+  border-bottom: 1px solid rgba(23,35,49,.2);
+  padding: 1.5rem 0;
+}
+
+.mel-wrap .timeline-dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex: 0 0 2.25rem;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid var(--editorial-blue);
+  color: var(--editorial-blue);
+  font-size: .75rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.mel-wrap .timeline-content {
+  min-width: 0;
+}
+
+.mel-wrap .timeline-title {
+  color: var(--editorial-ink);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.mel-wrap .timeline-desc {
+  max-width: 48rem;
+  margin-top: .35rem;
+  color: var(--editorial-muted);
+  line-height: 1.7;
+}
+
+.mel-wrap .testimonial-card,.mel-wrap .faq-item {
+  border-radius: 0;
+  border: 0;
+  border-top: 1px solid rgba(23,35,49,.2);
+  background: transparent;
+  box-shadow: none;
+}
+
+.mel-wrap .faq-item[open] {
+  border-color: var(--editorial-gold);
+  box-shadow: none;
+}
+
+.mel-wrap .faq-summary {
+  padding: 1.35rem 0;
+  color: var(--editorial-ink);
+}
+
+.mel-wrap .faq-content {
+  padding: 0 0 1.35rem;
+  color: var(--editorial-muted);
+}
+
+.mel-wrap picture {
+  display: block;
+  margin: 0;
+  padding: 0;
+  background: transparent !important;
+}
+
+.mel-wrap .relative.group {
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.mel-wrap .relative.group > .absolute {
+  display: none !important;
+}
+
+.mel-wrap .relative.group img {
+  display: block;
+  width: 100%;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  border-radius: 1.25rem !important;
+  box-shadow: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.mel-wrap .relative.group picture {
+  overflow: hidden !important;
+}
+
+.mel-wrap .relative.group img[src*="Sydney 1.webp"] {
+  margin-top: -1%;
+}
+
+.mel-wrap .relative.group img[src*="Sydney 3.webp"] {
+  margin-top: -1%;
+  margin-bottom: -1%;
+}
+
+.mel-wrap #life .flex.items-start.gap-3 {
+  display: block;
+}
+
+.mel-wrap #life .flex-shrink-0 {
+  display: none;
+}

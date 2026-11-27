@@ -1,0 +1,189 @@
+:root {
+  --hero-from: #041f3c;
+  --hero-to: #0c4a6e;
+  --accent: #38bdf8;
+  --panel: rgba(255,255,255,0.12);
+}
+
+.hero-secondary-btn {
+  border: 1px solid rgba(147,197,253,.45);
+  background: rgba(255,255,255,.08);
+  color: #e8f2ff;
+}
+
+.hero-secondary-btn:hover {
+  background: rgba(255,255,255,.14);
+}
+
+.hero-stat-card {
+  background: linear-gradient(155deg, rgba(255,255,255,.13), rgba(148,163,184,.08));
+  border: 1px solid rgba(148,197,255,.22);
+}
+
+.hero-stat-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(125,211,252,.45);
+}
+
+.mel-hero-title {
+  text-shadow: 0 18px 42px rgba(4,11,26,.38);
+}
+
+.mel-hero-gradient {
+  background: linear-gradient(115deg, #ffffff 0%, #e0f2fe 40%, #93c5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.mel-hero-gold {
+  background: linear-gradient(120deg, #fde68a 0%, #fbbf24 48%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.mel-hero-shell {
+  border: 1px solid rgba(147,197,253,.32);
+  background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+  backdrop-filter: blur(8px);
+  border-radius: 1.25rem;
+  padding: 0.45rem 0.95rem;
+  display: inline-flex;
+}
+
+.mel-premium-frame {
+  position: relative;
+  border: 1.5px solid rgba(201,162,75,.6);
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(201,162,75,.25), inset 0 0 20px rgba(255,255,255,.05);
+  background: rgba(255,255,255,.02);
+}
+
+.mel-premium-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 2rem;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(201,162,75,.3) 0%, transparent 50%, rgba(99,179,255,.2) 100%);
+}
+
+.mel-premium-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(36px);
+  pointer-events: none;
+}
+
+.mel-primary-btn {
+  background: linear-gradient(135deg, #7dd3fc, #3b82f6);
+  color: #041a3d;
+  box-shadow: 0 18px 44px rgba(30,64,175,.35);
+}
+
+.mel-primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 56px rgba(30,64,175,.45);
+}
+
+.mel-section-soft {
+  background: linear-gradient(180deg, #f7fbff 0%, #eef5ff 100%);
+}
+
+.mel-kicker {
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .28em;
+  color: var(--mel-navy-soft);
+  font-weight: 700;
+}
+
+.mel-copy {
+  color: #475569;
+  line-height: 1.8;
+}
+
+.mel-list li {
+  position: relative;
+  padding-left: 1.1rem;
+}
+
+.mel-list li::before {
+  content: "";
+  width: .42rem;
+  height: .42rem;
+  border-radius: 9999px;
+  background: #3b82f6;
+  position: absolute;
+  left: 0;
+  top: .62rem;
+}
+
+.mel-badge-card {
+  border: 1px solid rgba(96,165,250,.25);
+  background: linear-gradient(145deg, #ffffff, #f0f6ff);
+}
+
+.mel-timeline::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  background: linear-gradient(#1c4788, rgba(28,71,136,.08));
+}
+
+.faq-item[open] {
+  box-shadow: 0 20px 55px rgba(11,31,68,.12);
+}
+
+/*PREMIUM REDESIGN ANIMATIONS & STYLES*/
+
+.premium-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(99,179,255,.08), transparent 50%),
+              radial-gradient(circle at 0% 100%, rgba(201,162,75,.06), transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.premium-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0b1f44;
+  line-height: 1.15;
+}
+
+.premium-subtitle {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #1b4f9a;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.premium-subtitle::before {
+  content: "";
+  width: 3rem;
+  height: 2px;
+  background: linear-gradient(90deg, #1b4f9a, transparent);
+  border-radius: 1px;
+}
+
+/*ANU editorial layout: same open system as the Melbourne guide.*/

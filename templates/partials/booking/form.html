@@ -1,0 +1,77 @@
+<div class="booking-card booking-form-card p-5 sm:p-6 lg:p-7">
+  <div class="booking-form-intro mb-5 rounded-[1.3rem] bg-slate-950 p-4 text-sm text-slate-200">
+    <p class="font-semibold text-white">Tell us where you want to go next.</p>
+    <p class="mt-2 text-slate-300">Share a few details — it takes about two minutes and helps us prepare a more useful first conversation.</p>
+  </div>
+
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              <div class="mb-5 space-y-3 rounded-[1.15rem] border border-primary/20 bg-primary/10 p-4 text-sm">
+                {% for category, message in messages %}
+                  <p class="{{ 'text-emerald-700' if category == 'success' else 'text-rose-600' }}">{{ message }}</p>
+                {% endfor %}
+              </div>
+            {% endif %}
+          {% endwith %}
+
+          <form class="space-y-4" method="post" action="{{ url_for('booking_page') }}">
+    <div aria-hidden="true" style="display:none!important;position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important;">
+              <label for="website">Website</label>
+              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+    <div class="grid gap-4 sm:grid-cols-2">
+              <label class="booking-label" for="name">
+                <span>Full name</span>
+                <input id="name" name="name" type="text" required class="booking-field" placeholder="Your name" value="{{ form_data.get('name', '') if form_data is defined else '' }}">
+              </label>
+              <label class="booking-label" for="phone">
+                <span>Phone number</span>
+                <input id="phone" name="phone" type="text" required class="booking-field" placeholder="Your phone number" value="{{ form_data.get('phone', '') if form_data is defined else '' }}">
+              </label>
+            </div>
+
+    <div class="grid gap-4 sm:grid-cols-2">
+              <label class="booking-label" for="email">
+                <span>Email address <small class="ml-1 text-[0.65rem] font-normal normal-case tracking-normal text-slate-400">(Optional)</small></span>
+                <input id="email" name="email" type="email" class="booking-field" placeholder="name@example.com" value="{{ form_data.get('email', '') if form_data is defined else '' }}">
+              </label>
+              <label class="booking-label" for="date">
+                <span>Preferred date <small class="ml-1 text-[0.65rem] font-normal normal-case tracking-normal text-slate-400">(Optional)</small></span>
+                <input id="date" name="date" type="date" class="booking-field" value="{{ form_data.get('date', '') if form_data is defined else '' }}">
+              </label>
+            </div>
+
+            <label class="booking-label" for="service_type">
+              <span>What do you need?</span>
+              {% set selected_service = form_data.get('service_type', '') if form_data is defined else '' %}
+              <select id="service_type" name="service_type" required class="booking-field">
+                <option value="" disabled {% if not selected_service %}selected{% endif %}>Select an option</option>
+                <option value="consultancy" {% if selected_service == 'consultancy' %}selected{% endif %}>Consultancy</option>
+                <option value="test_preparation" {% if selected_service == 'test_preparation' %}selected{% endif %}>Test Preparation</option>
+              </select>
+            </label>
+
+            <label class="booking-label" for="university">
+              <span id="preferred-choice-label">Preferred destination <small class="ml-1 text-[0.65rem] font-normal normal-case tracking-normal text-slate-400">(Optional)</small></span>
+              <input id="university" name="university" type="text" class="booking-field" placeholder="Any Country" value="{{ form_data.get('university', '') if form_data is defined else '' }}">
+            </label>
+
+            <label class="booking-label" for="address">
+              <span>Address</span>
+              <input id="address" name="address" type="text" required class="booking-field" placeholder="Your city or current address" value="{{ form_data.get('address', '') if form_data is defined else '' }}">
+            </label>
+
+            <label class="booking-label" for="message">
+              <span>Message <small class="ml-1 text-[0.65rem] font-normal normal-case tracking-normal text-slate-400">(Optional)</small></span>
+              <textarea id="message" name="message" rows="5" class="booking-field resize-none" placeholder="Tell us about your study goals">{{ form_data.get('message', '') if form_data is defined else '' }}</textarea>
+            </label>
+
+            {% if turnstile_sitekey %}
+              <div class="cf-turnstile" data-sitekey="{{ turnstile_sitekey }}" data-theme="light" data-appearance="always">
+    </div>
+            {% endif %}
+
+            <button type="submit" class="booking-submit w-full">Start my consultation request</button>
+            <p class="booking-form-note"><span aria-hidden="true">✓</span> Your details are used only to prepare your consultation.</p>
+  </form>
+</div>

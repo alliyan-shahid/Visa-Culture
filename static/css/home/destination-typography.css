@@ -1,0 +1,140 @@
+/*Destination typography fit*/
+
+.vc-destinations {
+  padding-top: clamp(2.5rem, 5vw, 4.5rem);
+  padding-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.vc-destinations__container {
+  width: min(100%, 74rem);
+}
+
+.vc-destinations__intro {
+  grid-template-columns: minmax(0,1.15fr) minmax(17rem,.65fr);
+  gap: clamp(2rem,6vw,5rem);
+  align-items: center;
+  margin-bottom: clamp(2.5rem,5vw,4rem);
+}
+
+.vc-destinations__summary {
+  padding-top: 0;
+}
+
+.vc-destinations__layout {
+  gap: clamp(2rem,5vw,4.5rem);
+  align-items: stretch;
+}
+
+.vc-destination-card {
+  align-self: stretch;
+  justify-content: center;
+  padding-right: clamp(1.25rem,3vw,2.75rem);
+}
+
+.vc-destination-card p:not(.vc-destination-card__eyebrow) {
+  margin-top: 1.25rem;
+}
+
+.vc-destination-card__footer {
+  margin-top: 1.75rem;
+}
+
+.vc-destination-link {
+  grid-template-columns: 3.75rem minmax(0,1fr) 1.75rem;
+  gap: 1rem;
+  padding: 1.25rem 0;
+}
+
+.vc-destinations__actions {
+  gap: .5rem 1rem;
+  margin-top: 1.25rem;
+}
+
+.vc-destinations__actions .vc-destinations__button {
+  min-height: 3.15rem;
+  padding: .85rem 1.35rem;
+  border-radius: 999px;
+  font-size: .82rem;
+  letter-spacing: .01em;
+}
+
+.vc-destinations__actions .vc-destinations__button:first-child {
+  box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.18);
+}
+
+.vc-destinations__actions .vc-destinations__button:first-child span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  margin-left: .45rem;
+  border-radius: 50%;
+  background: rgba(21,19,27,.16);
+}
+
+.vc-destinations__actions .vc-destinations__button--light {
+  border: 1px solid rgba(191,224,255,.65);
+  background: transparent;
+  color: #fff;
+  box-shadow: none;
+}
+
+.vc-destinations__actions .vc-destinations__button--light:hover, .vc-destinations__actions .vc-destinations__button--light:focus-visible {
+  border-color: #fff;
+  background: rgba(255,255,255,.08);
+  color: #fff;
+}
+
+.vc-destinations__eyebrow, .vc-destination-card__eyebrow {
+  font-size: .76rem;
+  letter-spacing: .16em;
+}
+
+.vc-destinations__title {
+  max-width: 43rem;
+  font-size: clamp(2.15rem, 4.4vw, 4rem);
+  line-height: 1;
+}
+
+.vc-destinations__summary {
+  font-size: .9rem;
+  line-height: 1.75;
+}
+
+.vc-destination-card h3 {
+  font-size: clamp(1.75rem, 3.2vw, 3rem);
+  line-height: 1.03;
+}
+
+.vc-destination-link__name {
+  font-size: clamp(1.25rem, 2.35vw, 1.95rem);
+}
+
+.vc-destination-link__description {
+  font-size: .78rem;
+}
+
+@media (max-width: 560px) {
+  .vc-destinations__eyebrow, .vc-destination-card__eyebrow {
+    font-size: .68rem;
+    letter-spacing: .13em;
+  }
+
+  .vc-destinations__title {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .vc-destination-card h3 {
+    font-size: clamp(1.8rem, 8vw, 2.45rem);
+  }
+
+  .vc-destination-link {
+    grid-template-columns: 2.75rem minmax(0,1fr) 1.25rem;
+    gap: .65rem;
+  }
+
+  .vc-destination-link__description {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,26 @@
+<div class="space-y-6">
+  <p class="booking-eyebrow">Book consultancy</p>
+  <h1 class="booking-title max-w-2xl text-[2.35rem] font-semibold text-slate-950 sm:text-[3.25rem] lg:text-[4.05rem]">
+            {{ page_summary.title if page_summary is defined else 'Book Appointment with Visa Culture' }}
+          </h1>
+  <p class="max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
+            {{ page_summary.subtitle if page_summary is defined else 'Schedule a consultation for Australia, USA, UK, Canada, Europe and more — with guidance shaped around your study goals.' }}
+          </p>
+  <div class="flex flex-wrap gap-2.5">
+    <div class="booking-proof-list" aria-label="Consultation benefits">
+              <span class="booking-proof">Free initial consultation</span>
+              <span class="booking-proof">Fast response</span>
+              <span class="booking-proof">Secure handling</span>
+            </div>
+  </div>
+  <div class="grid gap-3 sm:grid-cols-2">
+    <div class="booking-card booking-info-item p-5">
+      <p class="text-sm font-semibold text-slate-950">Clear next steps</p>
+      <p class="mt-2 text-sm leading-7 text-slate-600">We review your details and respond with a practical direction for the next stage.</p>
+    </div>
+    <div class="booking-card booking-info-item p-5">
+      <p class="text-sm font-semibold text-slate-950">Personalised guidance</p>
+      <p class="mt-2 text-sm leading-7 text-slate-600">Your booking is matched with the right consultancy support based on your profile.</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,598 @@
+{
+  "routes": [
+    [
+      "/",
+      "landing_page",
+      [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ]
+    ],
+    [
+      "/australia",
+      "australia_destination",
+      [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ]
+    ],
+    [
+      "/australia/australian-national-university",
+      "australian_national_university",
+      [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ]
+    ],
+    [
+      "/australia/monash-university",
+      "monash_university",
+      [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ]
+    ],
+    [
+      "/australia/university-of-melbourne",
+      "university_of_melbourne",
+      [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ]
+    ],
+    [
+      "/australia/university-of-queensland",
+      "university_of_queensland",
+      [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ]
+    ],
+    [
+      "/australia/university-of-sydney",
+      "university_of_sydney",
+      [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ]
+    ],
+    [
+      "/australia/unsw-sydney",
+      "unsw_sydney",
+      [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ]
+    ],
+    [
+      "/booking",
+      "booking_page",
+      [
+        "GET",
+        "HEAD",
+        "OPTIONS",
+        "POST"
+      ]
+    ],
+    [
+      "/canada",
+      "canada_destination",
+      [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ]
+    ],
+    [
+      "/europe",
+      "europe_destination",
+      [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ]
+    ],
+    [
+      "/ielts-preparation",
+      "ielts_preparation",
+      [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ]
+    ],
+    [
+      "/ielts-preparation-sheikhupura",
+      "ielts_preparation_legacy",
+      [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ]
+    ],
+    [
+      "/more",
+      "more_destinations",
+      [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ]
+    ],
+    [
+      "/pte-preparation",
+      "pte_preparation",
+      [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ]
+    ],
+    [
+      "/pte-preparation-sheikhupura",
+      "pte_preparation_legacy",
+      [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ]
+    ],
+    [
+      "/robots.txt",
+      "robots_txt",
+      [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ]
+    ],
+    [
+      "/sitemap.xml",
+      "sitemap_xml",
+      [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ]
+    ],
+    [
+      "/static/<path:filename>",
+      "static",
+      [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ]
+    ],
+    [
+      "/uk",
+      "uk_destination",
+      [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ]
+    ],
+    [
+      "/universities/australian-national-university",
+      "legacy_australian_national_university",
+      [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ]
+    ],
+    [
+      "/universities/monash-university",
+      "legacy_monash_university",
+      [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ]
+    ],
+    [
+      "/universities/university-of-melbourne",
+      "legacy_university_of_melbourne",
+      [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ]
+    ],
+    [
+      "/universities/university-of-queensland",
+      "legacy_university_of_queensland",
+      [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ]
+    ],
+    [
+      "/universities/university-of-sydney",
+      "legacy_university_of_sydney",
+      [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ]
+    ],
+    [
+      "/universities/unsw-sydney",
+      "legacy_unsw_sydney",
+      [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ]
+    ],
+    [
+      "/usa",
+      "usa_destination",
+      [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ]
+    ]
+  ],
+  "responses": {
+    "/": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "location": null,
+      "body_sha256": "5b4c7ab2ef0701e9725405cf3e01f3f94c36067824d6d330de3ae209d9fea513"
+    },
+    "/ielts-preparation": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "location": null,
+      "body_sha256": "a575fabb28c717be0547c23c99fa346f3e26a04a5b09003c526136c6351f3f5f"
+    },
+    "/pte-preparation": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "location": null,
+      "body_sha256": "734a2fb54012d2c8ccd765eaa9d4bcb5b4b43575e1a30438d6bf0a3d8594af19"
+    },
+    "/ielts-preparation-sheikhupura": {
+      "status": 301,
+      "content_type": "text/html; charset=utf-8",
+      "location": "https://visaculture.com/ielts-preparation",
+      "body_sha256": "bd1cf19532da796c096874225c8cded772c6b7033ff6d61595d02158d4c69cc6"
+    },
+    "/pte-preparation-sheikhupura": {
+      "status": 301,
+      "content_type": "text/html; charset=utf-8",
+      "location": "https://visaculture.com/pte-preparation",
+      "body_sha256": "0a20fbfd2b1132e514a8dc656fb2448b51758a8ffbb36f4a7a1391fa41fde502"
+    },
+    "/universities/university-of-melbourne": {
+      "status": 301,
+      "content_type": "text/html; charset=utf-8",
+      "location": "https://visaculture.com/australia/university-of-melbourne",
+      "body_sha256": "0c6ee0cc28a6ac9eccba7791dd03c4bac0574a00a6638a8bd086365b3b5bacf4"
+    },
+    "/universities/australian-national-university": {
+      "status": 301,
+      "content_type": "text/html; charset=utf-8",
+      "location": "https://visaculture.com/australia/australian-national-university",
+      "body_sha256": "a779ebe6e8edc408d9004dc8d95f27af37a6d57bea349b319f0f1c1e719aa3c3"
+    },
+    "/universities/university-of-sydney": {
+      "status": 301,
+      "content_type": "text/html; charset=utf-8",
+      "location": "https://visaculture.com/australia/university-of-sydney",
+      "body_sha256": "2e9cdd4d5d634ec8d4af8d75110c103ef61045fe101f4e0dd2dc55da6aeaf9fb"
+    },
+    "/universities/unsw-sydney": {
+      "status": 301,
+      "content_type": "text/html; charset=utf-8",
+      "location": "https://visaculture.com/australia/unsw-sydney",
+      "body_sha256": "74ebde69d14785bdbfd01436738843252a9f7088db8edfc04724f7e6d2164775"
+    },
+    "/universities/monash-university": {
+      "status": 301,
+      "content_type": "text/html; charset=utf-8",
+      "location": "https://visaculture.com/australia/monash-university",
+      "body_sha256": "3a3f872c02fa395b472a441f464073053a2341dd5c9562c83ac258e96718f4a9"
+    },
+    "/universities/university-of-queensland": {
+      "status": 301,
+      "content_type": "text/html; charset=utf-8",
+      "location": "https://visaculture.com/australia/university-of-queensland",
+      "body_sha256": "0992262b48235fc8485b38414468fc162645ca6d3adf99fc012d897ad3b80c7c"
+    },
+    "/australia/university-of-melbourne": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "location": null,
+      "body_sha256": "b33d5e9c13107a472cb8e1293a7c569c97dd4cabd2279769c482f40d17922673"
+    },
+    "/australia/australian-national-university": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "location": null,
+      "body_sha256": "282e964c8b2adfdc4e46e4c4271a2208a135691a1799212433d5b03fc5999264"
+    },
+    "/australia/university-of-sydney": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "location": null,
+      "body_sha256": "f3baa1970a65a1b887587ac5a60717c506974ebf7682facc2f675215135914b0"
+    },
+    "/australia/unsw-sydney": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "location": null,
+      "body_sha256": "7f8c3f26b97f884c3429cee87902c9dc9852e1d310986cfe948f365d6baa5868"
+    },
+    "/australia/monash-university": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "location": null,
+      "body_sha256": "716c433b1176f44442ef2faa0cbc1f0bccb84d05ab6985592935bf8d7812b9d5"
+    },
+    "/australia/university-of-queensland": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "location": null,
+      "body_sha256": "f788d363e233d999a411a2dc4677b3ddc06296a4dcda794ee9ad9a8dd6d79bb5"
+    },
+    "/usa": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "location": null,
+      "body_sha256": "b2b9688dd7159b330f64629b74b27c51227ba6394525f0b152eeeac26075ed8a"
+    },
+    "/uk": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "location": null,
+      "body_sha256": "152bc2a48a9d5431c9fdd6e4d625731b582c08fb3b592c47fdc804dfc52250bc"
+    },
+    "/canada": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "location": null,
+      "body_sha256": "b6c6bc95c2aaaccbac022691aa1f9ee22c64a557a5962c0b85b313c0d47ad1f5"
+    },
+    "/europe": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "location": null,
+      "body_sha256": "2b7cdc171ef73f2631321e7714d6a8b431ce99504c138cf439f863043c2f1f50"
+    },
+    "/more": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "location": null,
+      "body_sha256": "b2c93cfef26db6b38b4ddd4882365f0ecd61883c361f99593bedc8d12bc74101"
+    },
+    "/australia": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "location": null,
+      "body_sha256": "b5ef5c857d7ac246c78f63e45edf1ea4b7f1712f23061872b958940fd9d505ff"
+    },
+    "/booking": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "location": null,
+      "body_sha256": "0b613f9bfebcc80213720dc402a16109ad0b133a09228c4617196ff740622df5"
+    },
+    "/robots.txt": {
+      "status": 200,
+      "content_type": "text/plain",
+      "location": null,
+      "body_sha256": "308f46c5b4c734b59e7979261a4c4555ada7fc2f788c74db55988588b52c6ad8"
+    },
+    "/sitemap.xml": {
+      "status": 200,
+      "content_type": "application/xml",
+      "location": null,
+      "body_sha256": "1f42166dab36df72d01fb421e9d6f8e67fe539c1a1a759228531109c92a74b70"
+    },
+    "POST honeypot": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "location": null,
+      "body_sha256": "5e4e22aad75526488b4d93ec19c55cf3e0121a73f14cdd8b1b1b3ee90a096297",
+      "flashes": [],
+      "captcha_calls": 0,
+      "email_calls": 0,
+      "email_data": null
+    },
+    "POST captcha_failure": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "location": null,
+      "body_sha256": "f0b9ee273d6e87cabdb1b73ba3d191c288129ce4f429fe12d57cf17154c94108",
+      "flashes": [],
+      "captcha_calls": 1,
+      "email_calls": 0,
+      "email_data": null
+    },
+    "POST missing_fields": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "location": null,
+      "body_sha256": "380f54384f53c7ea186d910948b09184e5d2df85102c2d3dc8608b8f8845c95f",
+      "flashes": [],
+      "captcha_calls": 1,
+      "email_calls": 0,
+      "email_data": null
+    },
+    "POST mail_failure": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "location": null,
+      "body_sha256": "f5deda02a827f7f12e25321c0d749bc56f47354ccfcfbbdc91bca23258f59705",
+      "flashes": [],
+      "captcha_calls": 1,
+      "email_calls": 1,
+      "email_data": {
+        "name": "Example Applicant",
+        "phone": "12345",
+        "address": "Example Address",
+        "service_type": "study_abroad",
+        "university": "Australia",
+        "email": "applicant@example.test",
+        "message": "Hello"
+      }
+    },
+    "POST success": {
+      "status": 302,
+      "content_type": "text/html; charset=utf-8",
+      "location": "/booking",
+      "body_sha256": "33b3b4516f6fc930e709465beaad6d3deb257374ca795e9afbec317927133afa",
+      "flashes": [
+        [
+          "success",
+          "Thank you. Your consultation request has been sent successfully."
+        ]
+      ],
+      "captcha_calls": 1,
+      "email_calls": 1,
+      "email_data": {
+        "name": "Example Applicant",
+        "phone": "12345",
+        "address": "Example Address",
+        "service_type": "study_abroad",
+        "university": "Australia",
+        "email": "applicant@example.test",
+        "message": "Hello"
+      }
+    },
+    "FOLLOW success": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "location": null,
+      "body_sha256": "acea9246c8e21739db2bea6e58499a9ca2cc460573f7d4aa85ecc75f25491528"
+    },
+    "POST test_preparation": {
+      "status": 302,
+      "content_type": "text/html; charset=utf-8",
+      "location": "/booking",
+      "body_sha256": "33b3b4516f6fc930e709465beaad6d3deb257374ca795e9afbec317927133afa",
+      "flashes": [
+        [
+          "success",
+          "Thank you. Your consultation request has been sent successfully."
+        ]
+      ],
+      "captcha_calls": 1,
+      "email_calls": 1,
+      "email_data": {
+        "name": "Example Applicant",
+        "phone": "12345",
+        "address": "Example Address",
+        "service_type": "test_preparation",
+        "university": "IELTS",
+        "email": "applicant@example.test",
+        "message": "Hello"
+      }
+    },
+    "FOLLOW test_preparation": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "location": null,
+      "body_sha256": "acea9246c8e21739db2bea6e58499a9ca2cc460573f7d4aa85ecc75f25491528"
+    }
+  },
+  "emails": {
+    "study": {
+      "host": [
+        "smtp.example.test",
+        465
+      ],
+      "login": [
+        "sender@example.test",
+        "test-password"
+      ],
+      "messages": [
+        "Subject:\n New Consultation Booking Request |   Example Applicant   | Visa Culture\nFrom: sender@example.test\nTo: one@example.test, two@example.test\nReply-To: applicant@example.test\nContent-Type: text/plain; charset=\"utf-8\"\nContent-Transfer-Encoding: quoted-printable\nMIME-Version: 1.0\n\nA new consultation request was submitted through the Visa Culture booking for=\nm.\n\nBOOKING DETAILS\n=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D\nFull name:   Example Applicant =20\nPhone number:   12345 =20\nEmail address: applicant@example.test\nService type: study_abroad\nPreferred date: Not provided\nPreferred destination: Australia\nAddress:   Example Address =20\nMessage: Hello\n\nPlease follow up with the applicant using the details above.\n",
+        "Subject: Booking Received =?utf-8?b?4oCU?= Visa Culture Will Contact You Soon\nFrom: sender@example.test\nTo: applicant@example.test\nContent-Type: text/plain; charset=\"utf-8\"\nContent-Transfer-Encoding: quoted-printable\nMIME-Version: 1.0\n\nDear   Example Applicant  ,\n\nThank you for contacting Visa Culture. We have received your booking request =\nsuccessfully.\n\nOur team will review your details and contact you shortly regarding the next =\nsteps.\n\nRegards,\nVisa Culture Team\ninfo@visaculture.com\n"
+      ]
+    },
+    "test": {
+      "host": [
+        "smtp.example.test",
+        465
+      ],
+      "login": [
+        "sender@example.test",
+        "test-password"
+      ],
+      "messages": [
+        "Subject:\n New Consultation Booking Request |   Example Applicant   | Visa Culture\nFrom: sender@example.test\nTo: one@example.test, two@example.test\nReply-To: applicant@example.test\nContent-Type: text/plain; charset=\"utf-8\"\nContent-Transfer-Encoding: quoted-printable\nMIME-Version: 1.0\n\nA new consultation request was submitted through the Visa Culture booking for=\nm.\n\nBOOKING DETAILS\n=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D\nFull name:   Example Applicant =20\nPhone number:   12345 =20\nEmail address: applicant@example.test\nService type: test_preparation\nPreferred date: Not provided\nPreferred test: Australia\nAddress:   Example Address =20\nMessage: Hello\n\nPlease follow up with the applicant using the details above.\n",
+        "Subject: Booking Received =?utf-8?b?4oCU?= Visa Culture Will Contact You Soon\nFrom: sender@example.test\nTo: applicant@example.test\nContent-Type: text/plain; charset=\"utf-8\"\nContent-Transfer-Encoding: quoted-printable\nMIME-Version: 1.0\n\nDear   Example Applicant  ,\n\nThank you for contacting Visa Culture. We have received your booking request =\nsuccessfully.\n\nOur team will review your details and contact you shortly regarding the next =\nsteps.\n\nRegards,\nVisa Culture Team\ninfo@visaculture.com\n"
+      ]
+    },
+    "no_email": {
+      "host": [
+        "smtp.example.test",
+        465
+      ],
+      "login": [
+        "sender@example.test",
+        "test-password"
+      ],
+      "messages": [
+        "Subject:\n New Consultation Booking Request |   Example Applicant   | Visa Culture\nFrom: sender@example.test\nTo: one@example.test, two@example.test\nContent-Type: text/plain; charset=\"utf-8\"\nContent-Transfer-Encoding: quoted-printable\nMIME-Version: 1.0\n\nA new consultation request was submitted through the Visa Culture booking for=\nm.\n\nBOOKING DETAILS\n=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D\nFull name:   Example Applicant =20\nPhone number:   12345 =20\nEmail address: Not provided\nService type: study_abroad\nPreferred date: Not provided\nPreferred destination: Australia\nAddress:   Example Address =20\nMessage: Hello\n\nPlease follow up with the applicant using the details above.\n"
+      ]
+    },
+    "unsafe_email": {
+      "host": [
+        "smtp.example.test",
+        465
+      ],
+      "login": [
+        "sender@example.test",
+        "test-password"
+      ],
+      "messages": [
+        "Subject:\n New Consultation Booking Request |   Example Applicant   | Visa Culture\nFrom: sender@example.test\nTo: one@example.test, two@example.test\nContent-Type: text/plain; charset=\"utf-8\"\nContent-Transfer-Encoding: quoted-printable\nMIME-Version: 1.0\n\nA new consultation request was submitted through the Visa Culture booking for=\nm.\n\nBOOKING DETAILS\n=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D\nFull name:   Example Applicant =20\nPhone number:   12345 =20\nEmail address: bad\n@example.test\nService type: study_abroad\nPreferred date: Not provided\nPreferred destination: Australia\nAddress:   Example Address =20\nMessage: Hello\n\nPlease follow up with the applicant using the details above.\n"
+      ]
+    },
+    "missing_config": "Booking email settings are not configured"
+  },
+  "captcha": {
+    "unconfigured": true,
+    "missing_token": false,
+    "success": true,
+    "success_request": [
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      "secret=test-secret&response=test-token&remoteip=192.0.2.1",
+      {
+        "timeout": 5
+      }
+    ],
+    "rejected": false,
+    "rejected_request": [
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      "secret=test-secret&response=test-token&remoteip=192.0.2.1",
+      {
+        "timeout": 5
+      }
+    ],
+    "malformed": false,
+    "malformed_request": [
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      "secret=test-secret&response=test-token&remoteip=192.0.2.1",
+      {
+        "timeout": 5
+      }
+    ],
+    "network_failure": false
+  }
+}

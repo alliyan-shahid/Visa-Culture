@@ -1,0 +1,61 @@
+/*reveal on scroll (default visible to avoid blank page if JS fails)*/
+
+.reveal,
+        .reveal-fade {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.reveal-delay {
+  /*kept for compatibility with JS-driven animations*/
+}
+
+/*floating image*/
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gradient-ring {
+  background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.18), transparent 38%),
+                        radial-gradient(circle at bottom right, rgba(15, 123, 255, 0.2), transparent 34%);
+}

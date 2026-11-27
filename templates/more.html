@@ -9,133 +9,23 @@
 {% with desktop_hero='images/study around globe.webp', mobile_hero='images/m study around globe.webp', desktop_ratio='1919 / 820', mobile_ratio='1024 / 1536' %}
 {% include '_destination_guide_styles.html' %}
 {% endwith %}
-<style>
-  #more-title { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
-  .au-guide__university[id] { scroll-margin-top:5rem; }
-</style>
+{% with destination_id='more' %}<style>
+{% include 'styles/destinations/accessibility.css.jinja' %}
+</style>{% endwith %}
 {% endblock %}
 
 {% block content %}
 <main class="au-guide">
   <div class="au-guide__shell">
-    <section class="au-guide__hero" aria-labelledby="more-title">
-      <h1 id="more-title">Study Around the Globe</h1>
-    </section>
+    {% include 'partials/destinations/more/overview.html' %}
 
-    <section class="au-guide__section" aria-labelledby="why-more-title">
-      <div class="au-guide__section-head">
-        <div>
-          <p class="au-guide__label">Study around the globe</p>
-          <h2 id="why-more-title" class="au-guide__heading">Find a destination that fits your degree.</h2>
-        </div>
-        <p class="au-guide__section-copy">Compare Japan, Singapore, the UAE, Malaysia, Ireland and South Korea by course content, teaching language, cost and career options.</p>
-      </div>
-      <div class="au-guide__open-grid">
-        <article class="au-guide__open-item"><h3>Undergraduate degrees</h3><p>Compare course length, subject prerequisites and opportunities for laboratory work, industry projects or placements.</p></article>
-        <article class="au-guide__open-item"><h3>Taught and research postgraduate degrees</h3><p>Look at modules and research groups. Ask whether your application needs a proposal or a prospective supervisor.</p></article>
-        <article class="au-guide__open-item"><h3>International branch campuses</h3><p>Check which institution awards the degree, where you will study and whether the qualification meets any professional registration requirements.</p></article>
-        <article class="au-guide__open-item"><h3>Support for international students</h3><p>Ask about orientation, housing help, language classes and career services before you accept an offer.</p></article>
-      </div>
-    </section>
+    {% include 'partials/destinations/more/work-and-lifestyle.html' %}
 
-    <section class="au-guide__section" aria-labelledby="education-title">
-      <div class="au-guide__section-head">
-        <div>
-          <p class="au-guide__label">Applications and costs</p>
-          <h2 id="education-title" class="au-guide__heading">Build your shortlist and budget.</h2>
-        </div>
-        <p class="au-guide__section-copy">Use the official destination guides below to find programmes, then confirm deadlines, fees and entry requirements with each institution.</p>
-      </div>
-      <div class="au-guide__open-grid">
-        <article class="au-guide__open-item"><span class="au-guide__index">Admissions</span><h3>Check which qualifications count</h3><p>Ask how the institution assesses Pakistani HSSC, A-levels or previous degrees. Check whether you need certified translations, entrance tests, references or a portfolio.</p></article>
-        <article class="au-guide__open-item"><span class="au-guide__index">Language</span><h3>Check the language of your programme</h3><p>Confirm the teaching language for required modules and placements, and which proficiency tests or exemptions the institution accepts.</p></article>
-        <article class="au-guide__open-item"><span class="au-guide__index">Tuition</span><h3>Compare the cost of the full degree</h3><p>Add tuition, compulsory fees and deposits in the local currency. Check the payment schedule and refund terms before paying an acceptance deposit.</p></article>
-        <article class="au-guide__open-item"><span class="au-guide__index">Funding</span><h3>Check scholarships before you apply</h3><p>Explore MEXT in Japan, the Global Korea Scholarship in South Korea and university awards across the six destinations. Check eligibility, deadlines and what each award covers.</p></article>
-      </div>
-    </section>
+    {% include 'partials/destinations/more/settling.html' %}
 
-    <section class="au-guide__band" aria-labelledby="sectors-title">
-      <div class="au-guide__section-head">
-        <div>
-          <p class="au-guide__label">Work and future direction</p>
-          <h2 id="sectors-title" class="au-guide__heading">Choose a course that supports your career plans.</h2>
-        </div>
-        <p class="au-guide__section-copy">Compare employer links, internships and graduate outcomes. Check the destination’s rules for student work and post-study residence before relying on either in your plans.</p>
-      </div>
-      <div class="au-guide__sector-list">
-        <article class="au-guide__sector"><h3>Engineering and manufacturing</h3><p>Look for labs and applied projects in robotics, electronics, infrastructure or manufacturing.</p></article>
-        <article class="au-guide__sector"><h3>Technology and computing</h3><p>Compare modules and projects in software, data science, cybersecurity and AI.</p></article>
-        <article class="au-guide__sector"><h3>Business and finance</h3><p>Explore programmes in finance, management, analytics or international trade.</p></article>
-        <article class="au-guide__sector"><h3>Healthcare and life sciences</h3><p>Check clinical placement and licensing requirements if you plan to practise in a regulated profession.</p></article>
-        <article class="au-guide__sector"><h3>Logistics and hospitality</h3><p>Compare placements in supply chain management, tourism or hotel operations.</p></article>
-        <article class="au-guide__sector"><h3>Design and creative industries</h3><p>Look for studio work, internships and portfolio opportunities in design, games and media.</p></article>
-      </div>
-    </section>
+    {% include 'partials/destinations/more/institutions.html' %}
 
-    <section class="au-guide__life" aria-labelledby="lifestyle-title">
-      <div class="au-guide__life-intro">
-        <p class="au-guide__label">Living abroad</p>
-        <h2 id="lifestyle-title">Budget for the city where you’ll study.</h2>
-        <p>Use your institution’s local cost estimate to compare rent, deposits, food, transport and health insurance. Set aside enough for the first few weeks and check any separate immigration proof-of-funds requirement.</p>
-      </div>
-      <div class="au-guide__city-list">
-        <a class="au-guide__city" href="#japan"><span class="au-guide__city-number">01</span><div><strong class="au-guide__city-name">Tokyo</strong><span class="au-guide__city-tag">Japan</span><p>Compare student residences and rentals along your campus rail route.</p></div><span class="au-guide__city-arrow" aria-hidden="true">↗</span></a>
-        <a class="au-guide__city" href="#uae"><span class="au-guide__city-number">02</span><div><strong class="au-guide__city-name">Dubai</strong><span class="au-guide__city-tag">United Arab Emirates</span><p>Check your campus location before committing to housing. Ask about student residences and campus transport.</p></div><span class="au-guide__city-arrow" aria-hidden="true">↗</span></a>
-        <a class="au-guide__city" href="#malaysia"><span class="au-guide__city-number">03</span><div><strong class="au-guide__city-name">Kuala Lumpur</strong><span class="au-guide__city-tag">Malaysia</span><p>Compare housing in the city and surrounding areas by commute to your campus.</p></div><span class="au-guide__city-arrow" aria-hidden="true">↗</span></a>
-        <a class="au-guide__city" href="#ireland"><span class="au-guide__city-number">04</span><div><strong class="au-guide__city-name">Dublin</strong><span class="au-guide__city-tag">Ireland</span><p>Start your housing search early and compare the total cost of residences, private rooms and transport.</p></div><span class="au-guide__city-arrow" aria-hidden="true">↗</span></a>
-      </div>
-    </section>
-
-    <section class="au-guide__section au-guide__settle" aria-labelledby="settling-title">
-      <div class="au-guide__settle-intro">
-        <div>
-          <p class="au-guide__label">Student immigration and arrival</p>
-          <h2 id="settling-title" class="au-guide__heading">Prepare for your destination’s entry process.</h2>
-          <p>Confirm the current process with your institution and the destination’s immigration authority or consulate. Requirements can depend on your nationality, course length and institution.</p>
-        </div>
-        <div class="au-guide__settle-route">
-          <div><span>Admission</span><strong>Get your documents</strong></div>
-          <div><span>Immigration</span><strong>Apply for permission</strong></div>
-          <div><span>Arrival</span><strong>Complete enrolment</strong></div>
-        </div>
-      </div>
-      <div class="au-guide__settle-list">
-        <div class="au-guide__settle-row"><span>01</span><div><h3>Confirm which student permission you need</h3><p>Singapore and Malaysia use student passes, while the UAE offers a student residence visa. Check the application route and whether your institution needs to start or sponsor the process.</p></div></div>
-        <div class="au-guide__settle-row"><span>02</span><div><h3>Prepare your documents</h3><p>Check requirements for your passport, admission letter, financial evidence, translations and any medical screening or insurance.</p></div></div>
-        <div class="au-guide__settle-row"><span>03</span><div><h3>Check entry and registration deadlines</h3><p>Confirm what you need before you travel and whether you must register, collect a residence document or complete enrolment after arrival.</p></div></div>
-        <div class="au-guide__settle-row"><span>04</span><div><h3>Check work conditions before accepting a job</h3><p>Verify whether you can work during term time, take an internship or apply for a separate graduate permission after completing your course.</p></div></div>
-      </div>
-    </section>
-
-    <section id="network" class="au-guide__network" aria-labelledby="network-title">
-      <div class="au-guide__section-head">
-        <div>
-          <p class="au-guide__label">Study destinations</p>
-          <h2 id="network-title" class="au-guide__heading">Explore six study destinations.</h2>
-        </div>
-        <p class="au-guide__section-copy">Explore guidance for international students on study planning, admissions and student passes.</p>
-      </div>
-      <div class="au-guide__network-list">
-        {% for country in countries %}
-        <a id="{{ country.id }}" class="au-guide__university" href="{{ country.url }}" aria-label="{{ country.name }} study guide">
-          <div>
-            <h3 class="au-guide__university-name">{{ country.name }}</h3>
-            <p class="au-guide__university-summary">{{ country.summary }}</p>
-          </div>
-          <span class="au-guide__university-arrow" aria-hidden="true">↗</span>
-        </a>
-        {% endfor %}
-      </div>
-    </section>
-
-    <section class="au-guide__cta" aria-label="Study abroad consultation">
-      <div>
-        <p class="au-guide__label">Your study abroad plan</p>
-        <h2>Compare your options with an adviser.</h2>
-        <p>Bring your academic records, intended degree, language results and budget. We’ll help you shortlist destinations and plan your applications.</p>
-      </div>
-      <a class="au-guide__button" href="{{ url_for('booking_page') }}">Start a consultation <span aria-hidden="true">&nbsp;↗</span></a>
-    </section>
+    {% include 'partials/destinations/more/consultation.html' %}
   </div>
 </main>
 {% endblock %}

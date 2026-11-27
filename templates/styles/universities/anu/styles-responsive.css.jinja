@@ -1,0 +1,186 @@
+@media (min-width: 1024px) {
+  .mel-wrap .premium-section > .mx-auto > .grid.lg\\:grid-cols-2 {
+    align-items: center !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  .mel-wrap .hero-section > .relative {
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+  }
+
+  .mel-wrap .hero-section > .relative > .grid {
+    grid-template-columns: 1fr !important;
+    align-items: start !important;
+  }
+
+  .mel-wrap .hero-section .hero-grid-right {
+    max-width: 34rem;
+  }
+
+  .mel-wrap .feature-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+}
+
+@media (max-width: 639px) {
+  .mel-wrap .hero-section {
+    min-height: 0 !important;
+    height: clamp(23rem,78vh,36rem) !important;
+    background: transparent !important;
+  }
+
+  .mel-wrap .hero-section > div:first-child {
+    inset: 0 !important;
+  }
+
+  .mel-wrap .hero-section > div:first-child::after {
+    display: none !important;
+  }
+
+  .mel-wrap .hero-section > div:first-child img {
+    content: url("{{ url_for('static', filename='images/m anu hero.webp') }}");
+    object-position: center;
+    filter: none;
+  }
+
+  .mel-wrap .hero-section > .relative {
+    min-height: 100% !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+
+  .mel-wrap .hero-section > .relative > .grid, .mel-wrap .hero-section > .relative > .grid > div {
+    display: none !important;
+  }
+
+  .mel-wrap .premium-section {
+    padding-top: 2.75rem !important;
+    padding-bottom: 2.75rem !important;
+  }
+
+  .mel-wrap .premium-title {
+    max-width: 15ch;
+    font-size: clamp(2.1rem,9.7vw,3.1rem);
+    line-height: 1;
+  }
+
+  .mel-wrap .premium-subtitle {
+    font-size: .62rem;
+    letter-spacing: .16em;
+  }
+
+  .mel-wrap .mel-copy {
+    font-size: .91rem !important;
+    line-height: 1.75;
+  }
+
+  .mel-wrap .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mel-wrap .relative.group {
+    overflow: hidden !important;
+    isolation: isolate;
+    border-radius: 2rem !important;
+    clip-path: inset(0 round 2rem);
+    -webkit-clip-path: inset(0 round 2rem);
+    -webkit-mask-image: -webkit-radial-gradient(white,black);
+  }
+
+  .mel-wrap .relative.group picture {
+    display: block !important;
+    overflow: hidden !important;
+    border-radius: 2rem !important;
+  }
+
+  .mel-wrap .relative.group img {
+    height: 22rem !important;
+    border-radius: 0 !important;
+    clip-path: none !important;
+    transform: scale(1.045) !important;
+  }
+
+  .mel-wrap #final-cta > .mx-auto > div {
+    min-height: 0;
+    padding: 3.5rem 1.25rem !important;
+  }
+
+  .mel-wrap #final-cta > .mx-auto > div > .relative.z-10 {
+    display: block;
+  }
+
+  .mel-wrap #final-cta > .mx-auto > div > .relative.z-10 > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: .65rem;
+    padding-top: 1.25rem;
+  }
+
+  .mel-wrap #final-cta .premium-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .mel-wrap #final-cta.melbourne-cta {
+    padding: 3.5rem 1.25rem !important;
+  }
+
+  .melbourne-cta__inner {
+    display: block;
+  }
+
+  .melbourne-cta__copy h2 {
+    max-width: 18rem;
+    font-size: clamp(2rem,9vw,3rem);
+    line-height: 1;
+  }
+
+  .melbourne-cta__copy > p:last-child {
+    font-size: .84rem;
+    line-height: 1.75;
+  }
+
+  .melbourne-cta__button {
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+}
+
+/*Keep every editorial image fully visible; only the hero remains full-bleed.*/
+
+.mel-wrap .relative.group,
+.mel-wrap .relative.group picture {
+  height: auto !important;
+}
+
+.mel-wrap .relative.group img {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  transform: scale(1.02) !important;
+  transform-origin: center !important;
+}
+
+.mel-wrap .relative.group img {
+  transform: none !important;
+}
+
+.mel-wrap .relative.group picture {
+  overflow: hidden !important;
+}
+
+.mel-wrap .relative.group img[src*="anu 2.webp"] {
+  margin-bottom: -1%;
+}
+
+@media (max-width: 639px) {
+  .mel-wrap .relative.group img {
+    width: 100% !important;
+    object-fit: contain !important;
+  }
+}

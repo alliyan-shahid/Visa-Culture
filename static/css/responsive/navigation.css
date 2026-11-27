@@ -1,0 +1,402 @@
+/*======================================================
+   PREMIUM MOBILE/TABLET NAVBAR SYSTEM
+======================================================*/
+
+@media (max-width: 1024px) {
+  /*Hide the original header so only the custom pill navbar is shown*/
+
+  header,
+  header > .mx-auto,
+  header nav,
+  header .hidden,
+  header > .mx-auto > div {
+    display: none !important;
+  }
+
+  header > .mx-auto {
+    align-items: center !important;
+    justify-content: flex-start !important;
+    min-height: 72px !important;
+    padding: 0 12px !important;
+  }
+
+  /*Repurpose header as navbar background container*/
+
+  header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 72px !important;
+    z-index: 999998 !important;
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06) !important;
+    display: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /*Create spacing below navbar*/
+
+  main {
+    margin-top: 72px !important;
+    padding-top: 0 !important;
+  }
+
+  /*Full-width mobile navbar*/
+
+  .mobile-top-navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: translateY(0) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    z-index: 1000000 !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-radius: 0 !important;
+    padding: 0 12px !important;
+    min-height: 72px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    box-shadow: 0 1px 0 rgba(148, 163, 184, 0.35) !important;
+    border: none !important;
+    transition: opacity 0.28s ease, transform 0.28s ease, box-shadow 0.28s ease, background-color 0.28s ease !important;
+    overflow: visible !important;
+  }
+
+  .mobile-nav-brand {
+    flex: 0 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    height: 100% !important;
+    min-width: 52px !important;
+  }
+
+  .mobile-nav-brand img {
+    display: block !important;
+    width: auto !important;
+    height: 40px !important;
+    object-fit: contain !important;
+  }
+
+  .mobile-nav-items {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    gap: 2px !important;
+  }
+
+  /*Mobile navbar items*/
+
+  .mobile-nav-more-wrap {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .mobile-nav-destination-wrap {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    position: relative !important;
+  }
+
+  .mobile-nav-destination-wrap .mobile-nav-destination-trigger {
+    width: 100% !important;
+    flex: 1 1 auto !important;
+  }
+
+  .mobile-nav-more-wrap .mobile-nav-item {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+  }
+
+  .mobile-nav-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 2px !important;
+    padding: 0 4px !important;
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    color: #000 !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    background: transparent !important;
+    border: none !important;
+    transition: all 0.2s ease !important;
+    font-size: 0.62rem !important;
+    font-weight: 600 !important;
+  }
+
+  .mobile-nav-item:active,
+  .mobile-nav-item.mobile-nav-active {
+    color: #0a4d8f !important;
+  }
+
+  /*Mobile navbar icons*/
+
+  .mobile-nav-icon {
+    font-size: 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 24px !important;
+    height: 24px !important;
+    filter: drop-shadow(0 0.5px 1px rgba(0, 0, 0, 0.08)) !important;
+    position: relative !important;
+  }
+
+  /*SVG icons with black stroke and white fill*/
+
+  .mobile-nav-icon svg {
+    width: 20px !important;
+    height: 20px !important;
+    stroke: #000 !important;
+    stroke-width: 1.5 !important;
+    fill: #fff !important;
+    stroke-linejoin: round !important;
+    stroke-linecap: round !important;
+  }
+
+  .mobile-nav-item.mobile-nav-active .mobile-nav-icon svg {
+    stroke: #0a4d8f !important;
+    fill: #e8f0f8 !important;
+  }
+
+  /*Mobile navbar label*/
+
+  .mobile-nav-label {
+    font-size: 10px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.12px !important;
+    text-transform: uppercase !important;
+  }
+
+  /*Hero section below navbar*/
+
+  .hero-section,
+  .hero-carousel,
+  .min-h-screen {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /*Tablet keeps desktop-style hero content; phone-specific hiding is below.*/
+}
+
+@media (max-width: 767px) {
+  /*Hide hero text overlays only on phones*/
+
+  .hero-content,
+  .hero-text,
+  .hero-section h1,
+  .hero-section p,
+  .hero-section button,
+  .hero-section .btn {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  /*Hide the original header so only the custom pill navbar is shown*/
+
+  header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 999998 !important;
+    display: none !important;
+    height: 64px !important;
+    background: #ffffff !important;
+  }
+
+  main {
+    margin-top: 92px !important;
+    padding-top: 0 !important;
+  }
+
+  .mobile-top-navbar {
+    position: fixed !important;
+    top: 8px !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    width: 80vw !important;
+    max-width: 1180px !important;
+    min-height: 66px !important;
+    padding: 8px 18px !important;
+    gap: 18px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    border-radius: 999px !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(20px) saturate(1.25) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(1.25) !important;
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(226, 232, 240, 0.88) !important;
+    z-index: 1000000 !important;
+    overflow: visible !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transition: opacity 0.28s ease, transform 0.28s ease, box-shadow 0.28s ease, background-color 0.28s ease !important;
+  }
+
+  .mobile-nav-brand {
+    min-width: 108px !important;
+    justify-content: flex-start !important;
+  }
+
+  .mobile-nav-brand img {
+    height: 38px !important;
+  }
+
+  .mobile-nav-items {
+    flex: 1 1 auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-evenly !important;
+    gap: 14px !important;
+  }
+
+  .mobile-nav-destination-wrap {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    position: relative !important;
+  }
+
+  .mobile-nav-destination-wrap .mobile-nav-destination-trigger {
+    width: 100% !important;
+    flex: 1 1 auto !important;
+  }
+
+  .mobile-nav-more-wrap {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .mobile-nav-more-wrap .mobile-nav-item {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+  }
+
+  .mobile-nav-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    flex: 1 1 0 !important;
+    padding: 9px 12px !important;
+    min-width: 0 !important;
+    font-size: 0.72rem !important;
+    border-radius: 999px !important;
+    color: #334155 !important;
+    transition: color 0.22s ease, background-color 0.22s ease, transform 0.22s ease !important;
+  }
+
+  .mobile-nav-item:hover,
+  .mobile-nav-item:focus-visible,
+  .mobile-nav-item.mobile-nav-active {
+    color: #0a4d8f !important;
+    background: rgba(10, 77, 143, 0.08) !important;
+    outline: none !important;
+  }
+
+  .mobile-nav-item:hover {
+    transform: translateY(-1px) !important;
+  }
+
+  .mobile-nav-icon {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  .mobile-nav-icon svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .mobile-nav-label {
+    font-size: 11px !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  main {
+    margin-top: 92px !important;
+  }
+
+  .mobile-top-navbar {
+    top: 8px !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) translateY(0) !important;
+    width: 80vw !important;
+    max-width: 900px !important;
+    min-height: 66px !important;
+    padding: 8px 18px !important;
+    gap: 18px !important;
+    border-radius: 999px !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(20px) saturate(1.25) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(1.25) !important;
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(226, 232, 240, 0.88) !important;
+  }
+
+  .mobile-nav-brand {
+    min-width: 92px !important;
+    justify-content: flex-start !important;
+  }
+
+  .mobile-nav-brand img {
+    height: 38px !important;
+  }
+
+  .mobile-nav-item {
+    padding: 9px 10px !important;
+    border-radius: 999px !important;
+    color: #334155 !important;
+    transition: color 0.22s ease, background-color 0.22s ease, transform 0.22s ease !important;
+  }
+
+  .mobile-nav-item:hover,
+  .mobile-nav-item:focus-visible,
+  .mobile-nav-item.mobile-nav-active {
+    color: #0a4d8f !important;
+    background: rgba(10, 77, 143, 0.08) !important;
+    outline: none !important;
+  }
+
+  .mobile-nav-icon svg,
+  .mobile-nav-item.mobile-nav-active .mobile-nav-icon svg {
+    stroke: currentColor !important;
+  }
+}

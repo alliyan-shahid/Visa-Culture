@@ -1,0 +1,54 @@
+/*========================================================
+   ENHANCED TEXT EFFECTS
+   ========================================================*/
+
+.gradient-text {
+  background: linear-gradient(120deg, #1b4f9a, #3b82f6, #1b4f9a);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease infinite;
+}
+
+.gradient-text-warm {
+  background: linear-gradient(120deg, #c9a24b, #f59e0b, #c9a24b);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease infinite;
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, #0b1f44, #3b82f6, #0b1f44);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 8s linear infinite;
+}
+
+/*========================================================
+   ICON ENHANCEMENTS
+   ========================================================*/
+
+.icon-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.icon-float-slow {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.icon-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.icon-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.icon-glow-warm {
+  animation: glowWarm 2s ease-in-out infinite;
+}

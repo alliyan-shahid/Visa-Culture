@@ -1,0 +1,21 @@
+<section id="network" class="au-guide__network" aria-labelledby="network-title">
+  <div class="au-guide__section-head">
+    <div>
+      <p class="au-guide__label">University network</p>
+      <h2 id="network-title" class="au-guide__heading">Six leading Canadian universities to explore.</h2>
+    </div>
+    <p class="au-guide__section-copy">Visit each university’s official website to explore its programs, campus life and admissions information.</p>
+  </div>
+  <div class="au-guide__network-list">
+        {% for university in universities %}
+        <a id="{{ university.id }}" class="au-guide__university" href="{{ university.url }}" aria-label="{{ university.name }} official website">
+          <div>
+            <span class="au-guide__university-meta">{{ university.category }} · {{ university.region }}</span>
+            <h3 class="au-guide__university-name">{{ university.name }}</h3>
+      <p class="au-guide__university-summary">{{ university.summary }}</p>
+    </div>
+          <span class="au-guide__university-arrow" aria-hidden="true">↗</span>
+        </a>
+        {% endfor %}
+      </div>
+</section>

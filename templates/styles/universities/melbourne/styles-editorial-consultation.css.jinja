@@ -1,0 +1,184 @@
+.mel-wrap #final-cta {
+  width: 100%;
+  padding: 0 !important;
+  background: linear-gradient(125deg, #082b45 0%, #0a4d8f 62%, #0b756d 145%) !important;
+}
+
+.mel-wrap #final-cta > .mx-auto {
+  width: 100%;
+  max-width: none;
+  padding: 0;
+}
+
+.mel-wrap #final-cta > .mx-auto > div {
+  min-height: 25rem;
+  padding: clamp(3.5rem, 7vw, 6rem) max(1.25rem, calc((100vw - 78rem) / 2 + 3rem));
+  background: transparent;
+}
+
+.mel-wrap #final-cta > .mx-auto > div > .relative.z-10 {
+  width: 100%;
+  max-width: 78rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2.5rem;
+  align-items: end;
+  text-align: left;
+}
+
+.mel-wrap #final-cta > .mx-auto > div > .relative.z-10 > .absolute {
+  display: none;
+}
+
+.mel-wrap #final-cta > .mx-auto > div > .relative.z-10 > div:first-child {
+  grid-column: 1;
+}
+
+.mel-wrap #final-cta > .mx-auto > div > .relative.z-10 > div:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+  padding-bottom: .25rem;
+}
+
+.mel-wrap #final-cta > .mx-auto > div > .relative.z-10 > div:nth-child(3) {
+  grid-column: 1 / -1;
+}
+
+.mel-wrap #final-cta h2 {
+  max-width: 15ch;
+  margin-top: .75rem;
+  font-size: clamp(2.4rem, 4.8vw, 5rem);
+  letter-spacing: -.075em;
+  line-height: .95;
+}
+
+.mel-wrap #final-cta > .mx-auto > div > .relative.z-10 > div:first-child > p:last-child {
+  max-width: 36rem;
+  margin-top: 1rem;
+}
+
+.mel-wrap #final-cta .premium-btn {
+  white-space: nowrap;
+}
+
+.mel-wrap #final-cta > .mx-auto > div > .relative.z-10 > div:nth-child(3) p {
+  text-align: left;
+}
+
+.mel-wrap #final-cta {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(255,255,255,.18);
+  background: #0a4d8f !important;
+}
+
+.mel-wrap #final-cta::before {
+  content: "";
+  position: absolute;
+  inset: 1.25rem 0 auto;
+  height: 1px;
+  background: linear-gradient(90deg, #e1b35f 0 12%, rgba(255,255,255,.22) 12% 100%);
+  opacity: .9;
+}
+
+.mel-wrap #final-cta > .mx-auto > div {
+  padding-top: clamp(4.5rem, 8vw, 7rem);
+  padding-bottom: clamp(3.75rem, 6vw, 5.5rem);
+}
+
+.mel-wrap #final-cta > .mx-auto > div > .relative.z-10 {
+  gap: clamp(2rem, 7vw, 8rem);
+}
+
+.mel-wrap #final-cta .text-blue-200 {
+  color: #e1b35f !important;
+}
+
+.mel-wrap #final-cta h2 {
+  color: #fff;
+  font-family: Manrope, sans-serif;
+  font-weight: 800;
+}
+
+.mel-wrap #final-cta > .mx-auto > div > .relative.z-10 > div:first-child > p:last-child {
+  color: rgba(255,255,255,.74);
+}
+
+.mel-wrap #final-cta > .mx-auto > div > .relative.z-10 > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .65rem;
+}
+
+.mel-wrap #final-cta .premium-btn-primary {
+  border: 1px solid #e1b35f;
+  background: #e1b35f;
+  color: #172331;
+  box-shadow: none;
+}
+
+.mel-wrap #final-cta .premium-btn-secondary {
+  border: 1px solid rgba(255,255,255,.52);
+  background: transparent;
+  color: #fff;
+}
+
+.mel-wrap #final-cta > .mx-auto > div > .relative.z-10 > div:nth-child(3) {
+  margin-top: .75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255,255,255,.22);
+}
+
+.mel-wrap #final-cta > .mx-auto > div > .relative.z-10 > div:nth-child(3) p {
+  color: rgba(255,255,255,.72);
+  font-size: .78rem;
+  letter-spacing: .02em;
+}
+
+/*Keep the final action as an open editorial band, matching the destination guide.*/
+
+.mel-wrap #final-cta::before {
+  display: none;
+}
+
+.mel-wrap #final-cta > .mx-auto > div > .relative.z-10 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: clamp(2rem, 8vw, 9rem);
+  text-align: left;
+}
+
+.mel-wrap #final-cta > .mx-auto > div > .relative.z-10 > div:first-child {
+  flex: 1 1 auto;
+  max-width: 43rem;
+}
+
+.mel-wrap #final-cta > .mx-auto > div > .relative.z-10 > div:nth-child(2) {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: row;
+  align-items: center;
+  gap: .7rem;
+  padding: 0 0 .2rem;
+}
+
+.mel-wrap #final-cta > .mx-auto > div > .relative.z-10 > div:nth-child(3) {
+  display: none;
+}
+
+.mel-wrap #final-cta h2 {
+  max-width: 39rem;
+  margin-top: .7rem;
+  font-size: clamp(2.3rem, 4.3vw, 4.6rem);
+  line-height: .96;
+}
+
+.mel-wrap #final-cta > .mx-auto > div > .relative.z-10 > div:first-child > p:last-child {
+  max-width: 38rem;
+  margin-top: .9rem;
+  font-size: .9rem;
+  line-height: 1.8;
+}

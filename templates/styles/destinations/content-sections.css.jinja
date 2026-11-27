@@ -1,0 +1,202 @@
+.au-guide__section {
+  padding-top: clamp(4rem,8vw,8rem);
+}
+
+.au-guide__section-head {
+  display: grid;
+  grid-template-columns: minmax(0,.72fr) minmax(0,1.28fr);
+  gap: clamp(2rem,7vw,7rem);
+  align-items: end;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.au-guide__heading {
+  max-width: 27rem;
+  margin: .65rem 0 0;
+  font-size: clamp(2.15rem,4.4vw,4.2rem);
+  font-weight: 700;
+  letter-spacing: -.07em;
+  line-height: .94;
+}
+
+.au-guide__section-copy {
+  max-width: 39rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.85;
+}
+
+.au-guide__open-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  column-gap: clamp(2rem,6vw,6rem);
+}
+
+.au-guide__open-item {
+  padding: 1.35rem 0 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.au-guide__open-item:nth-child(odd) {
+  padding-right: 1rem;
+}
+
+.au-guide__open-item:nth-child(even) {
+  padding-left: 1rem;
+  border-left: 1px solid var(--line);
+}
+
+.au-guide__open-item h3 {
+  margin: .55rem 0 0;
+  font-size: 1.25rem;
+  letter-spacing: -.04em;
+}
+
+.au-guide__open-item p {
+  margin: .5rem 0 0;
+  color: var(--muted);
+  font-size: .78rem;
+  line-height: 1.75;
+}
+
+.au-guide__index {
+  color: var(--blue);
+  font-size: .66rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.au-guide__band {
+  margin-top: clamp(4rem,8vw,8rem);
+  padding: clamp(2.5rem,5vw,5rem) clamp(1.2rem,4vw,4rem);
+  background: #082b45;
+  color: #f8f5ed;
+}
+
+.au-guide__band .au-guide__label {
+  color: #e0b968;
+}
+
+.au-guide__band .au-guide__section-head {
+  border-color: rgba(255,255,255,.2);
+}
+
+.au-guide__band .au-guide__section-copy {
+  color: rgba(248,245,237,.72);
+}
+
+.au-guide__sector-list {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  margin-top: 1rem;
+}
+
+.au-guide__sector {
+  padding: 1.35rem 1.3rem 1.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,.2);
+}
+
+.au-guide__sector:nth-child(3n/**/+2),.au-guide__sector:nth-child(3n/**/+3) {
+  padding-left: 1.3rem;
+  border-left: 1px solid rgba(255,255,255,.2);
+}
+
+.au-guide__sector h3 {
+  margin: .5rem 0 0;
+  font-size: 1.18rem;
+  letter-spacing: -.03em;
+}
+
+.au-guide__sector p {
+  margin: .45rem 0 0;
+  color: rgba(248,245,237,.7);
+  font-size: .76rem;
+  line-height: 1.65;
+}
+
+.au-guide__city-list {
+  margin-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.au-guide__city {
+  display: grid;
+  grid-template-columns: 8rem minmax(0,1fr) 1fr;
+  gap: clamp(1rem,4vw,4rem);
+  align-items: start;
+  padding: 1.3rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.au-guide__city-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -.04em;
+}
+
+.au-guide__city-tag {
+  color: var(--gold);
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.au-guide__city p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .78rem;
+  line-height: 1.7;
+}
+
+.au-guide__settle {
+  display: grid;
+  grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr);
+  gap: clamp(2rem,8vw,8rem);
+}
+
+.au-guide__settle-intro {
+  border-top: 2px solid var(--gold);
+  padding-top: 1rem;
+}
+
+.au-guide__settle-intro p {
+  max-width: 26rem;
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: .84rem;
+  line-height: 1.8;
+}
+
+.au-guide__settle-list {
+  border-top: 1px solid var(--line);
+}
+
+.au-guide__settle-row {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0,1fr);
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.au-guide__settle-row span {
+  color: var(--gold);
+  font-size: .68rem;
+  font-weight: 800;
+}
+
+.au-guide__settle-row h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  letter-spacing: -.025em;
+}
+
+.au-guide__settle-row p {
+  margin: .35rem 0 0;
+  color: var(--muted);
+  font-size: .76rem;
+  line-height: 1.65;
+}

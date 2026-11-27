@@ -1,0 +1,177 @@
+/*WhatsApp floating button — pinned bottom-right viewport*/
+
+.whatsapp-widget {
+  position: fixed !important;
+  inset: auto 24px 24px auto !important;
+  top: auto !important;
+  left: auto !important;
+  right: calc(24px + env(safe-area-inset-right, 0px)) !important;
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px)) !important;
+  z-index: 1000001 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  pointer-events: none;
+}
+
+/*Book widget – sits above the WhatsApp button*/
+
+.book-widget {
+  bottom: calc(24px + 56px + 16px + env(safe-area-inset-bottom, 0px)) !important;
+}
+
+@media (max-width: 480px) {
+  .whatsapp-widget {
+    right: calc(16px + env(safe-area-inset-right, 0px)) !important;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+
+  .book-widget {
+    bottom: calc(16px + 56px + 12px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+
+  .whatsapp-widget__menu {
+    width: 220px;
+  }
+}
+
+.whatsapp-widget__btn,
+        .whatsapp-widget__menu {
+  pointer-events: auto;
+}
+
+.whatsapp-widget__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border: none;
+  border-radius: 50%;
+  background: #25D366;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.whatsapp-widget__btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 36px rgba(37, 211, 102, 0.55);
+}
+
+.whatsapp-widget__btn svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
+.whatsapp-widget__menu {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  right: 0;
+  width: 240px;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.14);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px) scale(0.96);
+  transform-origin: bottom right;
+  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+  overflow: hidden;
+}
+
+.whatsapp-widget__menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.whatsapp-widget__title {
+  padding: 14px 16px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  letter-spacing: 0.01em;
+}
+
+.whatsapp-widget__list {
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+}
+
+.whatsapp-widget__item a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.whatsapp-widget__item a:hover {
+  background: rgba(10, 77, 143, 0.08);
+  color: #0a4d8f;
+}
+
+.whatsapp-widget__item-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.12);
+  color: #25D366;
+}
+
+.whatsapp-widget__item-icon svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/*Book widget specific styles (overrides for feather icons)*/
+
+.book-widget .whatsapp-widget__btn {
+  background: #ffffff;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.16);
+}
+
+.book-widget .whatsapp-widget__btn:hover {
+  box-shadow: 0 12px 36px rgba(15, 23, 42, 0.2);
+}
+
+.book-widget .whatsapp-widget__btn img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.book-widget .whatsapp-widget__item-icon {
+  background: rgba(10, 77, 143, 0.12);
+  color: #0a4d8f;
+}
+
+/*Ensure feather calendar-check icons are visible*/
+
+.book-widget .whatsapp-widget__btn svg,
+        .book-widget .whatsapp-widget__item-icon svg {
+  stroke: white !important;
+  fill: none !important;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.book-widget .whatsapp-widget__item-icon svg {
+  stroke: #0a4d8f !important;
+}

@@ -1,0 +1,125 @@
+@media (max-width:900px) {
+  .au-guide__hero,.au-guide__section-head,.au-guide__settle,.au-guide__life {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .au-guide__life-intro,.au-guide__settle-intro {
+    position: static;
+  }
+
+  .au-guide__settle-intro {
+    min-height: 0;
+  }
+
+  .au-guide__settle-route {
+    margin-top: 2rem;
+  }
+
+  .au-guide__title {
+    max-width: 11ch;
+  }
+
+  .au-guide__sector-list {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  .au-guide__sector:nth-child(3n/**/+2),.au-guide__sector:nth-child(3n/**/+3) {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .au-guide__sector:nth-child(even) {
+    padding-left: 1.3rem;
+    border-left: 1px solid rgba(255,255,255,.2);
+  }
+}
+
+@media (max-width:650px) {
+  .au-guide__shell {
+    padding: 3rem 1rem 4rem;
+  }
+
+  .au-guide__title {
+    font-size: clamp(3rem,14vw,4.8rem);
+  }
+
+  .au-guide__lead {
+    font-size: .88rem;
+    line-height: 1.78;
+  }
+
+  .au-guide__actions,.au-guide__cta {
+    display: block;
+  }
+
+  .au-guide__button {
+    width: 100%;
+  }
+
+  .au-guide__actions .au-guide__button+.au-guide__button,.au-guide__cta .au-guide__button {
+    margin-top: .65rem;
+  }
+
+  .au-guide__open-grid,.au-guide__sector-list {
+    display: block;
+  }
+
+  .au-guide__open-item:nth-child(odd),.au-guide__open-item:nth-child(even) {
+    padding-left: 0;
+    padding-right: 0;
+    border-left: 0;
+  }
+
+  .au-guide__sector:nth-child(even) {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .au-guide__life {
+    gap: 2.5rem;
+  }
+
+  .au-guide__life-intro h2 {
+    font-size: clamp(2.15rem,10vw,3.2rem);
+  }
+
+  .au-guide__life .au-guide__city {
+    grid-template-columns: 2rem minmax(0,1fr) 1.2rem;
+    gap: .65rem;
+    padding: 1.25rem 0;
+  }
+
+  .au-guide__life .au-guide__city-name {
+    font-size: 1.45rem;
+  }
+
+  .au-guide__university {
+    grid-template-columns: 4.8rem minmax(0,1fr);
+    gap: .85rem;
+  }
+
+  .au-guide__university-image {
+    width: 4.8rem;
+    height: 4.4rem;
+  }
+
+  .au-guide__university-arrow {
+    grid-column: 2;
+    margin-top: -.5rem;
+  }
+
+  .au-guide__university-summary {
+    display: none;
+  }
+
+  .au-guide__cta .au-guide__button {
+    margin-top: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .au-guide__button,.au-guide__university,.au-guide__university-image img {
+    transition: none;
+  }
+}

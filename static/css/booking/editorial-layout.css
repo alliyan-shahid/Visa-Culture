@@ -1,0 +1,340 @@
+/*Booking page refinement: editorial layout instead of stacked panels*/
+
+.booking-page {
+  background: #f5f2ec;
+}
+
+.booking-page::before {
+  background-image: linear-gradient(rgba(10,77,143,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(10,77,143,.07) 1px, transparent 1px);
+  background-size: 96px 96px;
+  opacity: .2;
+}
+
+.booking-panel {
+  overflow: visible;
+  border: 0;
+  border-top: 1px solid rgba(23,21,28,.2);
+  border-bottom: 1px solid rgba(23,21,28,.2);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.booking-panel > .grid {
+  gap: clamp(2.5rem,7vw,7rem);
+}
+
+.booking-eyebrow {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  color: #0a4d8f;
+  box-shadow: none;
+}
+
+.booking-eyebrow::before {
+  content: "";
+  width: 2.6rem;
+  height: 1px;
+  background: #b08a4b;
+}
+
+.booking-title {
+  color: #17151c;
+  font-size: clamp(2.7rem,5vw,5.3rem) !important;
+  line-height: .93;
+}
+
+.booking-panel > .grid > .space-y-6 > p.max-w-xl {
+  max-width: 32rem;
+  color: #625e68;
+  line-height: 1.9;
+}
+
+.booking-chip {
+  border: 0;
+  border-bottom: 1px solid rgba(164,123,61,.45);
+  border-radius: 0;
+  padding: .45rem .1rem;
+  background: transparent;
+  color: #625e68;
+  font-size: .66rem;
+  letter-spacing: .12em;
+}
+
+.booking-info-item {
+  border: 0;
+  border-top: 1px solid rgba(23,21,28,.18);
+  border-radius: 0;
+  background: transparent;
+  padding: 1.1rem 0 !important;
+  box-shadow: none;
+}
+
+.booking-info-item p:first-child {
+  color: #17151c;
+  font-size: .85rem;
+}
+
+.booking-info-item p:last-child {
+  color: #716b72;
+  line-height: 1.65;
+}
+
+.booking-form-card {
+  border: 1px solid rgba(23,21,28,.14);
+  border-top: 3px solid #0a4d8f;
+  border-radius: 1rem;
+  background: rgba(255,255,255,.86);
+  box-shadow: 0 1.5rem 3rem rgba(23,21,28,.09);
+}
+
+.booking-form-intro {
+  margin-bottom: 1.75rem !important;
+  padding: 0 0 1.1rem !important;
+  border-bottom: 1px solid rgba(23,21,28,.14);
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #716b72;
+}
+
+.booking-form-intro p:first-child {
+  color: #17151c;
+}
+
+.booking-form-intro p:last-child {
+  color: #716b72;
+}
+
+.booking-label {
+  color: #45404a;
+  font-size: .78rem;
+  letter-spacing: .01em;
+}
+
+.booking-field {
+  border: 0;
+  border-bottom: 1px solid rgba(23,21,28,.2);
+  border-radius: 0;
+  background: transparent;
+  padding: .85rem 0;
+}
+
+.booking-field:focus {
+  border-color: #0a4d8f;
+  background: rgba(10,77,143,.035);
+  box-shadow: 0 2px 0 #0a4d8f;
+}
+
+.booking-submit {
+  border-radius: .3rem;
+  background: #0a4d8f;
+  box-shadow: none;
+}
+
+.booking-submit:hover {
+  background: #0d9488;
+  box-shadow: 0 .8rem 1.5rem rgba(10,77,143,.16);
+}
+
+.booking-step {
+  border: 0;
+  border-top: 1px solid rgba(23,21,28,.18);
+  border-radius: 0;
+  background: transparent;
+  padding: 1.25rem 0 !important;
+  box-shadow: none;
+}
+
+.booking-step h2 {
+  color: #17151c;
+  font-size: 1rem;
+}
+
+.booking-step p:last-child {
+  color: #716b72;
+  line-height: 1.65;
+}
+
+@media (max-width: 767px) {
+  .booking-shell {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  .booking-panel {
+    border-top: 0;
+  }
+
+  .booking-panel > .grid {
+    gap: 2.75rem;
+  }
+
+  .booking-title {
+    font-size: clamp(2.55rem,13vw,4rem) !important;
+  }
+
+  .booking-form-card {
+    border-radius: .8rem;
+  }
+}
+
+/*Final premium pass*/
+
+.booking-shell {
+  max-width: 86rem;
+}
+
+.booking-panel > .grid > .space-y-6 {
+  position: relative;
+  padding-left: clamp(0rem,2.5vw,2rem);
+}
+
+.booking-panel > .grid > .space-y-6::before {
+  content: "";
+  position: absolute;
+  top: .25rem;
+  bottom: .25rem;
+  left: 0;
+  width: 2px;
+  background: linear-gradient(180deg, #0a4d8f, #d5a85e 55%, transparent);
+  opacity: .75;
+}
+
+.booking-title {
+  max-width: 39rem !important;
+}
+
+.booking-title::first-line {
+  letter-spacing: -.07em;
+}
+
+.booking-panel > .grid > .space-y-6 > .flex {
+  gap: .8rem;
+}
+
+.booking-chip {
+  position: relative;
+  transition: color .25s ease, border-color .25s ease;
+}
+
+.booking-chip:hover {
+  border-color: #0d9488;
+  color: #0a4d8f;
+}
+
+.booking-info-item {
+  position: relative;
+}
+
+.booking-info-item::after {
+  content: "↗";
+  position: absolute;
+  top: 1rem;
+  right: .1rem;
+  color: #b08a4b;
+  font-size: 1rem;
+  opacity: .7;
+}
+
+.booking-form-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.booking-form-card::before {
+  content: "CONSULTATION REQUEST";
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  color: rgba(10,77,143,.45);
+  font-size: .58rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+}
+
+.booking-form-card form {
+  position: relative;
+  z-index: 1;
+}
+
+.booking-label > span {
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.booking-field::placeholder {
+  color: #9b9690;
+}
+
+.booking-submit {
+  position: relative;
+  overflow: hidden;
+  min-height: 3.4rem;
+  letter-spacing: .01em;
+}
+
+.booking-submit::after {
+  content: "↗";
+  margin-left: .5rem;
+  font-size: 1rem;
+  transition: transform .25s ease;
+}
+
+.booking-submit:hover::after {
+  transform: translate(.2rem,-.2rem);
+}
+
+.booking-step {
+  position: relative;
+  padding-left: 3.25rem !important;
+}
+
+.booking-step::before {
+  content: "01";
+  position: absolute;
+  top: 1.4rem;
+  left: 0;
+  color: #0a4d8f;
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.booking-step:nth-child(2)::before {
+  content: "02";
+}
+
+.booking-step:nth-child(3)::before {
+  content: "03";
+}
+
+.booking-step p:first-child {
+  color: #a47b3d !important;
+  font-size: .65rem;
+  letter-spacing: .18em;
+}
+
+@media (max-width: 767px) {
+  .booking-panel > .grid > .space-y-6 {
+    padding-left: 1rem;
+  }
+
+  .booking-panel > .grid > .space-y-6::before {
+    left: 0;
+  }
+
+  .booking-form-card::before {
+    position: static;
+    display: block;
+    margin-bottom: 1.1rem;
+  }
+
+  .booking-step {
+    padding-left: 2.5rem !important;
+  }
+}

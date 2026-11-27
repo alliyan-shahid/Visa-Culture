@@ -9,136 +9,23 @@
 {% with desktop_hero='images/study in canada.webp', mobile_hero='images/m study in canada.webp', desktop_ratio='1919 / 820', mobile_ratio='1086 / 1448' %}
 {% include '_destination_guide_styles.html' %}
 {% endwith %}
-<style>
-  #canada-title { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
-  .au-guide__university[id] { scroll-margin-top:5rem; }
-</style>
+{% with destination_id='canada' %}<style>
+{% include 'styles/destinations/accessibility.css.jinja' %}
+</style>{% endwith %}
 {% endblock %}
 
 {% block content %}
 <main class="au-guide">
   <div class="au-guide__shell">
-    <section class="au-guide__hero" aria-labelledby="canada-title">
-      <h1 id="canada-title">Study in Canada</h1>
-    </section>
+    {% include 'partials/destinations/canada/overview.html' %}
 
-    <section class="au-guide__section" aria-labelledby="why-canada-title">
-      <div class="au-guide__section-head">
-        <div>
-          <p class="au-guide__label">Why Canada</p>
-          <h2 id="why-canada-title" class="au-guide__heading">Find a program that fits your next step.</h2>
-        </div>
-        <p class="au-guide__section-copy">Compare universities, public colleges and polytechnics across Canada. Look at the credential, language of instruction, total cost and opportunities to gain experience.</p>
-      </div>
-      <div class="au-guide__open-grid">
-        <article class="au-guide__open-item"><span class="au-guide__index">01</span><h3>Undergraduate degrees</h3><p>Compare four-year bachelor’s programs, specialist degrees and transfer routes. Check prerequisites and how each institution assesses previous coursework.</p></article>
-        <article class="au-guide__open-item"><span class="au-guide__index">02</span><h3>Taught and research graduate programs</h3><p>Compare course-based and thesis-based master’s degrees. Research programs may ask for a proposal, a supervisor or both.</p></article>
-        <article class="au-guide__open-item"><span class="au-guide__index">03</span><h3>College and polytechnic pathways</h3><p>Explore diplomas, certificates and applied degrees. If you plan to transfer, confirm which credits are accepted. Check the exact program’s eligibility for a post-graduation work permit if that matters to you.</p></article>
-        <article class="au-guide__open-item"><span class="au-guide__index">04</span><h3>Support for international students</h3><p>Ask about orientation, academic advising, health coverage, housing support and services for students adjusting to a new campus.</p></article>
-      </div>
-    </section>
+    {% include 'partials/destinations/canada/work-and-lifestyle.html' %}
 
-    <section class="au-guide__section" aria-labelledby="education-title">
-      <div class="au-guide__section-head">
-        <div>
-          <p class="au-guide__label">Education in Canada</p>
-          <h2 id="education-title" class="au-guide__heading">Plan your application and budget.</h2>
-        </div>
-        <p class="au-guide__section-copy">Application routes vary by institution and province. Check whether you should apply directly or through a provincial service, and keep track of program and scholarship deadlines.</p>
-      </div>
-      <div class="au-guide__open-grid">
-        <article class="au-guide__open-item"><span class="au-guide__index">Admissions</span><h3>Check your academic qualifications</h3><p>Ask how the institution assesses Pakistani HSSC, A-levels or prior degrees. Check required subjects and grades, and whether you need transcripts, translations, references or a portfolio.</p></article>
-        <article class="au-guide__open-item"><span class="au-guide__index">English</span><h3>Confirm your language requirements</h3><p>Check whether the program is taught in English or French. Each institution sets its accepted proficiency tests, minimum scores and exemption rules.</p></article>
-        <article class="au-guide__open-item"><span class="au-guide__index">Tuition</span><h3>Compare international fees by program</h3><p>EduCanada reports 2026 annual average international university tuition of CAD 41,746 for undergraduates and CAD 24,028 for graduate students. Confirm your program’s tuition and compulsory fees. <a class="underline" href="https://www.educanada.ca/programs-programmes/education_cost-cout_education.aspx?lang=eng">EduCanada tuition and cost guide</a></p></article>
-        <article class="au-guide__open-item"><span class="au-guide__index">Funding</span><h3>Look for scholarships early</h3><p>Compare university entrance awards, departmental funding and graduate assistantships. Check whether you need a separate application and when funding decisions are made. <a class="underline" href="https://www.educanada.ca/scholarships-bourses/searchAll-rechercheTous.aspx?lang=eng">EduCanada scholarship search</a></p></article>
-      </div>
-    </section>
+    {% include 'partials/destinations/canada/settling.html' %}
 
-    <section class="au-guide__band" aria-labelledby="sectors-title">
-      <div class="au-guide__section-head">
-        <div>
-          <p class="au-guide__label">Work and future direction</p>
-          <h2 id="sectors-title" class="au-guide__heading">Connect your program to a career.</h2>
-        </div>
-        <p class="au-guide__section-copy">Compare co-op options and career support. Eligible graduates can apply for a post-graduation work permit (PGWP), which may last up to three years. Check the exact program’s eligibility and the language and field-of-study rules that apply to you. <a class="underline" href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation/eligibility.html">IRCC PGWP eligibility</a></p>
-      </div>
-      <div class="au-guide__sector-list">
-        <article class="au-guide__sector"><span class="au-guide__index">01</span><h3>Healthcare and life sciences</h3><p>Explore public health, biotechnology and health data. Check provincial registration requirements for regulated professions.</p></article>
-        <article class="au-guide__sector"><span class="au-guide__index">02</span><h3>Technology and computing</h3><p>Build skills in software development, data science, cybersecurity or artificial intelligence.</p></article>
-        <article class="au-guide__sector"><span class="au-guide__index">03</span><h3>Engineering and energy</h3><p>Compare programs in clean energy, infrastructure, electronics and advanced manufacturing.</p></article>
-        <article class="au-guide__sector"><span class="au-guide__index">04</span><h3>Business and finance</h3><p>Explore accounting, financial analysis, marketing, consulting or supply chain management.</p></article>
-        <article class="au-guide__sector"><span class="au-guide__index">05</span><h3>Education and research</h3><p>Explore roles in research, policy and education. Check provincial certification rules for school teaching.</p></article>
-        <article class="au-guide__sector"><span class="au-guide__index">06</span><h3>Creative industries</h3><p>Build a portfolio through practical projects in design, games, film, media or communications.</p></article>
-      </div>
-    </section>
+    {% include 'partials/destinations/canada/institutions.html' %}
 
-    <section class="au-guide__life" aria-labelledby="lifestyle-title">
-      <div class="au-guide__life-intro">
-        <p class="au-guide__label">Life in Canada</p>
-        <h2 id="lifestyle-title">Compare living costs before choosing a city.</h2>
-        <p>Budget for rent, food, transport, health coverage, winter clothing and books. For applications from 1 September 2026, a single applicant outside Québec generally needs to show CAD 23,448 for one year of living expenses, plus tuition and travel. Build your own budget from local costs. <a class="underline" href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html">IRCC financial requirements</a></p>
-        <div class="au-guide__life-note"><span>Compare campus locations</span><strong>Housing · transit · access to campus</strong></div>
-      </div>
-      <div class="au-guide__city-list">
-        <a class="au-guide__city" href="#toronto"><span class="au-guide__city-number">01</span><div><strong class="au-guide__city-name">Toronto</strong><span class="au-guide__city-tag">Ontario</span><p>The University of Toronto has campuses in Toronto and Mississauga. Compare rent and transit around the campus where you’ll study.</p></div><span class="au-guide__city-arrow" aria-hidden="true">↗</span></a>
-        <a class="au-guide__city" href="#ubc"><span class="au-guide__city-number">02</span><div><strong class="au-guide__city-name">Vancouver</strong><span class="au-guide__city-tag">British Columbia</span><p>UBC’s Vancouver campus is west of the city centre. Compare campus housing with neighbourhoods along bus routes.</p></div><span class="au-guide__city-arrow" aria-hidden="true">↗</span></a>
-        <a class="au-guide__city" href="#mcgill"><span class="au-guide__city-number">03</span><div><strong class="au-guide__city-name">Montréal</strong><span class="au-guide__city-tag">Québec</span><p>McGill offers English-language programs. Consider how French may be useful for daily life and local employment.</p></div><span class="au-guide__city-arrow" aria-hidden="true">↗</span></a>
-        <a class="au-guide__city" href="#waterloo"><span class="au-guide__city-number">04</span><div><strong class="au-guide__city-name">Waterloo</strong><span class="au-guide__city-tag">Ontario</span><p>Compare university residences and rentals near campus. If you choose co-op, budget for possible travel or temporary housing during placements.</p></div><span class="au-guide__city-arrow" aria-hidden="true">↗</span></a>
-      </div>
-    </section>
-
-    <section class="au-guide__section au-guide__settle" aria-labelledby="settling-title">
-      <div class="au-guide__settle-intro">
-        <div>
-          <p class="au-guide__label">Study permit and arrival</p>
-          <h2 id="settling-title" class="au-guide__heading">Prepare for your study permit and arrival.</h2>
-          <p>Most international students need a Canadian study permit for a degree or diploma. Check the application instructions and the documents required for your circumstances. <a class="underline" href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit.html">IRCC study permit guide</a></p>
-        </div>
-        <div class="au-guide__settle-route">
-          <div><span>Admission</span><strong>Get your acceptance letter</strong></div>
-          <div><span>Permit</span><strong>Apply for your permit</strong></div>
-          <div><span>Arrival</span><strong>Check your entry documents</strong></div>
-        </div>
-      </div>
-      <div class="au-guide__settle-list">
-        <div class="au-guide__settle-row"><span>01</span><div><h3>Get accepted by a designated learning institution</h3><p>Obtain a letter of acceptance from a designated learning institution (DLI). Check the school and program details before paying a deposit.</p></div></div>
-        <div class="au-guide__settle-row"><span>02</span><div><h3>Check attestation requirements</h3><p>Check whether you need a provincial or territorial attestation letter (PAL or TAL). If you’re studying in Québec, check the Québec Acceptance Certificate (CAQ) rules and any exemptions. <a class="underline" href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents.html">IRCC document checklist</a></p></div></div>
-        <div class="au-guide__settle-row"><span>03</span><div><h3>Show how you’ll pay</h3><p>Prepare evidence that you can cover tuition, living costs and transportation without relying on work in Canada. Québec sets separate financial requirements. <a class="underline" href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html">IRCC proof of funds guide</a></p></div></div>
-        <div class="au-guide__settle-row"><span>04</span><div><h3>Apply online and prepare to travel</h3><p>Check whether you need biometrics, an immigration medical exam or extra documents. If you’re approved from outside Canada, bring your port of entry letter and the required travel documents so an officer can assess your entry and issue your permit.</p></div></div>
-        <div class="au-guide__settle-row"><span>05</span><div><h3>Follow your work conditions</h3><p>Eligible students can usually work off campus up to 24 hours per week during regular academic sessions. Check your permit conditions and the separate rules for school-approved placements. <a class="underline" href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/work-off-campus.html">IRCC off-campus work rules</a></p></div></div>
-      </div>
-    </section>
-
-    <section id="network" class="au-guide__network" aria-labelledby="network-title">
-      <div class="au-guide__section-head">
-        <div>
-          <p class="au-guide__label">University network</p>
-          <h2 id="network-title" class="au-guide__heading">Six leading Canadian universities to explore.</h2>
-        </div>
-        <p class="au-guide__section-copy">Visit each university’s official website to explore its programs, campus life and admissions information.</p>
-      </div>
-      <div class="au-guide__network-list">
-        {% for university in universities %}
-        <a id="{{ university.id }}" class="au-guide__university" href="{{ university.url }}" aria-label="{{ university.name }} official website">
-          <div>
-            <span class="au-guide__university-meta">{{ university.category }} · {{ university.region }}</span>
-            <h3 class="au-guide__university-name">{{ university.name }}</h3>
-            <p class="au-guide__university-summary">{{ university.summary }}</p>
-          </div>
-          <span class="au-guide__university-arrow" aria-hidden="true">↗</span>
-        </a>
-        {% endfor %}
-      </div>
-    </section>
-
-    <section class="au-guide__cta" aria-label="Canada destination consultation">
-      <div>
-        <p class="au-guide__label">Your Canada plan</p>
-        <h2>Build your Canadian study plan.</h2>
-        <p>Bring your academic records, intended credential, language test results and budget. We’ll help you shortlist programs and map out your application timeline.</p>
-      </div>
-      <a class="au-guide__button" href="{{ url_for('booking_page') }}">Start a consultation <span aria-hidden="true">&nbsp;↗</span></a>
-    </section>
+    {% include 'partials/destinations/canada/consultation.html' %}
   </div>
 </main>
 {% endblock %}

@@ -1,0 +1,60 @@
+/*Stats Section*/
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.15rem;
+  margin-top: 1.75rem;
+}
+
+@media (min-width: 1024px) {
+  .hero-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.hero-stat-card {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-left: 4px solid rgba(37, 99, 235, 0.9);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  backdrop-filter: blur(16px);
+  min-height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-stat-value {
+  font-size: 1.95rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.hero-stat-label {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 0.6rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.university-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.university-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 75px rgba(15, 23, 42, 0.18);
+}
+
+.university-card .card-badge {
+  transition: transform 0.35s ease;
+}
+
+.university-card:hover .card-badge {
+  transform: translateY(-2px);
+}

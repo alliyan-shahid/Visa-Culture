@@ -1,0 +1,18 @@
+/*RESPONSIVE DESIGN - DESKTOP-FIRST APPROACH
+   
+   This file ONLY adds media queries for tablet and mobile.
+   All desktop styles remain untouched.
+   
+   Breakpoints:
+   - Desktop: No media query (existing styles apply)
+   - Tablet: max-width: 1024px
+   - Mobile: max-width: 767px*/
+
+/*============================================================
+   MOBILE VIEWPORT FIX
+   ============================================================*/
+
+@viewport {
+  width: device-width;
+  zoom: 1;
+}

@@ -9,151 +9,23 @@
 {% with desktop_hero='images/study in europe.webp', mobile_hero='images/m study in europe.webp', desktop_ratio='1918 / 820', mobile_ratio='1086 / 1448' %}
 {% include '_destination_guide_styles.html' %}
 {% endwith %}
-<style>
-  #europe-title { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
-  .au-guide__university[id] { scroll-margin-top:5rem; }
-</style>
+{% with destination_id='europe' %}<style>
+{% include 'styles/destinations/accessibility.css.jinja' %}
+</style>{% endwith %}
 {% endblock %}
 
 {% block content %}
 <main class="au-guide">
   <div class="au-guide__shell">
-    <section class="au-guide__hero" aria-labelledby="europe-title">
-      <h1 id="europe-title">Study in Europe</h1>
-    </section>
+    {% include 'partials/destinations/europe/overview.html' %}
 
-    <section class="au-guide__section" aria-labelledby="why-europe-title">
-      <div class="au-guide__section-head">
-        <div>
-          <p class="au-guide__label">Why Europe</p>
-          <h2 id="why-europe-title" class="au-guide__heading">Find a country that fits your study plans.</h2>
-        </div>
-        <p class="au-guide__section-copy">Compare degree options, teaching languages, costs and student residence rules before choosing where to apply.</p>
-      </div>
-      <div class="au-guide__open-grid">
-        <article class="au-guide__open-item"><span class="au-guide__index">01</span><h3>Undergraduate degrees</h3><p>Check degree length, entry qualifications and whether your programme leads to professional recognition in the country where you plan to work.</p></article>
-        <article class="au-guide__open-item"><span class="au-guide__index">02</span><h3>Taught and research postgraduate programmes</h3><p>Compare taught and research degrees. Some joint programmes let you study at institutions in more than one country.</p></article>
-        <article class="au-guide__open-item"><span class="au-guide__index">03</span><h3>Research and applied learning</h3><p>Compare research universities, universities of applied sciences and specialist schools. Check whether the programme includes a placement, laboratory work or a research project.</p></article>
-        <article class="au-guide__open-item"><span class="au-guide__index">04</span><h3>Support for international students</h3><p>Ask about orientation, academic support, housing guidance and language classes before accepting an offer.</p></article>
-      </div>
-    </section>
+    {% include 'partials/destinations/europe/work-and-lifestyle.html' %}
 
-    <section class="au-guide__section" aria-labelledby="education-title">
-      <div class="au-guide__section-head">
-        <div>
-          <p class="au-guide__label">Education in Europe</p>
-          <h2 id="education-title" class="au-guide__heading">Plan your applications and budget.</h2>
-        </div>
-        <p class="au-guide__section-copy">Check each country’s application route. Some programmes accept applications directly while others use a national or central portal. <a class="underline" href="https://education.ec.europa.eu/study-in-europe/country-profiles">European Commission country profiles</a></p>
-      </div>
-      <div class="au-guide__open-grid">
-        <article class="au-guide__open-item"><span class="au-guide__index">Admissions</span><h3>Check your academic qualifications</h3><p>Ask how the institution assesses Pakistani HSSC, A-levels or previous degrees. Check whether you need certified translations, subject prerequisites or a credential evaluation.</p></article>
-        <article class="au-guide__open-item"><span class="au-guide__index">Language</span><h3>Confirm the teaching language</h3><p>Check the language of the entire degree and what proof of proficiency the institution accepts. For placements, ask whether the local language is required.</p></article>
-        <article class="au-guide__open-item"><span class="au-guide__index">Tuition</span><h3>Compare tuition for international students</h3><p>Many German public programmes charge little or no tuition, though exceptions and semester contributions apply. Countries such as Hungary and Sweden generally charge tuition to non-EU degree students. Use the exact programme fee in your budget. <a class="underline" href="https://education.ec.europa.eu/news/tuition-fees-at-european-universities">European tuition guide</a></p></article>
-        <article class="au-guide__open-item"><span class="au-guide__index">Funding</span><h3>Look for scholarships early</h3><p>Compare institutional and national awards with Erasmus Mundus Joint Masters scholarships. Check eligibility, application deadlines and which costs the award covers. <a class="underline" href="https://erasmus-plus.ec.europa.eu/opportunities/individuals/students/erasmus-mundus-joint-masters">Erasmus Mundus Joint Masters</a></p></article>
-      </div>
-    </section>
+    {% include 'partials/destinations/europe/settling.html' %}
 
-    <section class="au-guide__band" aria-labelledby="sectors-title">
-      <div class="au-guide__section-head">
-        <div>
-          <p class="au-guide__label">Work and future direction</p>
-          <h2 id="sectors-title" class="au-guide__heading">Connect your programme to a career.</h2>
-        </div>
-        <p class="au-guide__section-copy">Compare placement options, local language expectations and employer links. Permission to work during your studies or stay after graduation depends on the destination and your immigration status. <a class="underline" href="https://immigration-portal.ec.europa.eu/">EU Immigration Portal</a></p>
-      </div>
-      <div class="au-guide__sector-list">
-        <article class="au-guide__sector"><span class="au-guide__index">01</span><h3>Healthcare and life sciences</h3><p>Explore biotechnology, public health and biomedical research. Check local language and registration requirements for clinical roles.</p></article>
-        <article class="au-guide__sector"><span class="au-guide__index">02</span><h3>Technology and computing</h3><p>Compare programmes in software development, data science, cybersecurity and artificial intelligence.</p></article>
-        <article class="au-guide__sector"><span class="au-guide__index">03</span><h3>Engineering and energy</h3><p>Look for laboratories and industry placements in manufacturing, renewable energy, transport and infrastructure.</p></article>
-        <article class="au-guide__sector"><span class="au-guide__index">04</span><h3>Business and finance</h3><p>Compare programmes in finance, management, marketing, logistics and supply chain management.</p></article>
-        <article class="au-guide__sector"><span class="au-guide__index">05</span><h3>Education and research</h3><p>Explore doctoral study, research roles and education. Check the local language and qualification requirements for teaching.</p></article>
-        <article class="au-guide__sector"><span class="au-guide__index">06</span><h3>Creative industries</h3><p>Build a portfolio through practical work in architecture, design, games, film or communications.</p></article>
-      </div>
-    </section>
+    {% include 'partials/destinations/europe/institutions.html' %}
 
-    <section class="au-guide__life" aria-labelledby="lifestyle-title">
-      <div class="au-guide__life-intro">
-        <p class="au-guide__label">Life in Europe</p>
-        <h2 id="lifestyle-title">Build a budget for the city where you’ll study.</h2>
-        <p>Compare rent, deposits, utilities, food, transport and health coverage. Ask the institution for its local cost estimate and check the separate proof-of-funds requirement for your visa or residence permit.</p>
-        <div class="au-guide__life-note"><span>Compare campus locations</span><strong>Housing · transit · access to campus</strong></div>
-      </div>
-      <div class="au-guide__city-list">
-        <a class="au-guide__city" href="#germany"><span class="au-guide__city-number">01</span><div><strong class="au-guide__city-name">Berlin</strong><span class="au-guide__city-tag">Germany</span><p>Compare student residences and private rentals. Check travel time from available housing to your campus.</p></div><span class="au-guide__city-arrow" aria-hidden="true">↗</span></a>
-        <a class="au-guide__city" href="#france"><span class="au-guide__city-number">02</span><div><strong class="au-guide__city-name">Paris</strong><span class="au-guide__city-tag">France</span><p>Compare student residences, shared rentals and suburbs on your transit route. Include deposits and transport in your first-month budget.</p></div><span class="au-guide__city-arrow" aria-hidden="true">↗</span></a>
-        <a class="au-guide__city" href="#hungary"><span class="au-guide__city-number">03</span><div><strong class="au-guide__city-name">Budapest</strong><span class="au-guide__city-tag">Hungary</span><p>Compare university dormitories and private rentals. Check public transport routes between your accommodation and campus.</p></div><span class="au-guide__city-arrow" aria-hidden="true">↗</span></a>
-        <a class="au-guide__city" href="#italy"><span class="au-guide__city-number">04</span><div><strong class="au-guide__city-name">Milan</strong><span class="au-guide__city-tag">Italy</span><p>Compare university accommodation with private rooms. Budget for the deposit, utilities and public transport.</p></div><span class="au-guide__city-arrow" aria-hidden="true">↗</span></a>
-      </div>
-    </section>
-
-    <section class="au-guide__section" aria-labelledby="schengen-title">
-      <div class="au-guide__section-head">
-        <div>
-          <p class="au-guide__label">The Schengen Area</p>
-          <h2 id="schengen-title" class="au-guide__heading">Study in one country and visit others.</h2>
-        </div>
-        <p class="au-guide__section-copy">All six destinations on this page are in the Schengen Area. If you hold a valid long-stay visa or residence permit issued by a Schengen country, you can generally visit other Schengen countries for short stays, subject to entry conditions. <a class="underline" href="https://home-affairs.ec.europa.eu/policies/schengen/schengen-area_en">European Commission Schengen guide</a></p>
-      </div>
-      <div class="au-guide__open-grid">
-        <article class="au-guide__open-item"><h3>Plan trips during study breaks</h3><p>A student based in Hungary could visit Austria or Germany during a break. Check entry conditions and carry your passport and valid visa or residence permit.</p></article>
-        <article class="au-guide__open-item"><h3>Count 90 days in any 180-day period</h3><p>For short visits, count the days you spend across other Schengen countries together. <a class="underline" href="https://home-affairs.ec.europa.eu/policies/schengen/border-crossing/short-stay-calculator_en">European Commission short-stay calculator</a></p></article>
-        <article class="au-guide__open-item"><h3>Apply through your study destination</h3><p>For a degree or other long stay, follow the visa and residence rules of the country where you will study.</p></article>
-        <article class="au-guide__open-item"><h3>Check rules before studying or working elsewhere</h3><p>A second country can require its own authorisation for work, study or a longer stay. If you plan an exchange, ask your institution whether student mobility rules apply. <a class="underline" href="https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/already-eu_en">EU guidance on moving between countries</a></p></article>
-      </div>
-    </section>
-
-    <section class="au-guide__section au-guide__settle" aria-labelledby="settling-title">
-      <div class="au-guide__settle-intro">
-        <div>
-          <p class="au-guide__label">Student visas and arrival</p>
-          <h2 id="settling-title" class="au-guide__heading">Check the rules for your destination.</h2>
-          <p>Pakistani applicants should confirm long-stay study requirements with the destination’s consulate or immigration authority. The required visa or permit and the order of steps vary by country. <a class="underline" href="https://immigration-portal.ec.europa.eu/">EU Immigration Portal</a></p>
-        </div>
-        <div class="au-guide__settle-route">
-          <div><span>Admission</span><strong>Get your admission documents</strong></div>
-          <div><span>Visa or permit</span><strong>Apply for the right visa or permit</strong></div>
-          <div><span>Arrival</span><strong>Complete local registration</strong></div>
-        </div>
-      </div>
-      <div class="au-guide__settle-list">
-        <div class="au-guide__settle-row"><span>01</span><div><h3>Confirm your admission</h3><p>Check that your institution and course qualify for the relevant student route. Ask the institution which admission documents it issues for your application.</p></div></div>
-        <div class="au-guide__settle-row"><span>02</span><div><h3>Check the destination’s document list</h3><p>Confirm which forms, passport documents, biometrics, translations and appointments you need. Check the consulate’s instructions for applicants in Pakistan.</p></div></div>
-        <div class="au-guide__settle-row"><span>03</span><div><h3>Prepare your financial evidence</h3><p>Check the required amount and accepted evidence. You may need to show bank funds, sponsorship, a scholarship or a blocked account, depending on the destination.</p></div></div>
-        <div class="au-guide__settle-row"><span>04</span><div><h3>Plan housing, insurance and arrival</h3><p>Arrange accommodation and check insurance requirements. Confirm whether you need to register your address or collect a residence permit after arrival.</p></div></div>
-        <div class="au-guide__settle-row"><span>05</span><div><h3>Check work conditions before accepting a job</h3><p>Look up the rules for part-time work, internships and post-study residence in your destination. Ask your institution who can help you check your conditions.</p></div></div>
-      </div>
-    </section>
-
-    <section id="network" class="au-guide__network" aria-labelledby="network-title">
-      <div class="au-guide__section-head">
-        <div>
-          <p class="au-guide__label">Study destinations</p>
-          <h2 id="network-title" class="au-guide__heading">Six leading European study destinations.</h2>
-        </div>
-        <p class="au-guide__section-copy">Open each country’s official study guide to compare programmes, costs and application routes.</p>
-      </div>
-      <div class="au-guide__network-list">
-        {% for country in countries %}
-        <a id="{{ country.id }}" class="au-guide__university" href="{{ country.url }}" aria-label="Study in {{ country.name }} official guide">
-          <div>
-            <h3 class="au-guide__university-name">{{ country.name }}</h3>
-            <p class="au-guide__university-summary">{{ country.summary }}</p>
-          </div>
-          <span class="au-guide__university-arrow" aria-hidden="true">↗</span>
-        </a>
-        {% endfor %}
-      </div>
-    </section>
-
-    <section class="au-guide__cta" aria-label="Europe destination consultation">
-      <div>
-        <p class="au-guide__label">Your Europe plan</p>
-        <h2>Build your European study plan.</h2>
-        <p>Bring your academic records, intended degree, language test results and budget. We’ll help you shortlist destinations and map out your applications.</p>
-      </div>
-      <a class="au-guide__button" href="{{ url_for('booking_page') }}">Start a consultation <span aria-hidden="true">&nbsp;↗</span></a>
-    </section>
+    {% include 'partials/destinations/europe/consultation.html' %}
   </div>
 </main>
 {% endblock %}

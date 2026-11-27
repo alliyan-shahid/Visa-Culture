@@ -1,0 +1,85 @@
+<section class="hero-section text-white relative overflow-hidden">
+  <div class="absolute inset-0">
+      <picture class="block w-full h-full">
+        <source media="(max-width: 640px)" srcset="{{ url_for('static', filename='images/m hero melbourne.webp') }}" type="image/webp">
+        <source srcset="{{ url_for('static', filename='images/hero melbourne.webp') }}" type="image/webp">
+        <img src="{{ url_for('static', filename='images/hero melbourne.webp') }}" alt="University of Melbourne hero" class="w-full h-full object-cover"  loading="eager" fetchpriority="high" decoding="async">
+      </picture>
+    </div>
+  <div class="absolute inset-0 bg-slate-950/45 hidden lg:block">
+  </div>
+  <div class="relative max-w-7xl mx-auto px-6">
+    <div class="grid gap-10 lg:grid-cols-[1.3fr_0.9fr] items-center h-full">
+      <div class="flex flex-col justify-center">
+        <div class="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm uppercase tracking-[0.28em] text-slate-200 w-fit">World-Class Campus</div>
+        <h1 class="mt-8 font-black leading-tight">Study at the <span class="hero-highlight">University of Melbourne</span> from Pakistan</h1>
+        <p class="mt-6 max-w-2xl text-lg text-slate-200">Melbourne combines academic excellence with cultural diversity for Pakistani students seeking global recognition and a vibrant city experience.</p>
+        <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+            <a href="#final-cta" class="accent-btn inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-semibold shadow-lg shadow-sky-400/20">Start Your Melbourne Journey</a>
+            <a href="#why" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-8 py-4 text-sm text-white transition hover:bg-white/15">See Study Benefits</a>
+          </div>
+      </div>
+      <div class="hero-grid-right space-y-4">
+        <div class="section-card rounded-3xl p-8">
+            <span class="text-sm uppercase tracking-[0.2em] text-slate-300">Why Melbourne</span>
+            <h2 class="mt-4 text-3xl font-bold">Academic strength, global reach</h2>
+          <p class="mt-3 text-slate-300">Top-ranked university with exceptional research and strong employment outcomes.</p>
+        </div>
+        <div class="section-card rounded-3xl p-8">
+            <span class="text-sm uppercase tracking-[0.2em] text-slate-300">Scholarship opportunity</span>
+            <h2 class="mt-4 text-3xl font-bold">Merit-based funding available</h2>
+          <p class="mt-3 text-slate-300">Melbourne offers scholarships to talented international students to support your studies.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="premium-section relative py-12 lg:py-16">
+  <div class="mx-auto max-w-7xl px-6 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-14 items-center">
+      <div class="mel-reveal space-y-6">
+        <div>
+          <p class="premium-subtitle">Why Choose Melbourne</p>
+          <h2 class="premium-title">World-class education designed for ambitious students</h2>
+        </div>
+        <p class="mel-copy text-lg">University of Melbourne is a premier destination for Pakistani students seeking academic excellence, confident career outcomes, and a global community that supports long-term success.</p>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="luxury-card">
+            <div class="luxury-card-icon">&#127942;</div>
+            <h3 class="luxury-card-title">Global Reputation</h3>
+            <p class="luxury-card-text">Ranked among the world's top institutions with widely respected degrees across sectors.</p>
+          </div>
+          <div class="luxury-card">
+            <div class="luxury-card-icon">&#128300;</div>
+            <h3 class="luxury-card-title">Research Leadership</h3>
+            <p class="luxury-card-text">Advance knowledge through high-impact research and innovation partnerships.</p>
+          </div>
+          <div class="luxury-card">
+            <div class="luxury-card-icon">&#128188;</div>
+            <h3 class="luxury-card-title">Graduate Success</h3>
+            <p class="luxury-card-text">Top employment outcomes and industry pathways for global career launches.</p>
+          </div>
+          <div class="luxury-card">
+            <div class="luxury-card-icon">&#127757;</div>
+            <h3 class="luxury-card-title">International Network</h3>
+            <p class="luxury-card-text">A community spanning 185+ countries, including strong connections in Pakistan.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mel-reveal">
+        <div class="relative group">
+          <div class="absolute inset-0 rounded-[2rem] bg-transparent">
+          </div>
+            <picture>
+              <source media="(max-width: 640px)" srcset="{{ url_for('static', filename='images/M Melbourne 1.webp') }}" type="image/webp">
+              <source srcset="{{ url_for('static', filename='images/Melbourne 1.webp') }}" type="image/webp">
+              <img src="{{ url_for('static', filename='images/Melbourne 1.webp') }}" alt="International students on campus" loading="lazy" decoding="async" style="border-radius:2rem !important; overflow:hidden; clip-path:inset(0 round 2rem);" class="relative rounded-[2rem] object-cover w-full h-[500px] lg:h-[500px] shadow-none border-0">
+            </picture>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>

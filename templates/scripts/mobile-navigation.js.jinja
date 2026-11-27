@@ -1,0 +1,101 @@
+
+        (function () {
+            document.body.classList.add('enhanced-nav-ready');
+
+            const mobileTopNavbar = document.querySelector('.mobile-top-navbar');
+            const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+            const mobileNavMoreBtn = document.getElementById('mobileNavMore');
+            const mobileNavMoreMenu = document.getElementById('mobileNavMoreMenu');
+            const mobileNavDestBtn = document.getElementById('mobileNavDestinations');
+            const mobileNavDestMenu = document.getElementById('mobileNavDestinationsMenu');
+            const moreMenuPaths = [];
+
+            if (!mobileTopNavbar || !mobileNavItems.length) return;
+
+            function setMobileNavActive(navName) {
+                mobileNavItems.forEach(item => {
+                    const itemNav = item.getAttribute('data-nav');
+                    if (itemNav === navName) item.classList.add('mobile-nav-active');
+                    else item.classList.remove('mobile-nav-active');
+                });
+            }
+
+            function closeMoreMenu() { mobileNavMoreMenu?.classList.remove('is-open'); mobileNavMoreBtn?.setAttribute('aria-expanded', 'false'); }
+            function openMoreMenu() { mobileNavMoreMenu?.classList.add('is-open'); mobileNavMoreBtn?.setAttribute('aria-expanded', 'true'); }
+            function closeDestinationsMenu() { mobileNavDestMenu?.classList.remove('is-open'); mobileNavDestBtn?.setAttribute('aria-expanded', 'false'); }
+            function openDestinationsMenu() { closeMoreMenu(); mobileNavDestMenu?.classList.add('is-open'); mobileNavDestBtn?.setAttribute('aria-expanded', 'true'); setMobileNavActive('destinations'); }
+
+            const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
+            if (currentPath.startsWith('/universities') || currentPath.startsWith('/australia') || [{{ url_for('usa_destination')|tojson }}, {{ url_for('uk_destination')|tojson }}, {{ url_for('canada_destination')|tojson }}, {{ url_for('europe_destination')|tojson }}, {{ url_for('more_destinations')|tojson }}].includes(currentPath)) setMobileNavActive('home');
+            else if (currentPath.startsWith('/booking')) setMobileNavActive('booking');
+            else if (moreMenuPaths.includes(currentPath)) setMobileNavActive('more');
+            else setMobileNavActive('home');
+
+            if (window.innerWidth <= 1024) {
+                let lastScrollTop = 0;
+                window.addEventListener('scroll', function () {
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const isTabletNav = window.innerWidth >= 768;
+                    if (scrollTop > lastScrollTop && scrollTop > 100) {
+                        mobileTopNavbar.style.opacity = '0';
+                        mobileTopNavbar.style.pointerEvents = 'none';
+                        mobileTopNavbar.style.transform = isTabletNav ? 'translateX(-50%) translateY(-120%)' : 'translateY(-100%)';
+                        closeMoreMenu();
+                    } else {
+                        mobileTopNavbar.style.opacity = '1';
+                        mobileTopNavbar.style.pointerEvents = 'auto';
+                        mobileTopNavbar.style.transform = isTabletNav ? 'translateX(-50%) translateY(0)' : 'translateY(0)';
+                    }
+                    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+                }, false);
+            }
+
+            mobileNavMoreBtn?.addEventListener('click', function (e) {
+                e.preventDefault(); e.stopPropagation();
+                closeDestinationsMenu();
+                if (mobileNavMoreMenu?.classList.contains('is-open')) closeMoreMenu();
+                else { openMoreMenu(); setMobileNavActive('more'); }
+            });
+
+            mobileNavDestBtn?.addEventListener('click', function (e) {
+                e.preventDefault(); e.stopPropagation();
+                if (mobileNavDestMenu?.classList.contains('is-open')) closeDestinationsMenu();
+                else openDestinationsMenu();
+            });
+
+            mobileNavMoreMenu?.querySelectorAll('.more-menu-accordion__trigger').forEach(function (trigger) {
+                trigger.addEventListener('click', function (e) {
+                    e.preventDefault(); e.stopPropagation();
+                    const group = trigger.closest('.more-menu-accordion');
+                    if (!group) return;
+                    const willOpen = !group.classList.contains('is-open');
+                    mobileNavMoreMenu.querySelectorAll('.more-menu-accordion.is-open').forEach(function (openGroup) {
+                        if (openGroup !== group) {
+                            openGroup.classList.remove('is-open');
+                            openGroup.querySelector('.more-menu-accordion__trigger')?.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                    group.classList.toggle('is-open', willOpen);
+                    trigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+                });
+            });
+
+            document.addEventListener('click', function (e) { if (!e.target.closest('.mobile-nav-more-wrap')) closeMoreMenu(); if (!e.target.closest('.mobile-nav-destination-wrap')) closeDestinationsMenu(); });
+            document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeMoreMenu(); closeDestinationsMenu(); } });
+
+            mobileNavItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    const navName = this.getAttribute('data-nav');
+                    if (navName && navName !== 'more' && navName !== 'destinations') { closeMoreMenu(); closeDestinationsMenu(); setMobileNavActive(navName); }
+                });
+            });
+
+            window.addEventListener('scroll', () => {
+                const scrollPath = window.location.pathname.replace(/\/+$/, '') || '/';
+                if (scrollPath.startsWith('/universities') || scrollPath.startsWith('/australia') || [{{ url_for('usa_destination')|tojson }}, {{ url_for('uk_destination')|tojson }}, {{ url_for('canada_destination')|tojson }}, {{ url_for('europe_destination')|tojson }}, {{ url_for('more_destinations')|tojson }}].includes(scrollPath)) setMobileNavActive('home');
+                else if (scrollPath.startsWith('/booking')) setMobileNavActive('booking');
+                else if (moreMenuPaths.includes(scrollPath)) setMobileNavActive('more');
+                else if (window.scrollY < 120) setMobileNavActive('home');
+            });
+        })();
+    

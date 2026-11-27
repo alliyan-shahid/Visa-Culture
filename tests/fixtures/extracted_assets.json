@@ -1,0 +1,74 @@
+[
+  {
+    "file": "js/home/mobile-content.js",
+    "replacement": "<script src=\"/static/js/home/mobile-content.js\"></script>",
+    "opening": "<script>",
+    "closing": "</script>"
+  },
+  {
+    "file": "js/home/services.js",
+    "replacement": "<script src=\"/static/js/home/services.js\"></script>",
+    "opening": "<script>",
+    "closing": "</script>"
+  },
+  {
+    "file": "js/home/budget-guidance.js",
+    "replacement": "<script src=\"/static/js/home/budget-guidance.js\"></script>",
+    "opening": "<script>",
+    "closing": "</script>"
+  },
+  {
+    "file": "js/home/hero-carousel.js",
+    "replacement": "<script src=\"/static/js/home/hero-carousel.js\"></script>",
+    "opening": "<script>",
+    "closing": "</script>"
+  },
+  {
+    "file": "css/pages/home.css",
+    "replacement": "<link rel=\"stylesheet\" href=\"/static/css/pages/home.css\">",
+    "opening": "<style>",
+    "closing": "</style>"
+  },
+  {
+    "file": "js/layout/contact-widgets.js",
+    "replacement": "<script src=\"/static/js/layout/contact-widgets.js\"></script>",
+    "opening": "<script>",
+    "closing": "</script>"
+  },
+  {
+    "replacement": "<script src=\"/static/js/layout/text-formatting.js\"></script><script src=\"/static/js/layout/page-controls.js\"></script><script src=\"/static/js/layout/scroll-reveals.js\"></script><script src=\"/static/js/layout/hero-text.js\"></script><script src=\"/static/js/layout/expandable-content.js\"></script>",
+    "opening": "<script>",
+    "closing": "</script>",
+    "files": [
+      "js/layout/text-formatting.js",
+      "js/layout/page-controls.js",
+      "js/layout/scroll-reveals.js",
+      "js/layout/hero-text.js",
+      "js/layout/expandable-content.js"
+    ]
+  },
+  {
+    "file": "css/layout-overrides.css",
+    "replacement": "<link rel=\"stylesheet\" href=\"/static/css/layout-overrides.css\">",
+    "opening": "<style>",
+    "closing": "</style>"
+  },
+  {
+    "file": "js/booking.js",
+    "replacement": "<script src=\"/static/js/booking.js\"></script>",
+    "opening": "<script>",
+    "closing": "</script>"
+  },
+  {
+    "file": "css/pages/booking.css",
+    "replacement": "<link rel=\"stylesheet\" href=\"/static/css/pages/booking.css\">",
+    "opening": "<style>",
+    "closing": "</style>"
+  },
+  {
+    "file": "js/university-interactions.js",
+    "replacement": "<script src=\"/static/js/university-interactions.js\"></script>",
+    "opening": "<script>",
+    "closing": "</script>"
+  }
+]

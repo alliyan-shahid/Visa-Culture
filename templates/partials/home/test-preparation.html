@@ -1,0 +1,15 @@
+<section id="ielts-pte" class="bg-white py-20">
+  <div class="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
+    <div>
+      <p class="text-sm uppercase tracking-[0.28em] text-primary">IELTS &amp; PTE preparation</p>
+      <h2 class="mt-4 text-4xl font-bold leading-tight text-slate-950">IELTS and PTE preparation in Sheikhupura</h2>
+      <p class="mt-5 max-w-xl text-base leading-8 text-slate-600">Prepare for IELTS or PTE through in-person classes at Visa Culture, with structured practice, timed mock tests and individual feedback.</p>
+      <p class="mt-4 max-w-xl text-sm leading-7 text-slate-500">Build listening, reading, writing and speaking skills through guided practice. General and spoken-English training is included in preparation and available separately in person on request, with no IELTS or PTE enrolment required.</p>
+            <a href="{{ url_for('booking_page') }}" class="mt-8 inline-flex items-center justify-center rounded-full bg-primary px-8 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-slate-900">Start IELTS/PTE Preparation <span class="ml-2" aria-hidden="true">↗</span></a>
+        </div>
+    <div class="ielts-pte__features">
+      <div class="ielts-pte__features-heading"><span>Inside the classroom</span><strong>A clear learning system for steady progress.</strong></div>
+      <div class="grid gap-x-8 sm:grid-cols-2">{% for item in ['Expert-led instruction','Updated course material','Complete skill development','Timed mock tests','Individual feedback','Progress tracking'] %}<div class="ielts-pte__feature border-b border-slate-200 py-5 text-sm font-semibold text-slate-950"><span class="mr-3 text-primary">0{{ loop.index }}</span>{{ item }}</div>{% endfor %}</div>
+    </div>
+  </div>
+</section>

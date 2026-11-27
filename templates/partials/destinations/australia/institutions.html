@@ -1,0 +1,13 @@
+<section id="network" class="au-guide__network" aria-labelledby="network-title">
+  <div class="au-guide__section-head">
+    <div>
+      <p class="au-guide__label">University network</p>
+      <h2 id="network-title" class="au-guide__heading">Six leading university guides to begin your search.</h2>
+    </div>
+    <p class="au-guide__section-copy">Explore each profile for its academic focus, city, tuition direction, intakes and student-fit notes. Your final choice should be based on the complete picture—not a single ranking.</p>
+  </div>
+  <div class="au-guide__network-list">{% for university in universities %}<a class="au-guide__university" href="{{ university.url }}" aria-label="Open guide for {{ university.name }}"><div class="au-guide__university-image"><img src="{{ url_for('static', filename=university.image) }}" alt="{{ university.name }} campus" loading="lazy" decoding="async"></div>
+    <div><span class="au-guide__university-meta">{{ university.category }} · {{ university.region }}</span><h3 class="au-guide__university-name">{{ university.name }}</h3>
+      <p class="au-guide__university-summary">{{ university.summary }}</p>
+    </div><span class="au-guide__university-arrow" aria-hidden="true">↗</span></a>{% endfor %}</div>
+</section>

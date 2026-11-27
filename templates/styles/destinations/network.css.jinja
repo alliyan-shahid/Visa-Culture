@@ -1,0 +1,207 @@
+/*University network follows the homepage destination composition: one featured guide plus an open image list.*/
+
+.au-guide__network {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-top: 0;
+  padding: clamp(3.5rem,7vw,6.5rem) max(1.1rem,calc((100vw - 78rem) / 2 + 3rem));
+  border-top: 0;
+  background: #15131b;
+  color: #fff;
+}
+
+.au-guide__network .au-guide__section-head {
+  border-bottom-color: rgba(255,255,255,.2);
+}
+
+.au-guide__network .au-guide__label,.au-guide__network .au-guide__university-meta {
+  color: #d5a85e;
+}
+
+.au-guide__network .au-guide__heading {
+  color: #fff;
+}
+
+.au-guide__network .au-guide__section-copy {
+  color: #bcb7c1;
+}
+
+.au-guide__network-list {
+  display: grid;
+  grid-template-columns: minmax(0,.92fr) minmax(0,1.08fr);
+  gap: clamp(2rem,5vw,4.5rem);
+  margin-top: 2rem;
+  border-top: 0;
+}
+
+.au-guide__network .au-guide__university {
+  color: #fff;
+  border-bottom-color: rgba(255,255,255,.2);
+}
+
+.au-guide__network .au-guide__university:hover {
+  border-color: rgba(213,168,94,.85);
+}
+
+.au-guide__network .au-guide__university:first-child {
+  grid-row: span 5;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  min-height: 31rem;
+  padding: 0 2rem 1.5rem 0;
+  border-right: 1px solid rgba(255,255,255,.2);
+  border-bottom: 0;
+}
+
+.au-guide__network .au-guide__university:first-child .au-guide__university-image {
+  width: 100%;
+  height: clamp(16rem,27vw,24rem);
+}
+
+.au-guide__network .au-guide__university:first-child .au-guide__university-name {
+  margin-top: 1rem;
+  font-size: clamp(1.8rem,3.3vw,3rem);
+}
+
+.au-guide__network .au-guide__university:first-child .au-guide__university-summary {
+  max-width: 32rem;
+  color: #bcb7c1;
+  font-size: .84rem;
+}
+
+.au-guide__network .au-guide__university:first-child .au-guide__university-arrow {
+  align-self: flex-end;
+  margin-top: 1.25rem;
+  color: #d5a85e;
+}
+
+.au-guide__network .au-guide__university:not(:first-child) {
+  grid-template-columns: 7rem minmax(0,1fr) auto;
+  padding: 1rem 0;
+}
+
+.au-guide__network .au-guide__university:not(:first-child) .au-guide__university-image {
+  width: 7rem;
+  height: 5.5rem;
+}
+
+.au-guide__network .au-guide__university-arrow {
+  color: #d5a85e;
+}
+
+/*Keep the network text-led; university photography does not belong in this destination-style section.*/
+
+.au-guide__network .au-guide__university-image {
+  display: none;
+}
+
+.au-guide__network .au-guide__university:first-child {
+  min-height: 0;
+  justify-content: flex-start;
+  padding-top: 1rem;
+}
+
+.au-guide__network .au-guide__university:first-child .au-guide__university-name {
+  max-width: 25rem;
+  margin-top: 1.25rem;
+}
+
+.au-guide__network .au-guide__university:first-child .au-guide__university-summary {
+  max-width: 28rem;
+  margin-top: 1rem;
+}
+
+.au-guide__network .au-guide__university:not(:first-child) {
+  grid-template-columns: minmax(0,1fr) auto;
+  gap: 1rem;
+}
+
+.au-guide__network .au-guide__university:not(:first-child) .au-guide__university-name {
+  font-size: clamp(1.25rem,2.5vw,2rem);
+}
+
+/*Six equal guides: three in the left column and three in the right.*/
+
+.au-guide__network-list {
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  column-gap: clamp(2rem,5vw,4.5rem);
+  row-gap: 0;
+}
+
+.au-guide__network .au-guide__university:first-child {
+  grid-row: auto;
+  display: grid;
+  grid-template-columns: minmax(0,1fr) auto;
+  align-items: center;
+  min-height: 0;
+  padding: 1rem 1.35rem 1.35rem 0;
+  border-right: 0;
+  border-bottom: 1px solid rgba(255,255,255,.2);
+}
+
+.au-guide__network .au-guide__university:first-child .au-guide__university-name {
+  max-width: none;
+  margin-top: .35rem;
+  font-size: clamp(1.25rem,2.5vw,2rem);
+}
+
+.au-guide__network .au-guide__university:first-child .au-guide__university-summary {
+  max-width: 32rem;
+  margin-top: .45rem;
+  font-size: .75rem;
+}
+
+.au-guide__network .au-guide__university:first-child .au-guide__university-arrow {
+  align-self: center;
+  margin-top: 0;
+}
+
+.au-guide__network .au-guide__university:nth-child(even) {
+  padding-right: 0;
+  padding-left: 1.35rem;
+  border-left: 1px solid rgba(255,255,255,.2);
+}
+
+@media (max-width:900px) {
+  .au-guide__network-list {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .au-guide__network .au-guide__university:first-child {
+    grid-row: auto;
+    min-height: 0;
+    padding: 0 0 1.5rem;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,.2);
+  }
+
+  .au-guide__network .au-guide__university:nth-child(even) {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+@media (max-width:650px) {
+  .au-guide__network {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .au-guide__network .au-guide__university:not(:first-child) {
+    grid-template-columns: minmax(0,1fr) auto;
+    gap: .7rem;
+  }
+
+  .au-guide__network .au-guide__university:not(:first-child) .au-guide__university-arrow {
+    grid-column: auto;
+    margin-top: 0;
+  }
+
+  .au-guide__network .au-guide__university:not(:first-child) .au-guide__university-summary {
+    display: none;
+  }
+}

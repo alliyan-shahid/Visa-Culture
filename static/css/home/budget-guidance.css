@@ -1,0 +1,294 @@
+/*Budget guidance: warm editorial treatment*/
+
+#budget-guidance {
+  position: relative;
+  overflow: hidden;
+  padding-top: clamp(2.5rem, 4.5vw, 4rem);
+  padding-bottom: clamp(2.5rem, 4.5vw, 4rem);
+  background: #f1eee8 !important;
+}
+
+#budget-guidance::before {
+  content: "";
+  position: absolute;
+  top: -12rem;
+  right: -8rem;
+  width: 28rem;
+  height: 28rem;
+  border: 1px solid rgba(164,123,61,.2);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+#budget-guidance::after {
+  content: "";
+  position: absolute;
+  top: -6rem;
+  right: -2rem;
+  width: 16rem;
+  height: 16rem;
+  border: 1px solid rgba(164,123,61,.13);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+#budget-guidance > div {
+  position: relative;
+  z-index: 1;
+}
+
+#budget-guidance > div:first-child {
+  align-items: start;
+  gap: clamp(2.5rem, 8vw, 8rem);
+}
+
+#budget-guidance h2 {
+  max-width: 48rem;
+  font-size: clamp(2.25rem, 5vw, 4.8rem);
+  letter-spacing: -.06em;
+  line-height: .98;
+}
+
+#budget-guidance > div:first-child > div:first-child > p:not(:first-child) {
+  max-width: 42rem;
+}
+
+#budget-guidance > div:first-child > div:nth-child(2) {
+  margin-top: .5rem;
+  padding-left: 1.75rem;
+  border-left-width: 1px;
+  border-left-color: rgba(164,123,61,.55);
+}
+
+#budget-guidance > div:first-child > div:nth-child(2)::before {
+  content: "A clear plan starts with a clear picture";
+  display: block;
+  margin-bottom: 1.15rem;
+  color: #a47b3d;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .17em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+#budget-guidance > div:nth-child(2), #budget-guidance > div:nth-child(3) {
+  position: relative;
+  z-index: 1;
+}
+
+#budget-guidance > div:nth-child(2) {
+  margin-top: clamp(3.5rem, 7vw, 6rem);
+  padding-top: 2.25rem;
+  border-top-color: #d6d0c6;
+}
+
+#budget-guidance > div:nth-child(2) > div {
+  gap: 2.5rem;
+}
+
+#budget-guidance > div:nth-child(3) {
+  margin-top: clamp(3.5rem, 7vw, 6rem);
+  padding-top: 2.25rem;
+  border-top-color: #d6d0c6;
+}
+
+#budget-guidance > div:nth-child(3) h3 {
+  max-width: 24rem;
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  letter-spacing: -.045em;
+  line-height: 1.02;
+}
+
+#budget-guidance a {
+  text-underline-offset: .25rem;
+}
+
+@media (max-width: 640px) {
+  #budget-guidance::before {
+    right: -15rem;
+  }
+
+  #budget-guidance > div:first-child > div:nth-child(2) {
+    margin-top: 1rem;
+    padding-left: 1.25rem;
+  }
+
+  #budget-guidance > div:nth-child(2), #budget-guidance > div:nth-child(3) {
+    margin-top: 3.5rem;
+  }
+}
+
+/*Electric blue budget section*/
+
+#budget-guidance {
+  background: #0a4d8f !important;
+  color: #fff;
+}
+
+#budget-guidance::before {
+  border-color: rgba(191,224,255,.24);
+}
+
+#budget-guidance::after {
+  border-color: rgba(191,224,255,.15);
+}
+
+#budget-guidance .text-slate-950 {
+  color: #fff !important;
+}
+
+#budget-guidance .text-slate-600 {
+  color: #d9eafa !important;
+}
+
+#budget-guidance .text-primary {
+  color: #bfe0ff !important;
+}
+
+#budget-guidance strong {
+  color: #fff !important;
+}
+
+#budget-guidance .border-primary\\/20 {
+  border-color: rgba(191,224,255,.7) !important;
+}
+
+#budget-guidance .border-slate-200 {
+  border-color: rgba(191,224,255,.3) !important;
+}
+
+#budget-guidance > div:first-child > div:nth-child(2) {
+  border-left-color: rgba(191,224,255,.7);
+}
+
+#budget-guidance > div:first-child > div:nth-child(2)::before {
+  color: #bfe0ff;
+}
+
+#budget-guidance a {
+  color: #bfe0ff;
+}
+
+#budget-guidance a:hover {
+  color: #fff !important;
+}
+
+#budget-guidance .budget-guidance__title {
+  max-width: 36rem;
+  font-size: clamp(2.4rem, 5vw, 4.7rem);
+  letter-spacing: -.065em;
+  line-height: .97;
+}
+
+#budget-guidance .budget-guidance__title span, #budget-guidance .budget-guidance__title strong {
+  display: block;
+}
+
+#budget-guidance .budget-guidance__title strong {
+  margin-top: .25em;
+  color: #bfe0ff !important;
+  font-weight: 500;
+}
+
+#budget-guidance .budget-guidance__list {
+  margin-top: 1.5rem;
+}
+
+#budget-guidance .budget-guidance__list li {
+  display: grid;
+  grid-template-columns: 2rem minmax(0,1fr);
+  gap: .65rem;
+  align-items: start;
+  padding: .55rem 0;
+  border-bottom: 1px solid rgba(191,224,255,.2);
+  line-height: 1.55;
+}
+
+#budget-guidance .budget-guidance__list li:last-child {
+  border-bottom: 0;
+}
+
+#budget-guidance .budget-guidance__list li > span:first-child {
+  color: #bfe0ff !important;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  line-height: 1.8;
+}
+
+#budget-guidance > div:nth-child(2) {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+}
+
+#budget-guidance > div:nth-child(2) > div {
+  padding-right: 1.5rem;
+  border-right: 1px solid rgba(191,224,255,.25);
+}
+
+#budget-guidance > div:nth-child(2) > div:last-child {
+  border-right: 0;
+}
+
+@media (max-width: 800px) {
+  #budget-guidance > div:nth-child(2) {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    row-gap: 2rem;
+  }
+
+  #budget-guidance > div:nth-child(2) > div:nth-child(2) {
+    border-right: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  #budget-guidance > div:nth-child(2) {
+    grid-template-columns: 1fr;
+  }
+
+  #budget-guidance > div:nth-child(2) > div {
+    padding-right: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(191,224,255,.25);
+    padding-bottom: 1.25rem;
+  }
+
+  #budget-guidance > div:nth-child(2) > div:last-child {
+    border-bottom: 0;
+  }
+}
+
+#budget-guidance .budget-guidance__aside-intro {
+  margin: 0 0 2.25rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(191,224,255,.4);
+}
+
+#budget-guidance .budget-guidance__aside-intro > span {
+  display: block;
+  color: #bfe0ff;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+#budget-guidance .budget-guidance__aside-intro h3 {
+  max-width: 22rem;
+  margin: .65rem 0 0;
+  color: #fff;
+  font-size: clamp(1.55rem, 3vw, 2.35rem);
+  font-weight: 600;
+  letter-spacing: -.04em;
+  line-height: 1.08;
+}
+
+#budget-guidance .budget-guidance__aside-intro p {
+  max-width: 24rem;
+  margin: .85rem 0 0;
+  color: #d9eafa;
+  font-size: .88rem;
+  line-height: 1.7;
+}

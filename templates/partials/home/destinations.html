@@ -1,0 +1,61 @@
+<section id="destinations" class="vc-destinations">
+  <div class="vc-destinations__container">
+    <div class="vc-destinations__intro">
+      <div>
+        <p class="vc-destinations__eyebrow">Study destinations we offer</p>
+        <h2 class="vc-destinations__title">Find the right route for your future.</h2>
+      </div>
+      <p class="vc-destinations__summary">Your best destination depends on your course, academic profile, budget, English score, career goals, intakes, and current visa conditions.</p>
+    </div>
+
+    <div class="vc-destinations__layout">
+      <article class="vc-destination-card">
+        <div class="vc-destination-card__content">
+          <p class="vc-destination-card__eyebrow">Featured destinations </p>
+          <h3>A stronger start for your global education journey.</h3>
+        </div>
+        <div class="vc-destination-card__footer" aria-label="Australia highlights">
+                    <span class="vc-destination-card__tag">Quality education</span>
+                    <span class="vc-destination-card__tag">Practical learning</span>
+                    <span class="vc-destination-card__tag">Student support</span>
+                </div>
+      </article>
+
+      <div class="vc-destination-list" aria-label="Study destination options">
+                <a class="vc-destination-link" href="{{ url_for('australia_destination') }}">
+                    <span class="vc-destination-link__number">01</span>
+                    <span><strong class="vc-destination-link__name">Australia</strong><span class="vc-destination-link__description">Practical education and globally recognised programs.</span></span>
+                    <span class="vc-destination-link__arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="vc-destination-link" href="{{ url_for('usa_destination') }}">
+                    <span class="vc-destination-link__number">02</span>
+                    <span><strong class="vc-destination-link__name">USA</strong><span class="vc-destination-link__description">Flexible degrees, research, and campus pathways.</span></span>
+                    <span class="vc-destination-link__arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="vc-destination-link" href="{{ url_for('uk_destination') }}">
+                    <span class="vc-destination-link__number">03</span>
+                    <span><strong class="vc-destination-link__name">United Kingdom</strong><span class="vc-destination-link__description">Focused degrees with a wide choice of institutions.</span></span>
+                    <span class="vc-destination-link__arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="vc-destination-link" href="{{ url_for('canada_destination') }}">
+                    <span class="vc-destination-link__number">04</span>
+                    <span><strong class="vc-destination-link__name">Canada</strong><span class="vc-destination-link__description">Career-oriented study pathways and support.</span></span>
+                    <span class="vc-destination-link__arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="vc-destination-link" href="{{ url_for('europe_destination') }}">
+                    <span class="vc-destination-link__number">05</span>
+                    <span><strong class="vc-destination-link__name">Europe</strong><span class="vc-destination-link__description">Country-specific options across diverse education systems.</span></span>
+                    <span class="vc-destination-link__arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="vc-destination-link" href="{{ url_for('more_destinations') }}">
+                    <span class="vc-destination-link__number">06</span>
+                    <span><strong class="vc-destination-link__name">&amp; More Destinations </strong><span class="vc-destination-link__description">Explore additional study opportunities suited to your goals.</span></span>
+                    <span class="vc-destination-link__arrow" aria-hidden="true">↗</span>
+                </a>
+                <div class="vc-destinations__actions">
+                    <a class="vc-destinations__button" href="{{ url_for('booking_page') }}">Find Your Best Destination <span aria-hidden="true">&nbsp;↗</span></a>
+                </div>
+      </div>
+    </div>
+  </div>
+</section>

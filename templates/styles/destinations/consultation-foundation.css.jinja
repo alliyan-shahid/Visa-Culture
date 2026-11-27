@@ -1,0 +1,234 @@
+.au-guide__cta {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: end;
+  margin-top: clamp(4rem,8vw,8rem);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.au-guide__cta h2 {
+  max-width: 36rem;
+  margin: .65rem 0 0;
+  font-family: "Playfair Display",Georgia,serif;
+  font-size: clamp(2rem,4vw,3.7rem);
+  letter-spacing: -.065em;
+  line-height: .95;
+}
+
+.au-guide__cta p {
+  max-width: 31rem;
+  margin: .9rem 0 0;
+  color: var(--muted);
+  font-size: .82rem;
+  line-height: 1.75;
+}
+
+.au-guide__life {
+  display: grid;
+  grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr);
+  gap: clamp(2.5rem,8vw,8rem);
+  align-items: start;
+  padding-top: clamp(4rem,8vw,7rem);
+}
+
+.au-guide__life-intro {
+  position: sticky;
+  top: 2rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--gold);
+}
+
+.au-guide__life-intro h2 {
+  max-width: 28rem;
+  margin: .75rem 0 0;
+  font-family: Manrope,sans-serif;
+  font-size: clamp(2.25rem,4.4vw,4rem);
+  font-weight: 800;
+  letter-spacing: -.075em;
+  line-height: .96;
+}
+
+.au-guide__life-intro>p:not(.au-guide__label) {
+  max-width: 27rem;
+  margin: 1.25rem 0 0;
+  color: #625e68;
+  font-size: .88rem;
+  line-height: 1.85;
+}
+
+.au-guide__life-note {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.au-guide__life-note span {
+  color: var(--gold);
+  font-size: .66rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.au-guide__life-note strong {
+  color: var(--ink);
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.au-guide__life .au-guide__city-list {
+  margin-top: 0;
+  border-top: 1px solid var(--line);
+}
+
+.au-guide__life .au-guide__city {
+  grid-template-columns: 2.6rem minmax(0,1fr) 1.5rem;
+  gap: 1rem;
+  align-items: start;
+  padding: 1.5rem 0;
+  color: var(--ink);
+  text-decoration: none;
+  transition: padding-left .25s ease,border-color .25s ease;
+}
+
+.au-guide__life .au-guide__city:hover {
+  padding-left: .55rem;
+  border-color: var(--gold);
+}
+
+.au-guide__city-number {
+  padding-top: .25rem;
+  color: var(--gold);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .13em;
+}
+
+.au-guide__life .au-guide__city-name {
+  display: block;
+  font-size: clamp(1.4rem,2.7vw,2.25rem);
+  line-height: 1;
+}
+
+.au-guide__life .au-guide__city-tag {
+  display: block;
+  margin-top: .5rem;
+  color: var(--gold);
+  font-size: .63rem;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.au-guide__life .au-guide__city p {
+  max-width: 34rem;
+  margin: .65rem 0 0;
+  color: var(--muted);
+  font-size: .78rem;
+  line-height: 1.7;
+}
+
+.au-guide__city-arrow {
+  padding-top: .15rem;
+  color: var(--ink);
+  font-size: 1.4rem;
+  transition: transform .25s ease,color .25s ease;
+}
+
+.au-guide__life .au-guide__city:hover .au-guide__city-arrow {
+  color: var(--gold);
+  transform: translate(.2rem,-.2rem);
+}
+
+.au-guide__settle {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  grid-template-columns: minmax(0,.78fr) minmax(0,1.22fr);
+  gap: clamp(2.5rem,8vw,8rem);
+  align-items: stretch;
+  padding: clamp(4rem,7vw,6.5rem) max(1.1rem,calc((100vw - 78rem) / 2 + 3rem));
+  background: #edf4f7;
+}
+
+.au-guide__settle-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: static;
+  min-height: 100%;
+  border-top-color: #0a4d8f;
+}
+
+.au-guide__settle-intro .au-guide__label {
+  color: #0a4d8f;
+}
+
+.au-guide__settle-intro .au-guide__heading {
+  max-width: 25rem;
+}
+
+.au-guide__settle-list {
+  border-top-color: rgba(10,77,143,.35);
+}
+
+.au-guide__settle-row {
+  grid-template-columns: 3rem minmax(0,1fr);
+  gap: 1.1rem;
+  padding: 1.3rem 0;
+  border-bottom-color: rgba(10,77,143,.22);
+}
+
+.au-guide__settle-row>span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 1px solid rgba(10,77,143,.45);
+  border-radius: 50%;
+  color: #0a4d8f;
+  font-size: .62rem;
+}
+
+.au-guide__settle-row h3 {
+  font-size: 1.15rem;
+}
+
+.au-guide__settle-row p {
+  max-width: 37rem;
+  color: #5f707a;
+}
+
+.au-guide__settle-route {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: .75rem;
+  margin-top: clamp(3rem,6vw,6rem);
+  padding-top: 1rem;
+  border-top: 1px solid rgba(10,77,143,.25);
+}
+
+.au-guide__settle-route span {
+  display: block;
+  color: #0a4d8f;
+  font-size: .63rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.au-guide__settle-route strong {
+  display: block;
+  margin-top: .45rem;
+  color: #263f50;
+  font-size: .78rem;
+  line-height: 1.35;
+}

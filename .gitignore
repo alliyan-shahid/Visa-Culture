@@ -1,9 +1,160 @@
+# Files and folders listed here will not be added to Git or uploaded to GitHub.
+
+# PyCharm and VS Code
+.idea/
+.vscode
+
+# macOS files and thumbnails
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Python rules based on:
+# https://github.com/github/gitignore/blob/main/Python.gitignore
+
+# Compiled Python files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution and packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Tests and coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask
+instance/
+.webassets-cache
+
+# Scrapy
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv: keep this file tracked unless the project needs otherwise.
+# .python-version
+
+# Keep dependency lock files tracked unless the project needs otherwise.
+# Pipfile.lock
+# poetry.lock
+# pdm.lock
+
+# Local PDM settings
+.pdm.toml
+
+# PEP 582 packages
+__pypackages__/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath
+*.sage.py
+
+# Local settings and virtual environments
+.env
+.env.*
+!.env.example
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder
+.spyderproject
+.spyproject
+
+# Rope
+.ropeproject
+
+# MkDocs output
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre
+.pyre/
+
+# pytype
+.pytype/
+
+# Cython debug files
+cython_debug/
+
+# Project-specific generated notes
 /IMPLEMENTATION_SUMMARY.md
 /QUICK_REFERENCE.md
 /SCROLL_BEHAVIOR_IMPLEMENTATION.md
 /TESTING_CHECKLIST.md
 /VERTICAL_ONLY_UPDATE.md
-/__pycache__
-.env
-.env.*
-!.env.example

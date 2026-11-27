@@ -1,0 +1,79 @@
+<section class="hero-carousel" id="heroCarousel">
+  <div class="hero-carousel-track">
+        <!-- Slide 1 -->
+        <div class="hero-slide active" id="heroSlide-0">
+            <picture>
+                <source media="(max-width: 767px)" srcset="{{ url_for('static', filename='images/m home hero img.webp') }}">
+                <img src="{{ url_for('static', filename='images/home hero img.webp') }}" alt="Hero slide 1" class="hero-slide-image" loading="lazy" decoding="async">
+            </picture>
+            <div class="hero-content">
+        <div class="hero-text-group">
+          <h1>Your Journey to Global Education Starts Here</h1>
+          <p>Personalized study-abroad guidance and IELTS/PTE preparation for Pakistani students planning their future in Australia, USA, UK, Canada, Europe &amp; more.</p>
+          <div class="hero-buttons">
+                        <a href="#destinations" class="hero-btn hero-btn-primary">Explore Study Destinations</a>
+                        <a href="{{ url_for('booking_page') }}" class="hero-btn hero-btn-secondary">Book Free Consultation</a>
+                    </div>
+          <div class="hero-stats">
+            <div class="hero-stat-card">
+              <p class="hero-stat-value">100+</p>
+              <p class="hero-stat-label">Approved student visas</p>
+            </div>
+            <div class="hero-stat-card">
+              <p class="hero-stat-value">98%</p>
+              <p class="hero-stat-label">Application success rate</p>
+            </div>
+            <div class="hero-stat-card">
+              <p class="hero-stat-value">24/7</p>
+              <p class="hero-stat-label">Student support access</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <!-- Slide 2 -->
+        <div class="hero-slide" id="heroSlide-1">
+            <picture>
+                <source media="(max-width: 767px)" srcset="{{ url_for('static', filename='images/m home hero img2.webp') }}">
+                <img src="{{ url_for('static', filename='images/home hero img 2.webp') }}" alt="Hero slide 2" class="hero-slide-image" loading="lazy" decoding="async">
+            </picture>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="hero-slide" id="heroSlide-2">
+            <picture>
+                <source media="(max-width: 767px)" srcset="{{ url_for('static', filename='images/m home hero img3.webp') }}">
+                <img src="{{ url_for('static', filename='images/home hero img 3.webp') }}" alt="Hero slide 3" class="hero-slide-image" loading="lazy" decoding="async">
+            </picture>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="hero-slide" id="heroSlide-3">
+            <picture>
+                <source media="(max-width: 767px)" srcset="{{ url_for('static', filename='images/m home hero img4.webp') }}">
+                <img src="{{ url_for('static', filename='images/home hero img 4.webp') }}" alt="Hero slide 4" class="hero-slide-image" loading="lazy" decoding="async">
+            </picture>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button class="hero-nav-arrow prev" id="heroPrevBtn" aria-label="Previous slide">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+        <button class="hero-nav-arrow next" id="heroNextBtn" aria-label="Next slide">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+
+        <!-- Pagination Dots -->
+        <div class="hero-pagination" id="heroPagination">
+            <button class="hero-dot active" data-slide="0" aria-label="Go to slide 1"></button>
+            <button class="hero-dot" data-slide="1" aria-label="Go to slide 2"></button>
+            <button class="hero-dot" data-slide="2" aria-label="Go to slide 3"></button>
+            <button class="hero-dot" data-slide="3" aria-label="Go to slide 4"></button>
+        </div>
+  </div>
+</section>

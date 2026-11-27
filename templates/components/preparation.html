@@ -1,0 +1,5 @@
+{% macro enquiry(test) %}<a href="{{ url_for('booking_page') }}" class="inline-flex items-center justify-center rounded-full bg-slate-900 px-8 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-slate-800">Enquire About {{ test }} Classes</a>{% endmacro %}
+{% macro panel(title) %}<section class="border-t border-slate-200 py-8">
+  <h2 class="mb-5 text-2xl font-bold text-slate-950 md:text-3xl">{{ title }}</h2>
+  <div class="space-y-4 text-base leading-8 text-slate-600">{{ caller() }}</div>
+</section>{% endmacro %}

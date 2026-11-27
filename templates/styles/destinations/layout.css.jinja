@@ -1,0 +1,46 @@
+/*Full-bleed treatment used by the homepage's major colour sections.*/
+
+.au-guide__hero,
+  .au-guide__band {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: max(1.1rem,calc((100vw - 78rem) / 2 + 3rem));
+  padding-right: max(1.1rem,calc((100vw - 78rem) / 2 + 3rem));
+}
+
+.au-guide__hero {
+  padding-top: 20px;
+}
+
+/*Compact settling layout: two concise checklist columns remove the empty vertical gulf.*/
+
+.au-guide__settle {
+  align-items: start;
+}
+
+.au-guide__settle-intro {
+  display: block;
+  min-height: 0;
+}
+
+.au-guide__settle-route {
+  margin-top: 2.5rem;
+}
+
+.au-guide__settle-list {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  align-self: start;
+}
+
+.au-guide__settle-row {
+  min-height: 10.5rem;
+  padding: 1.2rem 1.35rem 1.35rem 0;
+}
+
+.au-guide__settle-row:nth-child(even) {
+  padding-right: 0;
+  padding-left: 1.35rem;
+  border-left: 1px solid rgba(10,77,143,.22);
+}

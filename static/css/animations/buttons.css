@@ -1,0 +1,60 @@
+/*========================================================
+   BUTTON ENHANCEMENTS
+   ========================================================*/
+
+.btn-premium {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  border-radius: 0.875rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  overflow: hidden;
+}
+
+.btn-premium::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.3), transparent 80%);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  pointer-events: none;
+}
+
+.btn-premium:hover::before {
+  opacity: 1;
+}
+
+.btn-premium-primary {
+  background: linear-gradient(135deg, #7dd3fc, #3b82f6);
+  color: #041a3d;
+  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.3);
+}
+
+.btn-premium-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 25px 60px rgba(59, 130, 246, 0.4);
+}
+
+.btn-premium-primary:active {
+  transform: translateY(-1px);
+}
+
+.btn-premium-secondary {
+  border: 2px solid rgba(201, 162, 75, 0.5);
+  background: rgba(255, 255, 255, 0.7);
+  color: #0b1f44;
+  backdrop-filter: blur(10px);
+}
+
+.btn-premium-secondary:hover {
+  border-color: rgba(201, 162, 75, 0.8);
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}

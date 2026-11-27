@@ -1,0 +1,78 @@
+/*============================================================
+   TABLET BREAKPOINT (max-width: 1024px)
+   ============================================================*/
+
+@media (max-width: 1024px) {
+  /*Ensure proper scrolling on tablet*/
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /*Container adjustments*/
+
+  .max-w-7xl {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .max-w-6xl {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  /*Reduce padding for sections on tablet*/
+
+  section {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  /*Hero section on tablet*/
+
+  .hero-section {
+    min-height: auto;
+  }
+
+  /*Adjust grid gaps on tablet*/
+
+  .grid {
+    gap: 1.5rem;
+  }
+
+  /*Text adjustments for better readability on tablet*/
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.875rem;
+    line-height: 1.25;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /*Ensure buttons are touchable*/
+
+  button, a.accent-btn, a[class*="btn"] {
+    min-height: 44px;
+    padding: 0.75rem 1.5rem;
+  }
+
+  /*Card padding reduction*/
+
+  .rounded-3xl {
+    padding: 1.5rem;
+  }
+
+  /*Prevent text overflow*/
+
+  .tracking-\[0\.28em\] {
+    letter-spacing: 0.1em;
+  }
+}

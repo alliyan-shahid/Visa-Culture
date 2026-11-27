@@ -1,0 +1,182 @@
+/*Final Visa Culture theme alignment: the guide should feel like part of the homepage, not a separate microsite.*/
+
+.au-guide {
+  background: #fbfaf8;
+  color: #17151c;
+}
+
+.au-guide__shell {
+  width: min(100%,78rem);
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.au-guide__hero {
+  position: relative;
+  grid-template-columns: minmax(0,1.1fr) minmax(18rem,.7fr);
+  gap: clamp(2rem,6vw,5rem);
+  align-items: center;
+  margin: 0 calc(clamp(1.1rem,4vw,3rem) * -1);
+  padding: clamp(2.6rem,5vw,5rem) clamp(1.1rem,4vw,3rem) clamp(3rem,6vw,5.5rem);
+  background: linear-gradient(130deg,#15131b 0%,#102b4a 68%,#0d766f 145%);
+  border: 0;
+  color: #fff;
+}
+
+.au-guide__hero:after,.au-guide__cta:after {
+  content: none !important;
+  display: none !important;
+}
+
+.au-guide__hero > div,.au-guide__glance {
+  position: relative;
+  z-index: 1;
+}
+
+.au-guide__eyebrow,.au-guide__label {
+  font-family: Manrope,sans-serif;
+}
+
+.au-guide__eyebrow {
+  color: #d5a85e;
+}
+
+.au-guide__eyebrow:before {
+  background: #d5a85e;
+}
+
+.au-guide__title {
+  max-width: 15ch;
+  margin-top: .9rem;
+  font-family: Manrope,sans-serif;
+  font-size: clamp(2.8rem,6vw,5.5rem);
+  font-weight: 800;
+  letter-spacing: -.075em;
+  line-height: .94;
+}
+
+.au-guide__lead {
+  max-width: 37rem;
+  color: #d8e1e8;
+  font-size: clamp(.9rem,1.2vw,1rem);
+  line-height: 1.78;
+}
+
+.au-guide__glance {
+  border-top-color: #d5a85e;
+}
+
+.au-guide__glance-title {
+  color: #fff;
+  font-family: Manrope,sans-serif;
+  font-size: clamp(1.45rem,2.5vw,2.2rem);
+  line-height: 1.06;
+}
+
+.au-guide__facts {
+  border-top-color: rgba(255,255,255,.22);
+}
+
+.au-guide__fact {
+  border-bottom-color: rgba(255,255,255,.22);
+}
+
+.au-guide__fact:nth-child(odd) {
+  border-right-color: rgba(255,255,255,.22);
+}
+
+.au-guide__fact strong {
+  color: #fff;
+  font-family: Manrope,sans-serif;
+}
+
+.au-guide__fact span {
+  color: #bfcbd5;
+}
+
+.au-guide__button {
+  border-radius: 999px;
+  border-color: #d5a85e;
+  background: #d5a85e;
+  color: #15131b;
+  box-shadow: 0 .7rem 1.4rem rgba(0,0,0,.18);
+}
+
+.au-guide__button:hover,.au-guide__button:focus-visible {
+  background: #fff;
+  border-color: #fff;
+  color: #15131b;
+}
+
+.au-guide__button--quiet {
+  border-color: rgba(255,255,255,.55);
+  background: transparent;
+  color: #fff;
+  box-shadow: none;
+}
+
+.au-guide__button--quiet:hover,.au-guide__button--quiet:focus-visible {
+  background: rgba(255,255,255,.1);
+  border-color: #fff;
+  color: #fff;
+}
+
+.au-guide__section {
+  padding-top: clamp(3.5rem,7vw,6.5rem);
+}
+
+.au-guide__heading,.au-guide__open-item h3,.au-guide__sector h3,.au-guide__city-name,.au-guide__settle-row h3,.au-guide__university-name {
+  font-family: Manrope,sans-serif;
+}
+
+.au-guide__heading {
+  font-size: clamp(2rem,3.8vw,3.5rem);
+  line-height: 1;
+}
+
+.au-guide__section-head {
+  align-items: center;
+}
+
+.au-guide__section-copy,.au-guide__open-item p,.au-guide__city p,.au-guide__settle-row p {
+  color: #625e68;
+}
+
+.au-guide__label {
+  color: #a47b3d;
+}
+
+.au-guide__index,.au-guide__university-meta {
+  color: #a47b3d;
+}
+
+.au-guide__open-item:nth-child(even) {
+  border-left-color: #d8d2c8;
+}
+
+.au-guide__band {
+  background: linear-gradient(135deg,#082b45 0%,#0a4d8f 66%,#0b756d 145%);
+}
+
+.au-guide__network {
+  margin-top: clamp(3.5rem,7vw,6.5rem);
+}
+
+.au-guide__network .au-guide__heading {
+  max-width: 31rem;
+}
+
+.au-guide__university {
+  padding: 1.25rem 0;
+}
+
+.au-guide__university:hover {
+  padding-left: .45rem;
+}
+
+.au-guide__cta h2 {
+  font-family: Manrope,sans-serif;
+  font-size: clamp(2rem,3.8vw,3.5rem);
+  font-weight: 800;
+  line-height: 1;
+}

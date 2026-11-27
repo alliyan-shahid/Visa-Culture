@@ -1,0 +1,28 @@
+<header class="sticky top-0 z-50 shadow-sm">
+  <div class="mx-auto flex min-h-[56px] max-w-7xl items-center justify-between px-6 py-1 md:min-h-[60px] md:py-1">
+            <a href="/" class="flex items-center">
+                <img src="{{ url_for('static', filename='images/VisaCulture Logo.webp') }}" alt="Visa Culture logo" class="block h-auto w-12 object-contain object-left md:w-14 lg:w-14 logo-image" loading="lazy" decoding="async">
+            </a>
+            <div class="items-center gap-7 text-sm font-semibold text-slate-600 md:flex">
+                <a href="{{ url_for('landing_page') }}#services" class="nav-link">Services</a>
+                <div class="desktop-destination-menu">
+                    <button class="nav-link desktop-destination-trigger" type="button" aria-haspopup="true">
+                        Destinations
+                        <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m2.25 4.5 3.75 3.75L9.75 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="desktop-destination-dropdown" role="menu" aria-label="Study destinations">
+                        <a href="{{ url_for('australia_destination') }}" role="menuitem">Australia</a>
+                        <a href="{{ url_for('usa_destination') }}" role="menuitem">USA</a>
+                        <a href="{{ url_for('uk_destination') }}" role="menuitem">UK</a>
+                        <a href="{{ url_for('canada_destination') }}" role="menuitem">Canada</a>
+                        <a href="{{ url_for('europe_destination') }}" role="menuitem">Europe</a>
+                        <a href="{{ url_for('more_destinations') }}" role="menuitem">&amp; More</a>
+                    </div>
+      </div>
+                <a href="{{ url_for('booking_page') }}" class="nav-link">Book Appointment</a>
+            </div>
+    <div class="items-center gap-2.5 md:flex">
+                <a href="{{ url_for('booking_page') }}" class="rounded-full border border-slate-200 bg-white/95 px-4 py-1.5 text-sm font-semibold text-slate-900 transition hover:border-primary hover:shadow-soft">Book Appointment</a>
+            </div>
+  </div>
+</header>

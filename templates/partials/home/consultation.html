@@ -1,0 +1,30 @@
+<section id="booking-cta" class="booking-cta-section bg-slate-950 py-20">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="booking-cta__panel grid gap-8 rounded-[2.25rem] border border-white/10 bg-white/5 p-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <div class="space-y-6 reveal">
+        <p class="booking-cta__eyebrow text-sm uppercase tracking-[0.35em] text-primary">Book consultancy</p>
+        <h2 class="booking-cta__title text-4xl font-bold text-white">A clear first step towards your study abroad plan.</h2>
+        <p class="max-w-xl text-base leading-8 text-slate-300">Use the dedicated booking page to submit your details in a calmer, more polished layout. Your request goes straight to our consultancy team.</p>
+        <div class="booking-cta__points grid gap-3 sm:grid-cols-2">
+          <div class="booking-cta__point rounded-[1.75rem] border border-white/10 bg-white/5 p-5 text-sm text-slate-200">
+            <p class="font-semibold text-white">Dedicated booking page</p>
+            <p class="mt-2 text-slate-300">A focused form without homepage distractions.</p>
+          </div>
+          <div class="booking-cta__point rounded-[1.75rem] border border-white/10 bg-white/5 p-5 text-sm text-slate-200">
+            <p class="font-semibold text-white">Fast response</p>
+            <p class="mt-2 text-slate-300">Our team reaches out with the next steps soon after submission.</p>
+          </div>
+        </div>
+      </div>
+      <div class="booking-cta__action flex justify-center lg:justify-end">
+        <div class="booking-cta__action-inner">
+                    <span>Start with a conversation</span>
+                    <small class="booking-cta__action-meta">PROFILE · COURSE · VISA DIRECTION</small>
+                    <a href="{{ url_for('booking_page') }}" class="booking-cta__button inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary to-accent px-8 py-4 text-sm font-semibold text-white shadow-[0_20px_60px_rgba(37,99,235,0.32)] transition hover:translate-y-[-2px] hover:shadow-[0_24px_72px_rgba(37,99,235,0.38)]">
+                    Open booking page
+                    </a>
+                </div>
+      </div>
+    </div>
+  </div>
+</section>

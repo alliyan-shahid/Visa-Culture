@@ -1,0 +1,72 @@
+{
+  "layout-enhancements": {
+    "files": [
+      "js/layout/text-formatting.js",
+      "js/layout/page-controls.js",
+      "js/layout/scroll-reveals.js",
+      "js/layout/hero-text.js",
+      "js/layout/expandable-content.js"
+    ],
+    "sha256": "b2391ebefb3d5dad26f003c5c64c53d5054d856d52f52941ab8d535cb13d9d1a"
+  },
+  "js/booking.js": {
+    "files": [
+      "js/booking.js"
+    ],
+    "sha256": "0ba69f7e6b9b8e5ed74be9729b265e91cabc1141a44518bf0db0241936dc95a5"
+  },
+  "js/premium-animations.js": {
+    "files": [
+      "js/premium-animations.js"
+    ],
+    "sha256": "a184d7cafe4d4c87fe920431cc104a929208a36932a9f4f5f4e9c5f0ba8307d6"
+  },
+  "js/premium-pages.js": {
+    "files": [
+      "js/premium-pages.js"
+    ],
+    "sha256": "9a4db7719f323e8c6779cebe7fce52d242b1c11b61d606f29146d50fc56b2635"
+  },
+  "js/tailwind-config.js": {
+    "files": [
+      "js/tailwind-config.js"
+    ],
+    "sha256": "b8c6dc5781cf976ce397d0f77734b270726e76a8ac02aff4fa9cb6e4b2e8b1aa"
+  },
+  "js/university-interactions.js": {
+    "files": [
+      "js/university-interactions.js"
+    ],
+    "sha256": "ba86ad9ff9617270cc9ab287f5acf0a1c565608778e96a8fb48515cb7385e3a0"
+  },
+  "js/home/budget-guidance.js": {
+    "files": [
+      "js/home/budget-guidance.js"
+    ],
+    "sha256": "56a49e580ca268d69e9d1c3c8bad9590d3e5db86d602c12f0e731679f2539e68"
+  },
+  "js/home/hero-carousel.js": {
+    "files": [
+      "js/home/hero-carousel.js"
+    ],
+    "sha256": "b26190d718674289d4b89e0cb1dd5046966894ef568b73e3a86566ad36f0e3a6"
+  },
+  "js/home/mobile-content.js": {
+    "files": [
+      "js/home/mobile-content.js"
+    ],
+    "sha256": "b7a478de0f538baf535eb3c7d5f220e717a76ed8c95d8a82aa2437bc8ee5f63a"
+  },
+  "js/home/services.js": {
+    "files": [
+      "js/home/services.js"
+    ],
+    "sha256": "330b59e4c028b171a4a64645ac6e2ea3a436483ebb26b1bb4afe511ece9a806c"
+  },
+  "js/layout/contact-widgets.js": {
+    "files": [
+      "js/layout/contact-widgets.js"
+    ],
+    "sha256": "1cfc2e9c8e73f83c7988bc62e5464f8e67c10c700ecaa03f9b94d58351453c17"
+  }
+}

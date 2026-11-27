@@ -1,0 +1,85 @@
+<section class="hero-section text-white relative overflow-hidden hero-fade-in">
+  <div class="absolute inset-0">
+    <picture class="block w-full h-full">
+      <source media="(max-width: 640px)" srcset="{{ url_for('static', filename='images/m sydney hero.webp') }}" type="image/webp">
+      <source srcset="{{ url_for('static', filename='images/sydney hero.webp') }}" type="image/webp">
+      <img src="{{ url_for('static', filename='images/sydney hero.webp') }}" alt="University of Sydney hero" class="w-full h-full object-cover"  loading="lazy" decoding="async">
+    </picture>
+  </div>
+  <div class="absolute inset-0 bg-slate-950/45 hidden lg:block">
+  </div>
+  <div class="relative max-w-7xl mx-auto px-6">
+    <div class="grid gap-10 lg:grid-cols-[1.3fr_0.9fr] items-center h-full">
+      <div class="flex flex-col justify-center">
+        <div class="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm uppercase tracking-[0.28em] text-slate-200 w-fit">Iconic Harbour Campus</div>
+        <h1 class="mt-8 font-black leading-tight">Study at the <span class="hero-highlight">University of Sydney</span> from Pakistan</h1>
+        <p class="mt-6 max-w-2xl text-lg text-slate-200">Sydney blends historic prestige with cutting-edge programs for Pakistani students who want global recognition and modern city life.</p>
+        <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+          <a href="#final-cta" class="accent-btn inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-semibold shadow-lg shadow-sky-400/20">Claim a Sydney Pathway Session</a>
+          <a href="#why" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-8 py-4 text-sm text-white transition hover:bg-white/15">See Study Benefits</a>
+        </div>
+      </div>
+      <div class="hero-grid-right space-y-4">
+        <div class="section-card rounded-3xl p-8">
+          <span class="text-sm uppercase tracking-[0.2em] text-slate-300">Why Sydney</span>
+          <h2 class="mt-4 text-3xl font-bold">Global reputation, bright lifestyle</h2>
+          <p class="mt-3 text-slate-300">A leading Australian university with iconic campus culture and strong employer demand.</p>
+        </div>
+        <div class="section-card rounded-3xl p-8">
+          <span class="text-sm uppercase tracking-[0.2em] text-slate-300">Scholarship edge</span>
+          <h2 class="mt-4 text-3xl font-bold">Targeted awards for international talent</h2>
+          <p class="mt-3 text-slate-300">Sydney supplies merit and faculty scholarships to help reduce study costs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="premium-section relative py-12 lg:py-16">
+  <div class="mx-auto max-w-7xl px-6 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-14 items-center">
+      <div class="mel-reveal space-y-6">
+        <div>
+          <p class="premium-subtitle">Why Choose University of Sydney</p>
+          <h2 class="premium-title">Research-led education in Australia's largest academic city</h2>
+        </div>
+        <p class="mel-copy text-lg">The University of Sydney is Australia's oldest university, founded in 1850. It is a public research university and part of the Group of Eight, with strong global academic recognition and industry-connected learning.</p>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="luxury-card">
+            <div class="luxury-card-icon">+</div>
+            <h3 class="luxury-card-title">National and Global Reputation</h3>
+            <p class="luxury-card-text">Ranked among the world's top institutions with widely respected degrees across sectors.</p>
+          </div>
+          <div class="luxury-card">
+            <div class="luxury-card-icon">+</div>
+            <h3 class="luxury-card-title">Research and Innovation</h3>
+            <p class="luxury-card-text">Advance knowledge through high-impact research and innovation partnerships.</p>
+          </div>
+          <div class="luxury-card">
+            <div class="luxury-card-icon">+</div>
+            <h3 class="luxury-card-title">Career Outcomes</h3>
+            <p class="luxury-card-text">Top employment outcomes and industry pathways for global career launches.</p>
+          </div>
+          <div class="luxury-card">
+            <div class="luxury-card-icon">+</div>
+            <h3 class="luxury-card-title">International Student Community</h3>
+            <p class="luxury-card-text">A community spanning 185+ countries, including strong connections in Pakistan.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mel-reveal">
+        <div class="relative group">
+          <div class="absolute inset-0 rounded-[2rem] bg-transparent">
+          </div>
+            <picture>
+              <source media="(max-width: 640px)" srcset="{{ url_for('static', filename='images/M Sydney 1.webp') }}" type="image/webp">
+              <source srcset="{{ url_for('static', filename='images/Sydney 1.webp') }}" type="image/webp">
+              <img src="{{ url_for('static', filename='images/Sydney 1.webp') }}" alt="Sydney university-style campus students" loading="lazy" decoding="async" class="relative rounded-[2rem] object-cover w-full h-[500px] lg:h-[500px] shadow-none border-0">
+            </picture>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>

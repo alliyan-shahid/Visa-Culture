@@ -1,0 +1,131 @@
+/*Spin & Rotate Animations*/
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinReverse {
+  0% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotateIn {
+  0% {
+    opacity: 0;
+    transform: rotate(-200deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(0);
+  }
+}
+
+@keyframes rotateInDownLeft {
+  0% {
+    opacity: 0;
+    transform: rotate(-45deg) translateX(-60px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(0) translateX(0);
+  }
+}
+
+@keyframes rotateInDownRight {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translateX(60px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(0) translateX(0);
+  }
+}
+
+@keyframes rotateInUpLeft {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translateX(-60px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(0) translateX(0);
+  }
+}
+
+@keyframes rotateInUpRight {
+  0% {
+    opacity: 0;
+    transform: rotate(-45deg) translateX(60px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(0) translateX(0);
+  }
+}
+
+@keyframes rotateOut {
+  0% {
+    opacity: 1;
+    transform: rotate(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(200deg);
+  }
+}
+
+/*Scale Animations*/
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleInCenter {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}

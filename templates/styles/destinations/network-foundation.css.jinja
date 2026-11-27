@@ -1,0 +1,75 @@
+.au-guide__network {
+  margin-top: clamp(4rem,8vw,8rem);
+  padding-top: clamp(3rem,6vw,5rem);
+  border-top: 1px solid var(--line);
+}
+
+.au-guide__network-list {
+  margin-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.au-guide__university {
+  display: grid;
+  grid-template-columns: 7rem minmax(0,1fr) auto;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  text-decoration: none;
+  transition: padding-left .25s ease,border-color .25s ease;
+}
+
+.au-guide__university:hover {
+  padding-left: .55rem;
+  border-color: var(--gold);
+}
+
+.au-guide__university-image {
+  width: 7rem;
+  height: 5rem;
+  overflow: hidden;
+  background: #ded9d0;
+}
+
+.au-guide__university-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(.7);
+  transition: transform .4s ease,filter .4s ease;
+}
+
+.au-guide__university:hover img {
+  transform: scale(1.06);
+  filter: saturate(1);
+}
+
+.au-guide__university-meta {
+  color: var(--gold);
+  font-size: .63rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.au-guide__university-name {
+  margin: .3rem 0 0;
+  font-size: clamp(1.15rem,2.2vw,1.75rem);
+  font-weight: 700;
+  letter-spacing: -.045em;
+}
+
+.au-guide__university-summary {
+  margin: .35rem 0 0;
+  color: var(--muted);
+  font-size: .75rem;
+  line-height: 1.55;
+}
+
+.au-guide__university-arrow {
+  color: var(--blue);
+  font-size: 1.2rem;
+}

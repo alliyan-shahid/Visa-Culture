@@ -9,136 +9,23 @@
 {% with desktop_hero='images/study in uk.webp', mobile_hero='images/m study in uk.webp', desktop_ratio='1920 / 820', mobile_ratio='1159 / 1358' %}
 {% include '_destination_guide_styles.html' %}
 {% endwith %}
-<style>
-  #uk-title { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
-  .au-guide__university[id] { scroll-margin-top:5rem; }
-</style>
+{% with destination_id='uk' %}<style>
+{% include 'styles/destinations/accessibility.css.jinja' %}
+</style>{% endwith %}
 {% endblock %}
 
 {% block content %}
 <main class="au-guide">
   <div class="au-guide__shell">
-    <section class="au-guide__hero" aria-labelledby="uk-title">
-      <h1 id="uk-title">Study in the United Kingdom</h1>
-    </section>
+    {% include 'partials/destinations/uk/overview.html' %}
 
-    <section class="au-guide__section" aria-labelledby="why-uk-title">
-      <div class="au-guide__section-head">
-        <div>
-          <p class="au-guide__label">Why the UK</p>
-          <h2 id="why-uk-title" class="au-guide__heading">Find a course that fits your next step.</h2>
-        </div>
-        <p class="au-guide__section-copy">Compare universities across England, Scotland, Wales and Northern Ireland. Look at what you’ll study, how you’ll be assessed and what the full degree will cost.</p>
-      </div>
-      <div class="au-guide__open-grid">
-        <article class="au-guide__open-item"><span class="au-guide__index">01</span><h3>Focused undergraduate degrees</h3><p>Many bachelor’s degrees take three years in England, Wales and Northern Ireland. Scottish honours degrees often take four. Check the duration of your course, especially if it includes a placement or year abroad.</p></article>
-        <article class="au-guide__open-item"><span class="au-guide__index">02</span><h3>Taught and research postgraduate study</h3><p>Many full-time taught master’s degrees take one year. Research degrees follow different timelines and may require a proposal or a conversation with a prospective supervisor.</p></article>
-        <article class="au-guide__open-item"><span class="au-guide__index">03</span><h3>Foundation and pathway programmes</h3><p>If you need more subject or language preparation, check for an international foundation year or pre-master’s course. Confirm progression requirements and the full cost of the pathway.</p></article>
-        <article class="au-guide__open-item"><span class="au-guide__index">04</span><h3>Support for international students</h3><p>Check what each university offers through its international student advisers, orientation, academic skills support and careers service.</p></article>
-      </div>
-    </section>
+    {% include 'partials/destinations/uk/work-and-lifestyle.html' %}
 
-    <section class="au-guide__section" aria-labelledby="education-title">
-      <div class="au-guide__section-head">
-        <div>
-          <p class="au-guide__label">Education in the UK</p>
-          <h2 id="education-title" class="au-guide__heading">Plan your application and budget.</h2>
-        </div>
-        <p class="au-guide__section-copy">Most undergraduate applications go through UCAS. For postgraduate study, check the university’s application process. Deadlines vary by course, with earlier dates for some universities and professional programmes. <a class="underline" href="https://www.ucas.com/">UCAS</a></p>
-      </div>
-      <div class="au-guide__open-grid">
-        <article class="au-guide__open-item"><span class="au-guide__index">Admissions</span><h3>Check your academic qualifications</h3><p>Check how each university assesses Pakistani HSSC, A-levels or previous degrees. Subject prerequisites, references, interviews, admissions tests and portfolios depend on the course.</p></article>
-        <article class="au-guide__open-item"><span class="au-guide__index">English</span><h3>Confirm which evidence is accepted</h3><p>Check the university’s accepted English tests, minimum scores and exemptions. The Student visa usually requires English evidence as well, and the way you can provide it depends on your course and sponsor. <a class="underline" href="https://www.gov.uk/student-visa/knowledge-of-english">GOV.UK English requirements</a></p></article>
-        <article class="au-guide__open-item"><span class="au-guide__index">Tuition</span><h3>Compare international fees by course</h3><p>The British Council gives indicative international tuition ranges of £11,400–£38,000 for undergraduate study and £9,000–£30,000 for postgraduate study. Confirm the exact fee and payment schedule with the university. <a class="underline" href="https://study-uk.britishcouncil.org/moving-uk/cost-studying">British Council cost guide</a></p></article>
-        <article class="au-guide__open-item"><span class="au-guide__index">Funding</span><h3>Look for scholarships early</h3><p>Compare university awards with schemes such as GREAT Scholarships for Pakistan and Chevening for eligible postgraduate applicants. Check participating universities, what the award covers and separate application deadlines. <a class="underline" href="https://study-uk.britishcouncil.org/scholarships-funding">British Council scholarship guide</a></p></article>
-      </div>
-    </section>
+    {% include 'partials/destinations/uk/settling.html' %}
 
-    <section class="au-guide__band" aria-labelledby="sectors-title">
-      <div class="au-guide__section-head">
-        <div>
-          <p class="au-guide__label">Work and future direction</p>
-          <h2 id="sectors-title" class="au-guide__heading">Connect your degree to a career.</h2>
-        </div>
-        <p class="au-guide__section-copy">Compare placements, employer links and career support. Eligible graduates can apply from within the UK for a Graduate visa. It lasts two years for applications made by 31 December 2026 and 18 months from 1 January 2027. Eligible doctoral graduates receive three years. <a class="underline" href="https://www.gov.uk/graduate-visa">GOV.UK Graduate visa guide</a></p>
-      </div>
-      <div class="au-guide__sector-list">
-        <article class="au-guide__sector"><span class="au-guide__index">01</span><h3>Healthcare and life sciences</h3><p>Explore public health, biotechnology and health data. Check professional registration requirements for regulated roles.</p></article>
-        <article class="au-guide__sector"><span class="au-guide__index">02</span><h3>Technology and computing</h3><p>Build skills in software engineering, data science, cybersecurity and artificial intelligence.</p></article>
-        <article class="au-guide__sector"><span class="au-guide__index">03</span><h3>Engineering and energy</h3><p>Compare programmes in infrastructure, renewable energy, electronics and advanced manufacturing.</p></article>
-        <article class="au-guide__sector"><span class="au-guide__index">04</span><h3>Business and finance</h3><p>Explore accounting, financial analysis, consulting, marketing and supply chain management.</p></article>
-        <article class="au-guide__sector"><span class="au-guide__index">05</span><h3>Education and research</h3><p>Look at routes into research, policy and education. Check the qualifications required for school teaching where you plan to work.</p></article>
-        <article class="au-guide__sector"><span class="au-guide__index">06</span><h3>Creative industries</h3><p>Build a portfolio in design, games, film, media or communication through practical coursework and projects.</p></article>
-      </div>
-    </section>
+    {% include 'partials/destinations/uk/institutions.html' %}
 
-    <section class="au-guide__life" aria-labelledby="lifestyle-title">
-      <div class="au-guide__life-intro">
-        <p class="au-guide__label">Life in the UK</p>
-        <h2 id="lifestyle-title">Compare living costs before choosing a city.</h2>
-        <p>The British Council suggests budgeting around £1,300–£1,400 a month in London or £900–£1,300 elsewhere in the UK. Compare actual rent, bills, food and transport for your campus, and check the separate Student visa financial requirements. <a class="underline" href="https://study-uk.britishcouncil.org/moving-uk/cost-studying">British Council living cost estimates</a></p>
-        <div class="au-guide__life-note"><span>Compare campus locations</span><strong>Housing · transport · access to campus</strong></div>
-      </div>
-      <div class="au-guide__city-list">
-        <a class="au-guide__city" href="#imperial"><span class="au-guide__city-number">01</span><div><strong class="au-guide__city-name">London</strong><span class="au-guide__city-tag">England</span><p>Imperial and UCL have campuses in London. Compare your course location, rent and commuting time before choosing accommodation.</p></div><span class="au-guide__city-arrow" aria-hidden="true">↗</span></a>
-        <a class="au-guide__city" href="#oxford"><span class="au-guide__city-number">02</span><div><strong class="au-guide__city-name">Oxford and Cambridge</strong><span class="au-guide__city-tag">England</span><p>Both cities have collegiate universities. Check which accommodation your college offers and what you’ll need during vacations.</p></div><span class="au-guide__city-arrow" aria-hidden="true">↗</span></a>
-        <a class="au-guide__city" href="#edinburgh"><span class="au-guide__city-number">03</span><div><strong class="au-guide__city-name">Edinburgh</strong><span class="au-guide__city-tag">Scotland</span><p>University buildings span several sites. Compare housing and bus routes around the buildings you’ll use most.</p></div><span class="au-guide__city-arrow" aria-hidden="true">↗</span></a>
-        <a class="au-guide__city" href="#manchester"><span class="au-guide__city-number">04</span><div><strong class="au-guide__city-name">Manchester</strong><span class="au-guide__city-tag">England</span><p>Compare university halls with private rentals and check which bus or tram routes fit your commute.</p></div><span class="au-guide__city-arrow" aria-hidden="true">↗</span></a>
-      </div>
-    </section>
-
-    <section class="au-guide__section au-guide__settle" aria-labelledby="settling-title">
-      <div class="au-guide__settle-intro">
-        <div>
-          <p class="au-guide__label">Student visa and arrival</p>
-          <h2 id="settling-title" class="au-guide__heading">Prepare for your Student visa and arrival.</h2>
-          <p>Check current eligibility, fees and documents before applying. Your university’s international student team can help with questions about your course and sponsorship. <a class="underline" href="https://www.gov.uk/student-visa">GOV.UK Student visa guide</a></p>
-        </div>
-        <div class="au-guide__settle-route">
-          <div><span>Admission</span><strong>Get your CAS</strong></div>
-          <div><span>Visa</span><strong>Apply online</strong></div>
-          <div><span>Arrival</span><strong>Enrol on campus</strong></div>
-        </div>
-      </div>
-      <div class="au-guide__settle-list">
-        <div class="au-guide__settle-row"><span>01</span><div><h3>Get your CAS</h3><p>Meet the conditions of your offer from a licensed student sponsor so it can issue your Confirmation of Acceptance for Studies (CAS).</p></div></div>
-        <div class="au-guide__settle-row"><span>02</span><div><h3>Prepare your financial evidence</h3><p>Where required, show funds for the course fees listed on your CAS and the applicable living-cost amount. Check the evidence rules and how long you must hold the funds. <a class="underline" href="https://www.gov.uk/student-visa/money">GOV.UK financial requirements</a></p></div></div>
-        <div class="au-guide__settle-row"><span>03</span><div><h3>Apply and check your documents</h3><p>Have your passport and CAS ready, and budget for the visa fee and immigration health surcharge. Check whether you need a tuberculosis certificate from an approved clinic or an ATAS certificate for your course. <a class="underline" href="https://www.gov.uk/student-visa/documents-you-must-provide">GOV.UK document checklist</a></p></div></div>
-        <div class="au-guide__settle-row"><span>04</span><div><h3>Get ready to travel and enrol</h3><p>Check the start date of your visa, follow the instructions for accessing your eVisa, and confirm your housing and enrolment arrangements before travelling.</p></div></div>
-        <div class="au-guide__settle-row"><span>05</span><div><h3>Follow your work conditions</h3><p>Some full-time degree students may work up to 20 hours per week during term time. Check the conditions of your own visa and your university’s term dates before accepting work.</p></div></div>
-      </div>
-    </section>
-
-    <section id="network" class="au-guide__network" aria-labelledby="network-title">
-      <div class="au-guide__section-head">
-        <div>
-          <p class="au-guide__label">University network</p>
-          <h2 id="network-title" class="au-guide__heading">Six leading UK universities to explore.</h2>
-        </div>
-        <p class="au-guide__section-copy">Visit each university’s official website to explore its programmes, campus life and admissions information.</p>
-      </div>
-      <div class="au-guide__network-list">
-        {% for university in universities %}
-        <a id="{{ university.id }}" class="au-guide__university" href="{{ university.url }}" aria-label="{{ university.name }} official website">
-          <div>
-            <span class="au-guide__university-meta">{{ university.category }} · {{ university.region }}</span>
-            <h3 class="au-guide__university-name">{{ university.name }}</h3>
-            <p class="au-guide__university-summary">{{ university.summary }}</p>
-          </div>
-          <span class="au-guide__university-arrow" aria-hidden="true">↗</span>
-        </a>
-        {% endfor %}
-      </div>
-    </section>
-
-    <section class="au-guide__cta" aria-label="UK destination consultation">
-      <div>
-        <p class="au-guide__label">Your UK plan</p>
-        <h2>Build your UK study plan.</h2>
-        <p>Bring your academic records, intended degree, English test results and budget. We’ll help you shortlist courses and map out your application timeline.</p>
-      </div>
-      <a class="au-guide__button" href="{{ url_for('booking_page') }}">Start a consultation <span aria-hidden="true">&nbsp;↗</span></a>
-    </section>
+    {% include 'partials/destinations/uk/consultation.html' %}
   </div>
 </main>
 {% endblock %}

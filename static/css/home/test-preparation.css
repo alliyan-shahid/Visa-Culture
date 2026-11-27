@@ -1,0 +1,119 @@
+/*IELTS/PTE section: teal academic treatment*/
+
+#ielts-pte {
+  position: relative;
+  overflow: hidden;
+  background: #0b756d !important;
+  color: #fff;
+}
+
+#ielts-pte::before {
+  content: "";
+  position: absolute;
+  right: -8rem;
+  bottom: -12rem;
+  width: 30rem;
+  height: 30rem;
+  border: 1px solid rgba(210,255,246,.18);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+#ielts-pte > div {
+  position: relative;
+  z-index: 1;
+}
+
+#ielts-pte .text-primary {
+  color: #baf4e8 !important;
+}
+
+#ielts-pte .text-slate-950 {
+  color: #fff !important;
+}
+
+#ielts-pte .text-slate-600, #ielts-pte .text-slate-500 {
+  color: #d5f1ec !important;
+}
+
+#ielts-pte h2 {
+  max-width: 40rem;
+  font-size: clamp(2.25rem, 5vw, 4.4rem);
+  letter-spacing: -.06em;
+  line-height: .98;
+}
+
+#ielts-pte .border-slate-200 {
+  border-color: rgba(210,255,246,.3) !important;
+}
+
+#ielts-pte .border-y {
+  border-color: rgba(210,255,246,.42) !important;
+}
+
+#ielts-pte .text-primary {
+  font-weight: 700;
+}
+
+#ielts-pte a {
+  border: 1px solid #f4b942;
+  background: #f4b942;
+  color: #173f3a;
+  box-shadow: 0 .8rem 1.8rem rgba(0,0,0,.18);
+}
+
+#ielts-pte a:hover, #ielts-pte a:focus-visible {
+  border-color: #ffd477;
+  background: #ffd477;
+  color: #173f3a;
+}
+
+#ielts-pte .ielts-pte__features {
+  padding-top: .25rem;
+}
+
+#ielts-pte .ielts-pte__features-heading {
+  display: flex;
+  flex-direction: column;
+  gap: .65rem;
+  padding: 0 0 1.5rem;
+  border-bottom: 1px solid rgba(210,255,246,.42);
+}
+
+#ielts-pte .ielts-pte__features-heading span {
+  color: #baf4e8;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+#ielts-pte .ielts-pte__features-heading strong {
+  max-width: 29rem;
+  color: #fff;
+  font-size: clamp(1.4rem, 2.8vw, 2.15rem);
+  font-weight: 600;
+  letter-spacing: -.035em;
+  line-height: 1.12;
+}
+
+#ielts-pte .ielts-pte__feature {
+  min-height: 4.25rem;
+  display: flex;
+  align-items: center;
+  border-color: rgba(210,255,246,.3) !important;
+  line-height: 1.45;
+}
+
+#ielts-pte .ielts-pte__feature > span {
+  color: #baf4e8 !important;
+  font-size: .7rem;
+  letter-spacing: .08em;
+}
+
+@media (max-width: 640px) {
+  #ielts-pte h2 {
+    font-size: clamp(2.15rem, 10vw, 3.25rem);
+  }
+}

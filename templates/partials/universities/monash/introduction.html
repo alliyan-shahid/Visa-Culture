@@ -1,0 +1,85 @@
+<section class="hero-section text-white relative overflow-hidden hero-fade-in">
+  <div class="absolute inset-0">
+      <picture class="block w-full h-full">
+        <source media="(max-width: 640px)" srcset="{{ url_for('static', filename='images/m monash hero.webp') }}" type="image/webp">
+        <source srcset="{{ url_for('static', filename='images/monash hero.webp') }}" type="image/webp">
+        <img src="{{ url_for('static', filename='images/monash hero.webp') }}" alt="Monash University campus" class="w-full h-full object-cover" loading="eager" fetchpriority="high" decoding="async">
+      </picture>
+    </div>
+  <div class="absolute inset-0 bg-slate-950/45 hidden lg:block">
+  </div>
+  <div class="relative max-w-7xl mx-auto px-6">
+    <div class="grid gap-10 lg:grid-cols-[1.3fr_0.9fr] items-center h-full">
+      <div class="flex flex-col justify-center">
+        <div class="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm uppercase tracking-[0.28em] text-slate-200 w-fit">World-class Melbourne campus</div>
+        <h1 class="mt-8 font-black leading-tight">Study at <span class="hero-highlight">Monash University</span> from Pakistan</h1>
+        <p class="mt-6 max-w-2xl text-lg text-slate-200">Build a future through globally respected education, practical learning, and strong industry pathways across business, engineering, IT, and health.</p>
+        <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+            <a href="#final-cta" class="accent-btn inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-semibold">Start Your Monash Journey</a>
+            <a href="#why-monash" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-8 py-4 text-sm text-white">See Study Benefits</a>
+          </div>
+      </div>
+      <div class="hero-grid-right space-y-4">
+        <div class="section-card rounded-3xl p-8">
+            <span class="text-sm uppercase tracking-[0.2em] text-slate-300">Why Monash</span>
+            <h2 class="mt-4 text-3xl font-bold">Research strength, global reach</h2>
+          <p class="mt-3 text-slate-300">A Group of Eight university with practical learning and strong employer connections across Melbourne.</p>
+        </div>
+        <div class="section-card rounded-3xl p-8">
+            <span class="text-sm uppercase tracking-[0.2em] text-slate-300">Scholarship opportunity</span>
+            <h2 class="mt-4 text-3xl font-bold">Funding routes for international talent</h2>
+          <p class="mt-3 text-slate-300">Explore merit, faculty, and international awards with a clear application strategy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why-monash" class="premium-section relative py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-6 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-14 items-center">
+      <div class="mel-reveal space-y-6">
+        <div>
+          <p class="premium-subtitle">Why Choose Monash University</p>
+          <h2 class="premium-title">Research-led education with strong industry pathways in Melbourne</h2>
+        </div>
+        <p class="mel-copy text-lg">The Monash University is a leading public research university and a member of Australia's Group of Eight. It is known for innovation, practical learning, and strong graduate outcomes across engineering, business, health, and technology.</p>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="luxury-card">
+            <div class="luxury-card-icon">+</div>
+            <h3 class="luxury-card-title">National and Global Reputation</h3>
+            <p class="luxury-card-text">QS World University Rankings 2027: #31 worldwide, with widely respected degrees across sectors.</p>
+          </div>
+          <div class="luxury-card">
+            <div class="luxury-card-icon">+</div>
+            <h3 class="luxury-card-title">Research and Innovation</h3>
+            <p class="luxury-card-text">Advance knowledge through high-impact research and innovation partnerships.</p>
+          </div>
+          <div class="luxury-card">
+            <div class="luxury-card-icon">+</div>
+            <h3 class="luxury-card-title">Career Outcomes</h3>
+            <p class="luxury-card-text">Top employment outcomes and industry pathways for global career launches.</p>
+          </div>
+          <div class="luxury-card">
+            <div class="luxury-card-icon">+</div>
+            <h3 class="luxury-card-title">International Student Community</h3>
+            <p class="luxury-card-text">A community spanning 185+ countries, including strong connections in Pakistan.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mel-reveal">
+        <div class="relative group">
+          <div class="absolute inset-0 rounded-[2rem] bg-transparent">
+          </div>
+            <picture>
+              <source media="(max-width: 640px)" srcset="{{ url_for('static', filename='images/m monash 1.webp') }}" type="image/webp">
+              <source srcset="{{ url_for('static', filename='images/monash 1.webp') }}" type="image/webp">
+              <img src="{{ url_for('static', filename='images/monash 1.webp') }}" alt="Monash university-style campus students" loading="lazy" decoding="async" class="relative rounded-[2rem] object-cover w-full h-[500px] lg:h-[500px] shadow-none border-0">
+            </picture>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
