@@ -71,6 +71,8 @@ def send_booking_email(form_data):
                 "Our team will review your details and contact you shortly regarding the next steps.\n\n"
                 "Regards,\n"
                 "Visa Culture Team\n"
-                "info@visaculture.com"
+                "info@visaculture.com\n\n"
+                "This is an automated email. Please do not reply to this message. "
+                "For assistance, contact support@visaculture.com."
             )
             smtp.send_message(confirmation)
